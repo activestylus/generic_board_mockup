@@ -1,4 +1,5 @@
-= Get Started
+# Get Started
+
 All you need is Bundler
 
 ```
@@ -10,7 +11,7 @@ bundle install
 You can start the server by running the `middleman` command.
 Then visit http://localhost:4567/ in your browser
 
-== Notes
+## Notes
 
 All dynamic files reside in the **src** directory
 
