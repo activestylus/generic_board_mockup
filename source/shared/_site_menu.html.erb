@@ -1,0 +1,21 @@
+<div class="navbar" id="menu">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li class="clean"><a href="#" class="brand">logo<b>.</b></a></li>
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Find a job</a>
+        <ul class="dropdown-menu">
+          <li class="hud">
+            <%= partial 'shared/job_filters', locals: {:pre => 'nav' } %>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">Your account</a></li>
+      <li><a href="#">Career Advice</a></li>
+      <li><a href="#">Jobs by email</a></li>
+      <li class="clean icon facebook"><a href="#">Facebook</a></li>
+      <li class="clean icon twitter"><a href="#">Twitter</a></li>
+    </ul>
+  </div>
+</div>

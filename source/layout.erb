@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>WhiteLabelJobboards | Generic</title>
+  <%= partial 'shared/head' %>
+</head>
+<body>
+  <%= partial 'shared/user_menu' %>
+  <div class="container" id="content">
+    <%= partial 'shared/site_menu' %>
+    <%= partial 'shared/search' %>
+    <div id="yield">
+      <%= yield %>
+    </div>
+  </div>
+  <%= partial 'shared/footer' %>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<div class="row-fluid">
+  <div class="span8">
+    <%= partial 'shared/job_filters', locals: {:pre => 'home' } %>
+  </div>
+  <div class="span4">
+    <a class="mail break" href="#">Sign up for email alerts</a>
+    <div class="pane bordered">
+      <h2>Post a Job</h2>
+      <p>Quick and easy cost-effective recruitment<br />
+      <strong>Call us now at 0844 5619233 to find out more.</strong></p>
+      <%= partial 'shared/creditcards' %>
+      <div class="clear"></div>
+      <input class="btn btn-primary clear" name="commit" type="submit" value="Post a Job" />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <div class="pane bordered">
+      <h2>Featured Jobs</h2>
+      <ul class="column">
+        <li><small>Thousands of quality jobs over €50K in Europe. Find yours today!</small></li>
+        <li>
+          <h3><a href="#">Web Solution Business Manager</a></h3><a href="#">London, €38,000.00 - €75,000.00</a>
+        </li>
+        <li>
+          <h3><a href="#">Senior Java Developer</a></h3><a href="#">London,
+          €55,000.00 - €75,000.00</a>
+        </li>
+        <li class="last">
+          <h3><a href="#">Marketing Executive - German Speaking</a></h3><a href=
+          "#">London, €60,000.00 -
+          €75,000.00</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="span4">
+    <div class="pane bordered">
+      <h2>Upload your CV</h2>
+      <img src="/images/thumbs/girl-on-laptop.png" class="break" />
+      <p>Let employees find you - minimize the search for jobs that best fit you by
+      setting your CV status to "Public"</p>
+      <img src="/images/thumbs/convo.png" />
+    </div>
+  </div>
+  <div class="span4">
+    <img src="/images/adverts/o2-blue-xs.png" />
+  </div>
+</div>
+
+<div class="pane shadowed">
+  <h2>Featured Recruiters</h2>
+  <%= partial "shared/featured_recruiters" %>
+</div>

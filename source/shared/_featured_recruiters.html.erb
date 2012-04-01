@@ -1,0 +1,15 @@
+<div id="slideshow" class="jcarousel-skin-default">
+  <div id="homepage_logos" class="jcarousel">
+    <ul>
+      <% %w(propel sky honda santander fitness-first barclays).each do |logo| %>
+      <li>
+        <a class="logoslide" style="background-image:url(/images/logos/<%=logo%>.png)" href="#">
+          <%= logo.titleize %>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+    <a id="slide-left" href="#">«</a>
+    <a id="slide-right" href="#">»</a>
+  </div>
+</div>

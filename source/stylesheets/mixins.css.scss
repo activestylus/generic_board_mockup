@@ -1,0 +1,40 @@
+@mixin navy {
+  background: $blue url(/images/patterns/lines-navy.png);
+}
+@mixin icon($filename,$hover:false) {
+  background-image: url(/images/icons/#{$filename}.png);
+  background-repeat: no-repeat;
+  @if $hover=='hover' {
+    &:hover {
+      background-image: url(/images/icons/#{$filename}-hover.png);
+      background-repeat: no-repeat;
+    }
+  }
+  @if $hover=='fade' {
+    &:hover { opacity: 0.6; }
+  }
+}
+@mixin size($w,$h:$w) { width: $w; height: $h; }
+@mixin gradient-x($color1, $color2) {
+  background-position: left top;
+  background-color: $color1;
+  background-image: -webkit-gradient(linear, left center, right center, from($color1), to($color2));
+  background-image: -webkit-linear-gradient(left, $color1, $color2);
+  background-image: -moz-linear-gradient(left, $color1, $color2);
+  background-image: -o-linear-gradient(left, $color1, $color2);
+  background-image: -ms-linear-gradient(left, $color1, $color2);
+  background-image: linear-gradient(left, $color1, $color2);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$color1}', EndColorStr='#{$color2}');
+}
+
+@mixin gradient-y($color1, $color2) {
+  background-position: left top;
+  background-color: $color1;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($color1), to($color2));
+  background-image: -webkit-linear-gradient(top, $color1, $color2);
+  background-image: -moz-linear-gradient(top, $color1, $color2);
+  background-image: -o-linear-gradient(top, $color1, $color2);
+  background-image: -ms-linear-gradient(top, $color1, $color2);
+  background-image: linear-gradient(top, $color1, $color2);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$color1}', EndColorStr='#{$color2}');
+}

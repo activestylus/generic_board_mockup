@@ -1,0 +1,415 @@
+@import "mixins.css.scss";
+//
+//----------------------------------------------------------------
+// Constants
+//----------------------------------------------------------------
+$amber: #fc0;
+$blue: #000032;
+$eggshell: #f7f7f7;
+$red: #cc0000;
+$link: #0088CC;
+$cobalt: #4a59b4;
+//
+//----------------------------------------------------------------
+// General Layout
+//----------------------------------------------------------------
+body { background: url(/images/patterns/lines-white-grad.png) repeat-x; }
+.wrap { padding-top: 40px; background: #fff url(/images/patterns/lines-white-grad.png) repeat-x; }
+.pad { padding: 20px; }
+.egg { background: $eggshell; }
+.center { margin: 0 auto; }
+.break { display: block; margin-bottom: 14px; }
+.clear.tall { height: 20px; }
+.blue { @include navy; color: #fff; h2, h3 { color: #fff; } }
+.focus { color: #f00; }
+.pane {
+  background: $eggshell;
+  padding: 0 20px 20px 20px; margin-bottom: 20px;
+  &.bordered { border-top: 4px solid $blue; }
+  &.shadowed { box-shadow: 0px 1px 3px #aaa; }
+  &.bleed { padding: 0; }
+  &.pad { padding: 20px; }
+}
+#content { padding-top: 40px; }
+#footer {
+  background: url(/images/patterns/squares-blue.png);
+  font-size: 11px;
+  padding-top: 20px; margin-top: 20px;
+  h2 {
+    color: #888;
+    font-weight: normal; line-height: 14px;
+    margin: 0 0 10px 0; padding-top: 0px;
+  }
+  ul { list-style-type: none; margin-left: 0px; }
+  a { color: #fff; }
+  .cell {
+    padding: 0px 40px; border-left: 1px solid #666;
+    &.first { border: none; padding-left: 20px }
+    &.triangle-white-down {
+      @include icon('triangle-white-down');
+      background-position: center top;
+      color: $amber; font-size: 16px;
+      padding-top: 20px; margin-top: -20px;
+    }
+  }
+  p.copy { clear: both; color: #fff;}
+}
+.cell {float: left; clear: none;}
+.clear { clear: both; }
+//
+//----------------------------------------------------------------
+// Typography
+//----------------------------------------------------------------
+h1 { margin-bottom: 10px; }
+h2 { font-size: 12px; color: #000; }
+h3 { font-size: 11px; color: #000; line-height: 14px;  }
+p { font-size: 11px; }
+//
+//----------------------------------------------------------------
+// User Navigation
+//----------------------------------------------------------------
+#head {
+  @include navy;
+  height: 30px;
+  .navbar {
+    margin-bottom: 0px;
+    .nav > li > a { padding: 5px 15px 4px 15px;}
+  }
+  .navbar-inner { background: transparent; }
+  ul.nav { float:right; margin: 0; }
+  a {
+    color: #fff; padding: 2px;
+    font-size: 12px; font-weight: bold; text-shadow: -1px -1px 0px #000;
+    &.active {
+      @include gradient-y(#090,#070);
+      &.jobseekers { @include gradient-y(#cc9900,#b3861f); }
+    }
+    &.active:hover { color: #fff; }
+    &:hover { color: $link; }
+  }
+}
+//
+//----------------------------------------------------------------
+// Site Navigation
+//----------------------------------------------------------------
+#menu {
+  ul.column {
+    border-right: 1px solid #777;
+    &.last {border: none;}
+  }
+  .dropdown-menu {
+    border: none;
+    border-radius: 0px;
+    margin: 0;
+    width: 620px;
+    li { border: none;}
+  }
+  .nav-tabs { border: none; padding-bottom: 6px; }
+  .tab-content { clear: both; }
+  .tab-pane { padding: 0px; margin: 0; }
+  li {
+    border-right: 1px dotted #ccc;
+    &.clean { border-right: none; }
+  }
+  a {
+    color: $blue;
+    &:hover { color: #0088CC; }
+    &.brand {
+      font-size: 28px; font-family: Trebuchet MS, sans-serif; font-weight: bold;
+      color: #000; border-right: none;
+      b {color: #c00;}
+    }
+  }
+  .hud a { color: #fff; }
+  .span4 {margin-left: 0px;}
+  h2 { display: none }
+  .navbar-inner { background: transparent; box-shadow: none; }
+  &.navbar .nav.nav-tabs > li.active > a, &.navbar .nav.nav-tabs > li.active > a:hover {
+    background: #444;
+  }
+  &.navbar .nav > li > a { padding: 5px 15px 4px 15px;}
+  &.navbar .nav li.active > a, &.navbar .nav li.active > a:hover {
+    background: #555; color: #fff; border-radius: 4px;
+  }
+  li.active { border-right: none; }
+}
+//
+//----------------------------------------------------------------
+// Search Box
+//----------------------------------------------------------------
+#search {
+  @include navy;
+  border-radius: 2px; font-weight: bold;
+  padding-top: 20px; margin-top: 40px; margin-bottom: 20px;
+  a, a:hover { color:#fff; }
+  a.add { position: relative; left: -8px; }
+  table { width:100% }
+  td {
+    vertical-align: top;
+    &.text { padding-top: 5px; }
+    &.find { width:123px; }
+    &.in { width:40px; text-indent: 12px; }
+    &.input input { text-indent: 10px; }
+    &.search {
+      width: 150px; padding-left: 14px;
+      input { padding: 8px 20px; margin-bottom: 8px; display: inline-block; width: auto; }
+    }
+  }
+  strong, small { color: #fff; }
+  strong { font-size: 22px; }
+  small { font-size: 12px; font-weight: normal; display: block; }
+  input, textarea, select, .uneditable-input {height: auto;}
+  input { display: block; padding: 8px 0px; width: 100%; font-size: 16px;}
+}
+.blue {
+  .btn-primary {
+    @include gradient-y(#CC0E0A, #870804);
+  }
+  .btn-primary:hover {
+    @include gradient-y(#FA2B2B, #CC0E0A);
+  }
+}
+//
+small.search {
+  display: block;
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+  padding-left: 130px;
+  &.more {
+    float: right;
+    padding-right: 50px;
+  }
+}
+//
+//----------------------------------------------------------------
+// Forms
+//----------------------------------------------------------------
+label { font-weight: bold; }
+.checkboxes {
+  li { display: block; clear: both; }
+  input, label { display: block; float: left; }
+  label { font-weight: normal; text-indent: 3px }
+}
+.btn-primary { @include gradient-y(#090, #070); }
+.btn-primary:hover { @include gradient-y(#0a0, #080); }
+.btn-secondary {
+  border: 1px solid $cobalt - 60;
+  @include gradient-y($cobalt, $cobalt - 30);
+  color: #fff; text-shadow: -1px -1px 0px #222e50 }
+.btn-secondary:hover { @include gradient-y($cobalt - 30, $cobalt - 60); color: #fff; }
+//
+//----------------------------------------------------------------
+// Tabs
+//----------------------------------------------------------------
+.nav-tabs { margin-bottom: 0px; border-bottom: 4px solid $blue; }
+.nav-tabs > li { margin-bottom: -6px; }
+.nav-tabs > li > a {border: none; color: #666; padding: 10px 14px; }
+.nav-tabs > li > a:hover { background: transparent; color: #000; text-decoration: underline}
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .tab-content > .active, .pill-content > .active {
+  background: $eggshell; border: none;
+  color: $blue; font-weight: bold;
+}
+.tab-pane { padding: 0 20px 20px 20px; margin-bottom: 20px; }
+.nav-pills > li > a, .nav-pills > li > a:hover { color: $cobalt; }
+.nav-pills > .active > a, .nav-pills > .active > a:hover { background: $cobalt; }
+.nav-pills-wrap {
+  border: 1px solid #ddd; border-radius: 9px;
+  padding: 20px 20px 1px 20px; margin-left: 0px;
+}
+//
+//----------------------------------------------------------------
+// Dark HUD Theme
+//----------------------------------------------------------------
+.hud {
+  background: #555;
+  color: #fff;
+  a {color: #fff;}
+  .dropdown-menu { background: #555; }
+  .nav-tabs {background: transparent;}
+  .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .tab-content > .active, .pill-content > .active, .pane {background: #444;}
+  ul.column a:hover { background: #333; }
+}
+//
+//----------------------------------------------------------------
+// Lists
+//----------------------------------------------------------------
+ul.column {
+  list-style-type: none; margin: 0; font-size: 11px; font-weight: normal;
+  &.last {border: none;}
+  h3 { padding: 0; margin: 0; }
+}
+ul.column > li { display: block; border-bottom: 1px dotted #ccc; padding: 3px 0;}
+ul.column > li.last { border: none; }
+ul.column > li > a { color: #666;}
+ul.column > li > a:hover { color: #000 }
+//
+//----------------------------------------------------------------
+// Icons
+//----------------------------------------------------------------
+.block { display: block; }
+.icon { display: block; text-indent: -9999px; }
+a.mail { @include icon('mail', 'fade'); padding-left: 28px; }
+.credit-cards {
+  float: left; margin-bottom: 14px;
+  span { @include size(48px,32px); margin-right: 8px; float: left;  display: block }
+}
+.mastercard { @include icon('mastercard') }
+.visa { @include icon('visa') }
+.maestro { @include icon('maestro') }
+.facebook { @include icon('facebook', 'fade') }
+.twitter { @include icon('twitter','fade') }
+#menu.navbar .nav > li.icon > a {
+  @include size(28px,27px);
+  margin: 0 7px; padding: 0;
+}
+a.add {
+  @include icon('add'); padding-left: 20px;
+  float: right; color: #fff; font-weight: normal;
+}
+//
+//----------------------------------------------------------------
+// Logo Slideshow
+//----------------------------------------------------------------
+a.logoslide {
+  @include size(170px,75px); display: block; float: left;
+  background-repeat:no-repeat; background-position:center center;
+  opacity: 0.4; text-indent: -9999px;
+}
+a.logoslide:hover { opacity: 1; }
+.jcarousel-skin-default {
+  background: #fff;
+  height: 75px; margin: 0; padding: 0 32px;
+  position: relative; overflow: hidden;
+  ul {
+    background: #fff; width: 20000px; margin: 0; padding: 0;
+    list-style: none; list-style-type: none; display:block; position: absolute;
+  }
+  li { margin: 0 0 0 10px; padding: 0; float: left; }
+}
+*[dir=rtl] .jcarousel-skin-default li {float: right; margin: 0; }
+.jcarousel-skin-default ul li, .jcarousel-skin-default ul {list-style-type:none;}
+a#slide-left, a#slide-right {
+  @include size(22px,75px); opacity:0.7; position:absolute;
+  padding: 0; display: block; text-indent: -9999px;
+  background-position: center center; background-color: #fff;
+}
+a#slide-left:hover, a#slide-right:hover { opacity:1; color:#666; text-decoration: none; }
+a#slide-right { right:0; @include icon('go-next', 'hover'); }
+a#slide-left { left:0; @include icon('go-prev', 'hover'); }
+//
+//----------------------------------------------------------------
+// Search Results
+//----------------------------------------------------------------
+.hr {
+  border-top: 4px solid $blue; clear: both; margin-bottom: 20px;
+  &.thin { border-width: 1px; }
+  &.dotted { border-style: dotted; border-top: none; }
+  &.lite { border-color: #ccc; }
+}
+#search-results {
+  font-size: 12px;
+  .head {
+    .pad { padding: 20px 20px 10px 20px; }
+    img { float: left; }
+    a { float: right; background-position: right center; padding: 0px 32px 0px 0px }
+  }
+  h2 {
+    background: #1639B0 url(/images/patterns/lines-cobalt.png); color: #fff;
+    padding: 6px 0px 6px 9px; margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  strong { font-weight: bold; }
+}
+.result {
+  position: relative;
+  .save { position: absolute; top: 40px; right: 0px; display: inline-block; }
+  span.save { @include icon('saved'); padding-right: 13px; background-position: right center; }
+}
+#subscribe {
+  label, input { float: left; margin-right: 10px;}
+  label { line-height: 26px;  }
+}
+.pagination ul { float: right; }
+//
+//----------------------------------------------------------------
+// Sidebar
+//----------------------------------------------------------------
+#sidebar {
+  border: 1px solid #ccc; background: #eee; font-size: 12px;
+  ul { list-style-type: none; margin-left: 0px; }
+  .checkboxes { label, input, button, select, textarea  { font-size: 12px; } }
+  h3 {
+    @include icon('toggle-down'); background-position: 0 16px;
+    border-top: 1px solid #ccc; clear: both;
+    padding: 10px 0 0 10px; margin-top: 10px;
+    font-size: 13px; line-height: 18px;
+  }
+  .text.field input { width: 94%; }
+  .checkboxes label, a { color: #666; &:hover { color: #000; text-decoration: underline } }
+}
+//
+//----------------------------------------------------------------
+// Job
+//----------------------------------------------------------------
+#job {
+  a.mail { font-weight: bold; font-size: 13px; color: $blue; padding-right: 27px; }
+  p { font-size: 12px; }
+  dl { margin-top: 0px; }
+  dl, dt, dd { display: block; float: left; }
+  dt, dd { border-bottom: 1px dotted #aaa; padding: 4px 0px; }
+  dl { clear: both; }
+  dt { width: 20%; font-weight: bold; }
+  dd { width: 80%; margin-left: 0px; position: relative; top: -1px; }
+  .submit .btn { float: right; margin-left: 10px; }
+}
+//
+//----------------------------------------------------------------
+// Account
+//----------------------------------------------------------------
+#account {
+  position: relative;
+  h1 { margin-top: 20px; }
+  h2 {
+    font-size: 14px;
+    a { font-size: 12px; border-left: 1px solid #000; padding-left: 6px; margin-left: 4px}
+  }
+  p { font-size: 12px; }
+  .section {
+    background-position: right center;
+    border-top: 1px dotted #666; padding: 20px 0px;
+    &.cv { @include icon('gray-cv'); }
+    &.searches { @include icon('gray-searches'); }
+    &.applications { @include icon('gray-applications'); }
+    &.email { @include icon('gray-email'); }
+  }
+  #cv-download { position: absolute; top: 110px; right: 0px; }
+}
+#cv-download {
+  background: url(/images/thumbs/pdf.png) no-repeat center top;
+  padding-top: 155px;
+  width: 120px; text-align: center;
+  &:hover { opacity: 0.6; }
+}
+//-------------------------------------------------------
+// Job Seekers
+//-------------------------------------------------------
+#jobseeker-login {
+  padding: 30px 0px; margin: 80px 0px 20px 0px;
+  h2 { font-size: 26px; color: $blue; }
+  h3 { font-size: 16px; margin-bottom: 20px; }
+  .login {
+    h2 { color: #fff; margin-bottom: 12px; font-weight: normal; padding-top: 20px; }
+    &.pad { padding-bottom: 50px; }
+  }
+  div, ul, p { font-size: 13px; }
+  .create, .pitch { padding: 40px; }
+  .pitch { border-left: 1px solid #ccc; margin-top: 20px; }
+  .login { padding: 20px 12% 40px 12%;}
+
+}
+.login {
+  .text input { display: block; clear: both; width: 96%; }
+  .submit input { float: right; }
+}

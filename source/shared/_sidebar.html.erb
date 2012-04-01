@@ -1,0 +1,54 @@
+<div class="span3">
+  <div id="sidebar" class="pad">
+    <div class="text field">
+      <label>Start new search</label>
+      <input type="text" placeholder="Keyword" />
+    </div>
+    <div class="text field">
+      <label>Location</label>
+      <input type="text" placeholder="Post code or town" />
+    </div>
+    <div class="clear divider"></div>
+    <h3 class="toggler">Specialties</h3>
+    <div class="togglee">
+      <ul>
+        <li><a href="#">Sales (13,960)</a></li>
+        <li><a href="#">IT & Telecoms (10,235)</a></li>
+        <li><a href="#">Financial Services (8,145)</a></li>
+        <li><a href="#">Accountancy (7,772)</a></li>
+        <li><a href="#">Engineering (7,762)</a></li>
+        <li><a href="#">Recruitment Consultancy (7,600)</a></li>
+        <li><a href="#">More Specialties</a></li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <h3 class="toggler">Salary</h3>
+    <div class="togglee">
+      <ul>
+        <li><a href="#">up to €15,000</a></li>
+        <li><a href="#">€15,000 - €20,000</a></li>
+        <li><a href="#">€20,000 - €30,000</a></li>
+        <li><a href="#">€30,000 - €50,000</a></li>
+        <li><a href="#">€50,000+</a></li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <h3 class="toggler">Work type</h3>
+    <div class="togglee">
+      <ul class='checkboxes'>
+        <% %w(Permanent Freelance Contract).each do |x| %>
+        <li><input type="checkbox" id="<%= x %>"/><label for="<%= x %>"><%= x %></label></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <h3 class="toggler">Job level</h3>
+    <div class="togglee">
+      <ul class='checkboxes'>
+        <% ['Entry Level Graduate', 'Experienced (non manager)', 'Management'].each do |x| %>
+        <li><input type="checkbox" id="<%= domize(x) %>"/><label for="<%= domize(x) %>"><%= x %></label></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

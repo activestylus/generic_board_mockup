@@ -1,0 +1,30 @@
+001:
+  position: Senior Developer
+  location: "City of London, London"
+  rate: "£27,000 - £30,000 per annum"
+  status: saved
+002:
+  position: Marketing Executive
+  location: "Paris, France"
+  rate: "€30,000 - €38,000 per annum"
+  status: unsaved
+003:
+  position: Graduate Web Developer
+  location: "Dublin, Ireland"
+  rate: "€20,000 - €25,000 per annum"
+  status: unsaved
+004:
+  position: Ruby Developer
+  location: "Berlin, Germany"
+  rate: "€30,000 - €40,000 per annum"
+  status: saved
+005:
+  position: Javascript Developer
+  location: "Budapest, Hungary"
+  rate: "€27,000 - €30,000 per annum"
+  status: saved
+006:
+  position: SEO Marketer
+  location: "City of London, London"
+  rate: "£30,000 - £40,000 per annum"
+  status: unsaved
