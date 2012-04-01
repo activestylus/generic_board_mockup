@@ -13,8 +13,8 @@ $cobalt: #4a59b4;
 //----------------------------------------------------------------
 // General Layout
 //----------------------------------------------------------------
-body { background: url(/images/patterns/lines-white-grad.png) repeat-x; }
-.wrap { padding-top: 40px; background: #fff url(/images/patterns/lines-white-grad.png) repeat-x; }
+body { background: url(../images/patterns/lines-white-grad.png) repeat-x; }
+.wrap { padding-top: 40px; background: #fff url(../images/patterns/lines-white-grad.png) repeat-x; }
 .pad { padding: 20px; }
 .egg { background: $eggshell; }
 .center { margin: 0 auto; }
@@ -32,7 +32,7 @@ body { background: url(/images/patterns/lines-white-grad.png) repeat-x; }
 }
 #content { padding-top: 40px; }
 #footer {
-  background: url(/images/patterns/squares-blue.png);
+  background: url(../images/patterns/squares-blue.png);
   font-size: 11px;
   padding-top: 20px; margin-top: 20px;
   h2 {
@@ -315,7 +315,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
     a { float: right; background-position: right center; padding: 0px 32px 0px 0px }
   }
   h2 {
-    background: #1639B0 url(/images/patterns/lines-cobalt.png); color: #fff;
+    background: #1639B0 url(../images/patterns/lines-cobalt.png); color: #fff;
     padding: 6px 0px 6px 9px; margin-bottom: 10px;
     font-size: 14px;
     line-height: 18px;
@@ -387,7 +387,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   #cv-download { position: absolute; top: 110px; right: 0px; }
 }
 #cv-download {
-  background: url(/images/thumbs/pdf.png) no-repeat center top;
+  background: url(../images/thumbs/pdf.png) no-repeat center top;
   padding-top: 155px;
   width: 120px; text-align: center;
   &:hover { opacity: 0.6; }

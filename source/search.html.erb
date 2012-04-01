@@ -1,8 +1,8 @@
 <div class="row-fluid">
   <%= partial "shared/sidebar" %>
   <div class="span9" id="search-results">
-    <%= partial "shared/newsletter" %>
     <%= partial "shared/featured_recruiters" %>
+    <%= partial "shared/newsletter" %>
     <% data.jobs.each do |jobs| %>
     <% job = jobs[1] %>
     <div class="result">

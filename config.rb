@@ -82,7 +82,7 @@ configure :build do
   activate :cache_buster
 
   # Use relative URLs
-  activate :relative_assets
+  # activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
@@ -90,14 +90,10 @@ configure :build do
   # activate :smusher
 
   # Or use a different image path
-  # set :http_path, "/Content/images/"
+  # set :http_path, "/Content../images/"
 end
 
 helpers do
-
-  def logo_slide(path_to_image, height)
-
-  end
 
   def domize(string)
     string.gsub(/[^0-9a-z]/i, '').downcase

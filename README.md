@@ -16,4 +16,5 @@ Then visit http://localhost:4567/ in your browser
 All dynamic files reside in the **src** directory
 
 Static version of the site lives in the **build** directory
+(This must be hosted somewhere as all links to assets are relative to root '/')
 
