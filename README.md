@@ -17,6 +17,8 @@ bundle install
 You can start the server by running the `middleman` command.
 Then visit http://localhost:4567/ in your browser
 
+When you are done you can generate the static site by running `middleman build`
+
 # Why Middleman?
 
 * It kicks ass for writing static prototypes.
