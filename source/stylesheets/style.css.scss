@@ -3,6 +3,7 @@
 //----------------------------------------------------------------
 // Constants
 //----------------------------------------------------------------
+$layout_width: 940px;
 $amber: #fc0;
 $blue: #000032;
 $eggshell: #f7f7f7;
@@ -13,79 +14,93 @@ $cobalt: #4a59b4;
 //----------------------------------------------------------------
 // General Layout
 //----------------------------------------------------------------
-body { background: url(../images/patterns/lines-white-grad.png) repeat-x; }
+body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-size: 14px}
 .wrap { padding-top: 40px; background: #fff url(../images/patterns/lines-white-grad.png) repeat-x; }
 .pad { padding: 20px; }
 .egg { background: $eggshell; }
 .center { margin: 0 auto; }
-.break { display: block; margin-bottom: 14px; }
+.break { display: block; margin-bottom: 18px; }
 .clear.tall { height: 20px; }
 .blue { @include navy; color: #fff; h2, h3 { color: #fff; } }
 .focus { color: #f00; }
 .pane {
   background: $eggshell;
-  padding: 0 20px 20px 20px; margin-bottom: 20px;
-  &.bordered { border-top: 4px solid $blue; }
+  padding: 0 27px 20px; margin-bottom: 30px;
+  &.bordered { border-top: 5px solid $blue; }
   &.shadowed { box-shadow: 0px 1px 3px #aaa; }
   &.bleed { padding: 0; }
   &.pad { padding: 20px; }
+  h2 { margin-top: 12px; }
 }
-#content { padding-top: 40px; }
+#content { padding-top: 40px; width: $layout_width;}
 #footer {
+  .container { width: $layout_width; }
   background: url(../images/patterns/squares-blue.png);
-  font-size: 11px;
   padding-top: 20px; margin-top: 20px;
+  font-size: 11px;
   h2 {
     color: #888;
     font-weight: normal; line-height: 14px;
     margin: 0 0 10px 0; padding-top: 0px;
   }
   ul { list-style-type: none; margin-left: 0px; }
-  a { color: #fff; }
+  a  { color: #fff; }
   .cell {
     padding: 0px 40px; border-left: 1px solid #666;
     &.first { border: none; padding-left: 20px }
     &.triangle-white-down {
       @include icon('triangle-white-down');
       background-position: center top;
-      color: $amber; font-size: 16px;
       padding-top: 20px; margin-top: -20px;
+      color: $amber; font-size: 16px;
     }
   }
   p.copy { clear: both; color: #fff;}
 }
-.cell {float: left; clear: none;}
+.cell  { float: left; clear: none; }
 .clear { clear: both; }
+img.break { padding: 8px 0; }
 //
 //----------------------------------------------------------------
 // Typography
 //----------------------------------------------------------------
 h1 { margin-bottom: 10px; }
-h2 { font-size: 12px; color: #000; }
-h3 { font-size: 11px; color: #000; line-height: 14px;  }
-p { font-size: 11px; }
+h2 { font-size: 14px; color: #000; &.recruiters { padding-top: 8px; } }
+h3 { font-size: 12px; color: #000; line-height: 18px;  letter-spacing: 0.3px }
+p  { font-size: 12px; margin: 0 0 18px 0; }
+a  { color: #333; }
 //
 //----------------------------------------------------------------
 // User Navigation
 //----------------------------------------------------------------
 #head {
   @include navy;
-  height: 30px;
+  margin-bottom: 34px;
+  height: 39px;
   .navbar {
-    margin-bottom: 0px;
-    .nav > li > a { padding: 5px 15px 4px 15px;}
+    width: $layout_width;
+    margin: 0 auto;
+    .nav > li > a { padding: 11px 0px;}
   }
   .navbar-inner { background: transparent; }
   ul.nav { float:right; margin: 0; }
   a {
-    color: #fff; padding: 2px;
-    font-size: 12px; font-weight: bold; text-shadow: -1px -1px 0px #000;
+    color: #fff;
+    font-size: 14px; font-weight: bold;
+    text-shadow: -1px -1px 0px #000;
     &.active {
       @include gradient-y(#090,#070);
+      position: relative; left: -1px;
       &.jobseekers { @include gradient-y(#cc9900,#b3861f); }
+      b { border: none; }
     }
     &.active:hover { color: #fff; }
     &:hover { color: $link; }
+  }
+  b {
+    line-height: 16px;
+    border-right: 1px dotted #fff;
+    padding: 0 15px; display: block;
   }
 }
 //
@@ -93,6 +108,7 @@ p { font-size: 11px; }
 // Site Navigation
 //----------------------------------------------------------------
 #menu {
+  height: 10px;
   ul.column {
     border-right: 1px solid #777;
     &.last {border: none;}
@@ -112,11 +128,11 @@ p { font-size: 11px; }
     &.clean { border-right: none; }
   }
   a {
-    color: $blue;
+    color: $blue; font-weight: bold; font-size: 14px;
     &:hover { color: #0088CC; }
     &.brand {
-      font-size: 28px; font-family: Trebuchet MS, sans-serif; font-weight: bold;
-      color: #000; border-right: none;
+      font-size: 40px; font-family: Trebuchet MS, sans-serif; font-weight: bold;
+      color: #000; border-right: none; margin-right: 25px; margin-top: -4px;
       b {color: #c00;}
     }
   }
@@ -124,14 +140,13 @@ p { font-size: 11px; }
   .span4 {margin-left: 0px;}
   h2 { display: none }
   .navbar-inner { background: transparent; box-shadow: none; }
-  &.navbar .nav.nav-tabs > li.active > a, &.navbar .nav.nav-tabs > li.active > a:hover {
-    background: #444;
-  }
-  &.navbar .nav > li > a { padding: 5px 15px 4px 15px;}
-  &.navbar .nav li.active > a, &.navbar .nav li.active > a:hover {
-    background: #555; color: #fff; border-radius: 4px;
-  }
-  li.active { border-right: none; }
+
+  &.navbar .nav { float: none; }
+  &.navbar .nav > li > a { padding: 8px 18px 7px 18px;}
+  &.navbar .nav li.active > a, &.navbar .nav li.active > a:hover {background: transparent; }
+  ul.nav { width: 102%; }
+  li.icon { float: right; margin: 0; padding: 0; }
+  li.icon a { margin: 0 0 0 10px; }
 }
 //
 //----------------------------------------------------------------
@@ -140,26 +155,27 @@ p { font-size: 11px; }
 #search {
   @include navy;
   border-radius: 2px; font-weight: bold;
-  padding-top: 20px; margin-top: 40px; margin-bottom: 20px;
+  padding-top: 12px; margin-top: 40px; margin-bottom: 20px;
+  .pad { padding: 20px 20px 6px; }
   a, a:hover { color:#fff; }
-  a.add { position: relative; left: -8px; }
+  a.add { position: relative; left: -55px; font-size: 12px; top: 4px;}
+  strong, small { color: #fff; }
+  strong { font-size: 26px; }
+  small { font-size: 12px; font-weight: normal; display: block; margin-top: 12px; }
+  input, textarea, select, .uneditable-input {height: auto;}
+  input { display: block; padding: 8px 0px; width: 100%; font-size: 16px;}
   table { width:100% }
   td {
     vertical-align: top;
     &.text { padding-top: 5px; }
-    &.find { width:123px; }
-    &.in { width:40px; text-indent: 12px; }
+    &.find { width:150px; text-indent: 7px}
+    &.in { width:60px; text-indent: 20px; }
     &.input input { text-indent: 10px; }
     &.search {
       width: 150px; padding-left: 14px;
       input { padding: 8px 20px; margin-bottom: 8px; display: inline-block; width: auto; }
     }
   }
-  strong, small { color: #fff; }
-  strong { font-size: 22px; }
-  small { font-size: 12px; font-weight: normal; display: block; }
-  input, textarea, select, .uneditable-input {height: auto;}
-  input { display: block; padding: 8px 0px; width: 100%; font-size: 16px;}
 }
 .blue {
   .btn-primary {
@@ -202,15 +218,24 @@ label { font-weight: bold; }
 //----------------------------------------------------------------
 // Tabs
 //----------------------------------------------------------------
-.nav-tabs { margin-bottom: 0px; border-bottom: 4px solid $blue; }
-.nav-tabs > li { margin-bottom: -6px; }
-.nav-tabs > li > a {border: none; color: #666; padding: 10px 14px; }
+.nav-tabs { margin-bottom: 0px; border-bottom: 5px solid $blue; }
+.nav-tabs > li {
+  margin-bottom: -7px; font-weight: bold;
+}
+.nav-tabs > li > a {
+  border: none; padding: 12px 0 17px 0;
+  b { padding: 0px 14px; display: block; border-right: 1px solid #000; line-height: 14px; }
+}
+.nav-tabs > li.first > a b { padding-left: 27px }
+.nav-tabs > li.last > a b { border-right: none; }
 .nav-tabs > li > a:hover { background: transparent; color: #000; text-decoration: underline}
-.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .tab-content > .active, .pill-content > .active {
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover,
+.tab-content > .active, .pill-content > .active {
   background: $eggshell; border: none;
   color: $blue; font-weight: bold;
+  b { border: none; }
 }
-.tab-pane { padding: 0 20px 20px 20px; margin-bottom: 20px; }
+.tab-pane { padding: 12px 27px 27px 27px; margin-bottom: 20px; }
 .nav-pills > li > a, .nav-pills > li > a:hover { color: $cobalt; }
 .nav-pills > .active > a, .nav-pills > .active > a:hover { background: $cobalt; }
 .nav-pills-wrap {
@@ -225,9 +250,10 @@ label { font-weight: bold; }
   background: #555;
   color: #fff;
   a {color: #fff;}
+  .nav-tabs > .active > a, .nav-tabs > .active > a:hover,
+  .tab-content > .active, .pill-content > .active, .pane { background: #444; }
   .dropdown-menu { background: #555; }
-  .nav-tabs {background: transparent;}
-  .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .tab-content > .active, .pill-content > .active, .pane {background: #444;}
+  .nav-tabs { background: transparent; }
   ul.column a:hover { background: #333; }
 }
 //
@@ -235,13 +261,13 @@ label { font-weight: bold; }
 // Lists
 //----------------------------------------------------------------
 ul.column {
-  list-style-type: none; margin: 0; font-size: 11px; font-weight: normal;
+  list-style-type: none; margin: 0; font-size: 12px; font-weight: normal;
   &.last {border: none;}
+  &.spaced > li { padding: 6px 0; }
   h3 { padding: 0; margin: 0; }
 }
 ul.column > li { display: block; border-bottom: 1px dotted #ccc; padding: 3px 0;}
 ul.column > li.last { border: none; }
-ul.column > li > a { color: #666;}
 ul.column > li > a:hover { color: #000 }
 //
 //----------------------------------------------------------------
@@ -249,7 +275,11 @@ ul.column > li > a:hover { color: #000 }
 //----------------------------------------------------------------
 .block { display: block; }
 .icon { display: block; text-indent: -9999px; }
-a.mail { @include icon('mail', 'fade'); padding-left: 28px; }
+a.mail {
+  @include icon('mail', 'fade'); background-position: right center;
+  padding-right: 28px; margin-right: 73px;
+  text-align: right; font-weight: bold;
+}
 .credit-cards {
   float: left; margin-bottom: 14px;
   span { @include size(48px,32px); margin-right: 8px; float: left;  display: block }
@@ -261,38 +291,45 @@ a.mail { @include icon('mail', 'fade'); padding-left: 28px; }
 .twitter { @include icon('twitter','fade') }
 #menu.navbar .nav > li.icon > a {
   @include size(28px,27px);
-  margin: 0 7px; padding: 0;
+  padding: 0;
 }
 a.add {
-  @include icon('add'); padding-left: 20px;
-  float: right; color: #fff; font-weight: normal;
+  @include icon('add'); background-position: right center;
+  padding-right: 20px; float: right;
+  color: #fff; font-weight: normal; text-align: right;
 }
 //
 //----------------------------------------------------------------
 // Logo Slideshow
 //----------------------------------------------------------------
+$slideshow_height: 60px;
+//----------------------------------------------------------------
 a.logoslide {
-  @include size(170px,75px); display: block; float: left;
-  background-repeat:no-repeat; background-position:center center;
+  background-repeat: no-repeat; background-position: center center;
+  @include size(170px,$slideshow_height);
   opacity: 0.4; text-indent: -9999px;
+  display: block; float: left;
 }
 a.logoslide:hover { opacity: 1; }
 .jcarousel-skin-default {
-  background: #fff;
-  height: 75px; margin: 0; padding: 0 32px;
+  background: transparent;
+  height: $slideshow_height;
+  margin: 0; padding: 0 32px;
   position: relative; overflow: hidden;
   ul {
-    background: #fff; width: 20000px; margin: 0; padding: 0;
-    list-style: none; list-style-type: none; display:block; position: absolute;
+    width: 20000px; margin: 0; padding: 0;
+    list-style: none; list-style-type: none;
+    display:block; position: absolute;
   }
   li { margin: 0 0 0 10px; padding: 0; float: left; }
 }
 *[dir=rtl] .jcarousel-skin-default li {float: right; margin: 0; }
 .jcarousel-skin-default ul li, .jcarousel-skin-default ul {list-style-type:none;}
 a#slide-left, a#slide-right {
-  @include size(22px,75px); opacity:0.7; position:absolute;
-  padding: 0; display: block; text-indent: -9999px;
-  background-position: center center; background-color: #fff;
+  background-position: center center; background-color: $eggshell;
+  @include size(22px,$slideshow_height);
+  opacity:0.7; position:absolute; padding: 0;
+  display: block; text-indent: -9999px;
 }
 a#slide-left:hover, a#slide-right:hover { opacity:1; color:#666; text-decoration: none; }
 a#slide-right { right:0; @include icon('go-next', 'hover'); }
@@ -317,7 +354,6 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   h2 {
     background: #1639B0 url(../images/patterns/lines-cobalt.png); color: #fff;
     padding: 6px 0px 6px 9px; margin-bottom: 10px;
-    font-size: 14px;
     line-height: 18px;
   }
   strong { font-weight: bold; }
@@ -344,7 +380,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
     @include icon('toggle-down'); background-position: 0 16px;
     border-top: 1px solid #ccc; clear: both;
     padding: 10px 0 0 10px; margin-top: 10px;
-    font-size: 13px; line-height: 18px;
+    font-size: 14px; line-height: 18px;
   }
   .text.field input { width: 94%; }
   .checkboxes label, a { color: #666; &:hover { color: #000; text-decoration: underline } }
@@ -354,8 +390,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 // Job
 //----------------------------------------------------------------
 #job {
-  a.mail { font-weight: bold; font-size: 13px; color: $blue; padding-right: 27px; }
-  p { font-size: 12px; }
+  a.mail { font-weight: bold; font-size: 14px; color: $blue; padding-right: 27px; }
   dl { margin-top: 0px; }
   dl, dt, dd { display: block; float: left; }
   dt, dd { border-bottom: 1px dotted #aaa; padding: 4px 0px; }
@@ -375,7 +410,6 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
     font-size: 14px;
     a { font-size: 12px; border-left: 1px solid #000; padding-left: 6px; margin-left: 4px}
   }
-  p { font-size: 12px; }
   .section {
     background-position: right center;
     border-top: 1px dotted #666; padding: 20px 0px;
@@ -403,7 +437,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
     h2 { color: #fff; margin-bottom: 12px; font-weight: normal; padding-top: 20px; }
     &.pad { padding-bottom: 50px; }
   }
-  div, ul, p { font-size: 13px; }
+  div, ul, p { font-size: 14px; }
   .create, .pitch { padding: 40px; }
   .pitch { border-left: 1px solid #ccc; margin-top: 20px; }
   .login { padding: 20px 12% 40px 12%;}
@@ -413,3 +447,8 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   .text input { display: block; clear: both; width: 96%; }
   .submit input { float: right; }
 }
+//-------------------------------------------------------
+// Home
+//-------------------------------------------------------
+#post-a-job { min-height: 301px; }
+.home-row2 .pane { min-height: 296px; }

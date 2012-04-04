@@ -1,18 +1,15 @@
 <div id="head">
-  <div class="navbar container">
+  <div class="navbar">
     <div class="navbar-inner">
-      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"></a>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li><a href="#">Sign in</a></li>
-          <li><a href="#">Create account</a></li>
-          <% if defined?(jobseekers) %>
-          <li><a href="#" class="active jobseekers">Job Seekers</a></li>
-          <% else %>
-          <li><a href="#" class="active">Recruiters</a></li>
-          <% end %>
-        </ul>
-      </div>
+      <ul class="nav">
+        <li><a href="#"><b>Sign in</b></a></li>
+        <li><a href="#"><b>Create account</b></a></li>
+        <% if defined?(jobseekers) %>
+        <li><a href="#" class="active jobseekers"><b>Job Seekers</b></a></li>
+        <% else %>
+        <li><a href="#" class="active"><b>Recruiters</b></a></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
