@@ -1,0 +1,1 @@
+$(function(){$(".scroll-pane").jScrollPane()})

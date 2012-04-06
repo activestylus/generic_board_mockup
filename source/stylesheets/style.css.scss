@@ -6,7 +6,8 @@
 $layout_width: 940px;
 $amber: #fc0;
 $blue: #000032;
-$eggshell: #f7f7f7;
+//$eggshell: #f7f7f7;
+$eggshell: #eee;
 $red: #cc0000;
 $link: #0088CC;
 $cobalt: #4a59b4;
@@ -23,6 +24,7 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
 .clear.tall { height: 20px; }
 .blue { @include navy; color: #fff; h2, h3 { color: #fff; } }
 .focus { color: #f00; }
+.space { margin-left: 10px; }
 .pane {
   background: $eggshell;
   padding: 0 27px 20px; margin-bottom: 30px;
@@ -30,16 +32,18 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
   &.shadowed { box-shadow: 0px 1px 3px #aaa; }
   &.bleed { padding: 0; }
   &.pad { padding: 20px; }
+  &.white { background: #fff; }
   h2 { margin-top: 12px; }
 }
-#content { padding-top: 40px; width: $layout_width;}
+.white .pane { background: #fff; }
+#content { padding-top: 40px; width: $layout_width; }
 #footer {
   .container { width: $layout_width; }
   background: url(../images/patterns/squares-blue.png);
   padding-top: 20px; margin-top: 20px;
-  font-size: 11px;
+  font-size: 12px;
   h2 {
-    color: #888;
+    color: #fff;
     font-weight: normal; line-height: 14px;
     margin: 0 0 10px 0; padding-top: 0px;
   }
@@ -53,9 +57,10 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
       background-position: center top;
       padding-top: 20px; margin-top: -20px;
       color: $amber; font-size: 16px;
+      border: none;
     }
   }
-  p.copy { clear: both; color: #fff;}
+  p.copy { clear: both; color: #fff; }
 }
 .cell  { float: left; clear: none; }
 .clear { clear: both; }
@@ -80,7 +85,7 @@ a  { color: #333; }
   .navbar {
     width: $layout_width;
     margin: 0 auto;
-    .nav > li > a { padding: 11px 0px;}
+    .nav > li > a { padding: 11px 0px; }
   }
   .navbar-inner { background: transparent; }
   ul.nav { float:right; margin: 0; }
@@ -107,20 +112,45 @@ a  { color: #333; }
 //----------------------------------------------------------------
 // Site Navigation
 //----------------------------------------------------------------
+.dropdown-toggle {
+  @include icon('menu-arrow');
+  border-right: 10px solid #fff;
+  background-position: right center;
+}
 #menu {
+  .row-fluid { padding: 16px 0px; }
+  .dropdown-menu::after, .dropdown-menu::before {
+    display: none;
+    color: #f00;
+  }
   height: 10px;
   ul.column {
     border-right: 1px solid #777;
-    &.last {border: none;}
+    &.last {border: none; }
   }
   .dropdown-menu {
+    background: transparent;
     border: none;
     border-radius: 0px;
     margin: 0;
-    width: 620px;
-    li { border: none;}
+    width: 695px;
+    top: 30px;
+    li { border: none; }
+    a { font-weight: normal; font-size: 11px; }
   }
-  .nav-tabs { border: none; padding-bottom: 6px; }
+  .dropdown.open {
+    background: transparent;
+    a.dropdown-toggle {
+      background-color: #444;
+      background-position: right center;
+      @include icon('menu-arrow-active');
+      color: #fff;
+      border-color: #444;
+    }
+  }
+  .nav-tabs {
+    border: none; padding-bottom: 6px;
+  }
   .tab-content { clear: both; }
   .tab-pane { padding: 0px; margin: 0; }
   li {
@@ -133,17 +163,18 @@ a  { color: #333; }
     &.brand {
       font-size: 40px; font-family: Trebuchet MS, sans-serif; font-weight: bold;
       color: #000; border-right: none; margin-right: 25px; margin-top: -4px;
-      b {color: #c00;}
+      b {color: #c00; }
     }
   }
   .hud a { color: #fff; }
-  .span4 {margin-left: 0px;}
+  .span4 {margin-left: 0px; }
   h2 { display: none }
   .navbar-inner { background: transparent; box-shadow: none; }
 
   &.navbar .nav { float: none; }
-  &.navbar .nav > li > a { padding: 8px 18px 7px 18px;}
-  &.navbar .nav li.active > a, &.navbar .nav li.active > a:hover {background: transparent; }
+  &.navbar .nav > li > a { padding: 8px 18px 7px 18px; }
+  &.navbar .nav li.active > a, &.navbar .nav li.active > a:hover {background: transparent;}
+  &.navbar .nav-tabs.nav li.active > a, .nav-tabs.nav li.active > a:hover {background: #444; color: #fff;}
   ul.nav { width: 102%; }
   li.icon { float: right; margin: 0; padding: 0; }
   li.icon a { margin: 0 0 0 10px; }
@@ -158,12 +189,12 @@ a  { color: #333; }
   padding-top: 12px; margin-top: 40px; margin-bottom: 20px;
   .pad { padding: 20px 20px 6px; }
   a, a:hover { color:#fff; }
-  a.add { position: relative; left: -55px; font-size: 12px; top: 4px;}
+  a.add { position: relative; left: -55px; font-size: 12px; top: 4px; }
   strong, small { color: #fff; }
-  strong { font-size: 26px; }
+  strong { font-size: 27px; font-weight: normal; line-height: 25px; }
   small { font-size: 12px; font-weight: normal; display: block; margin-top: 12px; }
-  input, textarea, select, .uneditable-input {height: auto;}
-  input { display: block; padding: 8px 0px; width: 100%; font-size: 16px;}
+  input, textarea, select, .uneditable-input {height: auto; }
+  input { display: block; padding: 8px 0px; width: 100%; font-size: 16px; }
   table { width:100% }
   td {
     vertical-align: top;
@@ -222,12 +253,17 @@ label { font-weight: bold; }
 .nav-tabs > li {
   margin-bottom: -7px; font-weight: bold;
 }
-.nav-tabs > li > a {
-  border: none; padding: 12px 0 17px 0;
-  b { padding: 0px 14px; display: block; border-right: 1px solid #000; line-height: 14px; }
+.nav-tabs > li > a {border: none; padding: 12px 0 17px 0;}
+
+.nav-tabs.plain > li > a  b {
+  padding: 0px 14px;  
+  border-right: 1px solid #000;
+  line-height: 14px; display: block;
+  color: #6e6e6e
 }
-.nav-tabs > li.first > a b { padding-left: 27px }
-.nav-tabs > li.last > a b { border-right: none; }
+.nav-tabs.plain > li.first > a b { padding-left: 27px }
+.nav-tabs.plain > li.last > a b { border-right: none; }
+.nav-tabs.plain > li.active > a b { border-right: none; }
 .nav-tabs > li > a:hover { background: transparent; color: #000; text-decoration: underline}
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover,
 .tab-content > .active, .pill-content > .active {
@@ -249,7 +285,7 @@ label { font-weight: bold; }
 .hud {
   background: #555;
   color: #fff;
-  a {color: #fff;}
+  a {color: #fff; }
   .nav-tabs > .active > a, .nav-tabs > .active > a:hover,
   .tab-content > .active, .pill-content > .active, .pane { background: #444; }
   .dropdown-menu { background: #555; }
@@ -261,12 +297,12 @@ label { font-weight: bold; }
 // Lists
 //----------------------------------------------------------------
 ul.column {
-  list-style-type: none; margin: 0; font-size: 12px; font-weight: normal;
-  &.last {border: none;}
+  list-style-type: none; margin: 0; font-size: 11px; font-weight: normal;
+  &.last {border: none; }
   &.spaced > li { padding: 6px 0; }
-  h3 { padding: 0; margin: 0; }
+  h3 { padding: 0; margin: 0; font-size: 11px; }
 }
-ul.column > li { display: block; border-bottom: 1px dotted #ccc; padding: 3px 0;}
+ul.column > li { display: block; border-bottom: 1px dotted #ccc; padding: 3px 0; }
 ul.column > li.last { border: none; }
 ul.column > li > a:hover { color: #000 }
 //
@@ -276,7 +312,7 @@ ul.column > li > a:hover { color: #000 }
 .block { display: block; }
 .icon { display: block; text-indent: -9999px; }
 a.mail {
-  @include icon('mail', 'fade'); background-position: right center;
+  @include icon('mail'); background-position: right center;
   padding-right: 28px; margin-right: 73px;
   text-align: right; font-weight: bold;
 }
@@ -309,6 +345,7 @@ a.logoslide {
   @include size(170px,$slideshow_height);
   opacity: 0.4; text-indent: -9999px;
   display: block; float: left;
+  padding: 0px 6px; margin: 0px 6px;
 }
 a.logoslide:hover { opacity: 1; }
 .jcarousel-skin-default {
@@ -324,7 +361,7 @@ a.logoslide:hover { opacity: 1; }
   li { margin: 0 0 0 10px; padding: 0; float: left; }
 }
 *[dir=rtl] .jcarousel-skin-default li {float: right; margin: 0; }
-.jcarousel-skin-default ul li, .jcarousel-skin-default ul {list-style-type:none;}
+.jcarousel-skin-default ul li, .jcarousel-skin-default ul {list-style-type:none; }
 a#slide-left, a#slide-right {
   background-position: center center; background-color: $eggshell;
   @include size(22px,$slideshow_height);
@@ -364,7 +401,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   span.save { @include icon('saved'); padding-right: 13px; background-position: right center; }
 }
 #subscribe {
-  label, input { float: left; margin-right: 10px;}
+  label, input { float: left; margin-right: 10px; }
   label { line-height: 26px;  }
 }
 .pagination ul { float: right; }
@@ -429,6 +466,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 //-------------------------------------------------------
 // Job Seekers
 //-------------------------------------------------------
+a.strong { font-weight: bold; }
 #jobseeker-login {
   padding: 30px 0px; margin: 80px 0px 20px 0px;
   h2 { font-size: 26px; color: $blue; }
@@ -440,7 +478,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   div, ul, p { font-size: 14px; }
   .create, .pitch { padding: 40px; }
   .pitch { border-left: 1px solid #ccc; margin-top: 20px; }
-  .login { padding: 20px 12% 40px 12%;}
+  .login { padding: 20px 12% 40px 12%; }
 
 }
 .login {
@@ -450,5 +488,48 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 //-------------------------------------------------------
 // Home
 //-------------------------------------------------------
-#post-a-job { min-height: 301px; }
+#post-a-job { min-height: 247px; }
 .home-row2 .pane { min-height: 296px; }
+.powered { display: block; color: #f60; font-size: 12px; margin-top: 5px; }
+.logo { float: left; background-repeat: no-repeat; background-position: center center; }
+.recommended.boards .logo {
+  @include size(106px,40px);
+  border: 1px solid #ccc;
+  text-indent: -9999px;
+  margin: 0 12px 12px 0
+}
+#featured-jobs {height: 200px; overflow-y: scroll;}
+
+//-------------------------------------------------------
+// Scroll
+//-------------------------------------------------------
+.jspVerticalBar *, .jspHorizontalBar * { margin: 0;	padding: 0; }
+.jspVerticalBar {
+	position: absolute;
+	top: 0;	right: 0;
+	width: 10px; height: 100%;
+	background: red;
+	.jspArrow { height: 16px; }
+	.jspArrow:focus {	outline: none; }
+}
+.jspHorizontalBar {
+	background: red;
+	bottom: 0;	left: 0; position: absolute;
+	width: 100%; height: 16px;
+	.jspCap { float: left; }
+	.jspArrow {	width: 16px; float: left;	height: 100%; }
+	.jspTrack, .jspDrag { float: left; height: 100%; }
+	
+}
+.jspContainer { overflow: hidden; position: relative; }
+.jspPane { position: absolute; }
+.jspCap {	display: none; }
+.jspTrack {	background: #ddd;	position: relative; }
+.jspDrag { background: #bbb; position: relative; top: 0; left: 0; cursor: pointer; }
+.jspArrow {
+  background: #50506d; text-indent: -20000px; display: block; cursor: pointer;
+  &.jspDisabled { cursor: default; background: #80808d; }
+}
+.jspCorner { background: #eee; float: left; height: 100%; }
+* html .jspCorner {	margin: 0 -3px 0 0; } // IE6 3 pixel bug :(
+

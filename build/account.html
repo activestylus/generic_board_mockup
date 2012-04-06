@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
 <script type="text/javascript" src="javascripts/base.js"></script>
 <script type="text/javascript" src="javascripts/application.js" ></script>
+<script type="text/javascript" src="javascripts/jquery.mousewheel.js" ></script>
+<script type="text/javascript" src="javascripts/jquery.jscrollpane.js" ></script>
+<script type="text/javascript" src="javascripts/app.js" ></script>
 <link href="stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
@@ -38,13 +41,13 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Find a job</a>
         <ul class="dropdown-menu">
           <li class="hud">
-            <ul class="nav nav-tabs" data-toggle="tab">
-  <li class="active first"><a href="#nav-industries" data-toggle="tab"><b>Industry</b></a></li>
-  <li><a href="#nav-locations" data-toggle="tab"><b>Location</b></a></li>
-  <li class='last'><a href="#nav-specialties" data-toggle="tab"><b>Specialty</b></a></li>
+            <ul class="nav nav-tabs menu" data-toggle="tab">
+  <li class="active first"><a href="#menu-industries" data-toggle="tab"><b>Industry</b></a></li>
+  <li><a href="#menu-locations" data-toggle="tab"><b>Location</b></a></li>
+  <li class='last'><a href="#menu-specialties" data-toggle="tab"><b>Specialism</b></a></li>
 </ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="nav-industries">
+<div class="tab-content menu">
+  <div class="tab-pane active" id="menu-industries">
     <h2>Browse Jobs by Industry</h2>
 
     <div class="row-fluid">
@@ -86,12 +89,12 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
     </div>
   </div>
 
-  <div class="tab-pane" id="nav-locations">
+  <div class="tab-pane" id="menu-locations">
     <h2>Browse Jobs by Location (TO-DO)</h2>
   </div>
 
-  <div class="tab-pane" id="nav-specialties">
-    <h2>Browse Jobs by Specialty (TO-DO)</h2>
+  <div class="tab-pane" id="menu-specialties">
+    <h2>Browse Jobs by Specialism (TO-DO)</h2>
   </div>
 </div>
           </li>
@@ -148,7 +151,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       <input type="text" placeholder="Post code or town" />
     </div>
     <div class="clear divider"></div>
-    <h3 class="toggler">Specialties</h3>
+    <h3 class="toggler">Specialisms</h3>
     <div class="togglee">
       <ul>
         <li><a href="#">Sales (13,960)</a></li>
@@ -157,7 +160,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li><a href="#">Accountancy (7,772)</a></li>
         <li><a href="#">Engineering (7,762)</a></li>
         <li><a href="#">Recruitment Consultancy (7,600)</a></li>
-        <li><a href="#">More Specialties</a></li>
+        <li><a href="#">More Specialisms</a></li>
       </ul>
     </div>
     <div class="divider"></div>
@@ -273,7 +276,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li><a href="#">Terms & Conditions</a></li>
       </ul>
     </div>
-    <div class="cell triangle-white-down first">Call 0844 645 2134</div>
+    <div class="cell triangle-white-down">Call 0844 645 2134</div>
     <div class="clear">&nbsp;</div>
     <div class="cell first">
       <p class="copy">© Copyright 2012</p>

@@ -1,10 +1,10 @@
 <div id="slideshow" class="jcarousel-skin-default">
   <div id="homepage_logos" class="jcarousel">
     <ul>
-      <% %w(propel sky honda santander fitness-first barclays).each do |logo| %>
+      <% %w(94 68 116 115 105 120).each do |n| %>
       <li>
-        <a class="logoslide" style="background-image:url(images/logos/<%=logo%>.png)" href="#">
-          <%= logo.titleize %>
+        <a class="logoslide" style="background-image:url(images/logos/<%=n%>.png); width:<%=n%>px;" href="#">
+          <%= n.titleize %>
         </a>
       </li>
       <% end %>
