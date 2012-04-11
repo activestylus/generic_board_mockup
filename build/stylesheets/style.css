@@ -102,9 +102,6 @@ body {
 img.break {
   padding: 8px 0; }
 
-h1, h2 {
-  font-weight: normal; }
-
 h1 {
   margin-bottom: 10px; }
 
@@ -234,7 +231,9 @@ a {
   #menu a {
     color: #000032;
     font-weight: bold;
-    font-size: 14px; }
+    font-size: 14px;
+    font-weight: normal;
+    text-shadow: none; }
     #menu a:hover {
       color: #0088CC; }
     #menu a.brand {

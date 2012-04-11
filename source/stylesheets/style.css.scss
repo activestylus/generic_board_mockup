@@ -161,6 +161,7 @@ a  { color: #333; }
   a {
     color: $blue; font-weight: bold; font-size: 14px;
     font-weight: normal;
+    text-shadow: none;
     &:hover { color: #0088CC; }
     &.brand {
       font-size: 40px; font-family: Trebuchet MS, sans-serif; font-weight: bold;
