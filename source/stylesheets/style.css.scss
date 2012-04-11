@@ -69,7 +69,6 @@ img.break { padding: 8px 0; }
 //----------------------------------------------------------------
 // Typography
 //----------------------------------------------------------------
-h1, h2 { font-weight: normal; }
 h1 { margin-bottom: 10px; }
 h2 { font-size: 15px; color: #000; &.recruiters { padding-top: 8px; } }
 h3 { font-size: $base_font_size; color: #000; line-height: 18px;  letter-spacing: 0.3px }
@@ -161,6 +160,7 @@ a  { color: #333; }
   }
   a {
     color: $blue; font-weight: bold; font-size: 14px;
+    font-weight: normal;
     &:hover { color: #0088CC; }
     &.brand {
       font-size: 40px; font-family: Trebuchet MS, sans-serif; font-weight: bold;
