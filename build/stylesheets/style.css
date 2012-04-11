@@ -35,6 +35,8 @@ body {
   background: #f7f7f7;
   padding: 0 27px 20px;
   margin-bottom: 30px; }
+  .pane.scroll {
+    padding-right: 5px; }
   .pane.bordered {
     border-top: 5px solid #000032; }
   .pane.shadowed {
@@ -181,32 +183,39 @@ a {
   background-image: url(../images/icons/menu-arrow.png);
   background-repeat: no-repeat;
   border-right: 10px solid #fff;
-  background-position: right center; }
+  background-position: right center;
+  border-radius: 2px; }
 
 #menu {
   height: 10px; }
   #menu .row-fluid {
     padding: 16px 0px; }
+    #menu .row-fluid .span4 {
+      width: 33%; }
   #menu .dropdown-menu::after, #menu .dropdown-menu::before {
     display: none;
     color: #f00; }
   #menu ul.column {
-    border-right: 1px solid #777; }
+    border-right: 1px solid #777;
+    padding-left: 10px;
+    font-size: 13px; }
     #menu ul.column.last {
       border: none; }
   #menu .dropdown-menu {
     background: #555;
     border: none;
-    border-radius: 0px;
+    border-radius: 2px;
     margin: 0;
     width: 630px;
-    padding: 10px 0;
+    padding: 10px 0 0 0;
     top: 30px; }
     #menu .dropdown-menu li {
       border: none; }
     #menu .dropdown-menu a {
       font-weight: normal;
-      font-size: 11px; }
+      font-size: 13px; }
+    #menu .dropdown-menu .nav-tabs a {
+      font-size: 14px; }
   #menu .dropdown.open {
     background: transparent; }
     #menu .dropdown.open a.dropdown-toggle {
@@ -219,11 +228,21 @@ a {
   #menu .nav-tabs {
     border: none;
     padding-bottom: 6px; }
+    #menu .nav-tabs a {
+      padding: 0px; }
+    #menu .nav-tabs b {
+      padding: 0px 10px;
+      border-right: 1px dotted #000; }
+    #menu .nav-tabs li.first b {
+      padding-left: 24px; }
+    #menu .nav-tabs li.active b, #menu .nav-tabs li.last b {
+      border-right: none; }
   #menu .tab-content {
     clear: both; }
   #menu .tab-pane {
-    padding: 0px;
-    margin: 0; }
+    padding: 10px 0px;
+    margin: 0;
+    border-radius: 2px; }
   #menu li {
     border-right: 1px dotted #ccc; }
     #menu li.clean {
@@ -259,6 +278,8 @@ a {
     float: none; }
   #menu.navbar .nav > li > a {
     padding: 8px 18px 7px 18px; }
+  #menu.navbar .nav.nav-tabs > li > a {
+    padding: 6px 0px; }
   #menu.navbar .nav li.active > a, #menu.navbar .nav li.active > a:hover {
     background: transparent; }
   #menu.navbar .nav-tabs.nav li.active > a, #menu .nav-tabs.nav li.active > a:hover {
@@ -266,6 +287,9 @@ a {
     color: #fff; }
   #menu ul.nav {
     width: 102%; }
+    #menu ul.nav.nav-tabs {
+      width: 100%;
+      background: #555; }
   #menu li.icon {
     float: right;
     margin: 0;
@@ -278,7 +302,7 @@ a {
   border-radius: 2px;
   font-weight: bold;
   padding-top: 12px;
-  margin-top: 40px;
+  margin-top: 42px;
   margin-bottom: 20px; }
   #search .pad {
     padding: 20px 20px 6px; }
@@ -361,7 +385,8 @@ a {
     width: 115px; }
 
 .blue .btn-primary {
-  background: #CC0E0A; }
+  background: #CC0E0A;
+  text-shadow: -1px -1px 1px #330000; }
 .blue .btn-primary:hover {
   background: #FA2B2B; }
 
@@ -391,11 +416,16 @@ label {
   width: 14px; }
 
 .btn {
-  border-radius: 4px;
-  box-shadow: none; }
+  border-radius: 2px;
+  box-shadow: none;
+  border: none; }
 
 .btn-primary {
-  background: #090; }
+  background: #090;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 12px;
+  text-shadow: -1px -1px 1px #004400; }
 
 .btn-primary:hover {
   background: #0a0; }
@@ -479,19 +509,19 @@ label {
   margin-left: 0px; }
 
 .hud {
-  background: #555;
-  color: #fff; }
+  background: #444;
+  color: #fff;
+  border-radius: 2px; }
   .hud a {
     color: #fff; }
-  .hud .nav-tabs > .active > a, .hud .nav-tabs > .active > a:hover,
-  .hud .tab-content > .active, .hud .pill-content > .active, .hud .pane {
-    background: #555; }
-  .hud ul.dropdown-menu {
+  .hud .nav-tabs > .active > a, .hud .nav-tabs > .active > a:hover {
     background: #555; }
   .hud .nav-tabs {
     background: transparent; }
   .hud ul.column a:hover {
     background: #333; }
+  .hud .tab-pane {
+    background: #444; }
 
 ul.column {
   list-style-type: none;
@@ -889,7 +919,7 @@ a.strong {
   right: 0;
   width: 15px;
   height: 100%;
-  background: red; }
+  background: transparent; }
   .jspVerticalBar .jspArrow {
     height: 16px; }
   .jspVerticalBar .jspArrow:focus {
@@ -923,11 +953,11 @@ a.strong {
   display: none; }
 
 .jspTrack {
-  background: #ddd;
+  background: transparent;
   position: relative; }
 
 .jspDrag {
-  background: #bbb;
+  background: transparent;
   position: relative;
   top: 0;
   left: 0;
