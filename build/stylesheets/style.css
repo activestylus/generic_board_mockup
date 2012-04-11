@@ -9,9 +9,6 @@ body {
 .pad {
   padding: 20px; }
 
-.egg {
-  background: #eeeeee; }
-
 .center {
   margin: 0 auto; }
 
@@ -35,7 +32,7 @@ body {
   margin-left: 10px; }
 
 .pane {
-  background: #eeeeee;
+  background: #f7f7f7;
   padding: 0 27px 20px;
   margin-bottom: 30px; }
   .pane.bordered {
@@ -62,7 +59,7 @@ body {
   background: url(../images/patterns/squares-blue.png);
   padding-top: 20px;
   margin-top: 20px;
-  font-size: 12px; }
+  font-size: 13px; }
   #footer .container {
     width: 940px; }
   #footer h2 {
@@ -105,23 +102,26 @@ body {
 img.break {
   padding: 8px 0; }
 
+h1, h2 {
+  font-weight: normal; }
+
 h1 {
   margin-bottom: 10px; }
 
 h2 {
-  font-size: 14px;
+  font-size: 15px;
   color: #000; }
   h2.recruiters {
     padding-top: 8px; }
 
 h3 {
-  font-size: 12px;
+  font-size: 13px;
   color: #000;
   line-height: 18px;
   letter-spacing: 0.3px; }
 
 p {
-  font-size: 12px;
+  font-size: 13px;
   margin: 0 0 18px 0; }
 
 a {
@@ -198,11 +198,12 @@ a {
     #menu ul.column.last {
       border: none; }
   #menu .dropdown-menu {
-    background: transparent;
+    background: #555;
     border: none;
     border-radius: 0px;
     margin: 0;
-    width: 695px;
+    width: 630px;
+    padding: 10px 0;
     top: 30px; }
     #menu .dropdown-menu li {
       border: none; }
@@ -212,12 +213,12 @@ a {
   #menu .dropdown.open {
     background: transparent; }
     #menu .dropdown.open a.dropdown-toggle {
-      background-color: #444;
+      background-color: #555;
       background-position: right center;
       background-image: url(../images/icons/menu-arrow-active.png);
       background-repeat: no-repeat;
       color: #fff;
-      border-color: #444; }
+      border-color: #555; }
   #menu .nav-tabs {
     border: none;
     padding-bottom: 6px; }
@@ -287,8 +288,11 @@ a {
   #search a.add {
     position: relative;
     left: -55px;
-    font-size: 12px;
+    font-size: 13px;
     top: 4px; }
+    #search a.add.open {
+      background-image: url(../images/icons/search-less.png);
+      background-repeat: no-repeat; }
   #search strong, #search small {
     color: #fff; }
   #search strong {
@@ -296,7 +300,7 @@ a {
     font-weight: normal;
     line-height: 25px; }
   #search small {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: normal;
     display: block;
     margin-top: 12px; }
@@ -307,6 +311,8 @@ a {
     padding: 8px 0px;
     width: 100%;
     font-size: 16px; }
+  #search input.check {
+    width: 13px; }
   #search table {
     width: 100%; }
   #search td {
@@ -330,31 +336,40 @@ a {
         display: inline-block;
         width: auto; }
 
+#advanced_search {
+  padding: 10px 0 0 149px; }
+  #advanced_search input.text {
+    float: left;
+    width: 80px;
+    text-indent: 5px; }
+  #advanced_search select {
+    float: left;
+    margin: 0 20px;
+    width: 115px; }
+  #advanced_search .to {
+    float: left;
+    width: 40px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 33px; }
+  #advanced_search label {
+    color: #fff;
+    display: block;
+    float: left; }
+  #advanced_search .checkbox {
+    float: left;
+    width: 115px; }
+
 .blue .btn-primary {
-  background-position: left top;
-  background-color: #cc0e0a;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#cc0e0a), to(#870804));
-  background-image: -webkit-linear-gradient(top, #cc0e0a, #870804);
-  background-image: -moz-linear-gradient(top, #cc0e0a, #870804);
-  background-image: -o-linear-gradient(top, #cc0e0a, #870804);
-  background-image: -ms-linear-gradient(top, #cc0e0a, #870804);
-  background-image: linear-gradient(top, #cc0e0a, #870804);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#cc0e0a', EndColorStr='#870804'); }
+  background: #CC0E0A; }
 .blue .btn-primary:hover {
-  background-position: left top;
-  background-color: #fa2b2b;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fa2b2b), to(#cc0e0a));
-  background-image: -webkit-linear-gradient(top, #fa2b2b, #cc0e0a);
-  background-image: -moz-linear-gradient(top, #fa2b2b, #cc0e0a);
-  background-image: -o-linear-gradient(top, #fa2b2b, #cc0e0a);
-  background-image: -ms-linear-gradient(top, #fa2b2b, #cc0e0a);
-  background-image: linear-gradient(top, #fa2b2b, #cc0e0a);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#fa2b2b', EndColorStr='#cc0e0a'); }
+  background: #FA2B2B; }
 
 small.search {
   display: block;
   float: left;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: normal;
   padding-left: 130px; }
   small.search.more {
@@ -373,40 +388,22 @@ label {
 .checkboxes label {
   font-weight: normal;
   text-indent: 3px; }
+.checkboxes input {
+  width: 14px; }
+
+.btn {
+  border-radius: 4px;
+  box-shadow: none; }
 
 .btn-primary {
-  background-position: left top;
-  background-color: #009900;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#009900), to(#007700));
-  background-image: -webkit-linear-gradient(top, #009900, #007700);
-  background-image: -moz-linear-gradient(top, #009900, #007700);
-  background-image: -o-linear-gradient(top, #009900, #007700);
-  background-image: -ms-linear-gradient(top, #009900, #007700);
-  background-image: linear-gradient(top, #009900, #007700);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#009900', EndColorStr='#007700'); }
+  background: #090; }
 
 .btn-primary:hover {
-  background-position: left top;
-  background-color: #00aa00;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00aa00), to(#008800));
-  background-image: -webkit-linear-gradient(top, #00aa00, #008800);
-  background-image: -moz-linear-gradient(top, #00aa00, #008800);
-  background-image: -o-linear-gradient(top, #00aa00, #008800);
-  background-image: -ms-linear-gradient(top, #00aa00, #008800);
-  background-image: linear-gradient(top, #00aa00, #008800);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#00aa00', EndColorStr='#008800'); }
+  background: #0a0; }
 
 .btn-secondary {
   border: 1px solid #0e1d78;
-  background-position: left top;
-  background-color: #4a59b4;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a59b4), to(#2c3b96));
-  background-image: -webkit-linear-gradient(top, #4a59b4, #2c3b96);
-  background-image: -moz-linear-gradient(top, #4a59b4, #2c3b96);
-  background-image: -o-linear-gradient(top, #4a59b4, #2c3b96);
-  background-image: -ms-linear-gradient(top, #4a59b4, #2c3b96);
-  background-image: linear-gradient(top, #4a59b4, #2c3b96);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#4a59b4', EndColorStr='#2c3b96');
+  background: #4a59b4;
   color: #fff;
   text-shadow: -1px -1px 0px #222e50; }
 
@@ -448,7 +445,8 @@ label {
   border-right: none; }
 
 .nav-tabs.plain > li.active > a b {
-  border-right: none; }
+  border-right: none;
+  color: #282751; }
 
 .nav-tabs > li > a:hover {
   background: transparent;
@@ -457,7 +455,7 @@ label {
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover,
 .tab-content > .active, .pill-content > .active {
-  background: #eeeeee;
+  background: #f7f7f7;
   border: none;
   color: #000032;
   font-weight: bold; }
@@ -488,8 +486,8 @@ label {
     color: #fff; }
   .hud .nav-tabs > .active > a, .hud .nav-tabs > .active > a:hover,
   .hud .tab-content > .active, .hud .pill-content > .active, .hud .pane {
-    background: #444; }
-  .hud .dropdown-menu {
+    background: #555; }
+  .hud ul.dropdown-menu {
     background: #555; }
   .hud .nav-tabs {
     background: transparent; }
@@ -520,6 +518,9 @@ ul.column > li.last {
 
 ul.column > li > a:hover {
   color: #000; }
+
+#plain-industries ul.column li {
+  font-size: 13px; }
 
 .block {
   display: block; }
@@ -577,7 +578,7 @@ a.mail {
   padding: 0; }
 
 a.add {
-  background-image: url(../images/icons/add.png);
+  background-image: url(../images/icons/search-more.png);
   background-repeat: no-repeat;
   background-position: right center;
   padding-right: 20px;
@@ -587,6 +588,7 @@ a.add {
   text-align: right; }
 
 a.logoslide {
+  background: #fff;
   background-repeat: no-repeat;
   background-position: center center;
   width: 170px;
@@ -630,7 +632,7 @@ a.logoslide:hover {
 
 a#slide-left, a#slide-right {
   background-position: center center;
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
   width: 22px;
   height: 60px;
   opacity: 0.7;
@@ -673,7 +675,7 @@ a#slide-left {
     border-color: #ccc; }
 
 #search-results {
-  font-size: 12px; }
+  font-size: 13px; }
   #search-results .head .pad {
     padding: 20px 20px 10px 20px; }
   #search-results .head img {
@@ -716,12 +718,12 @@ a#slide-left {
 #sidebar {
   border: 1px solid #ccc;
   background: #eee;
-  font-size: 12px; }
+  font-size: 13px; }
   #sidebar ul {
     list-style-type: none;
     margin-left: 0px; }
   #sidebar .checkboxes label, #sidebar .checkboxes input, #sidebar .checkboxes button, #sidebar .checkboxes select, #sidebar .checkboxes textarea {
-    font-size: 12px; }
+    font-size: 13px; }
   #sidebar h3 {
     background-image: url(../images/icons/toggle-down.png);
     background-repeat: no-repeat;
@@ -774,7 +776,7 @@ a#slide-left {
   #account h2 {
     font-size: 14px; }
     #account h2 a {
-      font-size: 12px;
+      font-size: 13px;
       border-left: 1px solid #000;
       padding-left: 6px;
       margin-left: 4px; }
@@ -852,11 +854,12 @@ a.strong {
 .powered {
   display: block;
   color: #f60;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 5px; }
 
 .logo {
   float: left;
+  background-color: #fff;
   background-repeat: no-repeat;
   background-position: center center; }
 
@@ -867,9 +870,15 @@ a.strong {
   text-indent: -9999px;
   margin: 0 12px 12px 0; }
 
-#featured-jobs {
-  height: 200px;
+#featured-jobs.column {
+  height: 240px;
   overflow-y: scroll; }
+  #featured-jobs.column h3 {
+    font-size: 13px; }
+  #featured-jobs.column li {
+    border-bottom: 1px dotted #ccc;
+    padding: 7px 0px;
+    font-size: 13px; }
 
 .jspVerticalBar *, .jspHorizontalBar * {
   margin: 0;
@@ -879,7 +888,7 @@ a.strong {
   position: absolute;
   top: 0;
   right: 0;
-  width: 10px;
+  width: 15px;
   height: 100%;
   background: red; }
   .jspVerticalBar .jspArrow {
@@ -926,13 +935,22 @@ a.strong {
   cursor: pointer; }
 
 .jspArrow {
-  background: #50506d;
+  background-color: #fff;
   text-indent: -20000px;
   display: block;
   cursor: pointer; }
   .jspArrow.jspDisabled {
-    cursor: default;
-    background: #80808d; }
+    cursor: default; }
+
+.jspArrowUp {
+  background-image: url(../images/icons/scroll-up.png);
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.jspArrowDown {
+  background-image: url(../images/icons/scroll-down.png);
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .jspCorner {
   background: #eee;

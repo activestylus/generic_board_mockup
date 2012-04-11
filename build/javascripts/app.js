@@ -1,1 +1,1 @@
-$(function(){$(".scroll-pane").jScrollPane()})
+$(function(){$(".scroll-pane").jScrollPane({showArrows:!0}),$("#advanced_search").hide(),$("#toggle_advanced_search").click(function(){var a=$(this);$("#advanced_search").toggle(),a.toggleClass("open"),a.hasClass("open")?a.html("Fewer options"):a.html("Search more options"),console.log($(this).html())})})
