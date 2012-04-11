@@ -3,9 +3,11 @@
 //----------------------------------------------------------------
 // Constants
 //----------------------------------------------------------------
+$base_font_size: 13px;
 $layout_width: 940px;
 $amber: #fc0;
 $blue: #000032;
+$navy: #282751;
 $eggshell: #f7f7f7;
 $red: #cc0000;
 $link: #0088CC;
@@ -17,12 +19,12 @@ $cobalt: #4a59b4;
 body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-size: 14px}
 .wrap { padding-top: 40px; background: #fff url(../images/patterns/lines-white-grad.png) repeat-x; }
 .pad { padding: 20px; }
-.egg { background: $eggshell; }
 .center { margin: 0 auto; }
 .break { display: block; margin-bottom: 18px; }
 .clear.tall { height: 20px; }
 .blue { @include navy; color: #fff; h2, h3 { color: #fff; } }
 .focus { color: #f00; }
+.space { margin-left: 10px; }
 .pane {
   background: $eggshell;
   padding: 0 27px 20px; margin-bottom: 30px;
@@ -30,16 +32,18 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
   &.shadowed { box-shadow: 0px 1px 3px #aaa; }
   &.bleed { padding: 0; }
   &.pad { padding: 20px; }
+  &.white { background: #fff; }
   h2 { margin-top: 12px; }
 }
-#content { padding-top: 40px; width: $layout_width;}
+.white .pane { background: #fff; }
+#content { padding-top: 40px; width: $layout_width; }
 #footer {
   .container { width: $layout_width; }
   background: url(../images/patterns/squares-blue.png);
   padding-top: 20px; margin-top: 20px;
-  font-size: 11px;
+  font-size: $base_font_size;
   h2 {
-    color: #888;
+    color: #fff;
     font-weight: normal; line-height: 14px;
     margin: 0 0 10px 0; padding-top: 0px;
   }
@@ -53,9 +57,10 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
       background-position: center top;
       padding-top: 20px; margin-top: -20px;
       color: $amber; font-size: 16px;
+      border: none;
     }
   }
-  p.copy { clear: both; color: #fff;}
+  p.copy { clear: both; color: #fff; }
 }
 .cell  { float: left; clear: none; }
 .clear { clear: both; }
@@ -64,10 +69,11 @@ img.break { padding: 8px 0; }
 //----------------------------------------------------------------
 // Typography
 //----------------------------------------------------------------
+h1, h2 { font-weight: normal; }
 h1 { margin-bottom: 10px; }
-h2 { font-size: 14px; color: #000; &.recruiters { padding-top: 8px; } }
-h3 { font-size: 12px; color: #000; line-height: 18px;  letter-spacing: 0.3px }
-p  { font-size: 12px; margin: 0 0 18px 0; }
+h2 { font-size: 15px; color: #000; &.recruiters { padding-top: 8px; } }
+h3 { font-size: $base_font_size; color: #000; line-height: 18px;  letter-spacing: 0.3px }
+p  { font-size: $base_font_size; margin: 0 0 18px 0; }
 a  { color: #333; }
 //
 //----------------------------------------------------------------
@@ -80,7 +86,7 @@ a  { color: #333; }
   .navbar {
     width: $layout_width;
     margin: 0 auto;
-    .nav > li > a { padding: 11px 0px;}
+    .nav > li > a { padding: 11px 0px; }
   }
   .navbar-inner { background: transparent; }
   ul.nav { float:right; margin: 0; }
@@ -107,20 +113,46 @@ a  { color: #333; }
 //----------------------------------------------------------------
 // Site Navigation
 //----------------------------------------------------------------
+.dropdown-toggle {
+  @include icon('menu-arrow');
+  border-right: 10px solid #fff;
+  background-position: right center;
+}
 #menu {
+  .row-fluid { padding: 16px 0px; }
+  .dropdown-menu::after, .dropdown-menu::before {
+    display: none;
+    color: #f00;
+  }
   height: 10px;
   ul.column {
     border-right: 1px solid #777;
-    &.last {border: none;}
+    &.last {border: none; }
   }
   .dropdown-menu {
+    background: #555;
     border: none;
     border-radius: 0px;
     margin: 0;
-    width: 620px;
-    li { border: none;}
+    width: 630px;
+    padding: 10px 0;
+    top: 30px;
+    li { border: none; }
+    a { font-weight: normal; font-size: 11px; }
   }
-  .nav-tabs { border: none; padding-bottom: 6px; }
+  .dropdown.open {
+    background: transparent;
+    a.dropdown-toggle {
+      background-color: #555;
+      background-position: right center;
+      @include icon('menu-arrow-active');
+      color: #fff;
+      border-color: #555;
+    }
+  }
+  .nav-tabs {
+    border: none; padding-bottom: 6px;
+  }
   .tab-content { clear: both; }
   .tab-pane { padding: 0px; margin: 0; }
   li {
@@ -133,17 +165,18 @@ a  { color: #333; }
     &.brand {
       font-size: 40px; font-family: Trebuchet MS, sans-serif; font-weight: bold;
       color: #000; border-right: none; margin-right: 25px; margin-top: -4px;
-      b {color: #c00;}
+      b {color: #c00; }
     }
   }
   .hud a { color: #fff; }
-  .span4 {margin-left: 0px;}
+  .span4 {margin-left: 0px; }
   h2 { display: none }
   .navbar-inner { background: transparent; box-shadow: none; }
 
   &.navbar .nav { float: none; }
-  &.navbar .nav > li > a { padding: 8px 18px 7px 18px;}
-  &.navbar .nav li.active > a, &.navbar .nav li.active > a:hover {background: transparent; }
+  &.navbar .nav > li > a { padding: 8px 18px 7px 18px; }
+  &.navbar .nav li.active > a, &.navbar .nav li.active > a:hover {background: transparent;}
+  &.navbar .nav-tabs.nav li.active > a, .nav-tabs.nav li.active > a:hover {background: #444; color: #fff;}
   ul.nav { width: 102%; }
   li.icon { float: right; margin: 0; padding: 0; }
   li.icon a { margin: 0 0 0 10px; }
@@ -158,12 +191,17 @@ a  { color: #333; }
   padding-top: 12px; margin-top: 40px; margin-bottom: 20px;
   .pad { padding: 20px 20px 6px; }
   a, a:hover { color:#fff; }
-  a.add { position: relative; left: -55px; font-size: 12px; top: 4px;}
+  a.add {
+    position: relative; left: -55px;
+    font-size: $base_font_size; top: 4px;
+    &.open { @include icon('search-less') }
+  }
   strong, small { color: #fff; }
-  strong { font-size: 27px; font-weight: normal; line-height: 25px;}
-  small { font-size: 12px; font-weight: normal; display: block; margin-top: 12px; }
-  input, textarea, select, .uneditable-input {height: auto;}
-  input { display: block; padding: 8px 0px; width: 100%; font-size: 16px;}
+  strong { font-size: 27px; font-weight: normal; line-height: 25px; }
+  small { font-size: $base_font_size; font-weight: normal; display: block; margin-top: 12px; }
+  input, textarea, select, .uneditable-input {height: auto; }
+  input { display: block; padding: 8px 0px; width: 100%; font-size: 16px; }
+  input.check { width: 13px; }
   table { width:100% }
   td {
     vertical-align: top;
@@ -177,19 +215,33 @@ a  { color: #333; }
     }
   }
 }
+#advanced_search {
+  padding: 10px 0 0 149px;
+  input.text { float: left; width: 80px; text-indent: 5px; }
+  select { float: left; margin: 0 20px; width: 115px; }
+  .to {
+    float: left; width: 40px; text-align: center;
+    font-weight: normal; font-size: 16px;
+    line-height: 33px;
+  }
+  label { color: #fff; display: block; float: left; }
+  .checkbox { float: left; width: 115px; }
+}
 .blue {
   .btn-primary {
-    @include gradient-y(#CC0E0A, #870804);
+    background: #CC0E0A;
+    //@include gradient-y(#CC0E0A, #870804);
   }
   .btn-primary:hover {
-    @include gradient-y(#FA2B2B, #CC0E0A);
+    background: #FA2B2B;
+    // @include gradient-y(#FA2B2B, #CC0E0A);
   }
 }
 //
 small.search {
   display: block;
   float: left;
-  font-size: 12px;
+  font-size: $base_font_size;
   font-weight: normal;
   padding-left: 130px;
   &.more {
@@ -206,12 +258,15 @@ label { font-weight: bold; }
   li { display: block; clear: both; }
   input, label { display: block; float: left; }
   label { font-weight: normal; text-indent: 3px }
+  input { width: 14px; }
 }
-.btn-primary { @include gradient-y(#090, #070); }
-.btn-primary:hover { @include gradient-y(#0a0, #080); }
+.btn { border-radius: 4px; box-shadow: none; }
+.btn-primary { background: #090; } // @include gradient-y(#090, #070);
+.btn-primary:hover { background: #0a0; } // @include gradient-y(#0a0, #080); }
 .btn-secondary {
   border: 1px solid $cobalt - 60;
-  @include gradient-y($cobalt, $cobalt - 30);
+  // @include gradient-y($cobalt, $cobalt - 30);
+  background: $cobalt;
   color: #fff; text-shadow: -1px -1px 0px #222e50 }
 .btn-secondary:hover { @include gradient-y($cobalt - 30, $cobalt - 60); color: #fff; }
 //
@@ -222,12 +277,17 @@ label { font-weight: bold; }
 .nav-tabs > li {
   margin-bottom: -7px; font-weight: bold;
 }
-.nav-tabs > li > a {
-  border: none; padding: 12px 0 17px 0;
-  b { padding: 0px 14px; display: block; border-right: 1px solid #000; line-height: 14px; }
+.nav-tabs > li > a {border: none; padding: 12px 0 17px 0;}
+
+.nav-tabs.plain > li > a  b {
+  padding: 0px 14px;
+  border-right: 1px solid #000;
+  line-height: 14px; display: block;
+  color: #6e6e6e
 }
-.nav-tabs > li.first > a b { padding-left: 27px }
-.nav-tabs > li.last > a b { border-right: none; }
+.nav-tabs.plain > li.first > a b { padding-left: 27px }
+.nav-tabs.plain > li.last > a b { border-right: none; }
+.nav-tabs.plain > li.active > a b { border-right: none; color: $navy; }
 .nav-tabs > li > a:hover { background: transparent; color: #000; text-decoration: underline}
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover,
 .tab-content > .active, .pill-content > .active {
@@ -249,10 +309,10 @@ label { font-weight: bold; }
 .hud {
   background: #555;
   color: #fff;
-  a {color: #fff;}
+  a {color: #fff; }
   .nav-tabs > .active > a, .nav-tabs > .active > a:hover,
-  .tab-content > .active, .pill-content > .active, .pane { background: #444; }
-  .dropdown-menu { background: #555; }
+  .tab-content > .active, .pill-content > .active, .pane { background: #555; }
+  ul.dropdown-menu { background: #555; }
   .nav-tabs { background: transparent; }
   ul.column a:hover { background: #333; }
 }
@@ -261,14 +321,15 @@ label { font-weight: bold; }
 // Lists
 //----------------------------------------------------------------
 ul.column {
-  list-style-type: none; margin: 0; font-size: 12px; font-weight: normal;
-  &.last {border: none;}
+  list-style-type: none; margin: 0; font-size: 11px; font-weight: normal;
+  &.last {border: none; }
   &.spaced > li { padding: 6px 0; }
-  h3 { padding: 0; margin: 0; }
+  h3 { padding: 0; margin: 0; font-size: 11px; }
 }
-ul.column > li { display: block; border-bottom: 1px dotted #ccc; padding: 3px 0;}
+ul.column > li { display: block; border-bottom: 1px dotted #ccc; padding: 3px 0; }
 ul.column > li.last { border: none; }
 ul.column > li > a:hover { color: #000 }
+#plain-industries ul.column li { font-size: 13px; }
 //
 //----------------------------------------------------------------
 // Icons
@@ -276,7 +337,7 @@ ul.column > li > a:hover { color: #000 }
 .block { display: block; }
 .icon { display: block; text-indent: -9999px; }
 a.mail {
-  @include icon('mail', 'fade'); background-position: right center;
+  @include icon('mail'); background-position: right center;
   padding-right: 28px; margin-right: 73px;
   text-align: right; font-weight: bold;
 }
@@ -294,7 +355,7 @@ a.mail {
   padding: 0;
 }
 a.add {
-  @include icon('add'); background-position: right center;
+  @include icon('search-more'); background-position: right center;
   padding-right: 20px; float: right;
   color: #fff; font-weight: normal; text-align: right;
 }
@@ -305,10 +366,12 @@ a.add {
 $slideshow_height: 60px;
 //----------------------------------------------------------------
 a.logoslide {
+  background: #fff;
   background-repeat: no-repeat; background-position: center center;
   @include size(170px,$slideshow_height);
   opacity: 0.4; text-indent: -9999px;
   display: block; float: left;
+  padding: 0px 6px; margin: 0px 6px;
 }
 a.logoslide:hover { opacity: 1; }
 .jcarousel-skin-default {
@@ -324,7 +387,7 @@ a.logoslide:hover { opacity: 1; }
   li { margin: 0 0 0 10px; padding: 0; float: left; }
 }
 *[dir=rtl] .jcarousel-skin-default li {float: right; margin: 0; }
-.jcarousel-skin-default ul li, .jcarousel-skin-default ul {list-style-type:none;}
+.jcarousel-skin-default ul li, .jcarousel-skin-default ul {list-style-type:none; }
 a#slide-left, a#slide-right {
   background-position: center center; background-color: $eggshell;
   @include size(22px,$slideshow_height);
@@ -345,7 +408,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   &.lite { border-color: #ccc; }
 }
 #search-results {
-  font-size: 12px;
+  font-size: $base_font_size;
   .head {
     .pad { padding: 20px 20px 10px 20px; }
     img { float: left; }
@@ -364,7 +427,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   span.save { @include icon('saved'); padding-right: 13px; background-position: right center; }
 }
 #subscribe {
-  label, input { float: left; margin-right: 10px;}
+  label, input { float: left; margin-right: 10px; }
   label { line-height: 26px;  }
 }
 .pagination ul { float: right; }
@@ -373,9 +436,9 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 // Sidebar
 //----------------------------------------------------------------
 #sidebar {
-  border: 1px solid #ccc; background: #eee; font-size: 12px;
+  border: 1px solid #ccc; background: #eee; font-size: $base_font_size;
   ul { list-style-type: none; margin-left: 0px; }
-  .checkboxes { label, input, button, select, textarea  { font-size: 12px; } }
+  .checkboxes { label, input, button, select, textarea  { font-size: $base_font_size; } }
   h3 {
     @include icon('toggle-down'); background-position: 0 16px;
     border-top: 1px solid #ccc; clear: both;
@@ -408,7 +471,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   h1 { margin-top: 20px; }
   h2 {
     font-size: 14px;
-    a { font-size: 12px; border-left: 1px solid #000; padding-left: 6px; margin-left: 4px}
+    a { font-size: $base_font_size; border-left: 1px solid #000; padding-left: 6px; margin-left: 4px}
   }
   .section {
     background-position: right center;
@@ -429,6 +492,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 //-------------------------------------------------------
 // Job Seekers
 //-------------------------------------------------------
+a.strong { font-weight: bold; }
 #jobseeker-login {
   padding: 30px 0px; margin: 80px 0px 20px 0px;
   h2 { font-size: 26px; color: $blue; }
@@ -440,7 +504,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   div, ul, p { font-size: 14px; }
   .create, .pitch { padding: 40px; }
   .pitch { border-left: 1px solid #ccc; margin-top: 20px; }
-  .login { padding: 20px 12% 40px 12%;}
+  .login { padding: 20px 12% 40px 12%; }
 
 }
 .login {
@@ -450,5 +514,59 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 //-------------------------------------------------------
 // Home
 //-------------------------------------------------------
-#post-a-job { min-height: 301px; }
+#post-a-job { min-height: 247px; }
 .home-row2 .pane { min-height: 296px; }
+.powered { display: block; color: #f60; font-size: $base_font_size; margin-top: 5px; }
+.logo {
+  float: left;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.recommended.boards .logo {
+  @include size(106px,40px);
+  border: 1px solid #ccc;
+  text-indent: -9999px;
+  margin: 0 12px 12px 0
+}
+#featured-jobs.column {
+  height: 240px; overflow-y: scroll;
+  h3 { font-size: $base_font_size; }
+  li { border-bottom: 1px dotted #ccc; padding: 7px 0px; font-size: $base_font_size; }
+}
+
+//-------------------------------------------------------
+// Scroll
+//-------------------------------------------------------
+.jspVerticalBar *, .jspHorizontalBar * { margin: 0;  padding: 0; }
+.jspVerticalBar {
+  position: absolute;
+  top: 0;  right: 0;
+  width: 15px; height: 100%;
+  background: red;
+  .jspArrow { height: 16px; }
+  .jspArrow:focus { outline: none; }
+}
+.jspHorizontalBar {
+  background: red;
+  bottom: 0;  left: 0; position: absolute;
+  width: 100%; height: 16px;
+  .jspCap { float: left; }
+  .jspArrow { width: 16px; float: left;  height: 100%; }
+  .jspTrack, .jspDrag { float: left; height: 100%; }
+
+}
+.jspContainer { overflow: hidden; position: relative; }
+.jspPane { position: absolute; }
+.jspCap { display: none; }
+.jspTrack { background: #ddd;  position: relative; }
+.jspDrag { background: #bbb; position: relative; top: 0; left: 0; cursor: pointer; }
+.jspArrow {
+  background-color: #fff; text-indent: -20000px; display: block; cursor: pointer;
+  &.jspDisabled { cursor: default; }
+}
+.jspArrowUp { @include icon('scroll-up'); background-position: center center; }
+.jspArrowDown { @include icon('scroll-down'); background-position: center center; }
+.jspCorner { background: #eee; float: left; height: 100%;}
+* html .jspCorner { margin: 0 -3px 0 0; } // IE6 3 pixel bug :(
+

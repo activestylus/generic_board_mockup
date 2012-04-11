@@ -21,10 +21,27 @@
           </td>
           <td class="search">
             <input class="btn btn-primary btn-large" id="filter" name="commit" type="submit" value="Search" />
-            <a href="#" class="add">Search more Options</a>
+            <a href="#" class="add" id="toggle_advanced_search">Search more options</a>
           </td>
         </tr>
       </table>
+      <div id="advanced_search">
+        <input type="text" class="text" placeholder="€" />
+        <div class="to">to</div>
+        <input type="text" class="text" placeholder="€" />
+        <select>
+          <option>Per annum</option>
+        </select>
+        <div class="checkboxes">
+          <% %w(Permanent Contract Freelance Temporary).each do |option| %>
+            <div class="checkbox">
+              <input type="checkbox" class="check" id="<%= option %>"/>
+              <label for="<%= option %>"><%= option %></label>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="clear"></div>
     </form>
   </div>
 </div>
