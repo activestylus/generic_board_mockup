@@ -1,7 +1,13 @@
 $(function() {
 
+  $("li.dropdown").bind( "clickoutside", function(event){
+    $(this).find('.dropdown-menu').slideUp();
+    $(this).find('.dropdown-toggle').removeClass('active');
+  });
+
   $('.dropdown-toggle').click(function() {
     var div = $(this).next('.dropdown-menu');
+    //$(this).parent('li').toggleClass('open');
     if (div.is(":hidden")) { div.slideDown(); } else { div.slideUp(); }
   });
 
