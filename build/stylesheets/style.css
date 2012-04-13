@@ -135,6 +135,8 @@ a {
     margin: 0 auto; }
     #head .navbar .nav > li > a {
       padding: 11px 0px; }
+      #head .navbar .nav > li > a.active {
+        padding: 16px 0 7px; }
   #head .navbar-inner {
     background: transparent; }
   #head ul.nav {
@@ -144,19 +146,13 @@ a {
     color: #fff;
     font-size: 14px;
     font-weight: bold;
-    text-shadow: -1px -1px 0px black; }
+    text-shadow: -1px -1px 1px #7c4900; }
     #head a.active {
-      background-position: left top;
-      background-color: #009900;
-      background-image: -webkit-gradient(linear, left top, left bottom, from(#009900), to(#007700));
-      background-image: -webkit-linear-gradient(top, #009900, #007700);
-      background-image: -moz-linear-gradient(top, #009900, #007700);
-      background-image: -o-linear-gradient(top, #009900, #007700);
-      background-image: -ms-linear-gradient(top, #009900, #007700);
-      background-image: linear-gradient(top, #009900, #007700);
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#009900', EndColorStr='#007700');
+      background: #cc9900;
       position: relative;
-      left: -1px; }
+      left: -1px;
+      top: -5px;
+      border-radius: 0 0 2px 2px; }
       #head a.active.jobseekers {
         background-position: left top;
         background-color: #cc9900;
@@ -360,7 +356,9 @@ a {
         width: auto; }
 
 #advanced_search {
-  padding: 10px 0 0 149px; }
+  position: relative;
+  padding: 10px 0 0 149px;
+  width: 700px; }
   #advanced_search input.text {
     float: left;
     width: 80px;
@@ -622,7 +620,6 @@ a.logoslide {
   background-position: center center;
   width: 170px;
   height: 60px;
-  opacity: 0.4;
   text-indent: -9999px;
   display: block;
   float: left;
@@ -630,7 +627,7 @@ a.logoslide {
   margin: 0px 6px; }
 
 a.logoslide:hover {
-  opacity: 1; }
+  opacity: 0.5; }
 
 .jcarousel-skin-default {
   background: transparent;
@@ -964,12 +961,12 @@ a.strong {
   cursor: pointer; }
 
 .jspArrow {
-  background-color: #fff;
   text-indent: -20000px;
   display: block;
   cursor: pointer; }
   .jspArrow.jspDisabled {
-    cursor: default; }
+    cursor: default;
+    opacity: 0.2; }
 
 .jspArrowUp {
   background-image: url(../images/icons/scroll-up.png);
@@ -988,3 +985,7 @@ a.strong {
 
 * html .jspCorner {
   margin: 0 -3px 0 0; }
+
+img.left {
+  float: left;
+  margin: 0 16px 20px 0; }

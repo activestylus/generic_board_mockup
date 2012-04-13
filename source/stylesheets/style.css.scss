@@ -5,6 +5,7 @@
 //----------------------------------------------------------------
 $base_font_size: 13px;
 $layout_width: 940px;
+$gold: #c90;
 $amber: #fc0;
 $blue: #000032;
 $navy: #282751;
@@ -12,6 +13,7 @@ $eggshell: #f7f7f7;
 $red: #cc0000;
 $link: #0088CC;
 $cobalt: #4a59b4;
+$button-radius: 2px;
 //
 //----------------------------------------------------------------
 // General Layout
@@ -86,17 +88,18 @@ a  { color: #333; }
   .navbar {
     width: $layout_width;
     margin: 0 auto;
-    .nav > li > a { padding: 11px 0px; }
+    .nav > li > a { padding: 11px 0px; &.active {padding: 16px 0 7px;} }
   }
   .navbar-inner { background: transparent; }
   ul.nav { float:right; margin: 0; }
   a {
     color: #fff;
     font-size: 14px; font-weight: bold;
-    text-shadow: -1px -1px 0px #000;
+    text-shadow: -1px -1px 1px $gold - 80;
     &.active {
-      @include gradient-y(#090,#070);
-      position: relative; left: -1px;
+      background: $gold;
+      position: relative; left: -1px; top: -5px;
+      border-radius: 0 0 $button-radius $button-radius;
       &.jobseekers { @include gradient-y(#cc9900,#b3861f); }
       b { border: none; }
     }
@@ -228,7 +231,9 @@ a  { color: #333; }
   }
 }
 #advanced_search {
+  position: relative;
   padding: 10px 0 0 149px;
+  width: 700px;
   input.text { float: left; width: 80px; text-indent: 5px; }
   select { float: left; margin: 0 20px; width: 115px; }
   .to {
@@ -273,7 +278,7 @@ label { font-weight: bold; }
   label { font-weight: normal; text-indent: 3px }
   input { width: 14px; }
 }
-.btn { border-radius: 2px; box-shadow: none; border: none; }
+.btn { border-radius: $button-radius; box-shadow: none; border: none; }
 .btn-primary {
   background: #090;
   font-size: 15px;
@@ -388,11 +393,11 @@ a.logoslide {
   background: #fff;
   background-repeat: no-repeat; background-position: center center;
   @include size(170px,$slideshow_height);
-  opacity: 0.4; text-indent: -9999px;
+  text-indent: -9999px;
   display: block; float: left;
   padding: 0px 6px; margin: 0px 6px;
 }
-a.logoslide:hover { opacity: 1; }
+a.logoslide:hover { opacity: 0.5; }
 .jcarousel-skin-default {
   background: transparent;
   height: $slideshow_height;
@@ -581,11 +586,11 @@ a.strong { font-weight: bold; }
 .jspTrack { background: transparent;  position: relative; }
 .jspDrag { background: transparent; position: relative; top: 0; left: 0; cursor: pointer; }
 .jspArrow {
-  background-color: #fff; text-indent: -20000px; display: block; cursor: pointer;
-  &.jspDisabled { cursor: default; }
+  text-indent: -20000px; display: block; cursor: pointer;
+  &.jspDisabled { cursor: default; opacity: 0.2;}
 }
 .jspArrowUp { @include icon('scroll-up'); background-position: center center; }
 .jspArrowDown { @include icon('scroll-down'); background-position: center center; }
 .jspCorner { background: #eee; float: left; height: 100%;}
 * html .jspCorner { margin: 0 -3px 0 0; } // IE6 3 pixel bug :(
-
+img.left {float: left; margin: 0 16px 20px 0;}
