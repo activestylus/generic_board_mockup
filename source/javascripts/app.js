@@ -1,6 +1,9 @@
 $(function() {
 
-  //$('.scroll-pane').jScrollPane({ showArrows: true });
+  $('.dropdown-toggle').click(function() {
+    var div = $(this).next('.dropdown-menu');
+    if (div.is(":hidden")) { div.slideDown(); } else { div.slideUp(); }
+  });
 
   var api = $('.scroll-pane').jScrollPane({ showArrows: true }).data('jsp');
   $('.jspArrowDown').bind('mouseover', function() {
