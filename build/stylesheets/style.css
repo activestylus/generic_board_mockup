@@ -33,10 +33,11 @@ body {
 
 .pane {
   background: #f7f7f7;
-  padding: 0 27px 20px;
+  padding: 0 26px 20px;
   margin-bottom: 30px; }
   .pane.scroll {
-    padding-right: 5px; }
+    padding-right: 5px;
+    position: relative; }
   .pane.bordered {
     border-top: 5px solid #000032; }
   .pane.shadowed {
@@ -145,7 +146,6 @@ a {
   #head a {
     color: #fff;
     font-size: 14px;
-    font-weight: bold;
     text-shadow: -1px -1px 1px #7c4900; }
     #head a.active {
       background: #cc9900;
@@ -163,17 +163,22 @@ a {
         background-image: -ms-linear-gradient(top, #cc9900, #b3861f);
         background-image: linear-gradient(top, #cc9900, #b3861f);
         filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#cc9900', EndColorStr='#b3861f'); }
+      #head a.active:hover {
+        background: #e0ad14; }
       #head a.active b {
-        border: none; }
+        border: none;
+        font-weight: bold; }
     #head a.active:hover {
-      color: #fff; }
+      color: #fff;
+      text-decoration: none; }
     #head a:hover {
-      color: #0088cc; }
+      text-decoration: underline; }
   #head b {
     line-height: 16px;
     border-right: 1px dotted #fff;
     padding: 0 15px;
-    display: block; }
+    display: block;
+    font-weight: normal; }
 
 .dropdown-toggle {
   background-image: url(../images/icons/menu-arrow.png);
@@ -961,22 +966,13 @@ a.strong {
   cursor: pointer; }
 
 .jspArrow {
+  display: none;
   text-indent: -20000px;
   display: block;
   cursor: pointer; }
   .jspArrow.jspDisabled {
     cursor: default;
     opacity: 0.2; }
-
-.jspArrowUp {
-  background-image: url(../images/icons/scroll-up.png);
-  background-repeat: no-repeat;
-  background-position: center center; }
-
-.jspArrowDown {
-  background-image: url(../images/icons/scroll-down.png);
-  background-repeat: no-repeat;
-  background-position: center center; }
 
 .jspCorner {
   background: #eee;
@@ -989,3 +985,13 @@ a.strong {
 img.left {
   float: left;
   margin: 0 16px 20px 0; }
+
+.hoverscroll {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 158px; }
+  .hoverscroll.up {
+    top: 0px; }
+  .hoverscroll.down {
+    bottom: 0px; }
