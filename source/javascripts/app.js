@@ -12,7 +12,7 @@ $(function() {
   });
 
   var api = $('.scroll-pane').jScrollPane({ showArrows: true }).data('jsp');
-  $('.jspArrowDown').bind('mouseover', function() {
+  $('.hoverscroll.down').bind('mouseover', function() {
     var scrollInterval,
     link = $(this),
     doScroll = function() { api.scrollByY(5) };
@@ -22,7 +22,7 @@ $(function() {
     doScroll();
     scrollInterval = setInterval(doScroll, 50);
   });
-  $('.jspArrowUp').bind('mouseover', function() {
+  $('.hoverscroll.up').bind('mouseover', function() {
     var scrollInterval,
     link = $(this),
     doScroll = function() { api.scrollByY(-5) };

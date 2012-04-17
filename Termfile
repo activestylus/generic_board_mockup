@@ -1,0 +1,4 @@
+run "gen && middleman"
+pane do
+  run "gen && mate ."
+end

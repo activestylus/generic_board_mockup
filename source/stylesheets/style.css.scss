@@ -29,8 +29,8 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
 .space { margin-left: 10px; }
 .pane {
   background: $eggshell;
-  padding: 0 27px 20px; margin-bottom: 30px;
-  &.scroll { padding-right: 5px; }
+  padding: 0 26px 20px; margin-bottom: 30px;
+  &.scroll { padding-right: 5px; position: relative; }
   &.bordered { border-top: 5px solid $blue; }
   &.shadowed { box-shadow: 0px 1px 3px #aaa; }
   &.bleed { padding: 0; }
@@ -94,22 +94,24 @@ a  { color: #333; }
   ul.nav { float:right; margin: 0; }
   a {
     color: #fff;
-    font-size: 14px; font-weight: bold;
+    font-size: 14px;
     text-shadow: -1px -1px 1px $gold - 80;
     &.active {
       background: $gold;
       position: relative; left: -1px; top: -5px;
       border-radius: 0 0 $button-radius $button-radius;
       &.jobseekers { @include gradient-y(#cc9900,#b3861f); }
-      b { border: none; }
+      &:hover { background: $gold + 20;}
+      b { border: none; font-weight: bold; }
     }
-    &.active:hover { color: #fff; }
-    &:hover { color: $link; }
+    &.active:hover { color: #fff; text-decoration: none; }
+    &:hover { text-decoration: underline; }
   }
   b {
     line-height: 16px;
     border-right: 1px dotted #fff;
     padding: 0 15px; display: block;
+    font-weight: normal;
   }
 }
 //
@@ -586,11 +588,19 @@ a.strong { font-weight: bold; }
 .jspTrack { background: transparent;  position: relative; }
 .jspDrag { background: transparent; position: relative; top: 0; left: 0; cursor: pointer; }
 .jspArrow {
+  display: none;
   text-indent: -20000px; display: block; cursor: pointer;
   &.jspDisabled { cursor: default; opacity: 0.2;}
 }
-.jspArrowUp { @include icon('scroll-up'); background-position: center center; }
-.jspArrowDown { @include icon('scroll-down'); background-position: center center; }
+//.jspArrowUp { @include icon('scroll-up'); background-position: center center; }
+//.jspArrowDown { @include icon('scroll-down'); background-position: center center; }
 .jspCorner { background: #eee; float: left; height: 100%;}
 * html .jspCorner { margin: 0 -3px 0 0; } // IE6 3 pixel bug :(
 img.left {float: left; margin: 0 16px 20px 0;}
+
+.hoverscroll {
+  position: absolute; left: 0px;right: 0px;
+  height: 158px;
+  &.up {top: 0px;}
+  &.down {bottom: 0px;}
+}
