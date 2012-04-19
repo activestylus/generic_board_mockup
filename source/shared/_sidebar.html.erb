@@ -1,5 +1,5 @@
-<div class="span3">
-  <div id="sidebar" class="pad">
+<div class="side col first">
+  <div id="sidebar" class="thin pad">
     <div class="text field">
       <label>Start new search</label>
       <input type="text" placeholder="Keyword" />
@@ -8,8 +8,8 @@
       <label>Location</label>
       <input type="text" placeholder="Post code or town" />
     </div>
-    <div class="clear divider"></div>
-    <h3 class="toggler">Specialisms</h3>
+    <div class="first clear divider"></div>
+    <h3 class="toggler open"><strong>Specialisms</strong></h3>
     <div class="togglee">
       <ul>
         <li><a href="#">Sales (13,960)</a></li>
@@ -22,7 +22,7 @@
       </ul>
     </div>
     <div class="divider"></div>
-    <h3 class="toggler">Salary</h3>
+    <h3 class="toggler open"><strong>Salary</strong></h3>
     <div class="togglee">
       <ul>
         <li><a href="#">up to €15,000</a></li>
@@ -33,22 +33,24 @@
       </ul>
     </div>
     <div class="divider"></div>
-    <h3 class="toggler">Work type</h3>
-    <div class="togglee">
+    <h3 class="toggler open"><strong>Work type</strong></h3>
+    <div class="togglee">&nbsp;
       <ul class='checkboxes'>
         <% %w(Permanent Freelance Contract).each do |x| %>
         <li><input type="checkbox" id="<%= x %>"/><label for="<%= x %>"><%= x %></label></li>
         <% end %>
       </ul>
+      <div class="clear"></div>
     </div>
     <div class="divider"></div>
-    <h3 class="toggler">Job level</h3>
-    <div class="togglee">
+    <h3 class="toggler open"><strong>Job level</strong></h3>
+    <div class="togglee">&nbsp;
       <ul class='checkboxes'>
         <% ['Entry Level Graduate', 'Experienced (non manager)', 'Management'].each do |x| %>
         <li><input type="checkbox" id="<%= domize(x) %>"/><label for="<%= domize(x) %>"><%= x %></label></li>
         <% end %>
       </ul>
+      <div class="clear"></div>
     </div>
   </div>
 </div>

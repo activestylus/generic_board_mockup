@@ -1,16 +1,20 @@
 <div class="row-fluid">
   <%= partial "shared/sidebar" %>
-  <div class="span9" id="search-results">
-    <%= partial "shared/featured_recruiters" %>
+  <div class="main col" id="search-results">
+    <div class="head">
+      <%= partial "shared/social_email" %>
+      <div class="hr thick"></div>
+    </div>
     <%= partial "shared/newsletter" %>
+    <%= partial "shared/featured_recruiters" %>
     <% data.jobs.each do |jobs| %>
     <% job = jobs[1] %>
     <div class="result">
-      <h2><%= job.position %></h2>
-      <strong><%= job.location %><br/><%= job.rate %></strong>
+      <h2><a href='#'><%= job.position %></a></h2>
+      <strong class="details"><%= job.location %><br/><%= job.rate %></strong>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <% if job.status === "unsaved" %>
-        <a href="#" class="save btn btn-small">Save</a>
+        <a href="#" class="save btn">Save</a>
       <% else %>
         <span class="save">Saved</span>
       <% end %>

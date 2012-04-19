@@ -1,17 +1,14 @@
-<div class="row-fluid">
+<div class="static">
   <%= partial "shared/sidebar" %>
-  <div class="span9" id="search-results">
+  <div class="main col" id="search-results">
     <div id="job">
       <div class="head">
         <%= partial "shared/social_email" %>
         <div class="hr"></div>
       </div>
-      <h1>Web Developer - HTML/CSS - London</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Please send your CV for immediate review.</p>
       <%= partial "shared/newsletter" %>
-      <h2>Further Information</h2>
+      <%= partial "shared/featured_recruiters" %>
+      <h1>Web Developer - HTML/CSS - London</h1>
       <dl>
         <dt>Recruiter</dt><dd>Source</dd>
         <dt>Posted</dt><dd>22 February 2012</dd>
@@ -26,13 +23,19 @@
         <dt>Contract Type</dt><dd>Permanent</dd>
         <dt>Salary</dt><dd>£20000 - £25000 per annum</dd>
       </dl>
+      <h2>Further Information</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Please send your CV for immediate review.</p>
+
+
+
       <div class="submit">
         <input value="Apply" type="submit" class="submit btn btn-success btn-large" />
         <input value="Save" type="submit" class="submit btn btn-large" />
       </div>
       <div class="clear tall"></div>
       <div class="hr"></div>
-      <%= partial "shared/featured_recruiters" %>
     </div>
   </div>
 </div>

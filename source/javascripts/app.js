@@ -1,14 +1,22 @@
+var toggleSlide = function(div) {
+  if (div.is(":hidden")) { div.slideDown(); } else { div.slideUp(); }
+};
+
 $(function() {
 
   $("li.dropdown").bind( "clickoutside", function(event){
     $(this).find('.dropdown-menu').slideUp();
     $(this).find('.dropdown-toggle').removeClass('active');
   });
-
   $('.dropdown-toggle').click(function() {
     var div = $(this).next('.dropdown-menu');
     //$(this).parent('li').toggleClass('open');
     if (div.is(":hidden")) { div.slideDown(); } else { div.slideUp(); }
+  });
+
+  $('.toggler').click(function() {
+    toggleSlide($(this).next('.togglee'));
+    $(this).toggleClass('open');
   });
 
   var api = $('.scroll-pane').jScrollPane({ showArrows: true }).data('jsp');

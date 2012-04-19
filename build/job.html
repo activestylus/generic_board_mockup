@@ -163,9 +163,9 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
   </div>
 </div>
     <div id="yield">
-      <div class="row-fluid">
-  <div class="span3">
-  <div id="sidebar" class="pad">
+      <div class="static">
+  <div class="side col first">
+  <div id="sidebar" class="thin pad">
     <div class="text field">
       <label>Start new search</label>
       <input type="text" placeholder="Keyword" />
@@ -174,8 +174,8 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       <label>Location</label>
       <input type="text" placeholder="Post code or town" />
     </div>
-    <div class="clear divider"></div>
-    <h3 class="toggler">Specialisms</h3>
+    <div class="first clear divider"></div>
+    <h3 class="toggler"><strong>Specialisms</strong></h3>
     <div class="togglee">
       <ul>
         <li><a href="#">Sales (13,960)</a></li>
@@ -188,7 +188,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       </ul>
     </div>
     <div class="divider"></div>
-    <h3 class="toggler">Salary</h3>
+    <h3 class="toggler"><strong>Salary</strong></h3>
     <div class="togglee">
       <ul>
         <li><a href="#">up to €15,000</a></li>
@@ -199,7 +199,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       </ul>
     </div>
     <div class="divider"></div>
-    <h3 class="toggler">Work type</h3>
+    <h3 class="toggler"><strong>Work type</strong></h3>
     <div class="togglee">
       <ul class='checkboxes'>
         
@@ -210,9 +210,10 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li><input type="checkbox" id="Contract"/><label for="Contract">Contract</label></li>
         
       </ul>
+      <div class="clear"></div>
     </div>
     <div class="divider"></div>
-    <h3 class="toggler">Job level</h3>
+    <h3 class="toggler"><strong>Job level</strong></h3>
     <div class="togglee">
       <ul class='checkboxes'>
         
@@ -223,21 +224,18 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li><input type="checkbox" id="management"/><label for="management">Management</label></li>
         
       </ul>
+      <div class="clear"></div>
     </div>
   </div>
 </div>
 
-  <div class="span9" id="search-results">
+  <div class="main col" id="search-results">
     <div id="job">
       <div class="head">
         <img src="images/thumbs/social.png" />
 <a class="mail break" href="#">Sign up for email alerts</a>
         <div class="hr"></div>
       </div>
-      <h1>Web Developer - HTML/CSS - London</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Please send your CV for immediate review.</p>
       <div id="subscribe" class="clear pane pad">
   <form>
     <label>Email me jobs like these</label>
@@ -247,29 +245,8 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
   <div class="clear"></div>
 </div>
 
-      <h2>Further Information</h2>
-      <dl>
-        <dt>Recruiter</dt><dd>Source</dd>
-        <dt>Posted</dt><dd>22 February 2012</dd>
-        <dt>Ref</dt><dd>ZPGRAD</dd>
-        <dt>Contact</dt><dd>Subair Parvez</dd>
-        <dt>Location</dt><dd>London</dd>
-        <dt>Sector</dt><dd>Agency - Digital Agency</dd>
-        <dt>Function</dt><dd>Technical/Development</dd>
-        <dt>Role</dt><dd>Graduate/Entry Level</dd>
-        <dt>Specialism</dt><dd>B2B</dd>
-        <dt>Hours</dt><dd>Full Time</dd>
-        <dt>Contract Type</dt><dd>Permanent</dd>
-        <dt>Salary</dt><dd>£20000 - £25000 per annum</dd>
-      </dl>
-      <div class="submit">
-        <input value="Apply" type="submit" class="submit btn btn-success btn-large" />
-        <input value="Save" type="submit" class="submit btn btn-large" />
-      </div>
-      <div class="clear tall"></div>
-      <div class="hr"></div>
       <div id="slideshow" class="jcarousel-skin-default">
-  <div id="homepage_logos" class="jcarousel">
+  <div id="featured_recruiters" class="jcarousel">
     <ul>
       
       <li>
@@ -313,6 +290,35 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
     <a id="slide-right" href="#">»</a>
   </div>
 </div>
+<div class="hr break thin"></div>
+      <h1>Web Developer - HTML/CSS - London</h1>
+      <dl>
+        <dt>Recruiter</dt><dd>Source</dd>
+        <dt>Posted</dt><dd>22 February 2012</dd>
+        <dt>Ref</dt><dd>ZPGRAD</dd>
+        <dt>Contact</dt><dd>Subair Parvez</dd>
+        <dt>Location</dt><dd>London</dd>
+        <dt>Sector</dt><dd>Agency - Digital Agency</dd>
+        <dt>Function</dt><dd>Technical/Development</dd>
+        <dt>Role</dt><dd>Graduate/Entry Level</dd>
+        <dt>Specialism</dt><dd>B2B</dd>
+        <dt>Hours</dt><dd>Full Time</dd>
+        <dt>Contract Type</dt><dd>Permanent</dd>
+        <dt>Salary</dt><dd>£20000 - £25000 per annum</dd>
+      </dl>
+      <h2>Further Information</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Please send your CV for immediate review.</p>
+
+
+
+      <div class="submit">
+        <input value="Apply" type="submit" class="submit btn btn-success btn-large" />
+        <input value="Save" type="submit" class="submit btn btn-large" />
+      </div>
+      <div class="clear tall"></div>
+      <div class="hr"></div>
     </div>
   </div>
 </div>
