@@ -345,6 +345,9 @@ a {
     width: 13px; }
   #search table {
     width: 100%; }
+  #search .checkboxes {
+    float: left;
+    width: 270px; }
   #search td {
     vertical-align: top; }
     #search td.text {
@@ -818,8 +821,10 @@ a#slide-left {
   #sidebar ul {
     list-style-type: none;
     margin-left: 0px; }
-  #sidebar .checkboxes label, #sidebar .checkboxes input, #sidebar .checkboxes button, #sidebar .checkboxes select, #sidebar .checkboxes textarea {
-    font-size: 13px; }
+  #sidebar .checkboxes {
+    margin-top: -16px; }
+    #sidebar .checkboxes label, #sidebar .checkboxes input, #sidebar .checkboxes button, #sidebar .checkboxes select, #sidebar .checkboxes textarea {
+      font-size: 13px; }
   #sidebar h3 {
     border-top: 1px solid #ccc;
     clear: both;
@@ -832,18 +837,21 @@ a#slide-left {
     #sidebar .divider.first {
       margin-top: 30px; }
   #sidebar .toggler {
-    padding-top: 18px; }
+    padding-top: 18px;
+    cursor: pointer; }
+    #sidebar .toggler strong {
+      display: inline-block;
+      padding-right: 12px;
+      background-image: url(../images/icons/toggle-up.png);
+      background-repeat: no-repeat;
+      background-position: right 6px; }
+    #sidebar .toggler.open strong {
+      background-image: url(../images/icons/toggle-down.png);
+      background-repeat: no-repeat;
+      background-position: right 6px; }
   #sidebar .toggler, #sidebar .field, #sidebar .togglee {
     padding-right: 12px;
     padding-left: 12px; }
-  #sidebar .toggler strong {
-    display: inline-block;
-    padding-right: 12px;
-    background-image: url(../images/icons/toggle-down.png);
-    background-repeat: no-repeat;
-    background-position: right 6px; }
-  #sidebar .togglee ul.checkboxes {
-    margin-top: -7px; }
   #sidebar .text.field input {
     width: 94%; }
   #sidebar .checkboxes label {
