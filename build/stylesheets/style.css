@@ -61,7 +61,7 @@ body {
 
 #content {
   padding-top: 40px;
-  width: 940px; }
+  width: 905px; }
 
 #footer {
   background: url(../images/patterns/squares-blue.png);
@@ -69,7 +69,7 @@ body {
   margin-top: 20px;
   font-size: 13px; }
   #footer .container {
-    width: 940px; }
+    width: 905px; }
   #footer h2 {
     color: #fff;
     font-weight: normal;
@@ -138,7 +138,7 @@ a {
   margin-bottom: 34px;
   height: 39px; }
   #head .navbar {
-    width: 940px;
+    width: 905px;
     margin: 0 auto; }
     #head .navbar .nav > li > a {
       padding: 11px 0px; }
@@ -510,8 +510,8 @@ label {
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover,
 .tab-content > .active, .pill-content > .active {
-  background: #f7f7f7;
   border: none;
+  background: #f7f7f7;
   color: #000066;
   font-weight: bold; }
   .nav-tabs > .active > a b, .nav-tabs > .active > a:hover b,
@@ -526,14 +526,16 @@ label {
   margin-top: 20px; }
 
 .nav-pills > li {
-  margin-right: 6px; }
+  margin-right: 2px; }
 
 .nav-pills > li > a {
+  color: #000;
   border-radius: 2px;
   font-weight: bold; }
-
-.nav-pills > li > a, .nav-pills > li > a:hover {
-  color: #000; }
+  .nav-pills > li > a:hover {
+    color: #0066cc;
+    background: transparent;
+    text-decoration: underline; }
 
 .nav-pills > .active > a, .nav-pills > .active > a:hover {
   background: #0066cc; }
@@ -862,18 +864,23 @@ a#slide-left {
       color: #000;
       text-decoration: underline; }
 
+#job h1 {
+  font-size: 25px;
+  font-weight: normal;
+  padding: 30px 0 20px; }
 #job a.mail {
   font-weight: bold;
   font-size: 14px;
   color: #000066;
   padding-right: 27px; }
+#job p {
+  color: #666; }
 #job dl {
   margin-top: 0px; }
 #job dl, #job dt, #job dd {
   display: block;
   float: left; }
 #job dt, #job dd {
-  border-bottom: 1px dotted #aaa;
   padding: 4px 0px; }
 #job dl {
   clear: both; }
@@ -905,9 +912,14 @@ a#slide-left {
   #account .info {
     padding-left: 30px; }
   #account .section {
-    background-position: right center;
+    background-position: 534px center;
     border-top: 1px dotted #666;
-    padding: 20px 0px; }
+    padding: 23px 0px; }
+    #account .section h2 {
+      padding: 0 0 10px 0;
+      line-height: 14px; }
+    #account .section p {
+      margin-bottom: 0px; }
     #account .section.cv {
       background-image: url(../images/icons/gray-cv.png);
       background-repeat: no-repeat; }
@@ -945,12 +957,6 @@ a.strong {
   #jobseeker-login h3 {
     font-size: 16px;
     margin-bottom: 20px; }
-  #jobseeker-login .login h2 {
-    color: #fff;
-    margin-bottom: 12px;
-    font-weight: normal; }
-  #jobseeker-login .login.pad {
-    padding-bottom: 50px; }
   #jobseeker-login div, #jobseeker-login ul, #jobseeker-login p {
     font-size: 14px; }
   #jobseeker-login .pad {
@@ -967,12 +973,18 @@ a.strong {
     border-left: 1px solid #ccc;
     width: 160px;
     padding-top: 40px; }
+  #jobseeker-login .focus {
+    padding-top: 10px; }
   #jobseeker-login .login {
     padding-right: 60px;
     padding-left: 60px;
-    width: 294px; }
-  #jobseeker-login .focus {
-    padding-top: 10px; }
+    width: 259px; }
+    #jobseeker-login .login h2 {
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: normal; }
+    #jobseeker-login .login.pad {
+      padding-bottom: 50px; }
   #jobseeker-login a {
     color: #fff;
     font-weight: normal; }
@@ -1006,7 +1018,7 @@ a.strong {
   background-position: center center; }
 
 .recommended.boards .logo {
-  width: 106px;
+  width: 103px;
   height: 40px;
   border: 1px solid #ccc;
   text-indent: -9999px;
@@ -1114,6 +1126,6 @@ img.left {
   .col.first {
     margin-left: 0px; }
   .col.main {
-    width: 670px; }
+    width: 635px; }
   .col.side {
     width: 245px; }

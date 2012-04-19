@@ -4,7 +4,7 @@
 // Constants
 //----------------------------------------------------------------
 $base_font_size: 13px;
-$layout_width: 940px;
+$layout_width: 905px;
 $gold: #c90;
 $amber: #fc0;
 $blue: #006;
@@ -335,15 +335,18 @@ label { font-weight: bold; }
 .nav-tabs > li > a:hover { background: transparent; color: #000; text-decoration: underline}
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover,
 .tab-content > .active, .pill-content > .active {
-  background: $eggshell; border: none;
+  border: none;
+  background: $eggshell;
   color: $blue; font-weight: bold;
   b { border: none; }
 }
 .tab-pane { padding: 12px 27px 27px 27px; margin-bottom: 20px; }
 .nav-pills.break {margin-top: 20px;}
-.nav-pills > li {margin-right: 6px;}
-.nav-pills > li > a { border-radius: 2px; font-weight: bold; }
-.nav-pills > li > a, .nav-pills > li > a:hover { color: #000; }
+.nav-pills > li {margin-right: 2px;}
+.nav-pills > li > a {
+  color: #000; border-radius: 2px; font-weight: bold;
+  &:hover { color: $cobalt; background: transparent; text-decoration: underline;}
+}
 .nav-pills > .active > a, .nav-pills > .active > a:hover { background: $cobalt; }
 .nav-pills-wrap {
   border: 1px solid #ddd; border-radius: 4px;
@@ -548,10 +551,12 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 // Job
 //----------------------------------------------------------------
 #job {
+  h1 { font-size: 25px; font-weight: normal; padding: 30px 0 20px; }
   a.mail { font-weight: bold; font-size: 14px; color: $blue; padding-right: 27px; }
+  p { color: #666; }
   dl { margin-top: 0px; }
   dl, dt, dd { display: block; float: left; }
-  dt, dd { border-bottom: 1px dotted #aaa; padding: 4px 0px; }
+  dt, dd { padding: 4px 0px; }
   dl { clear: both; }
   dt { width: 20%; font-weight: bold; }
   dd { width: 80%; margin-left: 0px; position: relative; top: -1px; }
@@ -570,8 +575,10 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   }
   .info { padding-left: 30px; }
   .section {
-    background-position: right center;
-    border-top: 1px dotted #666; padding: 20px 0px;
+    background-position: 534px center;
+    border-top: 1px dotted #666; padding: 23px 0px;
+    h2 { padding: 0 0 10px 0; line-height: 14px; }
+    p {margin-bottom: 0px; }
     &.cv { @include icon('gray-cv'); }
     &.searches { @include icon('gray-searches'); }
     &.applications { @include icon('gray-applications'); }
@@ -593,10 +600,6 @@ a.strong { font-weight: bold; }
   padding: 30px 0px; margin: 80px 0px 20px 0px;
   h2 { font-size: 15px; color: $blue; }
   h3 { font-size: 16px; margin-bottom: 20px; }
-  .login {
-    h2 { color: #fff; margin-bottom: 12px; font-weight: normal; }
-    &.pad { padding-bottom: 50px; }
-  }
   div, ul, p { font-size: 14px; }
   .pad {
     padding: 20px 40px 40px 40px; float: left;
@@ -604,10 +607,13 @@ a.strong { font-weight: bold; }
   }
   .create { padding-left: 25px; width: 220px; h2 {font-size: 25px;}}
   .pitch { border-left: 1px solid #ccc; width: 160px; padding-top: 40px;}
-  .login { padding-right: 60px; padding-left: 60px; width: 294px; }
   .focus {padding-top: 10px;}
+  .login {
+    padding-right: 60px; padding-left: 60px; width: 259px;
+    h2 { color: #fff; margin-bottom: 12px; font-weight: normal; }
+    &.pad { padding-bottom: 50px; }
+  }
   a {color:#fff;font-weight: normal; &:hover{text-decoration: underline;}}
-
 }
 .login {
   .text input { display: block; clear: both; width: 96%; margin-bottom: 22px; }
@@ -626,10 +632,10 @@ a.strong { font-weight: bold; }
   background-position: center center;
 }
 .recommended.boards .logo {
-  @include size(106px,40px);
+  @include size(103px,40px);
   border: 1px solid #ccc;
   text-indent: -9999px;
-  margin: 0 12px 12px 0
+  margin: 0 12px 12px 0;
 }
 #featured-jobs.column {
   height: 240px; overflow-y: scroll;
@@ -685,6 +691,6 @@ img.left {float: left; margin: 0 16px 20px 0;}
   float: left; clear: none;
   margin-left: 25px;
   &.first {margin-left: 0px;}
-  &.main {width: 670px;}
+  &.main {width: 635px;}
   &.side {width: 245px;}
 }
