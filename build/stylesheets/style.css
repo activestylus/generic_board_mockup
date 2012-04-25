@@ -152,11 +152,6 @@ h2.pane-title {
 .page-a4-y {
   padding: 40px 0 70px; }
 
-td {
-  font-size: 14px;
-  border-bottom: 1px dotted #ddd;
-  padding: 10px; }
-
 td.check {
   padding-right: 0px;
   width: 27px; }
@@ -184,6 +179,10 @@ table {
   margin-bottom: 22px; }
   table.last {
     margin-bottom: 0px; }
+  table.dotted td {
+    font-size: 14px;
+    border-bottom: 1px dotted #ddd;
+    padding: 10px; }
   table.data {
     border-top: 1px solid #000; }
     table.data td.first, table.data th.first {
@@ -698,7 +697,7 @@ a.remove {
     .nav-tabs.inverted a {
       margin-right: -1px;
       text-indent: -1px;
-      padding: 10px 0px 17px;
+      padding: 14px 0 21px;
       color: #fff; }
       .nav-tabs.inverted a:hover {
         color: #0088cc;
@@ -1389,8 +1388,17 @@ img.left {
 #recruiter-menu {
   padding-right: 10px; }
 
-.recruiters .landing_page a.graphic:hover {
-  opacity: 0.7; }
+.recruiters .landing_page a.graphic {
+  position: relative; }
+  .recruiters .landing_page a.graphic:hover {
+    color: #000; }
+  .recruiters .landing_page a.graphic img {
+    position: absolute;
+    top: 0px;
+    left: 0; }
+  .recruiters .landing_page a.graphic#recruiter-post {
+    padding-left: 120px;
+    width: 120px; }
 .recruiters .landing_page strong.title {
   font-size: 20px;
   line-height: 22px; }
@@ -1404,12 +1412,12 @@ img.left {
 .recruiters .landing_page .btn-join {
   float: right;
   margin-right: 65px; }
-.recruiters .landing_page .icons a.graphic {
-  padding-top: 83px; }
 .recruiters .landing_page .icons small {
   padding-right: 50px; }
 .recruiters .landing_page .icons .span3.first {
   padding-right: 32px; }
+.recruiters .landing_page .icons a.graphic {
+  padding-top: 83px; }
 .recruiters .landing_page .lined-columns strong.title {
   margin-bottom: 20px; }
 .recruiters .landing_page .lined-columns .go-search {
@@ -1419,30 +1427,8 @@ img.left {
 .recruiters .landing_page .hr {
   margin: 50px 0; }
 
-#recruiter-post {
-  background-image: url(../images/icons/recruiter-post.png);
-  background-repeat: no-repeat;
-  padding-left: 120px;
-  width: 120px; }
-
 #recruiter-savings {
   padding-left: 20px; }
-
-#recruiter-cv-search {
-  background-image: url(../images/icons/recruiter-cv-search.png);
-  background-repeat: no-repeat; }
-
-#recruiter-candidates {
-  background-image: url(../images/icons/recruiter-candidates.png);
-  background-repeat: no-repeat; }
-
-#recruiter-packages {
-  background-image: url(../images/icons/recruiter-packages.png);
-  background-repeat: no-repeat; }
-
-#recruiter-manage {
-  background-image: url(../images/icons/recruiter-manage.png);
-  background-repeat: no-repeat; }
 
 #recruiter-call {
   background-image: url(../images/icons/recruiter-call.png);
@@ -1455,7 +1441,7 @@ img.left {
 .job-bag {
   text-align: right;
   color: #666;
-  margin: 28px 13px 13px 13px; }
+  margin: 34px 13px 13px; }
   .job-bag img {
     margin: 0 3px; }
 
@@ -1492,11 +1478,15 @@ img.left {
 .breadcrumbs {
   margin-bottom: 20px; }
 
+#post_job .breadcrumbs {
+  margin-bottom: 26px;
+  margin-top: 4px; }
 #post_job .breadcrumbs, #post_job h1 {
   padding-left: 12px; }
 #post_job h1 {
   font-size: 25px;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  margin-bottom: 31px; }
 
 .cv-search h1 {
   text-indent: 20px; }
@@ -1529,3 +1519,6 @@ a.user span {
   background-repeat: no-repeat;
   background-position: right top;
   padding-right: 24px; }
+
+a:hover img {
+  opacity: 0.7; }

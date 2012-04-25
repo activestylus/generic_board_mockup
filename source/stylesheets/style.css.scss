@@ -89,7 +89,6 @@ h2.pane-title { background: #003; color: #fff; padding: 3px 16px; margin-bottom:
 //-------------------------------------------------------
 // Tables
 //-------------------------------------------------------
-td {font-size: 14px; border-bottom: 1px dotted #ddd; padding: 10px;}
 td.check {padding-right: 0px; width: 27px;}
 th.check {
   input[type="image"], input[type="checkbox"], input[type="radio"]  {margin-top: -6px}
@@ -107,6 +106,9 @@ table {
   width:100%;
   margin-bottom: 22px;
   &.last {margin-bottom: 0px}
+  &.dotted {
+    td {font-size: 14px; border-bottom: 1px dotted #ddd; padding: 10px;}
+  }
   &.data {
     border-top: 1px solid #000;
     td.first, th.first {padding-left: 0px;}
@@ -443,7 +445,7 @@ a.remove {
     &> .active > a, & > .active > a:hover, .tab-content > .active, .pill-content > .active { background: #fff; }
     a {
       margin-right: -1px; text-indent: -1px;
-      padding: 10px 0px 17px; color: #fff;
+      padding: 14px 0 21px; color: #fff;
       &:hover {color: $link; text-decoration: none; }
     }
     b { display: block; padding: 0px 20px; border-right: 1px solid #fff; }
@@ -846,7 +848,13 @@ img.left {float: left; margin: 0 16px 20px 0;}
 //-------------------------------------------------------
 #recruiter-menu { padding-right: 10px; }
 .recruiters .landing_page {
-  a.graphic:hover { opacity: 0.7; }
+  a.graphic {
+    position: relative;
+    &:hover { color: #000; }
+    img { position: absolute; top: 0px; left: 0;}
+    &#recruiter-post { padding-left: 120px; width: 120px; }
+  }
+
   strong.title { font-size: 20px; line-height: 22px;}
   small { font-size: 12px}
   .splash {
@@ -855,9 +863,9 @@ img.left {float: left; margin: 0 16px 20px 0;}
   }
   .btn-join { float: right; margin-right: 65px; }
   .icons {
-    a.graphic { padding-top: 83px; }
     small { padding-right: 50px; }
     .span3.first {padding-right: 32px;}
+    a.graphic {padding-top: 83px;}
   }
   .lined-columns {
     strong.title { margin-bottom: 20px; }
@@ -866,13 +874,8 @@ img.left {float: left; margin: 0 16px 20px 0;}
   .column { min-height: 100px;}
   .hr { margin: 50px 0; }
 }
-#recruiter-post { @include icon('recruiter-post');
-  padding-left: 120px; width: 120px; }
+
 #recruiter-savings { padding-left: 20px; }
-#recruiter-cv-search { @include icon('recruiter-cv-search'); }
-#recruiter-candidates { @include icon('recruiter-candidates'); }
-#recruiter-packages { @include icon('recruiter-packages'); }
-#recruiter-manage { @include icon('recruiter-manage');}
 #recruiter-call {
   @include icon('recruiter-call'); background-position: right top;
   display: block; margin-right: 75px; min-height: 30px;
@@ -883,7 +886,7 @@ img.left {float: left; margin: 0 16px 20px 0;}
 //-------------------------------------------------------
 .job-bag {
   text-align: right; color: #666;
-  margin: 28px 13px 13px 13px;
+  margin: 34px 13px 13px;
   img { margin: 0 3px; }
 }
 .cart-summary {
@@ -906,8 +909,9 @@ img.left {float: left; margin: 0 16px 20px 0;}
 .side .thin-panes { margin-bottom: 20px; }
 .breadcrumbs { margin-bottom: 20px;}
 #post_job {
+  .breadcrumbs {margin-bottom: 26px; margin-top: 4px}
   .breadcrumbs, h1 {padding-left: 12px;}
-  h1 {font-size: 25px; margin-bottom: 25px;}
+  h1 {font-size: 25px; margin-bottom: 25px; margin-bottom: 31px;}
 }
 //-------------------------------------------------------
 //  Recruiters CV Search
@@ -931,3 +935,4 @@ a.user span {
   background-position: right top;
   padding-right: 24px;
 }
+a:hover img { opacity: 0.7; }
