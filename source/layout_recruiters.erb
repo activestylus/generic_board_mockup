@@ -4,7 +4,7 @@
   <title>WhiteLabelJobboards | Generic</title>
   <%= partial 'shared/head' %>
 </head>
-<body>
+<body class='recruiters <%= @bodyclass %>'>
   <%= partial 'shared/user_menu', locals: { jobseekers: true } %>
   <div class="container" id="content">
     <%= partial 'shared/site_menu' %>

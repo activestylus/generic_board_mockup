@@ -1,0 +1,80 @@
+<%= partial "shared/recruiter_menu", locals: {active: "Post a job"} %>
+
+<div id="post_job" class="page-a4-y">
+
+  <div class="breadcrumbs">Post a Job / Buy Credits</div>
+
+  <div class="main col first">
+    <h1>Buy Credits</h1>
+    <% ["Multiple Job posting packages", "Featured job postings"].each do |title| %>
+    <table cellspacing="0" cellpadding="0" border="0" class="buy">
+      <thead>
+        <tr>
+          <th colspan="2"><%= title %></th>
+          <th colspan="2">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% %w(1 2 5).each do |n| %>
+        <tr class="<%= n=="5" ? "last" : nil %>">
+          <td><%= n %> x job listing</td>
+          <td class="info"><%= n %> x 30 day advert in bold with logo and 7 day refresh </td>
+          <td class="price">€<%= n %>25.00</td>
+          <td class="buy"><input type="submit" class="btn btn-success" value="Buy"/></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+    <table cellspacing="0" cellpadding="0" border="0" class="buy last">
+      <thead>
+        <tr>
+          <th>Recruitment Packages</th>
+          <th>CV Search</th>
+          <th colspan="2">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% %w(1 2 5).each do |n| %>
+        <tr class="<%= n=="5" ? "last" : nil %>">
+          <td class="packages"><%= n %> x job listing in bold with logo</td>
+          <td class="info">25 views</td>
+          <td class="price">€<%= n %>00.00</td>
+          <td class="buy"><input type="submit" class="btn btn-success" value="Buy"/></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="hr thin"></div>
+
+    <input type="submit" value="Checkout" class="btn btn-checkout pull-right" />
+  </div>
+
+  <div class="side col thin-panes">
+
+    <div class="job-bag">
+      Job Bag <img src="images/icons/job-bag.png"/> (3 items)
+    </div>
+
+    <h2 class="pane-title">Summary</h2>
+    <div class="cart-summary pane">
+      <ul>
+        <li>1 x job listing  (€225) <a class="remove" href="#">Remove</a></li>
+        <li>2 x featured job (€500) <a class="remove" href="#">Remove</a></li>
+        <li>1 x recruitment package (€1125) <a class="remove" href="#">Remove</a></li>
+      </ul>
+      <div class="hr thin dotted"></div>
+      <strong class="total">Total €1850.00</strong>
+      <input type="submit" value="Go to checkout" class="btn btn-checkout" />
+    </div>
+
+    <div class="chat pane">
+      <div class="text"><strong>Chat with us now</strong>
+      <a href="#" class="btn btn-join">online</a></div>
+      <img src="images/thumbs/chat-with-us.png" />
+      <div class="clear"></div>
+    </div>
+
+  </div>
+  <div class="clear"></div>
+</div>

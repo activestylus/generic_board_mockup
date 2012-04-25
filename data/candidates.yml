@@ -1,0 +1,30 @@
+001:
+  name: Han Solo
+  email: solo@millenniumfalcon.org
+  location: London
+  added: 26 Feb 12
+002:
+  name: Luke Skywalker
+  email: luke@theforce.net
+  location: Berlin
+  added: 05 Mar 12
+003:
+  name: Darth Vader
+  email: lord.vader@thedarkside.com
+  location: Death Star
+  added: 09 Mar 12
+004:
+  name: Boba Fett
+  email: fett@bountyhunters.biz
+  location: Hamburg
+  added: 11 Mar 12
+005:
+  name: Princess Leia
+  email: royal.loveliness@alderan.net
+  location: Munich
+  added: 30 Mar 12
+006:
+  name: Lando Calrissian
+  email: lando@colt45.com
+  location: Cologne
+  added: 22 Feb 12

@@ -35,7 +35,10 @@ require 'mini_magick'
 # Per-page layout changes:
 #
 # With no layout
-page "/jobseekers.html", :layout => 'layout_jobseekers'
+
+with_layout :layout_recruiters do
+  page "/recruiter*"
+end
 #
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout

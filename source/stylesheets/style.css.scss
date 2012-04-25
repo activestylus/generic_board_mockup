@@ -14,8 +14,9 @@ $eggshell: #f7f7f7;
 $red: #cc0000;
 $link: #0088CC;
 $cobalt: #06c;
+$sky: #e5effa;
+$bluesky: #3994f1;
 $button-radius: 3px;
-//
 //----------------------------------------------------------------
 // General Layout
 //----------------------------------------------------------------
@@ -25,6 +26,7 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
 .center { margin: 0 auto; }
 .break { display: block; margin-bottom: 18px; }
 .clear.tall { height: 20px; }
+strong.title { clear: both; display: block; margin-bottom: 2px; }
 .divider {
   &.thick { border-top: 4px solid $blue;}
 }
@@ -71,7 +73,68 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
 }
 .cell  { float: left; clear: none; }
 .clear { clear: both; }
+th { text-align: left; }
 img.break { padding: 8px 0; }
+a.graphic {display: block; &:hover { text-decoration: none; }}
+h2.pane-title { background: #003; color: #fff; padding: 3px 16px; margin-bottom: 0px;
+  font-size: 17px; font-weight: normal; }
+.lined-columns { .column { border-right: 1px solid #ddd; } }
+.span4 .column { margin-right: 4px; }
+.thin-panes .pane { padding: 18px; }
+.page-pad { padding: 40px 0; }
+.page-pad-y { padding: 40px 0; }
+.page-pad-x { padding: 0 40px; }
+.page-a4-y { padding: 40px 0 70px; }
+//
+//-------------------------------------------------------
+// Tables
+//-------------------------------------------------------
+td {font-size: 14px; border-bottom: 1px dotted #ddd; padding: 10px;}
+td.check {padding-right: 0px; width: 27px;}
+th.check {
+  input[type="image"], input[type="checkbox"], input[type="radio"]  {margin-top: -6px}
+}
+th { background: $sky; font-weight: normal; }
+th.sort {
+  span {
+    background-position: right 7px;
+    padding-right: 16px; display: inline-block;
+  }
+  &.asc span {@include icon('sort-asc');}
+  &.desc span {@include icon('sort-desc');}
+}
+table {
+  width:100%;
+  margin-bottom: 22px;
+  &.last {margin-bottom: 0px}
+  &.data {
+    border-top: 1px solid #000;
+    td.first, th.first {padding-left: 0px;}
+    th { padding: 0 12px; border-top: 1px solid #fff;}
+    tr.pad th { padding: 12px; &.first {padding-left: 0px} }
+
+  }
+  &.buy {
+    border-top: 3px solid $bluesky;
+    thead { padding-top: 3px; }
+    th { padding: 12px; font-size: 18px; }
+    tr.last td { border-bottom: none; }
+    td {
+      padding: 18px 12px;
+      &.info { font-size: 13px; color: #666; }
+      &.buy { width: 60px; }
+      &.price { width: 60px; }
+      &.packages { width: 260px; }
+    }
+    .btn-success { padding: 4px 18px;}
+  }
+}
+.sort-by {
+  padding-top: 6px; padding-right: 26px;
+  select, label {float: right;}
+  select {width: 80px;}
+  label {font-weight: normal; margin-right: 8px; line-height: 26px;}
+}
 //
 //----------------------------------------------------------------
 // Typography
@@ -81,6 +144,19 @@ h2 { font-size: 15px; color: #000; &.recruiters { padding-top: 8px; font-size: 1
 h3 { font-size: $base_font_size; color: #000; line-height: 18px;  letter-spacing: 0.3px }
 p  { font-size: $base_font_size; margin: 0 0 18px 0; }
 a  { color: #333; }
+.quotes {
+  text-indent: 24px;
+  position: relative;
+  display: inline-block;
+  .quote {
+    text-indent: 0px;
+    display: block; position: absolute;
+    font-weight: normal; font-size: 50px;
+    &.left { top: 5px; left: 0px; }
+    &.right { bottom: -18px; right: 20px; }
+  }
+}
+
 //
 //----------------------------------------------------------------
 // User Navigation
@@ -104,7 +180,7 @@ a  { color: #333; }
       background: $gold;
       position: relative; left: -1px; top: -5px;
       border-radius: 0 0 $button-radius $button-radius;
-      &.jobseekers { @include gradient-y(#cc9900,#b3861f); }
+      &.jobseekers { background: #090; &:hover { background: #0a0; } }
       &:hover { background: $gold + 20;}
       b { border: none; font-weight: bold; }
     }
@@ -223,7 +299,6 @@ a  { color: #333; }
   input, textarea, select, .uneditable-input {height: auto; }
   input { display: block; padding: 8px 0px; width: 100%; font-size: 16px; }
   input.check { width: 13px; }
-  table { width:100% }
   .checkboxes {float: left; width: 270px;}
   td {
     vertical-align: top;
@@ -283,21 +358,51 @@ input, textarea, select, .uneditable-input {
   border-bottom: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5;
   border-radius: 0px;
 }
-label { font-weight: bold; }
+label { font-weight: bold; &.fine {font-weight: normal} &.tall {line-height: 26px;}}
 .checkboxes {
   li { display: block; clear: both; }
   input, label { display: block; float: left; }
   label { font-weight: normal; text-indent: 3px }
   input { width: 14px; }
 }
+.btn-medium {
+  font-size: 14px; font-weight: bold;
+  padding: 6px 12px;
+}
 .btn {
   border-radius: $button-radius; box-shadow: none; border: none;
   &.save { border: 1px solid #ddd;}
 }
+.btn-gold {
+  color: #fff; background: $gold;
+  text-shadow: -1px -1px 0px $gold - 30;
+  &:hover { color: #fff; background: $gold + 30;  }
+}
+.btn-go {
+  font-size: 14px;
+  color: #fff; background: $cobalt;
+  text-shadow: -1px -1px 0px $cobalt - 40;
+  &:hover { color: #fff; background: $cobalt + 30;  }
+}
+.splash .btn { padding: 7px 17px; font-size: 15px; font-weight: bold; }
+.btn-join {
+  color: #fff; background: #c00;
+  //font-weight: bold; font-size: 15px; letter-spacing: 0.5px;
+  text-shadow: -1px -1px 0px #700;
+  //padding: 7px 18px;
+  &:hover { background: #f00; color: #fff; }
+}
+.btn-checkout {
+  color: #fff; background: #333;
+  font-weight: bold; font-size: 15px;
+  text-shadow: -1px -1px 0px #111;
+  padding: 7px 18px;
+  &:hover { background: #666; color: #fff; }
+}
 .btn-success {
   font-weight: bold;
   background: #090;
-  &:hover { background: #0a0 ;}
+  &:hover { background: #0b0 ;}
 }
 .btn-primary {
   background: #090;
@@ -313,11 +418,40 @@ label { font-weight: bold; }
   background: $royal_blue;
   color: #fff; text-shadow: -1px -1px 0px #222e50 }
 .btn-secondary:hover { @include gradient-y($royal_blue + 30, $royal_blue + 60); color: #fff; }
+.go-search {
+  padding-right: 53px;
+  position: relative;
+  input { margin-bottom: 0px; display: block; width: 100%; }
+  .btn { display: block; position: absolute; bottom: 0px; right: 0px; width: auto;}
+  .btn-go { padding-top: 6px; padding-bottom: 6px;}
+  &.break { padding-top: 8px; }
+}
+a.remove {
+  @include icon('delete'); @include size(20px);
+  text-indent: -9999px; display: block;
+  &:hover { opacity: 0.6; }
+}
 //
 //----------------------------------------------------------------
 // Tabs
 //----------------------------------------------------------------
-.nav-tabs { margin-bottom: 0px; border-bottom: 5px solid $blue; }
+.nav-tabs {
+  border-bottom: 5px solid $blue; margin-bottom: 0px;
+  li.pull-right {float: right;}
+  &.inverted {
+    @include navy; padding-top: 6px; padding-left: 6px; clear: both; margin-top: 60px;
+    &> .active > a, & > .active > a:hover, .tab-content > .active, .pill-content > .active { background: #fff; }
+    a {
+      margin-right: -1px; text-indent: -1px;
+      padding: 10px 0px 17px; color: #fff;
+      &:hover {color: $link; text-decoration: none; }
+    }
+    b { display: block; padding: 0px 20px; border-right: 1px solid #fff; }
+    .clean b {border: none}
+  }
+}
+
+
 .nav-tabs > li {
   margin-bottom: -7px; font-weight: bold;
 }
@@ -348,6 +482,10 @@ label { font-weight: bold; }
   &:hover { color: $cobalt; background: transparent; text-decoration: underline;}
 }
 .nav-pills > .active > a, .nav-pills > .active > a:hover { background: $cobalt; }
+.nav-pills.light li a {font-weight: normal;}
+.nav-pills.light > .active > a, .nav-pills.light > .active > a:hover {
+  color: #000; background: #f2f2f2; font-weight: normal;
+}
 .nav-pills-wrap {
   border: 1px solid #ddd; border-radius: 4px;
   padding: 20px 20px 1px 20px; margin-left: 0px;
@@ -438,10 +576,11 @@ a.logoslide:hover { opacity: 0.5; }
 }
 *[dir=rtl] .jcarousel-skin-default li {float: right; margin: 0; }
 .jcarousel-skin-default ul li, .jcarousel-skin-default ul {list-style-type:none; }
+.pane { a#slide-left, a#slide-right { background-color: $eggshell; } }
 a#slide-left, a#slide-right {
-  background-position: center center; background-color: $eggshell;
+  background-position: center center; background-color: #FFF;
   @include size(22px,$slideshow_height);
-  opacity:0.7; position:absolute; padding: 0;
+  position:absolute; padding: 0;
   display: block; text-indent: -9999px;
 }
 a#slide-left:hover, a#slide-right:hover { opacity:1; color:#666; text-decoration: none; }
@@ -458,6 +597,13 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   &.lite { border-color: #ccc; }
   &.thick { border-width: 8px; margin-bottom: 12px; }
   &.break { margin-top: 10px;}
+  &.table-rule { border-width: 1px; margin: 0 0 1px 0;}
+  &.deboss {
+    border: none;
+    background: transparent url(../images/sliding/deboss.png);
+    margin: 20px 0;
+    div {background: transparent url(../images/sliding/deboss.png) right bottom; height: 6px; }
+  }
 }
 #search-results {
   font-size: $base_font_size;
@@ -556,7 +702,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   p { color: #666; }
   dl { margin-top: 0px; }
   dl, dt, dd { display: block; float: left; }
-  dt, dd { padding: 4px 0px; }
+  dt, dd { padding: 1px 0px; }
   dl { clear: both; }
   dt { width: 20%; font-weight: bold; }
   dd { width: 80%; margin-left: 0px; position: relative; top: -1px; }
@@ -691,6 +837,97 @@ img.left {float: left; margin: 0 16px 20px 0;}
   float: left; clear: none;
   margin-left: 25px;
   &.first {margin-left: 0px;}
-  &.main {width: 635px;}
-  &.side {width: 245px;}
+  &.main {width: 635px; &.fat {width: 670px}}
+  &.side {width: 245px; &.thin {width: 200px}}
+}
+//
+//-------------------------------------------------------
+// Recruiters Landing Page
+//-------------------------------------------------------
+#recruiter-menu { padding-right: 10px; }
+.recruiters .landing_page {
+  a.graphic:hover { opacity: 0.7; }
+  strong.title { font-size: 20px; line-height: 22px;}
+  small { font-size: 12px}
+  .splash {
+    strong.title { font-size: 29px; margin-bottom: 10px;}
+    p { font-size: 14px}
+  }
+  .btn-join { float: right; margin-right: 65px; }
+  .icons {
+    a.graphic { padding-top: 83px; }
+    small { padding-right: 50px; }
+    .span3.first {padding-right: 32px;}
+  }
+  .lined-columns {
+    strong.title { margin-bottom: 20px; }
+    .go-search {width: 63%; }
+  }
+  .column { min-height: 100px;}
+  .hr { margin: 50px 0; }
+}
+#recruiter-post { @include icon('recruiter-post');
+  padding-left: 120px; width: 120px; }
+#recruiter-savings { padding-left: 20px; }
+#recruiter-cv-search { @include icon('recruiter-cv-search'); }
+#recruiter-candidates { @include icon('recruiter-candidates'); }
+#recruiter-packages { @include icon('recruiter-packages'); }
+#recruiter-manage { @include icon('recruiter-manage');}
+#recruiter-call {
+  @include icon('recruiter-call'); background-position: right top;
+  display: block; margin-right: 75px; min-height: 30px;
+}
+
+//-------------------------------------------------------
+// Recruiters Post Job
+//-------------------------------------------------------
+.job-bag {
+  text-align: right; color: #666;
+  margin: 28px 13px 13px 13px;
+  img { margin: 0 3px; }
+}
+.cart-summary {
+  ul {
+    margin-left: 0px; display: block; list-style-type:none;
+    li { position: relative; display: block; padding: 5px 12px 5px 0px;}
+    a { display: block; position: absolute; right: 0px; top: 7px;}
+  }
+  .btn-checkout { margin: 20px 0 0 0;}
+}
+.chat.pane {
+  .text {
+    float: left; width: 82px;
+    a.btn { font-size: 15px; }
+    strong { display: block; margin-bottom: 12px; }
+  }
+
+  img {float: right;}
+}
+.side .thin-panes { margin-bottom: 20px; }
+.breadcrumbs { margin-bottom: 20px;}
+#post_job {
+  .breadcrumbs, h1 {padding-left: 12px;}
+  h1 {font-size: 25px; margin-bottom: 25px;}
+}
+//-------------------------------------------------------
+//  Recruiters CV Search
+//-------------------------------------------------------
+.cv-search {
+  h1 {text-indent: 20px}
+  .side {padding-top: 40px; .pad {padding-right: 0px;}}
+  .go-search {
+    padding-right: 80px;
+    input {width: 90%;}
+    input.btn {width: auto;}
+  }
+  ul.nav-stacked {margin-top: 20px;}
+}
+.pull-left {float: left;}
+label.pull-left {margin-right: 8px; line-height: 26px;}
+.title-splash {padding-bottom: 40px;}
+a.user span {
+  display: inline-block;
+  @include icon('user');
+  background-position: right top;
+  padding-right: 24px;
 }

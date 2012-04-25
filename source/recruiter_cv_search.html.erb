@@ -1,0 +1,69 @@
+<%= partial "shared/recruiter_menu", locals: {active: "CV Search"} %>
+
+<div class="cv-search page-pad">
+  <div class="title-splash row-fluid">
+    <div class="span6">
+      <h1>CV Search</h1>
+    </div>
+    <div class="span5">
+      <div class="go-search">
+        <label class="pull-left">Search</label>
+        <input type="text" placeholder="e.g. Programmer"/>
+        <input type="submit" value="Go" class="btn btn-go " />
+      </div>
+    </div>
+  </div>
+
+  <div class="side col thin first">
+    <div class="pad">
+      <a href="#" class="btn btn-gold btn-medium">New list</a>
+      <ul class="nav nav-pills nav-stacked light">
+        <li><a href="#" class="user"><span>Saved CVs</span></a></li>
+        <li class="active"><a href="#">View All</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="main col fat">
+    <div class="hr table-rule"></div>
+    <table id="select" class="data" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <th class="check"><input type="checkbox" id="select-all" /></th>
+        <th class="first">
+          <label for="select-all" class="fine tall">Select all</label>
+        </th>
+        <th><a href="#" class="btn btn-go btn-medium">Add to list</a></th>
+        <th colspan="3">
+          <div class="field sort-by">
+            <select>
+              <option value="name">Name</option>
+            </select>
+            <label class="small">Sort by</label>
+          </div>
+        </th>
+      </tr>
+      <tr class='pad'>
+        <th>&nbsp;</th>
+        <th class="first">Name</th>
+        <th>Email address</th>
+        <th>Location</th>
+        <th class="sort desc"><span>Date added</span></th>
+      </tr>
+      <% 2.times do %>
+      <% data.candidates.each do |c| %>
+      <% candidate = c[1] %>
+      <tr>
+        <td class="check"><input type="checkbox" /></td>
+        <td class="first"><%= candidate.name %></td>
+        <td><%= candidate.email %></td>
+        <td><%= candidate.location %></td>
+        <td><%= candidate.added %></td>
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
+    <%= partial "shared/pagination" %>
+  </div>
+
+</div>
