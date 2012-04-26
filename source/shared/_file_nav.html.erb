@@ -1,0 +1,20 @@
+<div id="file-nav">
+  <h3 class="toggler open"><strong>Pages</strong></h2>
+  <div class="togglee">
+    <h2>Candidates</h2>
+    <ul>
+      <% %w(Home Job-Page Search Landing-Page).each do |file| %>
+        <% klass = file == @title ? "class='active'" : nil %>
+        <li <%= klass %>><a href="<%= file %>.html"><%= file.titleize %></a></li>
+      <% end %>
+    </ul>
+    <h2>Recruiters</h2>
+    <ul>
+      <% %w(Log-In Landing-Page CV-Search Post-a-Job).each do |file| %>
+        <% klass = "Recruiter-#{file}" == @title ? "class='active'" : nil %>
+        <li <%= klass %>><a href="Recruiter-<%= file %>.html"><%= file.titleize %></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

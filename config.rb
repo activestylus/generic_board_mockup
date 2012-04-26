@@ -37,7 +37,7 @@ require 'mini_magick'
 # With no layout
 
 with_layout :layout_recruiters do
-  page "/recruiter*"
+  page "/Recruiter*"
 end
 #
 # With alternative layout

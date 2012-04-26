@@ -1,3 +1,5 @@
+<% @title = "Recruiter-Landing-Page" %>
+
 <%= partial "shared/recruiter_menu", locals: {active: "Home"} %>
 
 <div class="landing_page page-pad">
@@ -28,7 +30,7 @@
          <small>Find potential employees with the skills and experience you need.</small>
        </a>
        <div class="go-search break">
-         <input type="text" placeholder="Search" />
+         <input type="text" placeholder="Search" class="text" />
          <input type="submit" value="Go" class="btn btn-go btn-medium" />
        </div>
     </div>
@@ -65,27 +67,17 @@
     </div>
     <div class="span4">
       <div class="column">
-        <strong class="title">Testimonials</strong>
-        <em class="quotes">
-          <span class="quote left">&ldquo;</span>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
-          <span class="quote right">&rdquo;</span>
-        </em>
+        <strong class="title">Customer Feedback</strong>
+        <%= partial "shared/testimonials" %>
       </div>
     </div>
     <div class="span4">
       <strong class="title">Candidates</strong>
       <div class="go-search">
         <label for="candidate-search" class="fine">Search:</label>
-        <input type="text" placeholder="Name or email address" id="candidate-search" />
+        <input type="text" placeholder="Name or email address" id="candidate-search" class="text" />
         <input type="submit" value="Go" class="btn btn-go btn-medium" />
       </div>
-
     </div>
   </div>
-
-
-
-
-
 </div>

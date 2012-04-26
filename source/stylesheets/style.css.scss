@@ -30,7 +30,7 @@ strong.title { clear: both; display: block; margin-bottom: 2px; }
 .divider {
   &.thick { border-top: 4px solid $blue;}
 }
-.blue { @include navy; color: #fff; h2, h3 { color: #fff; } }
+.blue { @include navy; color: #fff; h2, h3, a { color: #fff; } }
 .focus { color: #f00; }
 .space { margin-left: 10px; }
 .pane {
@@ -76,6 +76,7 @@ strong.title { clear: both; display: block; margin-bottom: 2px; }
 th { text-align: left; }
 img.break { padding: 8px 0; }
 a.graphic {display: block; &:hover { text-decoration: none; }}
+a.action { color: $red; &:hover {color: #000; text-decoration: underline;}}
 h2.pane-title { background: #003; color: #fff; padding: 3px 16px; margin-bottom: 0px;
   font-size: 17px; font-weight: normal; }
 .lined-columns { .column { border-right: 1px solid #ddd; } }
@@ -142,23 +143,29 @@ table {
 // Typography
 //----------------------------------------------------------------
 h1 { margin-bottom: 10px; }
-h2 { font-size: 15px; color: #000; &.recruiters { padding-top: 8px; font-size: 15px; } }
+h2 {
+  font-size: 15px; color: #000;
+  &.recruiters { padding-top: 8px; font-size: 15px; &.nudge-down { padding-top: 36px; } }
+}
 h3 { font-size: $base_font_size; color: #000; line-height: 18px;  letter-spacing: 0.3px }
 p  { font-size: $base_font_size; margin: 0 0 18px 0; }
 a  { color: #333; }
 .quotes {
   text-indent: 24px;
   position: relative;
+  font-size: 16px;
   display: inline-block;
+  color: #666;
   .quote {
     text-indent: 0px;
+    color: #333;
     display: block; position: absolute;
     font-weight: normal; font-size: 50px;
     &.left { top: 5px; left: 0px; }
     &.right { bottom: -18px; right: 20px; }
   }
 }
-
+.quote-source {display: block; margin-top: 20px;}
 //
 //----------------------------------------------------------------
 // User Navigation
@@ -441,14 +448,17 @@ a.remove {
   border-bottom: 5px solid $blue; margin-bottom: 0px;
   li.pull-right {float: right;}
   &.inverted {
-    @include navy; padding-top: 6px; padding-left: 6px; clear: both; margin-top: 60px;
-    &> .active > a, & > .active > a:hover, .tab-content > .active, .pill-content > .active { background: #fff; }
+    @include navy; padding-top: 6px; padding-left: 6px; clear: both; margin-top: 60px; border: none;
+    &> .active > a, & > .active > a:hover, .tab-content > .active, .pill-content > .active {
+      background: #fff; color: #000; text-decoration: none;
+      span {opacity:1; color: #000; }
+    }
     a {
       margin-right: -1px; text-indent: -1px;
-      padding: 14px 0 21px; color: #fff;
-      &:hover {color: $link; text-decoration: none; }
+      padding: 14px 0px 26px 20px; color: #fff;
+      &:hover span {color: #fff; text-decoration: none; opacity: 0.7;}
     }
-    b { display: block; padding: 0px 20px; border-right: 1px solid #fff; }
+    b { display: block; border-right: 1px solid #fff; float: right; margin-left: 20px;}
     .clean b {border: none}
   }
 }
@@ -565,6 +575,7 @@ a.logoslide {
 }
 a.logoslide:hover { opacity: 0.5; }
 .jcarousel-skin-default {
+  outline: none;
   background: transparent;
   height: $slideshow_height;
   margin: 0; padding: 0 32px;
@@ -600,12 +611,15 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   &.thick { border-width: 8px; margin-bottom: 12px; }
   &.break { margin-top: 10px;}
   &.table-rule { border-width: 1px; margin: 0 0 1px 0;}
-  &.deboss {
-    border: none;
-    background: transparent url(../images/sliding/deboss.png);
-    margin: 20px 0;
-    div {background: transparent url(../images/sliding/deboss.png) right bottom; height: 6px; }
-  }
+  &.deboss { margin: 20px 0; div { height: 6px; } }
+}
+.vr {
+  &.deboss { margin: 0; div { width: 6px; height: 100%; } }
+}
+.deboss {
+  border: none;
+  background: transparent url(../images/sliding/deboss.png);
+  div {background: transparent url(../images/sliding/deboss.png) right bottom;}
 }
 #search-results {
   font-size: $base_font_size;
@@ -679,21 +693,21 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
     margin: 18px 0px;
     &.first { margin-top: 30px; }
   }
-  .toggler {
-    padding-top: 18px; cursor: pointer;
-    strong {
-      display: inline-block; padding-right: 12px;
-      @include icon('toggle-up'); background-position: right 6px;
-    }
-    &.open strong {
-      @include icon('toggle-down'); background-position: right 6px;
-    }
-  }
-  .toggler, .field, .togglee { padding-right: 12px; padding-left: 12px; }
   .text.field input { width: 94%; }
   .checkboxes label { margin-bottom: 0px; }
   .checkboxes label, a { color: #666; &:hover { color: #000; text-decoration: underline } }
 }
+.toggler {
+  padding-top: 18px; cursor: pointer;
+  strong {
+    display: inline-block; padding-right: 12px;
+    @include icon('toggle-up'); background-position: right 6px;
+  }
+  &.open strong {
+    @include icon('toggle-down'); background-position: right 6px;
+  }
+}
+.toggler, .field, .togglee { padding-right: 12px; padding-left: 12px; }
 //
 //----------------------------------------------------------------
 // Job
@@ -741,10 +755,10 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   &:hover { opacity: 0.6; }
 }
 //-------------------------------------------------------
-// Job Seekers
+// Recruiters New Account
 //-------------------------------------------------------
 a.strong { font-weight: bold; }
-#jobseeker-login {
+#recruiter-login {
   padding: 30px 0px; margin: 80px 0px 20px 0px;
   h2 { font-size: 15px; color: $blue; }
   h3 { font-size: 16px; margin-bottom: 20px; }
@@ -753,15 +767,16 @@ a.strong { font-weight: bold; }
     padding: 20px 40px 40px 40px; float: left;
     h2 {font-size: 25px}
   }
-  .create { padding-left: 25px; width: 220px; h2 {font-size: 25px;}}
-  .pitch { border-left: 1px solid #ccc; width: 160px; padding-top: 40px;}
+  .create { padding-left: 25px; width: 220px; position: relative; h2 { font-size: 25px; } }
+  .vr { height: 281px; position: absolute; top: 20px; right: 0px; opacity: 0.6;}
+  .pitch { width: 160px; padding-top: 40px;}
   .focus {padding-top: 10px;}
   .login {
     padding-right: 60px; padding-left: 60px; width: 259px;
     h2 { color: #fff; margin-bottom: 12px; font-weight: normal; }
     &.pad { padding-bottom: 50px; }
   }
-  a {color:#fff;font-weight: normal; &:hover{text-decoration: underline;}}
+  a {font-weight: normal; &:hover{text-decoration: underline;}}
 }
 .login {
   .text input { display: block; clear: both; width: 96%; margin-bottom: 22px; }
@@ -848,6 +863,7 @@ img.left {float: left; margin: 0 16px 20px 0;}
 //-------------------------------------------------------
 #recruiter-menu { padding-right: 10px; }
 .recruiters .landing_page {
+  &.page-pad { padding: 86px 50px; }
   a.graphic {
     position: relative;
     &:hover { color: #000; }
@@ -861,15 +877,17 @@ img.left {float: left; margin: 0 16px 20px 0;}
     strong.title { font-size: 29px; margin-bottom: 10px;}
     p { font-size: 14px}
   }
-  .btn-join { float: right; margin-right: 65px; }
+  .btn-join { float: right; margin-right: 80px; }
   .icons {
     small { padding-right: 50px; }
     .span3.first {padding-right: 32px;}
     a.graphic {padding-top: 83px;}
+    input.text {width: 92%; }
   }
   .lined-columns {
     strong.title { margin-bottom: 20px; }
     .go-search {width: 63%; }
+    input.text {width: 93%; }
   }
   .column { min-height: 100px;}
   .hr { margin: 50px 0; }
@@ -936,3 +954,31 @@ a.user span {
   padding-right: 24px;
 }
 a:hover img { opacity: 0.7; }
+.page-shade {
+  background: url(../images/sliding/page-shade.png) repeat-x;
+  position: absolute; left: 0px; right: 0px;
+  height: 11px; margin: 0px 0px 90px; clear: both;
+}
+//-------------------------------------------------------
+// File Nav
+//-------------------------------------------------------
+#file-nav {
+  h2 {font-size: 12px;}
+  position: absolute; left: 0px;  top: 0px;
+  width: 140px;
+  background: transparent;
+  .togglee {box-shadow: 1px 1px 4px #aaa; background: #fff; padding-bottom: 10px;}
+  .toggler {
+    color: #fff; padding-top: 10px; padding-bottom: 10px;
+    strong { background-image: url(../images/icons/toggle-down-invert.png); }
+    &.open strong { background-image: url(../images/icons/toggle-up-invert.png); }
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0px;
+    font-size: 13px;
+  }
+  li , a {display: block;}
+  a { padding: 4px 8px; &:hover{ background:$sky; text-decoration: none; } }
+  li.active a { background: $cobalt; color: #fff; }
+}

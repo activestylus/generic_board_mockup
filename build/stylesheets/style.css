@@ -32,7 +32,7 @@ strong.title {
 .blue {
   background: #000066 url(../images/patterns/lines-navy.png);
   color: #fff; }
-  .blue h2, .blue h3 {
+  .blue h2, .blue h3, .blue a {
     color: #fff; }
 
 .focus {
@@ -122,6 +122,12 @@ a.graphic {
   display: block; }
   a.graphic:hover {
     text-decoration: none; }
+
+a.action {
+  color: #cc0000; }
+  a.action:hover {
+    color: #000;
+    text-decoration: underline; }
 
 h2.pane-title {
   background: #003;
@@ -238,6 +244,8 @@ h2 {
   h2.recruiters {
     padding-top: 8px;
     font-size: 15px; }
+    h2.recruiters.nudge-down {
+      padding-top: 36px; }
 
 h3 {
   font-size: 13px;
@@ -255,9 +263,12 @@ a {
 .quotes {
   text-indent: 24px;
   position: relative;
-  display: inline-block; }
+  font-size: 16px;
+  display: inline-block;
+  color: #666; }
   .quotes .quote {
     text-indent: 0px;
+    color: #333;
     display: block;
     position: absolute;
     font-weight: normal;
@@ -268,6 +279,10 @@ a {
     .quotes .quote.right {
       bottom: -18px;
       right: 20px; }
+
+.quote-source {
+  display: block;
+  margin-top: 20px; }
 
 #head {
   background: #000066 url(../images/patterns/lines-navy.png);
@@ -691,21 +706,29 @@ a.remove {
     padding-top: 6px;
     padding-left: 6px;
     clear: both;
-    margin-top: 60px; }
+    margin-top: 60px;
+    border: none; }
     .nav-tabs.inverted > .active > a, .nav-tabs.inverted > .active > a:hover, .nav-tabs.inverted .tab-content > .active, .nav-tabs.inverted .pill-content > .active {
-      background: #fff; }
+      background: #fff;
+      color: #000;
+      text-decoration: none; }
+      .nav-tabs.inverted > .active > a span, .nav-tabs.inverted > .active > a:hover span, .nav-tabs.inverted .tab-content > .active span, .nav-tabs.inverted .pill-content > .active span {
+        opacity: 1;
+        color: #000; }
     .nav-tabs.inverted a {
       margin-right: -1px;
       text-indent: -1px;
-      padding: 14px 0 21px;
+      padding: 14px 0px 26px 20px;
       color: #fff; }
-      .nav-tabs.inverted a:hover {
-        color: #0088cc;
-        text-decoration: none; }
+      .nav-tabs.inverted a:hover span {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.7; }
     .nav-tabs.inverted b {
       display: block;
-      padding: 0px 20px;
-      border-right: 1px solid #fff; }
+      border-right: 1px solid #fff;
+      float: right;
+      margin-left: 20px; }
     .nav-tabs.inverted .clean b {
       border: none; }
 
@@ -909,6 +932,7 @@ a.logoslide:hover {
   opacity: 0.5; }
 
 .jcarousel-skin-default {
+  outline: none;
   background: transparent;
   height: 60px;
   margin: 0;
@@ -989,12 +1013,21 @@ a#slide-left {
     border-width: 1px;
     margin: 0 0 1px 0; }
   .hr.deboss {
-    border: none;
-    background: transparent url(../images/sliding/deboss.png);
     margin: 20px 0; }
     .hr.deboss div {
-      background: transparent url(../images/sliding/deboss.png) right bottom;
       height: 6px; }
+
+.vr.deboss {
+  margin: 0; }
+  .vr.deboss div {
+    width: 6px;
+    height: 100%; }
+
+.deboss {
+  border: none;
+  background: transparent url(../images/sliding/deboss.png); }
+  .deboss div {
+    background: transparent url(../images/sliding/deboss.png) right bottom; }
 
 #search-results {
   font-size: 13px; }
@@ -1089,22 +1122,6 @@ a#slide-left {
     margin: 18px 0px; }
     #sidebar .divider.first {
       margin-top: 30px; }
-  #sidebar .toggler {
-    padding-top: 18px;
-    cursor: pointer; }
-    #sidebar .toggler strong {
-      display: inline-block;
-      padding-right: 12px;
-      background-image: url(../images/icons/toggle-up.png);
-      background-repeat: no-repeat;
-      background-position: right 6px; }
-    #sidebar .toggler.open strong {
-      background-image: url(../images/icons/toggle-down.png);
-      background-repeat: no-repeat;
-      background-position: right 6px; }
-  #sidebar .toggler, #sidebar .field, #sidebar .togglee {
-    padding-right: 12px;
-    padding-left: 12px; }
   #sidebar .text.field input {
     width: 94%; }
   #sidebar .checkboxes label {
@@ -1114,6 +1131,24 @@ a#slide-left {
     #sidebar .checkboxes label:hover, #sidebar a:hover {
       color: #000;
       text-decoration: underline; }
+
+.toggler {
+  padding-top: 18px;
+  cursor: pointer; }
+  .toggler strong {
+    display: inline-block;
+    padding-right: 12px;
+    background-image: url(../images/icons/toggle-up.png);
+    background-repeat: no-repeat;
+    background-position: right 6px; }
+  .toggler.open strong {
+    background-image: url(../images/icons/toggle-down.png);
+    background-repeat: no-repeat;
+    background-position: right 6px; }
+
+.toggler, .field, .togglee {
+  padding-right: 12px;
+  padding-left: 12px; }
 
 #job h1 {
   font-size: 25px;
@@ -1199,47 +1234,52 @@ a#slide-left {
 a.strong {
   font-weight: bold; }
 
-#jobseeker-login {
+#recruiter-login {
   padding: 30px 0px;
   margin: 80px 0px 20px 0px; }
-  #jobseeker-login h2 {
+  #recruiter-login h2 {
     font-size: 15px;
     color: #000066; }
-  #jobseeker-login h3 {
+  #recruiter-login h3 {
     font-size: 16px;
     margin-bottom: 20px; }
-  #jobseeker-login div, #jobseeker-login ul, #jobseeker-login p {
+  #recruiter-login div, #recruiter-login ul, #recruiter-login p {
     font-size: 14px; }
-  #jobseeker-login .pad {
+  #recruiter-login .pad {
     padding: 20px 40px 40px 40px;
     float: left; }
-    #jobseeker-login .pad h2 {
+    #recruiter-login .pad h2 {
       font-size: 25px; }
-  #jobseeker-login .create {
+  #recruiter-login .create {
     padding-left: 25px;
-    width: 220px; }
-    #jobseeker-login .create h2 {
+    width: 220px;
+    position: relative; }
+    #recruiter-login .create h2 {
       font-size: 25px; }
-  #jobseeker-login .pitch {
-    border-left: 1px solid #ccc;
+  #recruiter-login .vr {
+    height: 281px;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    opacity: 0.6; }
+  #recruiter-login .pitch {
     width: 160px;
     padding-top: 40px; }
-  #jobseeker-login .focus {
+  #recruiter-login .focus {
     padding-top: 10px; }
-  #jobseeker-login .login {
+  #recruiter-login .login {
     padding-right: 60px;
     padding-left: 60px;
     width: 259px; }
-    #jobseeker-login .login h2 {
+    #recruiter-login .login h2 {
       color: #fff;
       margin-bottom: 12px;
       font-weight: normal; }
-    #jobseeker-login .login.pad {
+    #recruiter-login .login.pad {
       padding-bottom: 50px; }
-  #jobseeker-login a {
-    color: #fff;
+  #recruiter-login a {
     font-weight: normal; }
-    #jobseeker-login a:hover {
+    #recruiter-login a:hover {
       text-decoration: underline; }
 
 .login .text input {
@@ -1388,6 +1428,8 @@ img.left {
 #recruiter-menu {
   padding-right: 10px; }
 
+.recruiters .landing_page.page-pad {
+  padding: 86px 50px; }
 .recruiters .landing_page a.graphic {
   position: relative; }
   .recruiters .landing_page a.graphic:hover {
@@ -1411,17 +1453,21 @@ img.left {
   font-size: 14px; }
 .recruiters .landing_page .btn-join {
   float: right;
-  margin-right: 65px; }
+  margin-right: 80px; }
 .recruiters .landing_page .icons small {
   padding-right: 50px; }
 .recruiters .landing_page .icons .span3.first {
   padding-right: 32px; }
 .recruiters .landing_page .icons a.graphic {
   padding-top: 83px; }
+.recruiters .landing_page .icons input.text {
+  width: 92%; }
 .recruiters .landing_page .lined-columns strong.title {
   margin-bottom: 20px; }
 .recruiters .landing_page .lined-columns .go-search {
   width: 63%; }
+.recruiters .landing_page .lined-columns input.text {
+  width: 93%; }
 .recruiters .landing_page .column {
   min-height: 100px; }
 .recruiters .landing_page .hr {
@@ -1522,3 +1568,47 @@ a.user span {
 
 a:hover img {
   opacity: 0.7; }
+
+.page-shade {
+  background: url(../images/sliding/page-shade.png) repeat-x;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 11px;
+  margin: 0px 0px 90px;
+  clear: both; }
+
+#file-nav {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 140px;
+  background: transparent; }
+  #file-nav h2 {
+    font-size: 12px; }
+  #file-nav .togglee {
+    box-shadow: 1px 1px 4px #aaa;
+    background: #fff;
+    padding-bottom: 10px; }
+  #file-nav .toggler {
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    #file-nav .toggler strong {
+      background-image: url(../images/icons/toggle-down-invert.png); }
+    #file-nav .toggler.open strong {
+      background-image: url(../images/icons/toggle-up-invert.png); }
+  #file-nav ul {
+    list-style-type: none;
+    margin-left: 0px;
+    font-size: 13px; }
+  #file-nav li, #file-nav a {
+    display: block; }
+  #file-nav a {
+    padding: 4px 8px; }
+    #file-nav a:hover {
+      background: #e5effa;
+      text-decoration: none; }
+  #file-nav li.active a {
+    background: #0066cc;
+    color: #fff; }

@@ -6,6 +6,7 @@
 <script type="text/javascript" src="javascripts/base.js"></script>
 <script type="text/javascript" src="javascripts/application.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.mousewheel.js" ></script>
+<script type="text/javascript" src="javascripts/jquery.jcarousel.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.jscrollpane.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.clickoutside.js" ></script>
 <script type="text/javascript" src="javascripts/app.js" ></script>
@@ -163,179 +164,89 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
   </div>
 </div>
     <div id="yield">
-      <div class="row-fluid">
-  <div class="span8">
-    <ul class="nav nav-tabs plain" data-toggle="tab">
-  <li class="active first"><a href="#plain-industries" data-toggle="tab"><b>Industry</b></a></li>
-  <li><a href="#plain-locations" data-toggle="tab"><b>Location</b></a></li>
-  <li class='last'><a href="#plain-specialties" data-toggle="tab"><b>Specialism</b></a></li>
-</ul>
-<div class="tab-content plain">
-  <div class="tab-pane active" id="plain-industries">
-    <h2>Browse Jobs by Industry</h2>
+      <div class="static">
+  <div class="side col first">
+  <div id="sidebar" class="thin pad">
+    <div class="text field">
+      <label>Start new search</label>
+      <input type="text" placeholder="Keyword" />
+    </div>
+    <div class="text field">
+      <label>Location</label>
+      <input type="text" placeholder="Post code or town" />
+    </div>
+    <div class="first clear divider"></div>
+    <h3 class="toggler open"><strong>Specialisms</strong></h3>
+    <div class="togglee">
+      <ul>
+        <li><a href="#">Sales (13,960)</a></li>
+        <li><a href="#">IT & Telecoms (10,235)</a></li>
+        <li><a href="#">Financial Services (8,145)</a></li>
+        <li><a href="#">Accountancy (7,772)</a></li>
+        <li><a href="#">Engineering (7,762)</a></li>
+        <li><a href="#">Recruitment Consultancy (7,600)</a></li>
+        <li><a href="#">More Specialisms</a></li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <h3 class="toggler open"><strong>Salary</strong></h3>
+    <div class="togglee">
+      <ul>
+        <li><a href="#">up to €15,000</a></li>
+        <li><a href="#">€15,000 - €20,000</a></li>
+        <li><a href="#">€20,000 - €30,000</a></li>
+        <li><a href="#">€30,000 - €50,000</a></li>
+        <li><a href="#">€50,000+</a></li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <h3 class="toggler open"><strong>Work type</strong></h3>
+    <div class="togglee">&nbsp;
+      <ul class='checkboxes'>
+        
+        <li><input type="checkbox" id="Permanent"/><label for="Permanent">Permanent</label></li>
+        
+        <li><input type="checkbox" id="Freelance"/><label for="Freelance">Freelance</label></li>
+        
+        <li><input type="checkbox" id="Contract"/><label for="Contract">Contract</label></li>
+        
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div class="divider"></div>
+    <h3 class="toggler open"><strong>Job level</strong></h3>
+    <div class="togglee">&nbsp;
+      <ul class='checkboxes'>
+        
+        <li><input type="checkbox" id="entrylevelgraduate"/><label for="entrylevelgraduate">Entry Level Graduate</label></li>
+        
+        <li><input type="checkbox" id="experiencednonmanager"/><label for="experiencednonmanager">Experienced (non manager)</label></li>
+        
+        <li><input type="checkbox" id="management"/><label for="management">Management</label></li>
+        
+      </ul>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
 
-    <div class="row-fluid">
-      <div class="span6">
-        <ul class="column">
-          <li><a href="#">Administration/Sachbearbeitung (292)</a></li>
-          <li><a href="#">Aus und Weiterbildung (1125)</a></li>
-          <li><a href="#">Customer Service/Kundenbetreuung (22)</a></li>
-          <li><a href="#">Design & Gestaltung (2387) </a></li>
-          <li><a href="#">Geschäftsleitung/Strategisches </a></li>
-          <li><a href="#">Management (353) </a></li>
-          <li><a href="#">IT/Informationstechnologie (231) </a></li>
-          <li class="last"><a href="#">Ingenieurwesen/Entwicklung und Kon... (284) </a></li>
-        </ul>
+  <div class="main col" id="search-results">
+    <div id="job">
+      <div class="head">
+        <img src="images/thumbs/social.png" />
+<a class="mail break" href="#">Sign up for email alerts</a>
+        <div class="hr"></div>
       </div>
-
-      <div class="span6">
-        <ul class="column">
-          <li><a href="#">Instandhaltung (942)</a></li>
-          <li><a href="#">Logistik und Transport (124)</a></li>
-          <li><a href="#">Marketing (338)</a></li>
-          <li><a href="#">Medizin und Gesundheit (355)</a></li>
-          <li><a href="#">Naturwissenschaftliche Forschung  (444)</a></li>
-          <li><a href="#">Personalwesen (435)</a></li>
-          <li><a href="#">Projektmanagement (86)</a></li>
-          <li><a href="#">Qualitätswesen (341)</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="tab-pane" id="plain-locations">
-    <h2>Browse Jobs by Location (TO-DO)</h2>
-  </div>
-
-  <div class="tab-pane" id="plain-specialties">
-    <h2>Browse Jobs by Specialism (TO-DO)</h2>
-  </div>
-</div>
-  </div>
-  <div class="span4">
-    <a class="mail break" href="#">Sign up for email alerts</a>
-    <div id="post-a-job" class="pane bordered">
-      <h2>Post a Job</h2>
-      <p>Quick and easy cost-effective recruitment<br />
-      <strong>Call us now at 0844 5619233 to find<br />
-      out more.</strong></p>
-      <div class="credit-cards">
-  <span class="icon visa">Visa</span>
-  <span class="icon mastercard">MasterCard</span>
-  <span class="icon maestro">Maestro</span>
-</div>
-      <div class="clear tall"></div>
-      <input class="btn btn-primary clear" name="commit" type="submit" value="Post a job" />
-      <a href="#" class="space strong">Recruiter login</a>
-    </div>
-  </div>
+      <div id="subscribe" class="clear pane pad">
+  <form>
+    <label>Email me jobs like these</label>
+    <input type="text" />
+    <input type="submit" value="Go" class="btn btn-secondary" />
+  </form>
+  <div class="clear"></div>
 </div>
 
-<div class="row-fluid home-row2">
-  <div class="span4">
-    <div class="pane bordered scroll">
-      <h2>Featured Jobs</h2>
-
-        <ul class="column spaced scroll-pane" id="featured-jobs">
-          
-          <li><small>Thousands of quality jobs over €50K in Europe. Find yours today!</small></li>
-          <li>
-            <h3><a href="#">Web Solution Business Manager</a></h3><a href="#">London, €38,000.00 - €75,000.00</a>
-          </li>
-          <li>
-            <h3><a href="#">Senior Java Developer</a></h3><a href="#">London,
-            €55,000.00 - €75,000.00</a>
-          </li>
-          <li class="last">
-            <h3><a href="#">Marketing Executive - German Speaking</a></h3><a href=
-            "#">London, €60,000.00 -
-            €75,000.00</a>
-          </li>
-          
-          <li><small>Thousands of quality jobs over €50K in Europe. Find yours today!</small></li>
-          <li>
-            <h3><a href="#">Web Solution Business Manager</a></h3><a href="#">London, €38,000.00 - €75,000.00</a>
-          </li>
-          <li>
-            <h3><a href="#">Senior Java Developer</a></h3><a href="#">London,
-            €55,000.00 - €75,000.00</a>
-          </li>
-          <li class="last">
-            <h3><a href="#">Marketing Executive - German Speaking</a></h3><a href=
-            "#">London, €60,000.00 -
-            €75,000.00</a>
-          </li>
-          
-          <li><small>Thousands of quality jobs over €50K in Europe. Find yours today!</small></li>
-          <li>
-            <h3><a href="#">Web Solution Business Manager</a></h3><a href="#">London, €38,000.00 - €75,000.00</a>
-          </li>
-          <li>
-            <h3><a href="#">Senior Java Developer</a></h3><a href="#">London,
-            €55,000.00 - €75,000.00</a>
-          </li>
-          <li class="last">
-            <h3><a href="#">Marketing Executive - German Speaking</a></h3><a href=
-            "#">London, €60,000.00 -
-            €75,000.00</a>
-          </li>
-          
-        </ul>
-        <div class="hoverscroll up"></div>
-        <div class="hoverscroll down"></div>
-
-    </div>
-  </div>
-  <div class="span4">
-    <div class="pane bordered">
-      <h2>Upload your CV</h2>
-      <img src="images/thumbs/girl-on-laptop.png" class="left" />
-      <p>Let employees find you - minimize the search for jobs that best fit you by
-      setting your CV status to "Public"</p>
-      <img src="images/thumbs/convo.png" class="left" />
-    </div>
-  </div>
-  <div class="span4">
-    <div class="pane bordered recommended boards">
-      <h2>Recommended Job boards</h2>
-      <p>Expand your reach by posting jobs on multiple job boards, recommended by us. <span class='powered'>Powered by 1000jobboersen.de</span></p>
-      
-        
-          <div class="logo" style="background-image:url(images/board_logos/01.png)">
-            1
-          </div>
-        
-          <div class="logo" style="background-image:url(images/board_logos/02.png)">
-            2
-          </div>
-        
-          <div class="logo" style="background-image:url(images/board_logos/03.png)">
-            3
-          </div>
-        
-      
-        
-          <div class="logo" style="background-image:url(images/board_logos/04.png)">
-            4
-          </div>
-        
-          <div class="logo" style="background-image:url(images/board_logos/05.png)">
-            5
-          </div>
-        
-          <div class="logo" style="background-image:url(images/board_logos/06.png)">
-            6
-          </div>
-        
-      
-    </div>
-  </div>
-</div>
-
-<div class="pane shadowed">
-  <h2 class="recruiters">Featured Recruiters</h2>
-  <div id="slideshow" class="jcarousel-skin-default">
+      <div id="slideshow" class="jcarousel-skin-default">
   <div id="featured_recruiters" class="jcarousel">
     <ul>
       
@@ -375,15 +286,140 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         </a>
       </li>
       
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/125.png); width:125px;" href="#">
+          125
+        </a>
+      </li>
+      
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/123.png); width:123px;" href="#">
+          123
+        </a>
+      </li>
+      
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/106.png); width:106px;" href="#">
+          106
+        </a>
+      </li>
+      
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/117.png); width:117px;" href="#">
+          117
+        </a>
+      </li>
+      
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/126.png); width:126px;" href="#">
+          126
+        </a>
+      </li>
+      
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/127.png); width:127px;" href="#">
+          127
+        </a>
+      </li>
+      
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/128.png); width:128px;" href="#">
+          128
+        </a>
+      </li>
+      
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/129.png); width:129px;" href="#">
+          129
+        </a>
+      </li>
+      
+      <li>
+        <a class="logoslide" style="background-image:url(images/logos/130.png); width:130px;" href="#">
+          130
+        </a>
+      </li>
+      
     </ul>
     <a id="slide-left" href="#">«</a>
     <a id="slide-right" href="#">»</a>
   </div>
 </div>
+      <div class="hr break thin"></div>
+      <h1>Web Developer - HTML/CSS - London</h1>
+      <dl>
+        <dt>Recruiter</dt><dd>Source</dd>
+        <dt>Posted</dt><dd>22 February 2012</dd>
+        <dt>Ref</dt><dd>ZPGRAD</dd>
+        <dt>Contact</dt><dd>Subair Parvez</dd>
+        <dt>Location</dt><dd>London</dd>
+        <dt>Sector</dt><dd>Agency - Digital Agency</dd>
+        <dt>Function</dt><dd>Technical/Development</dd>
+        <dt>Role</dt><dd>Graduate/Entry Level</dd>
+        <dt>Specialism</dt><dd>B2B</dd>
+        <dt>Hours</dt><dd>Full Time</dd>
+        <dt>Contract Type</dt><dd>Permanent</dd>
+        <dt>Salary</dt><dd>£20000 - £25000 per annum</dd>
+      </dl>
+      <div class="hr dotted thin"></div>
+      <h2>Further Information</h2>
+      <p>Web Developer - HTML / CSS - London<br/> An excellent opportunity has arisen for a Web developer to join a specialist digital start up. You will already have strong skills in HTML, CSS, and some javascript. Also any experience of PHP or Ruby will be ideal. The Web Developer will be given full training on using Ruby on Rails technology. Ideally you will have a strong grasp of web technology’s such as html, css, javascript either from previous experience or your degree.</p>
+
+      <p>The ideal developer will have a Computer Science or equivalent background and be keen to learn Ruby as their main language. You will be joing a specialist organisation who have an involvement in mobile applications and platforms. </p>
+
+      <p>Follow me on twitter for industry news and job updates - @zubairparvez </p>
+
+      <p>Please send your CV for immediate review.</p>
+
+      <div class="submit">
+        <input value="Apply" type="submit" class="submit btn btn-success btn-large" />
+        <input value="Save" type="submit" class="submit btn btn-large" />
+      </div>
+      <div class="clear tall"></div>
+      <div class="hr"></div>
+    </div>
+  </div>
 </div>
     </div>
   </div>
-  <div id="footer">
+  <div id="file-nav">
+  <h3 class="toggler open"><strong>Pages</strong></h2>
+  <div class="togglee">
+    <h2>Candidates</h2>
+    <ul>
+      
+        
+        <li ><a href="Home.html">Home</a></li>
+      
+        
+        <li class='active'><a href="Job-Page.html">Job Page</a></li>
+      
+        
+        <li ><a href="Search.html">Search</a></li>
+      
+        
+        <li ><a href="Landing-Page.html">Landing Page</a></li>
+      
+    </ul>
+    <h2>Recruiters</h2>
+    <ul>
+      
+        
+        <li ><a href="Recruiter-Log-In.html">Log In</a></li>
+      
+        
+        <li ><a href="Recruiter-Landing-Page.html">Landing Page</a></li>
+      
+        
+        <li ><a href="Recruiter-CV-Search.html">Cv Search</a></li>
+      
+        
+        <li ><a href="Recruiter-Post-a-Job.html">Post A Job</a></li>
+      
+    </ul>
+  </div>
+
+</div><div id="footer">
   <div class="container">
     <div class="cell first">
       <h2>Job Seekers</h2>

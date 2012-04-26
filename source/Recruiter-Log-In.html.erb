@@ -1,7 +1,8 @@
-<div class="clear"></div>
-<div id="jobseeker-login">
-  <div class="row-fluid pane bleed">
+<% @title = "Recruiter-Log-In" %>
 
+<div class="clear"></div>
+<div id="recruiter-login">
+  <div class="row-fluid pane bleed" style="margin-bottom:45px;">
     <div class="pad create">
       <h2>Create an account</h2>
       <h3>Quick, Easy and Efficient</h3>
@@ -9,8 +10,8 @@
         <strong>Quick and easy cost-effective recruitment.</strong> For more details, call 0844 5619233
       </p>
       <%= partial 'shared/creditcards' %>
+      <div class="vr deboss pull-right"><div>&nbsp;</div></div>
     </div>
-
 
     <div class="pitch pad">
       <strong class='focus'>3 reasons to join:</strong>
@@ -23,7 +24,6 @@
       <input value="Post a job" type="submit" class="btn btn-success btn-large"/>
     </div>
 
-
     <div class="login blue pad">
       <h2>Existing Recruiter</h2>
       <p>Enter your email address and password below to access your account.</p>
@@ -35,10 +35,23 @@
       </div>
       <div class="clear"></div>
     </div>
-
-
   </div>
-  <div class="hr thin dotted lite"></div>
-  <h2 class="recruiters">Featured Recruiters</h2>
+
+  <div class="clear page-shade">&nbsp;</div>
+
+  <h2 class="recruiters nudge-down">Featured Recruiters</h2>
   <%= partial "shared/featured_recruiters" %>
+  <div class="hr deboss white"><div>&nbsp;</div></div>
+  <div class="row-fluid">
+    <div class="span5">
+      <h2>Why Us</h2>
+      <p>Our aim is to help job seekers find the best jobs and recruiters find the best candidates by delivering inspirational and innovative digital recruitment.</p>
+      <a href="#" class="action">Request a call back</a> &nbsp; | &nbsp;  <a href="#" class="action">Email our sales team</a>
+    </div>
+    <div class="span2">&nbsp;</div>
+    <div class="span5">
+      <h2>Customer Feedback</h2>
+      <%= partial "shared/testimonials" %>
+    </div>
+  </div>
 </div>
