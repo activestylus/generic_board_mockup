@@ -1198,7 +1198,7 @@ a#slide-left {
   #account .info {
     padding-left: 30px; }
   #account .section {
-    background-position: 534px center;
+    background-position: 539px center;
     border-top: 1px dotted #666;
     padding: 23px 0px; }
     #account .section h2 {
@@ -1217,7 +1217,8 @@ a#slide-left {
       background-repeat: no-repeat; }
     #account .section.email {
       background-image: url(../images/icons/gray-email.png);
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      background-position: 546px center; }
   #account #cv-download {
     position: absolute;
     top: 110px;

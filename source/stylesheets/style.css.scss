@@ -737,14 +737,14 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   }
   .info { padding-left: 30px; }
   .section {
-    background-position: 534px center;
+    background-position: 539px center;
     border-top: 1px dotted #666; padding: 23px 0px;
     h2 { padding: 0 0 10px 0; line-height: 14px; }
     p {margin-bottom: 0px; }
     &.cv { @include icon('gray-cv'); }
     &.searches { @include icon('gray-searches'); }
     &.applications { @include icon('gray-applications'); }
-    &.email { @include icon('gray-email'); }
+    &.email { @include icon('gray-email'); background-position: 546px center;}
   }
   #cv-download { position: absolute; top: 110px; right: 0px; }
 }
