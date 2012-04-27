@@ -2,6 +2,30 @@ function changeUrl() {
   document.location.href = document.getElementById('choose_language').value;
 }
 
+var FileNav = {
+  init: function() {
+    $('#head').bind('inview', function (event, visible, topOrBottomOrBoth) {
+      if (visible == true) {
+        // element is now visible in the viewport
+        if (topOrBottomOrBoth == 'top')
+        {
+          // top part of element is visible
+        }
+        else if (topOrBottomOrBoth == 'bottom')
+        {
+          // bottom part of element is visible
+        }
+        else
+        {
+          $('#file-nav').removeClass('light');// whole part of element is visible
+        }
+      } else {
+        $('#file-nav').addClass('light');// element has gone out of viewport
+      }
+    });
+  }
+};
+
 var SlideShow = {
   init: function() {
     var logos = $('#slideshow');
@@ -63,7 +87,7 @@ var DropDownMenu = {
     //   $(this).find('.dropdown-menu').slideUp();
     //   $(this).find('.dropdown-toggle').toggleClass('open');
     // });
-    $("li.dropdown").bind( "clickoutside", function(event){
+    $(".dropdown").bind( "clickoutside", function(event){
       $(this).find('.dropdown-menu').slideUp();
       $(this).find('.dropdown-toggle').toggleClass('open');
     });
@@ -106,6 +130,7 @@ $(function() {
   SlideShow.init();
   AdvancedSearch.init();
   DropDownMenu.init();
+  FileNav.init();
   HoverScroll.init();
   Selections.init();
   Toggler.init();

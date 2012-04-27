@@ -963,15 +963,21 @@ a:hover img { opacity: 0.7; }
 // File Nav
 //-------------------------------------------------------
 #file-nav {
-  h2 {font-size: 12px;}
-  position: absolute; left: 0px;  top: 0px;
-  width: 140px;
   background: transparent;
-  .togglee {box-shadow: 1px 1px 4px #aaa; background: #fff; padding-bottom: 10px;}
+  position: fixed; left: 0px;  top: 0px;
+  width: 140px;
+  h2 {font-size: 12px;}
+  .togglee { background: #fff; padding-bottom: 10px; box-shadow: 1px 1px 4px #aaa;}
   .toggler {
-    color: #fff; padding-top: 10px; padding-bottom: 10px;
+    @include navy; color: #fff;
+    width: 50px; padding-top: 10px; padding-bottom: 10px;
     strong { background-image: url(../images/icons/toggle-down-invert.png); }
     &.open strong { background-image: url(../images/icons/toggle-up-invert.png); }
+  }
+  &.light .toggler {
+    background: $eggshell; color: $link;
+    strong { background-image: url(../images/icons/toggle-down.png); }
+    &.open strong { background-image: url(../images/icons/toggle-up.png); }
   }
   ul {
     list-style-type: none;
