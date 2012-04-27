@@ -30,7 +30,7 @@ strong.title {
   border-top: 4px solid #000066; }
 
 .blue {
-  background: #000066 url(../images/patterns/lines-navy.png);
+  background: #0b1437 url(../images/patterns/lines-navy.png);
   color: #fff; }
   .blue h2, .blue h3, .blue a {
     color: #fff; }
@@ -285,7 +285,7 @@ a {
   margin-top: 20px; }
 
 #head {
-  background: #000066 url(../images/patterns/lines-navy.png);
+  background: #0b1437 url(../images/patterns/lines-navy.png);
   margin-bottom: 34px;
   height: 39px; }
   #head .navbar {
@@ -450,7 +450,7 @@ a {
     margin: 0 0 0 10px; }
 
 #search {
-  background: #000066 url(../images/patterns/lines-navy.png);
+  background: #0b1437 url(../images/patterns/lines-navy.png);
   border-radius: 2px;
   font-weight: bold;
   padding-top: 12px;
@@ -702,7 +702,7 @@ a.remove {
   .nav-tabs li.pull-right {
     float: right; }
   .nav-tabs.inverted {
-    background: #000066 url(../images/patterns/lines-navy.png);
+    background: #0b1437 url(../images/patterns/lines-navy.png);
     padding-top: 6px;
     padding-left: 6px;
     clear: both;

@@ -1,5 +1,5 @@
 @mixin navy {
-  background: $blue url(../images/patterns/lines-navy.png);
+  background: #0B1437 url(../images/patterns/lines-navy.png);
 }
 @mixin icon($filename,$hover:false) {
   background-image: url(../images/icons/#{$filename}.png);
