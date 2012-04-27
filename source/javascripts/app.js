@@ -4,6 +4,15 @@ function changeUrl() {
 
 var FileNav = {
   init: function() {
+    var target = $("#file-nav .togglee");
+
+    $("#file-nav").bind( "clickoutside", function(event){
+      if (target.is(":visible")) {
+        target.hide('slide');
+        $("#file-nav .toggler").toggleClass('open');
+      }
+    });
+
     $('#head').bind('inview', function (event, visible, topOrBottomOrBoth) {
       if (visible == true) {
         // element is now visible in the viewport
@@ -83,10 +92,6 @@ var AdvancedSearch = {
 
 var DropDownMenu = {
   init: function() {
-    // $("li.dropdown").bind( "clickoutside", function(event){
-    //   $(this).find('.dropdown-menu').slideUp();
-    //   $(this).find('.dropdown-toggle').toggleClass('open');
-    // });
     $(".dropdown").bind( "clickoutside", function(event){
       $(this).find('.dropdown-menu').slideUp();
       $(this).find('.dropdown-toggle').toggleClass('open');

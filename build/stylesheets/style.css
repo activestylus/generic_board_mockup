@@ -1586,10 +1586,11 @@ a:hover img {
   top: 0px;
   width: 140px; }
   #file-nav h2 {
-    font-size: 12px; }
+    font-size: 12px;
+    padding-left: 10px; }
   #file-nav .togglee {
     background: #fff;
-    padding-bottom: 10px;
+    padding: 0 0 10px;
     box-shadow: 1px 1px 4px #aaa; }
   #file-nav .toggler {
     background: #0b1437 url(../images/patterns/lines-navy.png);

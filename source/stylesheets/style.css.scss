@@ -966,8 +966,8 @@ a:hover img { opacity: 0.7; }
   background: transparent;
   position: fixed; left: 0px;  top: 0px;
   width: 140px;
-  h2 {font-size: 12px;}
-  .togglee { background: #fff; padding-bottom: 10px; box-shadow: 1px 1px 4px #aaa;}
+  h2 {font-size: 12px; padding-left: 10px;}
+  .togglee { background: #fff; padding: 0 0 10px; box-shadow: 1px 1px 4px #aaa;}
   .toggler {
     @include navy; color: #fff;
     width: 50px; padding-top: 10px; padding-bottom: 10px;
