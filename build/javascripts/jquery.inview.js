@@ -1,0 +1,5 @@
+/**
+ * author Remy Sharp
+ * url http://remysharp.com/2009/01/26/element-in-view-event-plugin/
+ */
+(function(a){function b(){var b=window.innerHeight,c=document.compatMode;if(c||!a.support.boxModel)b=c=="CSS1Compat"?document.documentElement.clientHeight:document.body.clientHeight;return b}function c(){var c=b(),d=document.documentElement.scrollTop?document.documentElement.scrollTop:document.body.scrollTop,e=[];a.each(a.cache,function(){this.events&&this.events.inview&&e.push(this.handle.elem)}),e.length&&a(e).each(function(){var b=a(this),e=b.offset().top,f=b.height(),g=b.data("inview")||!1;if(d>e+f||d+c<e)g&&(b.data("inview",!1),b.trigger("inview",[!1]));else if(d<e+f){var h=d>e?"bottom":d+c<e+f?"top":"both";if(!g||g!==h)b.data("inview",h),b.trigger("inview",[!0,h])}})}a(window).scroll(c),a(window).resize(c),a(window).click(c),a(function(){c()})})(jQuery)

@@ -1580,25 +1580,34 @@ a:hover img {
   clear: both; }
 
 #file-nav {
-  position: absolute;
+  background: transparent;
+  position: fixed;
   left: 0px;
   top: 0px;
-  width: 140px;
-  background: transparent; }
+  width: 140px; }
   #file-nav h2 {
     font-size: 12px; }
   #file-nav .togglee {
-    box-shadow: 1px 1px 4px #aaa;
     background: #fff;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    box-shadow: 1px 1px 4px #aaa; }
   #file-nav .toggler {
+    background: #0b1437 url(../images/patterns/lines-navy.png);
     color: #fff;
+    width: 50px;
     padding-top: 10px;
     padding-bottom: 10px; }
     #file-nav .toggler strong {
       background-image: url(../images/icons/toggle-down-invert.png); }
     #file-nav .toggler.open strong {
       background-image: url(../images/icons/toggle-up-invert.png); }
+  #file-nav.light .toggler {
+    background: #f7f7f7;
+    color: #0088cc; }
+    #file-nav.light .toggler strong {
+      background-image: url(../images/icons/toggle-down.png); }
+    #file-nav.light .toggler.open strong {
+      background-image: url(../images/icons/toggle-up.png); }
   #file-nav ul {
     list-style-type: none;
     margin-left: 0px;
