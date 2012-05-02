@@ -1,0 +1,37 @@
+job:
+  001:
+    - Account Director
+    - Account Executive
+    - Account Manager
+    - Animation
+    - Arts & Entertainment
+    - Artworker
+    - CAD Design
+    - Copywriter
+    - Creative Director
+    - Desktop Publishing
+    - Editorial
+    - Events Design
+  002:
+    - Fashion Design
+    - Games
+    - Graphic Design
+    - iGaming
+    - Interior Design
+    - Journalism
+    - Media Sales
+    - Music Industry
+    - New Media
+    - Photography
+    - Planner/ Buyer
+    - Print Room
+  003:
+    - Product Design
+    - Project Manager
+    - Publishing
+    - Radio
+    - Researcher
+    - Search - SEO & PPC
+    - Television
+    - Web Design
+    - Other Media & Creative

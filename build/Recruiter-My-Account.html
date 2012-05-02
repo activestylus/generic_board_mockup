@@ -20,7 +20,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
 </script>
 
 </head>
-<body class='recruiters '>
+<body class='recruiters logged'>
   <div id="head">
   <div class="navbar">
     <div class="navbar-inner">
@@ -38,7 +38,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
     <div class="navbar" id="menu">
   <div class="navbar-inner">
     <ul class="nav">
-      <li class="clean"><a href="#" class="brand">logo<b>.</b></a></li>
+      <li class="clean first"><a href="#" class="brand">logo<b>.</b></a></li>
       <li class="active"><a href="#">Home</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Find a job</a>
@@ -103,111 +103,92 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
   </div>
 </div>
     <div id="yield">
-      
-<div class="clear"></div>
-<ul id="recruiter-menu" class="nav nav-tabs inverted">
+      <div class="clear"></div>
+<ul id="recruiter-menu" class="nav nav-tabs plain-text inverted">
   
     
-    <li class="active clean"><a href="#"><span>Home</span><b>&nbsp;</b></a></li>
+    
+    <li class=""><a href="Recruiter-Profile.html"><span>Profile</span><b>&nbsp;</b></a></li>
   
     
-    <li class=""><a href="#"><span>Post a job</span><b>&nbsp;</b></a></li>
+    
+    <li class=""><a href="Recruiter-Post-a-job.html"><span>Post a job</span><b>&nbsp;</b></a></li>
   
     
-    <li class=""><a href="#"><span>CV Search</span><b>&nbsp;</b></a></li>
+    
+    <li class=""><a href="Recruiter-CV-Search.html"><span>CV Search</span><b>&nbsp;</b></a></li>
   
     
-    <li class="clean"><a href="#"><span>Your candidates</span><b>&nbsp;</b></a></li>
+    
+    <li class=""><a href="Recruiter-Your-candidates.html"><span>Your candidates</span><b>&nbsp;</b></a></li>
   
     
-    <li class="pull-right clean"><a href="#"><span>My Account</span><b>&nbsp;</b></a></li>
+    
+    <li class="active clean"><a href="Recruiter-My-Account.html"><span>My Account</span><b>&nbsp;</b></a></li>
   
 </ul>
 
-<div class="landing_page page-pad">
-  <div class="row-fluid">
-    <div class="span5">
-      <a href="#" class="graphic" id="recruiter-post">
-        <img src="images/icons/recruiter-post.png" />
-        <strong class="title">Post a Job</strong>
-        <small>Advertise your job vacancy and get quality applications the same day</small>
-      </a>
+<div class="page pad" id="account-details">
+
+  <div class="main col fat">
+    <h1>Account Details</h1>
+    <p class="note">You have an Administrator account. This means you are able to create and edit user accounts and set access privileges for others.</p>
+
+    <h2>Profile: Darren Jones</h2>
+    <div class="block">
+      <dl class="horizontal">
+        <dt>Email</dt>
+        <dd>darren@born-creative.co.uk</dd>
+        <dt>Password</dt>
+        <dd>********</dd>
+        <dt>Phone</dt>
+        <dd>02071839115</dd>
+      </dl>
+      <a href="#" class="btn btn-go">Change Settings</a>
     </div>
-    <div class="span6 splash" id="recruiter-savings">
-      <strong class="title">Multi-Package savings</strong>
-      <p>Buy credits to post your jobs and search CV’s. <br/>
-        Buy online, or call your account manager<br/>
-        on <strong>0845 241 9293</strong></p>
-      <input type="submit" value="Buy Credits" class="btn btn-join" />
+    <div class="hr deboss white"><div>&nbsp;</div></div>
+
+    <h2>Account Users <small>You have 1 user(s) in your organization</small></h2>
+    <table cellspacing="0" cellpadding="0" border="0" class="pale">
+      <tr>
+        <th>Name</th>
+        <th>User type</th>
+        <th>Job posting status</th>
+        <th>CV Search</th>
+        <th>Applications</th>
+      </tr>
+      <tr>
+        <td>D Jones</td>
+        <td>Administrator</td>
+        <td>Active</td>
+        <td>Active</td>
+        <td>6</td>
+      </tr>
+    </table>
+    <a href="#" class="btn btn-go pull-right">Invite new user</a>
+    <br>
+    <br>
+
+    <div class="hr deboss white"><div>&nbsp;</div></div>
+
+    <h2>View activity Reports</h2>
+    <div class="block" id="view-reports">
+      <p class="note">View activity on your accounts activity and credit spend.</p>
+      <a href="#" class="btn btn-go">View reports</a>
     </div>
+
   </div>
 
-  <div class="hr deboss white"><div>&nbsp;</div></div>
+  <div class="side col buy credits">
+      <h2>Buy Credits</h2>
+      <p>Buy online, or call your account manager on 0845 241 9293</p>
+      <a href="#" class="btn btn-join btn-medium">Buy Credits</a>
 
-  <div class="row-fluid icons">
-    <div href="#" class="span3 first">
-       <a href="#" class="graphic">
-         <img src="images/icons/recruiter-cv-search.png" />
-         <strong class="title">CV Search</strong>
-         <small>Find potential employees with the skills and experience you need.</small>
-       </a>
-       <div class="go-search break">
-         <input type="text" placeholder="Search" class="text" />
-         <input type="submit" value="Go" class="btn btn-go btn-medium" />
-       </div>
-    </div>
-    <div class="span3">
-       <a href="#" class="graphic">
-         <img src="images/icons/recruiter-candidates.png" />
-         <strong class="title">Candidates</strong>
-         <small>Candidates who have applied for your jobs</small>
-       </a>
-    </div>
-    <div class="span3">
-       <a href="#" class="graphic">
-         <img src="images/icons/recruiter-packages.png" />
-         <strong class="title">Packages</strong>
-         <small>Buy credits for job postings</small>
-       </a>
-    </div>
-    <div class="span2">
-       <a href="#" class="graphic">
-         <img src="images/icons/recruiter-manage.png" />
-         <strong class="title">Manage <br/>Account</strong>
-       </a>
-    </div>
   </div>
 
-  <div class="hr deboss white"><div>&nbsp;</div></div>
 
-  <div class="row-fluid lined-columns">
-    <div class="span4 first">
-      <div class="column">
-        <strong class="title">Speak to an Expert</strong>
-        <strong id="recruiter-call">Call 0800 231 6785</strong>
-      </div>
-    </div>
-    <div class="span4">
-      <div class="column">
-        <strong class="title">Customer Feedback</strong>
-        <em class="quotes">
-  <span class="quote left">&ldquo;</span>
-  We chose Whitelabel jobboards because
-  they are the recognised experts in job board delivery and candidate engagement provider of trusted job board software and services.
-  <span class="quote right">&rdquo;</span>
-</em>
-<small class="quote-source">Hans Schroeder (CEO) Talents in Berlin</small>
-      </div>
-    </div>
-    <div class="span4">
-      <strong class="title">Candidates</strong>
-      <div class="go-search">
-        <label for="candidate-search" class="fine">Search:</label>
-        <input type="text" placeholder="Name or email address" id="candidate-search" class="text" />
-        <input type="submit" value="Go" class="btn btn-go btn-medium" />
-      </div>
-    </div>
-  </div>
+
+<div class="clear"></div>
 </div>
     </div>
   </div>
@@ -237,13 +218,19 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li ><a href="Recruiter-Log-In.html">Log In</a></li>
       
         
-        <li class='active'><a href="Recruiter-Landing-Page.html">Landing Page</a></li>
+        <li ><a href="Recruiter-Profile.html">Profile</a></li>
+      
+        
+        <li ><a href="Recruiter-Post-a-Job.html">Post A Job</a></li>
       
         
         <li ><a href="Recruiter-CV-Search.html">Cv Search</a></li>
       
         
-        <li ><a href="Recruiter-Post-a-Job.html">Post A Job</a></li>
+        <li ><a href="Recruiter-Your-candidates.html">Your Candidates</a></li>
+      
+        
+        <li class='active'><a href="Recruiter-My-Account.html">My Account</a></li>
       
     </ul>
   </div>

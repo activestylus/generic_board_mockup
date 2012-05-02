@@ -1,0 +1,65 @@
+<% @title, @bodyclass = "Recruiter-My-Account" %>
+<%= partial "shared/recruiter_menu", locals: {active: "My Account"} %>
+
+<div class="page pad" id="account-details">
+
+  <div class="main col fat">
+    <h1>Account Details</h1>
+    <p class="note">You have an Administrator account. This means you are able to create and edit user accounts and set access privileges for others.</p>
+
+    <h2>Profile: Darren Jones</h2>
+    <div class="block">
+      <dl class="horizontal">
+        <dt>Email</dt>
+        <dd>darren@born-creative.co.uk</dd>
+        <dt>Password</dt>
+        <dd>********</dd>
+        <dt>Phone</dt>
+        <dd>02071839115</dd>
+      </dl>
+      <a href="#" class="btn btn-go">Change Settings</a>
+    </div>
+    <div class="hr deboss white"><div>&nbsp;</div></div>
+
+    <h2>Account Users <small>You have 1 user(s) in your organization</small></h2>
+    <table cellspacing="0" cellpadding="0" border="0" class="pale">
+      <tr>
+        <th>Name</th>
+        <th>User type</th>
+        <th>Job posting status</th>
+        <th>CV Search</th>
+        <th>Applications</th>
+      </tr>
+      <tr>
+        <td>D Jones</td>
+        <td>Administrator</td>
+        <td>Active</td>
+        <td>Active</td>
+        <td>6</td>
+      </tr>
+    </table>
+    <a href="#" class="btn btn-go pull-right">Invite new user</a>
+    <br>
+    <br>
+
+    <div class="hr deboss white"><div>&nbsp;</div></div>
+
+    <h2>View activity Reports</h2>
+    <div class="block" id="view-reports">
+      <p class="note">View activity on your accounts activity and credit spend.</p>
+      <a href="#" class="btn btn-go">View reports</a>
+    </div>
+
+  </div>
+
+  <div class="side col buy credits">
+      <h2>Buy Credits</h2>
+      <p>Buy online, or call your account manager on 0845 241 9293</p>
+      <a href="#" class="btn btn-join btn-medium">Buy Credits</a>
+
+  </div>
+
+
+
+<div class="clear"></div>
+</div>

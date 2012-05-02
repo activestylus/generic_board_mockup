@@ -12,6 +12,7 @@ $navy: #282751;
 $royal_blue: #333e80;
 $eggshell: #f7f7f7;
 $red: #cc0000;
+$rust: #d93f3f;
 $link: #0088CC;
 $cobalt: #06c;
 $sky: #e5effa;
@@ -82,15 +83,19 @@ h2.pane-title { background: #003; color: #fff; padding: 3px 16px; margin-bottom:
 .lined-columns { .column { border-right: 1px solid #ddd; } }
 .span4 .column { margin-right: 4px; }
 .thin-panes .pane { padding: 18px; }
-.page-pad { padding: 40px 0; }
-.page-pad-y { padding: 40px 0; }
-.page-pad-x { padding: 0 40px; }
-.page-a4-y { padding: 40px 0 70px; }
+.page {
+  background: #fff;
+  &.pad { padding: 40px 0; }
+  &.pad-all {padding: 40px 20px;}
+  &.pad-y { padding: 40px 0; }
+  &.pad-x { padding: 0 40px; }
+  &.a4-y { padding: 40px 0 70px; }
+}
 //
 //-------------------------------------------------------
 // Tables
 //-------------------------------------------------------
-td.check {padding-right: 0px; width: 27px;}
+td.check {padding-right: 0px; width: 13px;}
 th.check {
   input[type="image"], input[type="checkbox"], input[type="radio"]  {margin-top: -6px}
 }
@@ -110,6 +115,7 @@ table {
   &.dotted {
     td {font-size: 14px; border-bottom: 1px dotted #ddd; padding: 10px;}
   }
+  &.pale { margin-top: 2px; th {background: $eggshell;} th,td {padding: 10px}}
   &.data {
     border-top: 1px solid #000;
     td.first, th.first {padding-left: 0px;}
@@ -142,14 +148,20 @@ table {
 //----------------------------------------------------------------
 // Typography
 //----------------------------------------------------------------
-h1 { margin-bottom: 10px; }
+h1 { margin-bottom: 10px; color: $blue}
 h2 {
   font-size: 15px; color: #000;
   &.recruiters { padding-top: 8px; font-size: 15px; &.nudge-down { padding-top: 36px; } }
+  small {font-size: 14px; font-weight: normal; display: inline-block; text-indent: 12px}
 }
 h3 { font-size: $base_font_size; color: #000; line-height: 18px;  letter-spacing: 0.3px }
-p  { font-size: $base_font_size; margin: 0 0 18px 0; }
+p  { font-size: $base_font_size; margin: 0 0 18px 0; &.note {color: #666; font-size: 14px;}}
 a  { color: #333; }
+dl.horizontal {
+  display: block; clear: both;
+  dd, dt {display: block; float: left;}
+  dt {font-weight: normal;}
+}
 .quotes {
   text-indent: 24px;
   position: relative;
@@ -298,8 +310,10 @@ a  { color: #333; }
   .pad { padding: 20px 20px 6px; }
   a, a:hover { color:#fff; }
   a.add {
-    position: relative; left: -55px;
+    position: relative; left: -55px; float: right;
     font-size: $base_font_size; top: 4px;
+    background-position: right center;
+    padding-right: 20px;
     &.open { @include icon('search-less') }
   }
   strong, small { color: #fff; }
@@ -362,17 +376,64 @@ small.search {
 //----------------------------------------------------------------
 // Forms
 //----------------------------------------------------------------
+.field.left-labels {
+  display: block; clear: both;
+  label, input, textarea, select {float: left; clear: none;}
+  label {width: 100px;}
+}
+.page .block {
+  input, textarea, select {background: #f9f9f9;}
+}
+.legend {
+  font-weight: bold; font-size: 17px;
+  margin-top: 10px; display: inline-block;
+  margin-bottom: 10px;
+  &.clear {display: block; clear: both;}
+}
+.block {
+  position: relative;
+  padding: 0px 20px 20px 20px;
+  &.full {
+    input, textarea {width: 98%;}
+  }
+
+  .top-right {top: 8px;}
+}
 input, textarea, select, .uneditable-input {
   border-top: 1px solid #999; border-left: 1px solid #999;
   border-bottom: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5;
   border-radius: 0px;
 }
-label { font-weight: bold; &.fine {font-weight: normal} &.tall {line-height: 26px;}}
+input.title {font-size: 18px; padding-top: 6px; padding-bottom: 6px; height: 24px;}
+label {
+  font-weight: bold;
+  &.fine {font-weight: normal}
+  &.strong {font-weight: bold; font-size: 14px;}
+  &.tall {line-height: 26px;}
+}
 .checkboxes {
   li { display: block; clear: both; }
   input, label { display: block; float: left; }
-  label { font-weight: normal; text-indent: 3px }
+  label {
+    font-weight: normal; text-indent: 3px;
+    &.legend, &.strong {font-weight: bold;}
+  }
   input { width: 14px; }
+  &.floated {
+    input {margin-left: 20px;}
+  }
+}
+.btn-cancel {
+  background: #ededed; color: $blue;
+  text-shadow: -1px 0px 0px #fff;
+  &:hover { color: $blue; background: #f1f1f1;  }
+  padding: 8px 20px;
+  font-size: 14px;
+}
+.btn-gray {
+  background: #b2b2b2; color: #fff;
+  text-shadow: -1px -1px 0px #999;
+  &:hover { color: #fff; background: #ccc;  }
 }
 .btn-medium {
   font-size: 14px; font-weight: bold;
@@ -447,8 +508,23 @@ a.remove {
 .nav-tabs {
   border-bottom: 5px solid $blue; margin-bottom: 0px;
   li.pull-right {float: right;}
+
   &.inverted {
     @include navy; padding-top: 6px; padding-left: 6px; clear: both; margin-top: 60px; border: none;
+    &.plain-text {
+      padding-top: 0; padding-bottom: 0px;
+      &>li {
+        margin-bottom: -10px;
+        margin-top: 2px;
+      }
+      span { font-weight: normal; }
+      &> .active > a, &> .active > a:hover, .tab-content > .active, .pill-content > .active {
+        background: transparent;
+        span {color: #4dbbff; }
+        b {border-left: 1px solid #fff;}
+      }
+
+    }
     &> .active > a, & > .active > a:hover, .tab-content > .active, .pill-content > .active {
       background: #fff; color: #000; text-decoration: none;
       span {opacity:1; color: #000; }
@@ -494,9 +570,9 @@ a.remove {
   &:hover { color: $cobalt; background: transparent; text-decoration: underline;}
 }
 .nav-pills > .active > a, .nav-pills > .active > a:hover { background: $cobalt; }
-.nav-pills.light li a {font-weight: normal;}
+.nav-pills.light li a {font-weight: normal; padding-left: 0px; }
 .nav-pills.light > .active > a, .nav-pills.light > .active > a:hover {
-  color: #000; background: #f2f2f2; font-weight: normal;
+  color: #000; background: #fff; font-weight: bold; text-decoration: none;
 }
 .nav-pills-wrap {
   border: 1px solid #ddd; border-radius: 4px;
@@ -555,10 +631,15 @@ a.mail {
   padding: 0;
 }
 a.add {
-  @include icon('search-more'); background-position: right center;
-  padding-right: 20px; float: right;
+  @include icon('search-more');
+  background-position: left center;
+  padding-left: 19px;
+  &.critical { color: $rust;}
+}
+.blue a.add {
   color: #fff; font-weight: normal; text-align: right;
 }
+.top-right { position: absolute; top: 0px; right: 0px;}
 //
 //----------------------------------------------------------------
 // Logo Slideshow
@@ -611,10 +692,10 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   &.thick { border-width: 8px; margin-bottom: 12px; }
   &.break { margin-top: 10px;}
   &.table-rule { border-width: 1px; margin: 0 0 1px 0;}
-  &.deboss { margin: 20px 0; div { height: 6px; } }
+  &.deboss { margin: 20px 0; div { height: 5px; } }
 }
 .vr {
-  &.deboss { margin: 0; div { width: 6px; height: 100%; } }
+  &.deboss { margin: 0; div { width: 5px; height: 100%; } }
 }
 .deboss {
   border: none;
@@ -707,7 +788,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
     @include icon('toggle-down'); background-position: right 6px;
   }
 }
-.toggler, .field, .togglee { padding-right: 12px; padding-left: 12px; }
+.toggler, .togglee { padding-right: 12px; padding-left: 12px; }
 //
 //----------------------------------------------------------------
 // Job
@@ -758,6 +839,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 // Recruiters New Account
 //-------------------------------------------------------
 a.strong { font-weight: bold; }
+
 #recruiter-login {
   padding: 30px 0px; margin: 80px 0px 20px 0px;
   h2 { font-size: 15px; color: $blue; }
@@ -854,16 +936,44 @@ img.left {float: left; margin: 0 16px 20px 0;}
   float: left; clear: none;
   margin-left: 25px;
   &.first {margin-left: 0px;}
-  &.main {width: 635px; &.fat {width: 670px}}
-  &.side {width: 245px; &.thin {width: 200px}}
+  &.main {width: 615px; &.fat { width: 680px;}}
+
+  &.side {
+    width: 225px;
+    &.list { padding-top: 105px; }
+    &.thin { width: 175px; }
+    &.buy { width: 132px; padding-right: 15px; margin-left: 35px}
+  }
+}
+.list {ul.nav-stacked {margin-top: 20px;}}
+.main.list {
+  h1 {padding-left: 10px; margin-bottom: 20px; }
+}
+.index-control {
+  padding-left: 10px;
+  padding-top: 21px;
+}
+.table-header {
+  padding-bottom: 10px;
+
 }
 //
 //-------------------------------------------------------
 // Recruiters Landing Page
 //-------------------------------------------------------
-#recruiter-menu { padding-right: 10px; }
+#recruiter-menu { padding-right: 10px; padding-left: 190px;  }
+body.recruiters {
+  &.logged {
+    background: url(../images/patterns/body.png) repeat-x;
+    .dropdown-toggle {border-color: #EFF7FE;}
+    #menu {
+      li.first { padding-right: 37px; }
+    }
+  }
+}
 .recruiters .landing_page {
   &.page-pad { padding: 86px 50px; }
+  .row-fluid {position: relative; left: 32px;}
   a.graphic {
     position: relative;
     &:hover { color: #000; }
@@ -900,50 +1010,16 @@ img.left {float: left; margin: 0 16px 20px 0;}
 }
 
 //-------------------------------------------------------
-// Recruiters Post Job
-//-------------------------------------------------------
-.job-bag {
-  text-align: right; color: #666;
-  margin: 34px 13px 13px;
-  img { margin: 0 3px; }
-}
-.cart-summary {
-  ul {
-    margin-left: 0px; display: block; list-style-type:none;
-    li { position: relative; display: block; padding: 5px 12px 5px 0px;}
-    a { display: block; position: absolute; right: 0px; top: 7px;}
-  }
-  .btn-checkout { margin: 20px 0 0 0;}
-}
-.chat.pane {
-  .text {
-    float: left; width: 82px;
-    a.btn { font-size: 15px; }
-    strong { display: block; margin-bottom: 12px; }
-  }
-
-  img {float: right;}
-}
-.side .thin-panes { margin-bottom: 20px; }
-.breadcrumbs { margin-bottom: 20px;}
-#post_job {
-  .breadcrumbs {margin-bottom: 26px; margin-top: 4px}
-  .breadcrumbs, h1 {padding-left: 12px;}
-  h1 {font-size: 25px; margin-bottom: 25px; margin-bottom: 31px;}
-}
-//-------------------------------------------------------
 //  Recruiters CV Search
 //-------------------------------------------------------
-.cv-search {
-  h1 {text-indent: 20px}
-  .side {padding-top: 40px; .pad {padding-right: 0px;}}
+.table-header {
   .go-search {
+    input {width:200px;}
     padding-right: 80px;
-    input {width: 90%;}
     input.btn {width: auto;}
   }
-  ul.nav-stacked {margin-top: 20px;}
 }
+
 .pull-left {float: left;}
 label.pull-left {margin-right: 8px; line-height: 26px;}
 .title-splash {padding-bottom: 40px;}
@@ -951,7 +1027,7 @@ a.user span {
   display: inline-block;
   @include icon('user');
   background-position: right top;
-  padding-right: 24px;
+  padding-right: 20px;
 }
 a:hover img { opacity: 0.7; }
 .page-shade {
@@ -987,4 +1063,102 @@ a:hover img { opacity: 0.7; }
   li , a {display: block;}
   a { padding: 4px 8px; &:hover{ background:$sky; text-decoration: none; } }
   li.active a { background: $cobalt; color: #fff; }
+}
+
+.index-control {
+  input, label, a { float: left; }
+  input {margin: 9px 5px 0 0;}
+  label {margin-top: 3px;}
+  a.btn {margin-left: 12px;}
+}
+
+//-------------------------------------------------------
+// Recruiters Post Job
+//-------------------------------------------------------
+.feature {
+  background: $eggshell; border: 1px solid #ccc;
+  padding: 0 10px; margin: 20px 0px;
+  clear: both;
+}
+#create-advert {
+  .top-right {right: 20px;}
+}
+#duration {
+  input, select { margin-left: 20px; margin-right: 20px; display: inline-block;}
+  input { width: 165px; }
+  select { width: 120px; }
+}
+#categories {
+  .checkboxes.span4 {margin-left: 0px;}
+}
+#job-type .checks {padding-top: 10px;}
+.job-bag {
+  text-align: right; color: #666;
+  margin: 34px 13px 13px;
+  img { margin: 0 3px; }
+}
+#salary-details { input.amount {width: 110px;} }
+#salary-pay-period { width: 90px; margin-left: 40px;}
+#salary-currency { width: 70px; margin-right: 40px;}
+#display-salary {padding-left: 138px;}
+#display-options {
+  label {padding-right: 12px;}
+  label.strong {padding-right: 30px;}
+}
+#applications {
+ .span3, .span8 {margin-left: 0px}
+}
+#job-ref {
+  label.fine {float: left; width: 125px;}
+}
+input#alt-email {width: 180px; margin-left: 12px;}
+.cart-summary {
+  ul {
+    margin-left: 0px; display: block; list-style-type:none;
+    li { position: relative; display: block; padding: 5px 12px 5px 0px;}
+    a { display: block; position: absolute; right: 0px; top: 7px;}
+  }
+  .btn-checkout { margin: 20px 0 0 0;}
+}
+.chat.pane {
+  .text {
+    float: left; width: 82px;
+    a.btn { font-size: 15px; }
+    strong { display: block; margin-bottom: 12px; }
+  }
+
+  img {float: right;}
+}
+.side .thin-panes { margin-bottom: 20px; }
+.breadcrumbs { margin-bottom: 20px;}
+#post_job {
+  .breadcrumbs {margin-bottom: 26px; margin-top: 4px}
+  .breadcrumbs, h1 {padding-left: 12px;}
+  h1 {font-size: 25px; margin-bottom: 25px; margin-bottom: 31px;}
+}
+//-------------------------------------------------------
+// My Account
+//-------------------------------------------------------
+#account-details {
+  h1 {font-size: 25px;}
+  .block {
+    .btn-go { position: absolute; right: 0px; bottom: 8px; }
+  }
+  .main {
+    h2 {
+      font-weight: normal; font-size: 18px; background: $sky;
+      padding: 4px 12px; margin-top: 40px;
+
+    }
+  }
+  dl {
+    dt, dd {line-height: 24px;}
+    dt {width: 20%;} dd {width: 75%;}
+    overflow-y: auto;
+    margin-bottom: 30px;
+  }
+  #view-reports {
+    p.note {padding-top: 30px;}
+    a.btn-go {bottom: 30px;}
+  }
 }

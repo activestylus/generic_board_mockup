@@ -1,18 +1,18 @@
+<% @bodyclass = @bodyclass ? @bodyclass << " logged" : "logged"%>
 <div class="clear"></div>
-<ul id="recruiter-menu" class="nav nav-tabs inverted">
-  <% ['Home', 'Post a job', 'CV Search', 'Your candidates', 'My Account'].each_with_index do |item, i| %>
+<ul id="recruiter-menu" class="nav nav-tabs plain-text inverted">
+  <% ['Profile', 'Post a job', 'CV Search', 'Your candidates', 'My Account'].each_with_index do |item, i| %>
     <% klass = if defined?(active) && active == item
         'active clean'
-      elsif i == 0 && (defined?(active) && active == 'Home')
+      elsif i == 0 && (defined?(active) && active == 'Profile')
         'active clean'
-      elsif item == 'Your candidates'
-        'clean'
       elsif item == 'My Account'
-        'pull-right clean'
+        'clean'
       else
         nil
       end
     %>
-    <li class="<%= klass %>"><a href="#"><span><%= item %></span><b>&nbsp;</b></a></li>
+    <% url = "Recruiter-" + item.gsub(' ','-') + '.html' %>
+    <li class="<%= klass %>"><a href="<%= url %>"><span><%= item %></span><b>&nbsp;</b></a></li>
   <% end %>
 </ul>
