@@ -231,6 +231,9 @@ table {
     table.buy .btn-success {
       padding: 4px 18px; }
 
+td {
+  color: #333; }
+
 .sort-by {
   padding-top: 6px;
   padding-right: 26px; }
@@ -287,7 +290,7 @@ dl.horizontal {
     font-weight: normal; }
 
 .column .quotes {
-  padding-right: 25px; }
+  padding-right: 30px; }
 
 .quotes {
   color: #666;
@@ -1581,7 +1584,7 @@ img.left {
   padding-left: 190px; }
 
 body.recruiters.logged {
-  background: url(../images/patterns/body.png) repeat-x; }
+  background: url(../images/patterns/body.png) repeat-x fixed; }
   body.recruiters.logged .dropdown-toggle {
     border-color: #EFF7FE; }
   body.recruiters.logged #menu li.first {
@@ -1739,6 +1742,9 @@ a:hover img {
 .index-control a.btn {
   margin-left: 12px; }
 
+#job-new h1 {
+  font-size: 22px; }
+
 .feature {
   background: #f7f7f7;
   border: 1px solid #ccc;
@@ -1801,6 +1807,9 @@ input#alt-email {
   width: 180px;
   margin-left: 12px; }
 
+.cart-summary.pane {
+  background: #fff;
+  border: 1px solid #ddd; }
 .cart-summary ul {
   margin-left: 0px;
   display: block;
