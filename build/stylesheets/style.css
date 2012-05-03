@@ -1864,6 +1864,8 @@ input#alt-email {
   background: #e5effa;
   padding: 4px 12px;
   margin-top: 40px; }
+  #account-details .main h2 small {
+    color: #8BA3BC; }
 #account-details dl {
   overflow-y: auto;
   margin-bottom: 30px; }
