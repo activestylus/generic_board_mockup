@@ -1697,12 +1697,12 @@ a:hover img {
   #file-nav h2 {
     font-size: 12px;
     padding-left: 10px; }
+  #file-nav .togglee, #file-nav .toggler {
+    background: transparent; }
   #file-nav .togglee {
-    background: #fff;
     padding: 0 0 10px;
     box-shadow: 1px 1px 4px #aaa; }
   #file-nav .toggler {
-    background: #0b1437 url(../images/patterns/lines-navy.png);
     color: #fff;
     width: 50px;
     padding-top: 10px;
@@ -1712,7 +1712,6 @@ a:hover img {
     #file-nav .toggler.open strong {
       background-image: url(../images/icons/toggle-up-invert.png); }
   #file-nav.light .toggler {
-    background: #f7f7f7;
     color: #0088cc; }
     #file-nav.light .toggler strong {
       background-image: url(../images/icons/toggle-down.png); }
