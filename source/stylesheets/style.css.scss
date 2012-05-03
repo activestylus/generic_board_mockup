@@ -979,7 +979,7 @@ img.left {float: left; margin: 0 16px 20px 0;}
 #recruiter-menu { padding-right: 10px; padding-left: 190px;  }
 body.recruiters {
   &.logged {
-    background: url(../images/patterns/body.png) repeat-x fixed;
+    background: url(../images/patterns/body.png) repeat-x fixed 0 -100px;
     .dropdown-toggle {border-color: #EFF7FE;}
     #menu {
       li.first { padding-right: 37px; }

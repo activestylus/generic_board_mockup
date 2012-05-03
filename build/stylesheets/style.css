@@ -1584,7 +1584,7 @@ img.left {
   padding-left: 190px; }
 
 body.recruiters.logged {
-  background: url(../images/patterns/body.png) repeat-x fixed; }
+  background: url(../images/patterns/body.png) repeat-x fixed 0 -100px; }
   body.recruiters.logged .dropdown-toggle {
     border-color: #EFF7FE; }
   body.recruiters.logged #menu li.first {
