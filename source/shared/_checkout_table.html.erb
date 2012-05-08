@@ -1,0 +1,28 @@
+<table cellspacing="0" cellpadding="0" border="0" class="buy dotted">
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+
+  <% data.cart_items.each do |i| %>
+  <% item = i[1] %>
+  <tr>
+    <td class="info"><%= item.info %></td>
+    <td class="price"><%= item.quantity %></td>
+    <td class="price"><%= item.price %></td>
+  </tr>
+  <% end %>
+  <tr class="promo-code lite">
+  	<td>&nbsp;</td>
+    <td colspan="2" class="price">
+      <div class="subtotal">Total net:  €2500.00</div>
+      <div class="vat">VAT: €300.00</div>
+      <div class="total">Total: €3600.00</div>
+      <% unless defined?(paying) && paying == false %>
+      <a href="Recruiter-Payment-Card" class="btn btn-gold btn-large">Pay by Card</a>
+      <a href="Recruiter-Payment-Invoice" class="btn btn-gold btn-large">Pay by Invoice</a>
+      <% end %>
+    </td>
+  </tr>
+</table>

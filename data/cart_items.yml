@@ -1,0 +1,20 @@
+001:
+  title: "1 x job listing inc: sub category"
+  info: "Duration 30 days premium advert on <em>company x</em> plus"
+  quantity: 2
+  price: "€650.00"
+002:
+  title: "1 x Featured job listing"
+  info: "Duration 30 days premium advert on <em>company x</em> plus"
+  quantity: 1
+  price: "€730.00"
+003:
+  title: "1 x job listing"
+  info: "Duration 30 days premium advert on <em>company x</em> plus"
+  quantity: 1
+  price: "€550.00"
+004:
+  title: "Monster job listing"
+  info: "Duration 30 days bolding and 7 day refresh"
+  quantity: 1
+  price: "€625.00"

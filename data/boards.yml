@@ -1,0 +1,15 @@
+001:
+  id: "02"
+  name: experteer
+  info: "30 day job listing inc: bolding"
+  price: €730.00
+002:
+  id: "06"
+  name: stepstone
+  info: "30 day job listing inc: bolding and 7-day refresh"
+  price: €750.00
+003:
+  id: "03"
+  name: careerbuilder
+  info: "30 day job listing inc: bolding and 7-day refresh"
+  price: €850.00

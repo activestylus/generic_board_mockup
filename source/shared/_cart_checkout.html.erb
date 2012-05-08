@@ -1,0 +1,10 @@
+<div class="cart-summary pane">
+  <strong class="total">Total</strong><br>
+  <strong class="total big">€3,600.00</strong>
+  <%= partial "shared/creditcards" %> 
+  <small>or request invoice</small>
+  <div class="hr dotted thin lite"></div>
+  <% unless defined?(button) && button == false %>
+    <input type="submit" value="Checkout Now" class="btn btn-success btn-large" />
+  <% end %>
+</div>

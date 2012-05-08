@@ -91,6 +91,7 @@ h2.pane-title { background: #003; color: #fff; padding: 3px 16px; margin-bottom:
   &.pad-y { padding: 40px 0; }
   &.pad-x { padding: 0 40px; }
   &.a4-y { padding: 40px 0 70px; }
+
 }
 //
 //-------------------------------------------------------
@@ -109,6 +110,16 @@ th.sort {
   &.asc span {@include icon('sort-asc');}
   &.desc span {@include icon('sort-desc');}
 }
+td.delete-row {
+  vertical-align: middle;
+  a {
+    display: block; text-indent: -9999px;
+    @include icon("delete-row");
+    background-position: center center;
+    width: 20px;
+    &:hover {opacity:0.6;}
+  }
+} 
 table {
   width:100%;
   margin-bottom: 22px;
@@ -129,6 +140,31 @@ table {
     thead { padding-top: 3px; }
     th { padding: 12px; font-size: 18px; }
     tr.last td { border-bottom: none; }
+    td.price {text-align: right;}
+    tr.promo-code {
+      div {line-height: 24px;}
+      .btn {margin-top: 10px;}
+      &.lite {
+        td {background: transparent; border:none;}
+        .vat {color: #666;}
+        .total { border-color: $cobalt;
+          border-bottom:1px solid $cobalt;
+          padding-bottom: 4px;
+        }
+      }
+      td {
+        background: $eggshell; padding:20px;
+        font-size: 13px;
+        &.price {padding-right: 10px;}
+      }
+      label, input {float:right; margin-left: 12px;}  
+      label {
+        width: 140px; text-align: right;
+        font-size: 15px; padding-top: 5px;
+      }
+      input.text {width: 110px;}
+      
+    }
     td {
       padding: 18px 12px;
       &.info { font-size: 13px; color: #666; }
@@ -137,6 +173,13 @@ table {
       &.packages { width: 260px; }
     }
     .btn-success { padding: 4px 18px;}
+    .vat {color:$cobalt;}
+    .total {
+      font-size: 15px; font-weight: bold;
+      border-top: 1px solid #aaa;
+      margin-top: 4px; padding-top: 4px;
+    }
+
   }
 }
 td { color: #333; }
@@ -146,6 +189,7 @@ td { color: #333; }
   select {width: 80px;}
   label {font-weight: normal; margin-right: 8px; line-height: 26px;}
 }
+
 //
 //----------------------------------------------------------------
 // Typography
@@ -452,7 +496,9 @@ label {
   padding: 6px 12px;
 }
 .btn {
-  border-radius: $button-radius; box-shadow: none; border: none;
+  border-radius: $button-radius;
+  box-shadow: none; border: none;
+  font-weight: bold;
   &.save { border: 1px solid #ddd;}
 }
 .btn-gold {
@@ -1139,6 +1185,8 @@ input#alt-email {width: 180px; margin-left: 12px;}
     li { position: relative; display: block; padding: 5px 12px 5px 0px;}
     a { display: block; position: absolute; right: 0px; top: 7px;}
   }
+  small {font-size: 13px; display: block; clear: both; margin-bottom:20px;}
+  .credit-cards {margin-bottom: 1px;}
   .btn-checkout { margin: 20px 0 0 0;}
 }
 .chat.pane {
@@ -1182,4 +1230,56 @@ input#alt-email {width: 180px; margin-left: 12px;}
     p.note {padding-top: 30px;}
     a.btn-go {bottom: 30px;}
   }
+}
+.total.big {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 20px;
+}
+///
+//-------------------------------------------------------
+// Recruiter Payment
+//-------------------------------------------------------
+.labels-left {
+  label {
+    display:block; float:left;
+    line-height:24px;
+    font-weight: normal;
+  }
+  input, select {float:right;}
+}
+.payment {  
+  position: relative;
+  .credit-cards { margin-bottom: 17px;}
+  padding: 0px 20px;
+  h2 {margin-bottom: 14px;}
+  label {width:80px}
+  input.text {width:165px; margin-bottom: 20px;}
+  select { width:175px; margin-bottom: 20px; }
+  .col {
+    width:45%;
+  }
+  .billing { margin: 0 30px 0 0;}
+  .exp select {
+    width: 70px; float: left;
+    margin-right: 10px;
+  }
+
+  .finalize {
+    position: absolute;
+    bottom:19px; left: 303px;
+    padding-left: 30px;
+  }
+  .finalize, .confirm {
+    label, input { float: left;}
+    label {width:200px;}
+  }
+  .confirm {
+    .checkboxes {
+      input {margin-left:0px;}
+      label {width:175px;}
+    }
+  }
+
+
 }

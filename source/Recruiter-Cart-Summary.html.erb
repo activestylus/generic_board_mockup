@@ -1,0 +1,74 @@
+<% @title = "Recruiter-Cart-Summary" %>
+
+<%= partial "shared/recruiter_menu", locals: {active: "Post a job"} %>
+
+<div id="post_job" class="page pad-all">
+
+  <div class="breadcrumbs">Post a Job / Cart Summary</div>
+
+  <div class="main col first">
+    
+    
+    <table cellspacing="0" cellpadding="0" border="0" class="buy dotted">
+      <tr>
+        <th>Order Summary</th>
+        <th>Quantity</th>
+        <th colspan="2">Price</th>
+      </tr>
+
+      <% data.cart_items.each do |i| %>
+      <% item = i[1] %>
+      <tr>
+        <td class="info">
+          <strong><%= item.title %></strong><br>
+          <%= item.info %>
+        </td>
+        <td class="price"><%= item.quantity %></td>
+        <td class="price"><%= item.price %></td>
+        <td class="delete-row"><a href="#">Delete</a></td>
+      </tr>
+      <% end %>
+      <tr class="promo-code">
+        <td>
+          <input type="submit" value="Apply" class="btn btn-go">
+          <input type="text" class="text" />
+          <label>Promotional Code:</label>
+        </td>
+        <td colspan="2" class="price">
+          <div class="subtotal">Total net:  €2500.00</div>
+          <div class="vat">VAT: €300.00</div>
+          <div class="total">Total: €3600.00</div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+
+    <table cellspacing="0" cellpadding="0" border="0" class="buy dotted last">
+      <tr>
+        <th colspan="4">Recommended Job Boards</th>
+      </tr>
+
+      <% data.boards.each do |b| %>
+      <% board = b[1] %>
+      <tr>
+        <td class="board-logo"><img src="images/board_logos/<%= board.id %>.png"/></td>
+        <td class="info"><%= board.info %></td>
+        <td class="price"><%= board.price %></td>
+        <td class="buy"><input type="submit" class="btn btn-join" value="Buy"/></td>
+      </tr>
+      <% end %>
+
+    </table>
+  </div>
+
+  <div class="side col thin-panes">
+
+    <h2 class="pane-title">Cart Summary</h2>
+    <%= partial "shared/cart_checkout" %>
+        
+    <%= partial "shared/chat_pane" %>
+    <a href="#"><img src="images/logos/world-pay.png" /></a>
+  </div>
+  <div class="clear"></div>
+
+</div>

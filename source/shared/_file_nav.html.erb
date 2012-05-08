@@ -10,7 +10,7 @@
     </ul>
     <h2>Recruiters</h2>
     <ul>
-      <% %w(Log-In Profile Post-a-Job CV-Search Your-candidates My-Account).each do |file| %>
+      <% %w(Log-In Profile Post-a-Job CV-Search Your-candidates My-Account Cart-Summary Payment Payment-Card Payment-Invoice).each do |file| %>
         <% klass = "Recruiter-#{file}" == @title ? "class='active'" : nil %>
         <li <%= klass %>><a href="Recruiter-<%= file %>.html"><%= file.titleize %></a></li>
       <% end %>

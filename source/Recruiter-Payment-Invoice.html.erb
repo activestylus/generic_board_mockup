@@ -1,0 +1,77 @@
+<% @title = "Recruiter-Payment-Invoice" %>
+
+<%= partial "shared/recruiter_menu", locals: {active: "Post a job"} %>
+
+<div id="post_job" class="page pad-all">
+
+  <div class="breadcrumbs">Post a Job / Cart Summary / Checkout</div>
+
+  <div class="main col first">    
+    <%= partial "shared/checkout_table", locals: { paying: false }  %>
+    
+    <div class="hr deboss"><div>&nbsp;</div></div>
+    
+    <div class="payment labels-left">
+      <div class="col billing">
+      	<% ["First Name",
+      		"Surname",
+      		"Address 1",
+      		"Address 2",
+      		"Town/City",
+      		"Postcode",
+      		"Country"].each do |field| %>
+        <div class="field">
+          <label><%= field %></label>
+          <input type="text" class="text" />
+          <% if field == "Address" %>
+            <input type="text" class="text" />
+          <% end %>
+        </div>
+        <div class="clear"></div>
+        <% end %>
+      </div>
+      
+      <div class="col card">
+      	<% ["Email",
+      		"Phone",
+      		"Company Name",
+      		"Company Number",
+      		"T Reg number",
+      		"PO number",
+      		"Country"].each do |field| %>
+        <div class="field">
+          <label><%= field %></label>
+          <input type="text" class="text" />
+          <% if field == "Address" %>
+            <input type="text" class="text" />
+          <% end %>
+        </div>
+        <div class="clear"></div>
+        <% end %>
+        <div class="confirm">
+      	  <div class="checkboxes">
+      	    <input type="checkbox" id="accept_terms" />
+      	    <label for="accept_terms">Accept terms and conditions</label>
+      	  </div>
+      	  <input type="submit" value="Confirm Order" class="btn btn-large btn-gold">
+      	  <div class="clear"></div>
+        </div>
+      </div>
+      
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="side col thin-panes">
+    <h2 class="pane-title">Cart Summary</h2>
+    <%= partial "shared/cart_checkout", locals: { button: false } %>  
+    <%= partial "shared/chat_pane" %>
+    <div class="buy credits">
+      <h2>Buy Credits</h2>
+      <p>Buy online, or call your account manager on 0845 241 9293</p>
+      <a href="#" class="btn btn-join btn-medium">Buy Credits</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+
+</div>

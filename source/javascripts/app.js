@@ -2,6 +2,7 @@ function changeUrl() {
   document.location.href = document.getElementById('choose_language').value;
 }
 
+
 var FileNav = {
   init: function() {
     var target = $("#file-nav .togglee");
