@@ -20,7 +20,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
 </script>
 
 </head>
-<body>
+<body class='recruiters logged'>
   <div id="head">
   <div class="navbar">
     <div class="navbar-inner">
@@ -28,7 +28,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li><a href="#"><b>Sign in</b></a></li>
         <li><a href="#"><b>Create account</b></a></li>
         
-        <li><a href="#" class="active"><b>Recruiters</b></a></li>
+        <li><a href="#" class="active jobseekers"><b>Job Seekers</b></a></li>
         
       </ul>
     </div>
@@ -102,180 +102,169 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
     </ul>
   </div>
 </div>
-    <div id="search" class="blue">
-  <div class="pad">
-    <form accept-charset="UTF-8" action="/jobs" method="get">
-      <div style="margin:0;padding:0;display:inline">
-        <input name="utf8" type="hidden" value="&#10003;" />
-      </div>
-      <table border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td class="text find">
-            <strong>Find a job</strong>
-          </td>
-          <td class="input">
-            <input id="keywords" name="keywords" placeholder="Keywords" type="text" />
-            <small>Search for over 2000 jobs</small>
-          </td>
-          <td class="text in">
-            <strong>in</strong>
-          </td>
-          <td class="input">
-            <input id="category_is" name="category_is" placeholder="Industries" type="text" />
-          </td>
-          <td class="search">
-            <input class="btn btn-primary btn-large" id="filter" name="commit" type="submit" value="Search" />
-            <a href="#" class="add" id="toggle_advanced_search">Search more options</a>
-          </td>
-        </tr>
-      </table>
-      <div id="advanced_search" style="display:none">
-        <input type="text" class="text" placeholder="€" />
-        <div class="to">to</div>
-        <input type="text" class="text" placeholder="€" />
-        <select>
-          <option>Per annum</option>
-        </select>
-        <div class="checkboxes">
-          
-            <div class="checkbox">
-              <input type="checkbox" class="check" id="Permanent"/>
-              <label for="Permanent">Permanent</label>
-            </div>
-          
-            <div class="checkbox">
-              <input type="checkbox" class="check" id="Contract"/>
-              <label for="Contract">Contract</label>
-            </div>
-          
-            <div class="checkbox">
-              <input type="checkbox" class="check" id="Freelance"/>
-              <label for="Freelance">Freelance</label>
-            </div>
-          
-            <div class="checkbox">
-              <input type="checkbox" class="check" id="Temporary"/>
-              <label for="Temporary">Temporary</label>
-            </div>
-          
-        </div>
-      </div>
-      <div class="clear"></div>
-    </form>
-  </div>
-</div>
     <div id="yield">
-      <div class="static">
-  <div class="side col first">
-  <div id="sidebar" class="thin pad">
-    <div class="text field">
-      <label>Start new search</label>
-      <input type="text" placeholder="Keyword" />
-    </div>
-    <div class="text field">
-      <label>Location</label>
-      <input type="text" placeholder="Post code or town" />
-    </div>
-    <div class="first clear divider"></div>
-    <h3 class="toggler open"><strong>Specialisms</strong></h3>
-    <div class="togglee">
-      <ul>
-        <li><a href="#">Sales (13,960)</a></li>
-        <li><a href="#">IT & Telecoms (10,235)</a></li>
-        <li><a href="#">Financial Services (8,145)</a></li>
-        <li><a href="#">Accountancy (7,772)</a></li>
-        <li><a href="#">Engineering (7,762)</a></li>
-        <li><a href="#">Recruitment Consultancy (7,600)</a></li>
-        <li><a href="#">More Specialisms</a></li>
-      </ul>
-    </div>
-    <div class="divider"></div>
-    <h3 class="toggler open"><strong>Salary</strong></h3>
-    <div class="togglee">
-      <ul>
-        <li><a href="#">up to €15,000</a></li>
-        <li><a href="#">€15,000 - €20,000</a></li>
-        <li><a href="#">€20,000 - €30,000</a></li>
-        <li><a href="#">€30,000 - €50,000</a></li>
-        <li><a href="#">€50,000+</a></li>
-      </ul>
-    </div>
-    <div class="divider"></div>
-    <h3 class="toggler open"><strong>Work type</strong></h3>
-    <div class="togglee">&nbsp;
-      <ul class='checkboxes'>
-        
-        <li><input type="checkbox" id="Permanent"/><label for="Permanent">Permanent</label></li>
-        
-        <li><input type="checkbox" id="Freelance"/><label for="Freelance">Freelance</label></li>
-        
-        <li><input type="checkbox" id="Contract"/><label for="Contract">Contract</label></li>
-        
-      </ul>
-      <div class="clear"></div>
-    </div>
-    <div class="divider"></div>
-    <h3 class="toggler open"><strong>Job level</strong></h3>
-    <div class="togglee">&nbsp;
-      <ul class='checkboxes'>
-        
-        <li><input type="checkbox" id="entrylevelgraduate"/><label for="entrylevelgraduate">Entry Level Graduate</label></li>
-        
-        <li><input type="checkbox" id="experiencednonmanager"/><label for="experiencednonmanager">Experienced (non manager)</label></li>
-        
-        <li><input type="checkbox" id="management"/><label for="management">Management</label></li>
-        
-      </ul>
-      <div class="clear"></div>
-    </div>
+      
+<div class="clear"></div>
+<ul id="recruiter-menu" class="nav nav-tabs plain-text inverted">
+  
+    
+    
+    <li class=""><a href="Recruiter-Profile.html"><span>Profile</span><b>&nbsp;</b></a></li>
+  
+    
+    
+    <li class="active clean"><a href="Recruiter-Post-a-job.html"><span>Post a job</span><b>&nbsp;</b></a></li>
+  
+    
+    
+    <li class=""><a href="Recruiter-CV-Search.html"><span>CV Search</span><b>&nbsp;</b></a></li>
+  
+    
+    
+    <li class=""><a href="Recruiter-Your-candidates.html"><span>Your candidates</span><b>&nbsp;</b></a></li>
+  
+    
+    
+    <li class="clean"><a href="Recruiter-My-Account.html"><span>My Account</span><b>&nbsp;</b></a></li>
+  
+</ul>
+
+<div id="post_job" class="page pad-all">
+
+  <div class="breadcrumbs">Post a Job / Cart Summary</div>
+
+  <div class="main col first">
+    
+    
+    <table cellspacing="0" cellpadding="0" border="0" class="buy dotted">
+      <tr>
+        <th>Order Summary</th>
+        <th>Quantity</th>
+        <th colspan="2">Price</th>
+      </tr>
+
+      
+      
+      <tr>
+        <td class="info">
+          <strong>1 x job listing inc: sub category</strong><br>
+          Duration 30 days premium advert on <em>company x</em> plus
+        </td>
+        <td class="price">2</td>
+        <td class="price">€650.00</td>
+        <td class="delete-row"><a href="#">Delete</a></td>
+      </tr>
+      
+      
+      <tr>
+        <td class="info">
+          <strong>1 x Featured job listing</strong><br>
+          Duration 30 days premium advert on <em>company x</em> plus
+        </td>
+        <td class="price">1</td>
+        <td class="price">€730.00</td>
+        <td class="delete-row"><a href="#">Delete</a></td>
+      </tr>
+      
+      
+      <tr>
+        <td class="info">
+          <strong>1 x job listing</strong><br>
+          Duration 30 days premium advert on <em>company x</em> plus
+        </td>
+        <td class="price">1</td>
+        <td class="price">€550.00</td>
+        <td class="delete-row"><a href="#">Delete</a></td>
+      </tr>
+      
+      
+      <tr>
+        <td class="info">
+          <strong>Monster job listing</strong><br>
+          Duration 30 days bolding and 7 day refresh
+        </td>
+        <td class="price">1</td>
+        <td class="price">€625.00</td>
+        <td class="delete-row"><a href="#">Delete</a></td>
+      </tr>
+      
+      <tr class="promo-code">
+        <td>
+          <input type="submit" value="Apply" class="btn btn-go">
+          <input type="text" class="text" />
+          <label>Promotional Code:</label>
+        </td>
+        <td colspan="2" class="price">
+          <div class="subtotal">Total net:  €2500.00</div>
+          <div class="vat">VAT: €300.00</div>
+          <div class="total">Total: €3600.00</div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+
+    <table cellspacing="0" cellpadding="0" border="0" class="buy dotted last">
+      <tr>
+        <th colspan="4">Recommended Job Boards</th>
+      </tr>
+
+      
+      
+      <tr>
+        <td class="board-logo"><img src="images/board_logos/02.png"/></td>
+        <td class="info">30 day job listing inc: bolding</td>
+        <td class="price">€730.00</td>
+        <td class="buy"><input type="submit" class="btn btn-join" value="Buy"/></td>
+      </tr>
+      
+      
+      <tr>
+        <td class="board-logo"><img src="images/board_logos/06.png"/></td>
+        <td class="info">30 day job listing inc: bolding and 7-day refresh</td>
+        <td class="price">€750.00</td>
+        <td class="buy"><input type="submit" class="btn btn-join" value="Buy"/></td>
+      </tr>
+      
+      
+      <tr>
+        <td class="board-logo"><img src="images/board_logos/03.png"/></td>
+        <td class="info">30 day job listing inc: bolding and 7-day refresh</td>
+        <td class="price">€850.00</td>
+        <td class="buy"><input type="submit" class="btn btn-join" value="Buy"/></td>
+      </tr>
+      
+
+    </table>
   </div>
+
+  <div class="side col thin-panes">
+
+    <h2 class="pane-title">Cart Summary</h2>
+    <div class="cart-summary pane">
+  <strong class="total">Total</strong><br>
+  <strong class="total big">€3,600.00</strong>
+  <div class="credit-cards">
+  <span class="icon visa">Visa</span>
+  <span class="icon mastercard">MasterCard</span>
+  <span class="icon maestro">Maestro</span>
+</div> 
+  <small>or request invoice</small>
+  <div class="hr dotted thin lite"></div>
+  
+    <input type="submit" value="Checkout Now" class="btn btn-success btn-large" />
+  
 </div>
-
-  <div class="main col" id="account">
-    <div class="nav-pills-wrap break">
-      <ul class="nav nav-pills">
-        <li class="active"><a href="#">Profile</a></li>
-        <li><a href="#">CV</a></li>
-        <li><a href="#">Saved Searches</a></li>
-        <li><a href="#">Applications</a></li>
-        <li><a href="#">Jobs by Email</a></li>
-        <li><a href="#">My Details</a></li>
-      </ul>
-    </div>
-    <div class='info'>
-      <h1>Your Account</h1>
-      <p>
-         Darren Jones<br/>
-         darren@1000jobboersen.de<br/>
-         Job title: Creative Director
-      </p>
-      <a href="#" id="cv-download">Download my CV</a>
-      <div class="clear"></div>
-      <h2>You're looking for <a href="#">Update</a></h2>
-      <p>
-        Industry Sectors: IT and Telecoms, Media<br/>
-        Location: Berlin, Germany<br/>
-        Salary: €80000 - €90000 per annum
-      </p>
-      <div class="section cv">
-        <h2>CV <a href="#">Update</a></h2>
-        <p>CV Status - searchable by recruiters</p>
-      </div>
-      <div class="section searches">
-        <h2>Saved Searches <a href="#">View</a></h2>
-        <p>You have 2 saved jobs</p>
-      </div>
-      <div class="section applications">
-        <h2>Applications <a href="#">View</a></h2>
-        <p>You have 2 saved jobs</p>
-      </div>
-      <div class="section email">
-        <h2>Jobs by email <a href="#">Add new</a></h2>
-        <p>You have 1 email alert set up</p>
-      </div>
-
-    </div>
+        
+    <div class="chat pane">
+  <div class="text"><strong>Chat with us now</strong>
+  <a href="#" class="btn btn-join">online</a></div>
+  <img src="images/thumbs/chat-with-us.png" />
+  <div class="clear"></div>
+</div>
+    <a href="#"><img src="images/logos/world-pay.png" /></a>
   </div>
+  <div class="clear"></div>
+
 </div>
     </div>
   </div>
@@ -320,7 +309,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li ><a href="Recruiter-My-Account.html">My Account</a></li>
       
         
-        <li ><a href="Recruiter-Cart-Summary.html">Cart Summary</a></li>
+        <li class='active'><a href="Recruiter-Cart-Summary.html">Cart Summary</a></li>
       
         
         <li ><a href="Recruiter-Payment.html">Payment</a></li>

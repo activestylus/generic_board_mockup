@@ -182,6 +182,18 @@ th.sort.desc span {
   background-image: url(../images/icons/sort-desc.png);
   background-repeat: no-repeat; }
 
+td.delete-row {
+  vertical-align: middle; }
+  td.delete-row a {
+    display: block;
+    text-indent: -9999px;
+    background-image: url(../images/icons/delete-row.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px; }
+    td.delete-row a:hover {
+      opacity: 0.6; }
+
 table {
   width: 100%;
   margin-bottom: 22px; }
@@ -217,6 +229,37 @@ table {
       font-size: 18px; }
     table.buy tr.last td {
       border-bottom: none; }
+    table.buy td.price {
+      text-align: right; }
+    table.buy tr.promo-code div {
+      line-height: 24px; }
+    table.buy tr.promo-code .btn {
+      margin-top: 10px; }
+    table.buy tr.promo-code.lite td {
+      background: transparent;
+      border: none; }
+    table.buy tr.promo-code.lite .vat {
+      color: #666; }
+    table.buy tr.promo-code.lite .total {
+      border-color: #0066cc;
+      border-bottom: 1px solid #0066cc;
+      padding-bottom: 4px; }
+    table.buy tr.promo-code td {
+      background: #f7f7f7;
+      padding: 20px;
+      font-size: 13px; }
+      table.buy tr.promo-code td.price {
+        padding-right: 10px; }
+    table.buy tr.promo-code label, table.buy tr.promo-code input {
+      float: right;
+      margin-left: 12px; }
+    table.buy tr.promo-code label {
+      width: 140px;
+      text-align: right;
+      font-size: 15px;
+      padding-top: 5px; }
+    table.buy tr.promo-code input.text {
+      width: 110px; }
     table.buy td {
       padding: 18px 12px; }
       table.buy td.info {
@@ -230,6 +273,14 @@ table {
         width: 260px; }
     table.buy .btn-success {
       padding: 4px 18px; }
+    table.buy .vat {
+      color: #0066cc; }
+    table.buy .total {
+      font-size: 15px;
+      font-weight: bold;
+      border-top: 1px solid #aaa;
+      margin-top: 4px;
+      padding-top: 4px; }
 
 td {
   color: #333; }
@@ -699,7 +750,8 @@ label {
 .btn {
   border-radius: 3px;
   box-shadow: none;
-  border: none; }
+  border: none;
+  font-weight: bold; }
   .btn.save {
     border: 1px solid #ddd; }
 
@@ -1822,6 +1874,13 @@ input#alt-email {
     position: absolute;
     right: 0px;
     top: 7px; }
+.cart-summary small {
+  font-size: 13px;
+  display: block;
+  clear: both;
+  margin-bottom: 20px; }
+.cart-summary .credit-cards {
+  margin-bottom: 1px; }
 .cart-summary .btn-checkout {
   margin: 20px 0 0 0; }
 
@@ -1879,3 +1938,53 @@ input#alt-email {
   padding-top: 30px; }
 #account-details #view-reports a.btn-go {
   bottom: 30px; }
+
+.total.big {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 20px; }
+
+.labels-left label {
+  display: block;
+  float: left;
+  line-height: 24px;
+  font-weight: normal; }
+.labels-left input, .labels-left select {
+  float: right; }
+
+.payment {
+  position: relative;
+  padding: 0px 20px; }
+  .payment .credit-cards {
+    margin-bottom: 17px; }
+  .payment h2 {
+    margin-bottom: 14px; }
+  .payment label {
+    width: 80px; }
+  .payment input.text {
+    width: 165px;
+    margin-bottom: 20px; }
+  .payment select {
+    width: 175px;
+    margin-bottom: 20px; }
+  .payment .col {
+    width: 45%; }
+  .payment .billing {
+    margin: 0 30px 0 0; }
+  .payment .exp select {
+    width: 70px;
+    float: left;
+    margin-right: 10px; }
+  .payment .finalize {
+    position: absolute;
+    bottom: 19px;
+    left: 303px;
+    padding-left: 30px; }
+  .payment .finalize label, .payment .finalize input, .payment .confirm label, .payment .confirm input {
+    float: left; }
+  .payment .finalize label, .payment .confirm label {
+    width: 200px; }
+  .payment .confirm .checkboxes input {
+    margin-left: 0px; }
+  .payment .confirm .checkboxes label {
+    width: 175px; }

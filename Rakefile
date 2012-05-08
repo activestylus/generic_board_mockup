@@ -2,7 +2,7 @@ desc "Build the website from source"
 task :deploy, :message do |t, args|
   dir = "~/Desktop/Code/middleman/generic_board_mockup"
   puts "## Building..."
-  system("middleman build")
+  system("bundle exec middleman build")
   puts "## Indexing..."
   link = system("cp build/Home.html build/index.html")
   puts link ? "* created index page" : "* index failed"
