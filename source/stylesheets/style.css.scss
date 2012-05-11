@@ -27,7 +27,7 @@ body { background: url(../images/patterns/lines-white-grad.png) repeat-x; font-s
 .pad { padding: 20px; &.thin { padding: 20px 15px; } }
 .center { margin: 0 auto; }
 .break { display: block; margin-bottom: 18px; }
-.clear.tall { height: 20px; }
+
 strong.title { clear: both; display: block; margin-bottom: 2px; }
 .divider {
   &.thick { border-top: 4px solid $blue;}
@@ -74,7 +74,11 @@ strong.title { clear: both; display: block; margin-bottom: 2px; }
   p.copy { clear: both; color: #fff; }
 }
 .cell  { float: left; clear: none; }
-.clear { clear: both; }
+.clear {
+  clear: both;
+  &.tall { height: 20px; }
+  &.short { height: 1px; }
+}
 th { text-align: left; }
 img.break { padding: 8px 0; }
 a.graphic {display: block; &:hover { text-decoration: none; }}
@@ -137,13 +141,14 @@ table {
   }
   &.buy {
     border-top: 3px solid $bluesky;
+    &.promo { border: none; }
     thead { padding-top: 3px; }
     th { padding: 12px; font-size: 18px; }
     tr.last td { border-bottom: none; }
     td.price {text-align: right;}
     tr.promo-code {
       div {line-height: 24px;}
-      .btn {margin-top: 10px;}
+      //.btn {margin-top: 10px;}
       &.lite {
         td {background: transparent; border:none;}
         .vat {color: #666;}
@@ -160,7 +165,7 @@ table {
       label, input {float:right; margin-left: 12px;}  
       label {
         width: 140px; text-align: right;
-        font-size: 15px; padding-top: 5px;
+        font-size: 14px; padding-top: 5px;
       }
       input.text {width: 110px;}
       
@@ -1106,7 +1111,7 @@ a:hover img { opacity: 0.7; }
   width: 140px;
   h2 {font-size: 12px; padding-left: 10px;}
   .togglee, .toggler {background: transparent;}
-  .togglee { padding: 0 0 10px; box-shadow: 1px 1px 4px #aaa;}
+  .togglee { padding: 0 0 10px; box-shadow: 1px 1px 4px #aaa; background: #fff;}
   .toggler {
     color: #fff;
     width: 50px; padding-top: 10px; padding-bottom: 10px;

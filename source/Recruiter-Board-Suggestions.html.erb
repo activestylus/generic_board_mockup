@@ -1,0 +1,68 @@
+<% @title = "Recruiter-Board-Suggestions" %>
+
+<%= partial "shared/recruiter_menu", locals: {active: "Post a job"} %>
+
+<div id="post_job" class="page pad-all">
+
+  <div class="breadcrumbs">Post a Job / Basket</div>
+
+  <div class="main col first">
+    
+    <table cellspacing="0" cellpadding="0" border="0" class="buy dotted">
+      <thead>
+        <tr>
+          <th colspan="2">Multiple Job posting packages</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% %w(1 2 4 5).each do |n| %>
+        <tr class="<%= n=="5" ? "last" : nil %>">
+          <td><img src="images/board_logos/0<%= n %>.png"></td>
+          <td class="checkboxes">
+          	<% id30, id60 = "option#{n}30", "option#{n}60" %>
+          	<input type="radio" id="<%= id30 %>" name="<%= id30 %>"/>
+          	<label for="<%= id30 %>">
+          		<strong>30 day job listing inc:</strong> bolding and 7 day refresh 
+          	</label>
+            <div class="clear short">&nbsp;</div>
+          	<input type="radio" id="<%= id60 %>" name="<%= id30 %>"/>
+          	<label for="<%= id60 %>">
+              <strong>60 day job listing inc:</strong> bolding and 7 day refresh 
+            </label>
+          </td>
+          <td class="price">€<%= n %>25.00</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table cellspacing="0" cellpadding="0" border="0"  class="buy dotted promo">
+      <tr class="promo-code">
+        <td width="200">
+          <input type="submit" value="Apply" class="btn btn-go">
+          <input type="text" class="text" />
+          <label>Promotional Code:</label>
+        </td>
+        <td class="price">
+          <div class="subtotal">Total net:  €2500.00</div>
+          <div class="vat">VAT: €300.00</div>
+          <div class="total">Total: €2800.00</div>
+        </td>
+      </tr>
+    </table>
+ 
+    <div class="hr deboss"><div>&nbsp;</div></div>
+
+    <input type="submit" value="Checkout" class="btn btn-checkout pull-right" />
+  </div>
+
+  <div class="side col thin-panes">
+
+    <h2 class="pane-title">Summary</h2>
+
+    <%= partial "shared/cart_summary" %>
+    <%= partial "shared/chat_pane" %>
+
+  </div>
+  <div class="clear"></div>
+</div>

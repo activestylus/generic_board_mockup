@@ -1,4 +1,7 @@
+require 'rack-livereload'
+
 use Rack::Static, :urls => [/./], :root => "build"
+use Rack::LiveReload
 
 run lambda { |env|
   [
