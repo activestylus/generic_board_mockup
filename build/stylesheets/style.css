@@ -1202,6 +1202,8 @@ a#slide-left {
     margin: 20px 0; }
     .hr.deboss div {
       height: 5px; }
+  .hr.cobalt {
+    border-color: #0066cc; }
 
 .vr.deboss {
   margin: 0; }
@@ -1367,6 +1369,26 @@ a#slide-left {
 #job .submit .btn {
   float: right;
   margin-left: 10px; }
+
+#cover-letter {
+  position: relative; }
+  #cover-letter .cv_links {
+    position: absolute;
+    top: 11px;
+    right: 0px; }
+  #cover-letter h3 {
+    margin: 20px 0 10px; }
+  #cover-letter textarea {
+    width: 100%; }
+
+h2.success {
+  background-image: url(../images/icons/success.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  display: inline-block;
+  padding-right: 30px;
+  font-size: 25px;
+  font-weight: normal; }
 
 #account {
   position: relative; }
@@ -1990,3 +2012,34 @@ input#alt-email {
     margin-left: 0px; }
   .payment .confirm .checkboxes label {
     width: 175px; }
+
+a.lite {
+  color: #0066cc; }
+  a.lite:hover {
+    color: #000; }
+
+div.app-confirm p, div.app-confirm div {
+  font-size: 16px;
+  line-height: 24px; }
+div.app-confirm h4 {
+  font-weight: normal;
+  margin-top: 24px; }
+div.app-confirm h3 {
+  margin-top: 34px; }
+div.app-confirm h3, div.app-confirm h4 {
+  font-size: 16px; }
+div.app-confirm small {
+  font-size: 14px;
+  margin-bottom: 9px; }
+div.app-confirm h2 {
+  margin-bottom: 20px; }
+div.app-confirm .hr {
+  margin-top: 24px; }
+
+#job {
+  position: relative; }
+  #job .view-jobs {
+    position: absolute;
+    top: 105px;
+    right: 0px;
+    font-size: 14px; }

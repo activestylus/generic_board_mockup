@@ -758,6 +758,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   &.break { margin-top: 10px;}
   &.table-rule { border-width: 1px; margin: 0 0 1px 0;}
   &.deboss { margin: 20px 0; div { height: 5px; } }
+  &.cobalt { border-color: $cobalt; }
 }
 .vr {
   &.deboss { margin: 0; div { width: 5px; height: 100%; } }
@@ -869,6 +870,22 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   dt { width: 20%; font-weight: bold; }
   dd { width: 80%; margin-left: 0px; position: relative; top: -1px; }
   .submit .btn { float: right; margin-left: 10px; }
+}
+#cover-letter {
+  position: relative;
+  .cv_links {
+    position: absolute;
+    top:11px; right: 0px;
+  }
+  h3 {margin: 20px 0 10px;}
+  textarea {width: 100%;}
+}
+h2.success {
+  @include icon('success');
+  background-position: right center;
+  display: inline-block;
+  padding-right: 30px;
+  font-size: 25px; font-weight: normal;
 }
 //
 //----------------------------------------------------------------
@@ -1285,6 +1302,21 @@ input#alt-email {width: 180px; margin-left: 12px;}
       label {width:175px;}
     }
   }
-
-
+}
+//
+//  Confirm
+//
+a.lite {color: $cobalt; &:hover {color:#000;} }
+div.app-confirm {
+  p, div {font-size: 16px; line-height: 24px;}
+  h4 {font-weight: normal; margin-top: 24px;}
+  h3 {margin-top: 34px}
+  h3, h4 {font-size: 16px}
+  small {font-size: 14px; margin-bottom:9px;}
+  h2 { margin-bottom: 20px; }
+  .hr {margin-top: 24px}
+}
+#job {
+  position: relative;
+  .view-jobs {position: absolute; top:105px; right: 0px; font-size: 14px}
 }
