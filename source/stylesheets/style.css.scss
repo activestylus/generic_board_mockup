@@ -632,6 +632,7 @@ a.remove {
 .nav-pills > li {margin-right: 2px;}
 .nav-pills > li > a {
   color: #000; border-radius: 2px; font-weight: bold;
+  padding-right:10px; padding-left: 10px;
   &:hover { color: $cobalt; background: transparent; text-decoration: underline;}
 }
 .nav-pills > .active > a, .nav-pills > .active > a:hover { background: $cobalt; }

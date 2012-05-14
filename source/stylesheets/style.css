@@ -961,7 +961,9 @@ a.remove {
 .nav-pills > li > a {
   color: #000;
   border-radius: 2px;
-  font-weight: bold; }
+  font-weight: bold;
+  padding-right: 10px;
+  padding-left: 10px; }
   .nav-pills > li > a:hover {
     color: #0066cc;
     background: transparent;

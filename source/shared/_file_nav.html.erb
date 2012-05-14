@@ -3,7 +3,7 @@
   <div class="togglee" style="display:none;">
     <h2>Candidates</h2>
     <ul>
-      <% %w(Home Job-Page Search Landing-Page).each do |file| %>
+      <% %w(Home Job-Page Search Landing-Page App-Confirmation Cover-Letter).each do |file| %>
         <% klass = file == @title ? "class='active'" : nil %>
         <li <%= klass %>><a href="<%= file %>.html"><%= file.titleize %></a></li>
       <% end %>
