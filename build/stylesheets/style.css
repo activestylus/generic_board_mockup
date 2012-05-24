@@ -514,7 +514,7 @@ dl.horizontal {
       margin-right: 25px;
       margin-top: -4px; }
       #menu a.brand b {
-        color: #c00; }
+        color: #cc0000; }
   #menu .hud a {
     color: #fff; }
   #menu .span4 {
@@ -780,7 +780,7 @@ label {
 
 .btn-join {
   color: #fff;
-  background: #c00;
+  background: #cc0000;
   text-shadow: -1px -1px 0px #770000; }
   .btn-join:hover {
     background: #f00;
@@ -956,7 +956,7 @@ a.remove {
   margin-top: 20px; }
 
 .nav-pills > li {
-  margin-right: 2px; }
+  margin-right: 4px; }
 
 .nav-pills > li > a {
   color: #000;
@@ -986,7 +986,8 @@ a.remove {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 20px 20px 1px 20px;
-  margin-left: 0px; }
+  margin-left: 0px;
+  width: 99%; }
 
 .hud {
   background: #444;
@@ -1802,7 +1803,7 @@ a:hover img {
   #file-nav li, #file-nav a {
     display: block; }
   #file-nav a {
-    padding: 4px 8px; }
+    padding: 1px 8px; }
     #file-nav a:hover {
       background: #e5effa;
       text-decoration: none; }
@@ -2045,3 +2046,70 @@ div.app-confirm .hr {
     top: 105px;
     right: 0px;
     font-size: 14px; }
+
+.candidate h1 {
+  margin-top: 20px;
+  font-size: 22px; }
+
+dl.candidate-form {
+  margin-top: 26px; }
+  dl.candidate-form dt, dl.candidate-form dd {
+    margin-bottom: 26px; }
+  dl.candidate-form dt {
+    color: #0088cc;
+    font-size: 16px; }
+  dl.candidate-form dd {
+    position: relative; }
+
+#employment dl dt {
+  width: 35%; }
+#employment dl dd {
+  width: 62%; }
+#employment button {
+  margin: 0px 170px 65px 0px; }
+
+.candidate table.clean-list h1 {
+  margin-top: 4px; }
+
+table.clean-list th {
+  background: #fff; }
+table.clean-list td {
+  border-top: 1px solid #ddd;
+  padding: 26px 0;
+  font-size: 13px; }
+table.clean-list td.crud {
+  padding-top: 44px; }
+table.clean-list h3 {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 26px; }
+  table.clean-list h3 a {
+    color: #0088cc; }
+
+#applications td {
+  line-height: 24px; }
+
+.error-text {
+  color: #cc0000; }
+
+#my-details dl dt {
+  width: 28%; }
+#my-details dl dd {
+  width: 65%; }
+#my-details button {
+  margin: 0px 65px 65px 0px; }
+#my-details dd.name select, #my-details dd.name input {
+  float: left; }
+#my-details dd.name input {
+  width: 130px;
+  margin-left: 20px; }
+#my-details dd.name select {
+  width: 60px; }
+#my-details a.update.left {
+  position: absolute;
+  top: 6px;
+  left: 243px; }
+
+a.update {
+  color: #0088cc;
+  font-size: 13px; }

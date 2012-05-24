@@ -1,0 +1,42 @@
+<% @title = "Candidate-Applications" %>
+<div class="candidate">
+  <%= partial "shared/sidebar" %>
+  <div class="main col" id="applications">
+    <%= partial "shared/candidate_menu", locals: {active: "Applications"} %>
+    <div class='info'>
+      <table cellspacing="0" cellpadding="0" border="0" class="clean-list">
+        <tr>
+          <th><h1>Your Applications</h1></th><th>Applied</th><th>Interview Status</th>
+        </tr>
+        <tr>
+          <td>
+            <h3><a href="#">Web Designer - Berlin</a></h3>
+            Berlin, Germany<br>
+            Recruiter: Rubyjobs.de
+          </td>
+          <td>3 days ago</td>
+          <td>27/05/12</td>
+        </tr>
+        <tr>
+          <td>
+            <h3><a href="#">Web Designer - Berlin</a></h3>
+            Berlin, Germany<br>
+            Recruiter: Rubyjobs.de
+          </td>
+          <td>7 days ago</td>
+          <td><a href="#">Add Interview date</a></td>
+        </tr>
+        <tr>
+          <td>
+            <h3><a href="#">Web Designer - Berlin</a></h3>
+            Berlin, Germany<br>
+            Recruiter: Rubyjobs.de
+          </td>
+          <td>3 days ago</td>
+          <td class="error-text">Job Expired</td>
+        </tr>
+      </table>
+      <div class="hr"></div>
+    </div>
+  </div>
+</div>

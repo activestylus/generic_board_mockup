@@ -1,0 +1,33 @@
+<% @title = "Candidate-My-Details" %>
+<div class="candidate">
+  <%= partial "shared/sidebar" %>
+  <div class="main col" id="my-details">
+    <%= partial "shared/candidate_menu", locals: {active: "My Details"} %>
+    <div class='info'>
+      <h1>My Details</h1>
+      <dl class="horizontal candidate-form">
+      	<dt>Name</dt>
+      	<dd class="name">
+          <select><option>Mr</option><option>Mrs</option><option>Ms</option></select>
+          <input type="text" class="text" placeholder="First Name" />
+          <input type="text" class="text" placeholder="Last Name" />
+        </dd>
+      	<dt>Phone Number</dt>
+      	<dd><input type="text" /></dd>
+      	<dt>Email Address</dt>
+      	<dd><input type="text" /><a href="#" class="update left">Change email</a></dd>
+      	<dt>Password</dt>
+      	<dd>************<a href="#" class="update left">Change password</a></dd>
+      	<dt>Address</dt>
+      	<dd>
+          101, Berlinerstrasse<br/>
+          Berlin, 10886<br/>
+          Germany<br/><br/>
+          <a class="update" href="#">Update address</a>
+        </dd>
+      </dl>
+      <button class="btn btn-join btn-large pull-right">Save changes</button>
+      <div class="hr"></div>
+    </div>
+  </div>
+</div>

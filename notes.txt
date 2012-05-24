@@ -1,0 +1,11 @@
+More design standards needed:
+
+- Candidate pages, titles are different (font-size border)
+
+Employment Page:
+
+We should show an incomplete form here, instead of populating the values we need to show the defaults/placeholders
+
+Saved jobs Page:
+
+We list it as saved jobs but the title says saved searches.

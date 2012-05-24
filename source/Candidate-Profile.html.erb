@@ -1,0 +1,40 @@
+<% @title = "Candidate-Landing-Page" %>
+<div class="candidate">
+  <%= partial "shared/sidebar" %>
+  <div class="main col" id="account">
+    <%= partial "shared/candidate_menu", locals: {active: "Profile"} %>
+    <div class='info'>
+      <h1>Your Account</h1>
+      <p>
+         Darren Jones<br/>
+         darren@1000jobboersen.de<br/>
+         Job title: Creative Director
+      </p>
+      <a href="#" id="cv-download">Download my CV</a>
+      <div class="clear"></div>
+      <h2>You're looking for <a href="#">Update</a></h2>
+      <p>
+        Industry Sectors: IT and Telecoms, Media<br/>
+        Location: Berlin, Germany<br/>
+        Salary: €80000 - €90000 per annum
+      </p>
+      <div class="section cv">
+        <h2>CV <a href="#">Update</a></h2>
+        <p>CV Status - searchable by recruiters</p>
+      </div>
+      <div class="section searches">
+        <h2>Saved Searches <a href="#">View</a></h2>
+        <p>You have 2 saved jobs</p>
+      </div>
+      <div class="section applications">
+        <h2>Applications <a href="#">View</a></h2>
+        <p>You have 2 saved jobs</p>
+      </div>
+      <div class="section email">
+        <h2>Jobs by email <a href="#">Add new</a></h2>
+        <p>You have 1 email alert set up</p>
+      </div>
+
+    </div>
+  </div>
+</div>

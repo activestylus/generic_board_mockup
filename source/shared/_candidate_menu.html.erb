@@ -1,0 +1,20 @@
+<% @bodyclass = @bodyclass ? @bodyclass << " logged" : "logged"%>
+
+<div class="nav-pills-wrap break">
+  <ul class="nav nav-pills">
+  <% ['Profile', 'Employment', 'Saved jobs', 'Applications', 'Jobs by email', 'My Details'].each_with_index do |item, i| %>
+    <% klass = if defined?(active) && active == item
+        'active clean'
+      elsif i == 0 && (defined?(active) && active == 'Profile')
+        'active clean'
+      elsif item == 'My Details'
+        'clean'
+      else
+        nil
+      end
+    %>
+    <% url = "Candidate-" + item.gsub(' ','-') + '.html' %>
+    <li class="<%= klass %>"><a href="<%= url %>"><%= item %></a></li>
+  <% end %>
+  </ul>
+</div>

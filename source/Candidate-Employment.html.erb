@@ -1,0 +1,26 @@
+<% @title = "Candidate-Employment" %>
+<div class="candidate">
+  <%= partial "shared/sidebar" %>
+  <div class="main col" id="employment">
+    <%= partial "shared/candidate_menu", locals: {active: "Employment"} %>
+    <div class='info'>
+      <h1>Employment and Skills</h1>
+      <dl class="horizontal candidate-form">
+      	<dt>Job Title</dt>
+      	<dd><input type="text" /></dd>
+      	<dt>Employer</dt>
+      	<dd><input type="text" /></dd>
+      	<dt>Employment Status</dt>
+      	<dd><select><option value="1">Employed</option></select></dd>
+      	<dt>Nationality</dt>
+      	<dd><select><option value="1">Deutsche</option></select></dd>
+      	<dt>Highest Qualification</dt>
+      	<dd><select><option value="1">Bachelor's Degree</option></select></dd>
+      	<dt>Languages</dt>
+      	<dd><select><option value="1">Select Language</option></select></dd>
+      </dl>
+      <button class="btn btn-join btn-large pull-right">Save changes</button>
+      <div class="hr"></div>
+    </div>
+  </div>
+</div>

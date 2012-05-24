@@ -4,7 +4,7 @@ task :deploy, :message do |t, args|
   puts "## Building..."
   system("bundle exec middleman build")
   puts "## Indexing..."
-  link = system("cp build/Home.html build/index.html")
+  link = system("cp build/Candidate-Home.html build/index.html")
   puts link ? "* created index page" : "* index failed"
   puts "## Compressing..."
   zip = system("zip -r build build")

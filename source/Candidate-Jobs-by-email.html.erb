@@ -1,0 +1,26 @@
+<% @title = "Candidate-Jobs-by-email" %>
+<div class="candidate">
+  <%= partial "shared/sidebar" %>
+  <div class="main col" id="job-alerts">
+    <%= partial "shared/candidate_menu", locals: {active: "Jobs by email"} %>
+    <div class='info'>
+      <h1>Job alerts</h1>
+      <table cellspacing="0" cellpadding="0" border="0" class="clean-list">
+        <% {"Temporary jobs in Berlin"=>"Berlin, Germany",
+            "Front End Developer - Berlin"=>"From 50,000+, Berlin, Germany",
+            "Freelance Web Developer"=>"Permanent jobs in Berlin, Germany",
+            "50k+ jobs"=>"Berlin, Germany"}.each do |title, location| %>
+          <tr>
+            <td>
+              <h3><a href="#"><%= title %></a></h3>
+              <%= location %>
+            </td>
+            <td class="crud">Edit</td>
+            <td class="crud">Delete</td>
+          </tr>
+        <% end %>
+      </table>
+      <div class="hr"></div>
+    </div>
+  </div>
+</div>

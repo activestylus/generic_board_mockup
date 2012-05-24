@@ -18,6 +18,7 @@ $link: #0088CC;
 $cobalt: #06c;
 $sky: #e5effa;
 $bluesky: #3994f1;
+$error: #c00;
 $button-radius: 3px;
 //----------------------------------------------------------------
 // General Layout
@@ -343,7 +344,7 @@ dl.horizontal {
     &.brand {
       font-size: 40px; font-family: Trebuchet MS, sans-serif; font-weight: bold;
       color: #000; border-right: none; margin-right: 25px; margin-top: -4px;
-      b {color: #c00; }
+      b {color: $error; }
     }
   }
   .hud a { color: #fff; }
@@ -519,7 +520,7 @@ label {
 }
 .splash .btn { padding: 7px 17px; font-size: 15px; font-weight: bold; }
 .btn-join {
-  color: #fff; background: #c00;
+  color: #fff; background: $error;
   //font-weight: bold; font-size: 15px; letter-spacing: 0.5px;
   text-shadow: -1px -1px 0px #700;
   //padding: 7px 18px;
@@ -629,7 +630,7 @@ a.remove {
 }
 .tab-pane { padding: 12px 27px 27px 27px; margin-bottom: 20px; }
 .nav-pills.break {margin-top: 20px;}
-.nav-pills > li {margin-right: 2px;}
+.nav-pills > li {margin-right: 4px;}
 .nav-pills > li > a {
   color: #000; border-radius: 2px; font-weight: bold;
   padding-right:10px; padding-left: 10px;
@@ -642,7 +643,7 @@ a.remove {
 }
 .nav-pills-wrap {
   border: 1px solid #ddd; border-radius: 4px;
-  padding: 20px 20px 1px 20px; margin-left: 0px;
+  padding: 20px 20px 1px 20px; margin-left: 0px; width: 99%;
 }
 //
 //----------------------------------------------------------------
@@ -1147,7 +1148,7 @@ a:hover img { opacity: 0.7; }
     font-size: 13px;
   }
   li , a {display: block;}
-  a { padding: 4px 8px; &:hover{ background:$sky; text-decoration: none; } }
+  a { padding: 1px 8px; &:hover{ background:$sky; text-decoration: none; } }
   li.active a { background: $cobalt; color: #fff; }
 }
 
@@ -1321,3 +1322,44 @@ div.app-confirm {
   position: relative;
   .view-jobs {position: absolute; top:105px; right: 0px; font-size: 14px}
 }
+// Candidate Employment
+.candidate h1 { margin-top: 20px; font-size: 22px; }
+dl.candidate-form {
+  margin-top: 26px;
+  dt, dd {margin-bottom: 26px;}
+  dt {color: $link; font-size: 16px;}
+  dd {position: relative;}
+}
+#employment {
+  dl { dt {width: 35%;} dd {width: 62%;} }
+  button {margin: 0px 170px 65px 0px;}
+}
+// Candidate Jobs and Applications
+.candidate table.clean-list h1 {margin-top: 4px}
+table.clean-list {
+  th {background: #fff;}
+  td { border-top: 1px solid #ddd; padding:26px 0; font-size: 13px;}
+  td.crud {padding-top: 44px;}
+  h3 {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 26px;
+    a {color: $link;}
+  }
+}
+#applications {
+  td {line-height: 24px;}
+}
+.error-text {color: $error;}
+// Candidate My Details
+#my-details {
+  dl { dt {width: 28%;} dd {width: 65%;} }
+  button {margin: 0px 65px 65px 0px;}
+  dd.name {
+    select, input {float: left;}
+    input {width: 130px; margin-left: 20px;}
+    select {width: 60px;}
+  }
+  a.update.left {position: absolute; top: 6px; left: 243px;}
+}
+a.update {color: $link; font-size: 13px;}
