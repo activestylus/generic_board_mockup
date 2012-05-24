@@ -2,6 +2,7 @@
   <h3 class="toggler"><strong>Pages</strong></h2>
   <div class="togglee" style="display:none;">
     <h2>Candidates</h2>
+    
     <ul>
       <% %w(Home Job-Page Search App-Confirm Cover-Letter Profile Employment Saved-jobs Applications Jobs-by-email My-Details).each do |file| %>
         <% klass = "Candidate-#{file}" == @title ? "class='active'" : nil %>
