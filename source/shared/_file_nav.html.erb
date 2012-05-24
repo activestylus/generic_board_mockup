@@ -5,7 +5,7 @@
     <ul>
       <% %w(Home Job-Page Search App-Confirm Cover-Letter Profile Employment Saved-jobs Applications Jobs-by-email My-Details).each do |file| %>
         <% klass = "Candidate-#{file}" == @title ? "class='active'" : nil %>
-        <li <%= klass %>><a href="<%= file %>.html"><%= file.titleize %></a></li>
+        <li <%= klass %>><a href="Candidate-<%= file %>.html"><%= file.titleize %></a></li>
       <% end %>
     </ul>
     <h2>Recruiters</h2>
