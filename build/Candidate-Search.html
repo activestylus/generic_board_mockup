@@ -10,6 +10,8 @@
 <script type="text/javascript" src="javascripts/jquery.jcarousel.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.jscrollpane.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.inview.js" ></script>
+<script type="text/javascript" src="javascripts/ModalDialog.js" ></script>
+<script type="text/javascript" src="javascripts/kalendae.min.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.clickoutside.js" ></script>
 <script type="text/javascript" src="javascripts/app.js" ></script>
 <link href="stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
@@ -21,7 +23,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
 </script>
 
 </head>
-<body>
+<body class="">
   <div id="head">
   <div class="navbar">
     <div class="navbar-inner">
@@ -169,6 +171,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       
 <div class="row-fluid">
   <div class="side col first">
+  
   <div id="sidebar" class="thin pad">
     <div class="text field">
       <label>Start new search</label>
@@ -235,17 +238,31 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
 
   <div class="main col" id="search-results">
     <div class="head">
-      <img src="images/thumbs/social.png" />
-<a class="mail break" href="#">Sign up for email alerts</a>
+      <img src="images/thumbs/social.png" style="margin-bottom:12px;"/>
       <div class="hr thick"></div>
     </div>
     <div id="subscribe" class="clear pane pad">
   <form>
     <label>Email me jobs like these</label>
     <input type="text" />
-    <input type="submit" value="Go" class="btn btn-secondary" />
+    <input type="submit" value="Go" class="btn btn-secondary" id="modal-trigger"/>
   </form>
   <div class="clear"></div>
+</div>
+<div id="modal">
+	<div class="note with-icon sign-in">Sign in to create your job alert.</div>
+	<div class="content">
+		<form>
+			<label>Email</label>
+		  <input type="text">
+		  <label>Password</label>
+		  <input type="password"/>
+		  <div class="clear">&nbsp;</div>
+		  <input type="submit" class="btn btn-join btn-large" value="Sign In"/>
+		  <a class="cancel" href="#">Forgotten Password</a>
+  	</form>
+  	<a href="#" id="btn-close">Close Window</a>
+	</div>
 </div>
 
     <div id="slideshow" class="jcarousel-skin-default">
@@ -437,10 +454,16 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li ><a href="Candidate-Home.html">Home</a></li>
       
         
+        <li ><a href="Candidate-Register.html">Register</a></li>
+      
+        
         <li ><a href="Candidate-Job-Page.html">Job Page</a></li>
       
         
         <li ><a href="Candidate-Search.html">Search</a></li>
+      
+        
+        <li ><a href="Candidate-Featured-Jobs.html">Featured Jobs</a></li>
       
         
         <li ><a href="Candidate-App-Confirm.html">App Confirm</a></li>
@@ -477,7 +500,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li ><a href="Recruiter-Profile.html">Profile</a></li>
       
         
-        <li ><a href="Recruiter-Post-a-Job.html">Post A Job</a></li>
+        <li ><a href="Recruiter-Post-a-job.html">Post A Job</a></li>
       
         
         <li ><a href="Recruiter-CV-Search.html">Cv Search</a></li>
@@ -505,6 +528,12 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       
         
         <li ><a href="Recruiter-Payment-Invoice.html">Payment Invoice</a></li>
+      
+        
+        <li ><a href="Recruiter-Confirmed-Payment.html">Confirmed Payment</a></li>
+      
+        
+        <li ><a href="Recruiter-Stats.html">Stats</a></li>
       
     </ul>
   </div>

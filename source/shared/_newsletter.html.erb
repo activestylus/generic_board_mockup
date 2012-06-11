@@ -2,7 +2,22 @@
   <form>
     <label>Email me jobs like these</label>
     <input type="text" />
-    <input type="submit" value="Go" class="btn btn-secondary" />
+    <input type="submit" value="Go" class="btn btn-secondary" id="modal-trigger"/>
   </form>
   <div class="clear"></div>
+</div>
+<div id="modal">
+	<div class="note with-icon sign-in">Sign in to create your job alert.</div>
+	<div class="content">
+		<form>
+			<label>Email</label>
+		  <input type="text">
+		  <label>Password</label>
+		  <input type="password"/>
+		  <div class="clear">&nbsp;</div>
+		  <input type="submit" class="btn btn-join btn-large" value="Sign In"/>
+		  <a class="cancel" href="#">Forgotten Password</a>
+  	</form>
+  	<a href="#" id="btn-close">Close Window</a>
+	</div>
 </div>

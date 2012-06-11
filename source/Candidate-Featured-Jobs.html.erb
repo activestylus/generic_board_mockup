@@ -1,0 +1,29 @@
+<% @title = "Candidate-Featured-Jobs" %>
+<div class="row-fluid">
+  <%= partial "shared/sidebar", locals: {companies: ['Vodafone']} %>
+  <div class="main col" id="search-results">
+    <div class="head">
+      <%= partial "shared/social_email" %>
+      <div class="hr thick"></div>
+    </div>
+    <%= partial "shared/newsletter" %>
+    <img src="/images/logos/vodafone-thumb.png" class='featured-logo' />
+    <strong class="featured">Featured Jobs by Vodafone</strong>
+    <div class="hr break thin"></div>
+    <% data.jobs.each do |jobs| %>
+    <% job = jobs[1] %>
+    <div class="result">
+      <h2><a href='#'><%= job.position %></a></h2>
+      <strong class="details"><%= job.location %><br/><%= job.rate %></strong>
+      <p>Our client, an entrepreneurial and well established wealth management organisation based in Jersey, Channel Islands is looking for an experienced Fund/Investment Manager to focus on developing a new book of clients.You will be responsible for developing...</p>
+      <img src="/images/logos/vodafone-icon.png" class="logo"/>
+      <% if job.status === "unsaved" %>
+        <a href="#" class="save btn">Save</a>
+      <% else %>
+        <span class="save">Saved</span>
+      <% end %>
+    </div>
+    <% end %>
+    <%= partial "shared/pagination" %>
+  </div>
+</div>

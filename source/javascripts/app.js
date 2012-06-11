@@ -68,6 +68,7 @@ var Toggler = {
       var div = $(this).next('.togglee');
       if (div.is(":hidden")) { div.slideDown(); } else { div.slideUp(); };
       $(this).toggleClass('open');
+      return false;
     });
   }
 };
@@ -131,13 +132,58 @@ var HoverScroll = {
   }
 };
 
-$(function() {
+var ModalWindow = {
+  init: function() {
+    var dialog = new ModalDialog ("#modal");
+    $("#modal-trigger").click (function() { dialog.show(); return false;});
+    $.each(["#s--modalbox-overlay", "#btn-close"], function(i,id) {
+      $(id).on('click',function() { dialog.hide(); return false;});
+    });
+    
+  }
+}
 
+var PopupMenuColumns = {
+  init : function() {
+    $(".popup-menu").bind( "clickoutside", function(event){
+      if ($(this).is(":visible")) {
+        $(this).parent().parent().fadeOut();
+      }
+    });
+
+    $('.popup-menu').find('a').on('click', function(e) {
+      self = $(this);
+      var div = self.parent().parent().parent();
+      var target = $(div.data().target);
+      div.parent().parent().fadeOut();
+      target.text(self.text());
+      
+      return false;
+    });
+  }
+}
+
+var PrintPage = {
+  init: function() {
+    if ($('a#print-me')) {
+      $('a#print-me').click(function() {
+        window.print();
+        return false;
+      });
+    }
+  }
+}
+
+
+$(function() {
+  PrintPage.init();
+  PopupMenuColumns.init();
   SlideShow.init();
   AdvancedSearch.init();
   DropDownMenu.init();
   FileNav.init();
   HoverScroll.init();
+  ModalWindow.init();
   Selections.init();
   Toggler.init();
 

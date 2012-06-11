@@ -1,6 +1,11 @@
 @mixin navy {
   background: #0B1437 url(../images/patterns/lines-navy.png);
 }
+@mixin tile($filename,$format:"") {
+  background-image: url(../images/patterns/#{$filename}.png);
+  @if $format == "x" {background-repeat: repeat-x;}
+  @if $format == "y" {background-repeat: repeat-y;}
+}
 @mixin icon($filename,$hover:false) {
   background-image: url(../images/icons/#{$filename}.png);
   background-repeat: no-repeat;

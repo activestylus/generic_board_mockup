@@ -1,4 +1,14 @@
 <div class="side col first">
+  <% if defined?(companies) %>
+    <div class="rows">
+      <% companies.map do |company| %>
+      <div class="row">
+        <%= company %>
+        <a href="#" class="delete-row">[x]</a>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
   <div id="sidebar" class="thin pad">
     <div class="text field">
       <label>Start new search</label>

@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Arvo:400italic);
 @import "mixins.css.scss";
+@import "kalendae.css.scss";
 //
 //----------------------------------------------------------------
 // Constants
@@ -7,14 +8,17 @@
 $base_font_size: 13px;
 $layout_width: 905px;
 $gold: #c90;
+$green: #00af3a;
 $amber: #fc0;
+$orange: #f68b1f;
 $blue: #006;
 $navy: #282751;
 $royal_blue: #333e80;
 $eggshell: #f7f7f7;
 $red: #cc0000;
 $rust: #d93f3f;
-$link: #0088CC;
+//$link: #0088CC;
+$link: #004c94;
 $cobalt: #06c;
 $sky: #e5effa;
 $bluesky: #3994f1;
@@ -117,14 +121,14 @@ th.sort {
 }
 td.delete-row {
   vertical-align: middle;
-  a {
-    display: block; text-indent: -9999px;
-    @include icon("delete-row");
-    background-position: center center;
-    width: 20px;
-    &:hover {opacity:0.6;}
-  }
-} 
+}
+td.delete-row a {
+  display: block; text-indent: -9999px;
+  @include icon("delete-row");
+  background-position: center center;
+  width: 20px;
+  &:hover {opacity:0.6;}
+}
 table {
   width:100%;
   margin-bottom: 22px;
@@ -442,7 +446,9 @@ small.search {
   display: block; clear: both;
   label, input, textarea, select {float: left; clear: none;}
   label {width: 100px;}
+  &.wide { label {width: 146px;} }
 }
+
 .page .block {
   input, textarea, select {background: #f9f9f9;}
 }
@@ -451,6 +457,8 @@ small.search {
   margin-top: 10px; display: inline-block;
   margin-bottom: 10px;
   &.clear {display: block; clear: both;}
+  &.small {font-size: 14px;}
+  &.spaced {margin: 10px;}
 }
 .block {
   position: relative;
@@ -466,13 +474,23 @@ input, textarea, select, .uneditable-input {
   border-bottom: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5;
   border-radius: 0px;
 }
-input.title {font-size: 18px; padding-top: 6px; padding-bottom: 6px; height: 24px;}
+input {
+  &.title {font-size: 18px; padding-top: 6px; padding-bottom: 6px; height: 24px;}
+  &.full {width: 99%;}  
+}
+  
 label {
-  font-weight: bold;
   &.fine {font-weight: normal}
   &.strong {font-weight: bold; font-size: 14px;}
   &.tall {line-height: 26px;}
+  &.left {display: inline-block; padding-right: 10px; float: left;}
+  &.wider {width:180px;}
 }
+select {
+  &.per-year {width: 120px;}
+}
+.select { select {margin-left: 13px; margin-top: 6px} }
+.form-grad {background: url(../images/patterns/form-grad.png) repeat-x;}
 .checkboxes {
   li { display: block; clear: both; }
   input, label { display: block; float: left; }
@@ -754,6 +772,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 .hr {
   border-top: 4px solid $blue; clear: both; margin-bottom: 20px;
   &.thin { border-width: 1px; }
+  &.thin2 { border-width: 2px; }
   &.dotted { border-style: dotted; border-top: none; }
   &.lite { border-color: #ccc; }
   &.thick { border-width: 8px; margin-bottom: 12px; }
@@ -761,6 +780,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   &.table-rule { border-width: 1px; margin: 0 0 1px 0;}
   &.deboss { margin: 20px 0; div { height: 5px; } }
   &.cobalt { border-color: $cobalt; }
+  &.shift-right {margin-right: 20px; }
 }
 .vr {
   &.deboss { margin: 0; div { width: 5px; height: 100%; } }
@@ -772,12 +792,13 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
 }
 #search-results {
   font-size: $base_font_size;
-  .hr { margin-bottom: 15px; }
+  .hr { margin-bottom: 4px; }
   .head {
     .pad { padding: 20px 20px 10px 20px; }
     img { float: left; }
     a { float: right; background-position: right center; padding: 0px 32px 0px 0px }
   }
+  img.logo {position: absolute; top:0; right:0;}
 }
 .result {
   position: relative; border-bottom: 1px dotted #777;
@@ -795,7 +816,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
     }
   }
   p { color: #666; }
-  .save { position: absolute; top: 33px; right: 0px; display: inline-block; }
+  .save { position: absolute; top: 39px; right: 0px; display: inline-block; }
   span.save { @include icon('saved'); padding-right: 13px; background-position: right center; }
 
 }
@@ -846,7 +867,7 @@ a#slide-left { left:0; @include icon('go-prev', 'hover'); }
   .checkboxes label { margin-bottom: 0px; }
   .checkboxes label, a { color: #666; &:hover { color: #000; text-decoration: underline } }
 }
-.toggler {
+h3.toggler {
   padding-top: 18px; cursor: pointer;
   strong {
     display: inline-block; padding-right: 12px;
@@ -1021,11 +1042,26 @@ img.left {float: left; margin: 0 16px 20px 0;}
   float: left; clear: none;
   margin-left: 25px;
   &.first {margin-left: 0px;}
-  &.main {width: 615px; &.fat { width: 680px;}}
+  &.main {
+    width: 615px;
+    &.shade-right {
+      @include tile("shade-left","y");
+      background-position: right top; 
+    }
+    &.fat { width: 680px;}
+    &.thin {width: 550px}
+  }
 
   &.side {
     width: 225px;
+    &.fat {
+      width: 290px;
+      &.shade-left {
+        width: 260px; padding-left: 30px;
+      }
+    }
     &.list { padding-top: 105px; }
+    &.shade-left { @include tile("shade-left","y"); }
     &.thin { width: 175px; }
     &.buy { width: 132px; padding-right: 15px; margin-left: 35px}
   }
@@ -1040,14 +1076,48 @@ img.left {float: left; margin: 0 16px 20px 0;}
 }
 .table-header {
   padding-bottom: 10px;
+}
+//
+// Modal
+#modal {
+  padding: 6px;
+  display: none;
+  width: 337px;
+  border: 1px solid #666;
+  background-color: #fff;
+  box-shadow: 2px 2px 8px #999;
+  position: absolute;
+  .content {
+    padding: 26px;
+  }
+  .note {
+    background-color: $eggshell;
+    padding: 26px;
+    font-weight: bold;
+    font-size: 14px;
+    &.sign-in {
+      @include icon("sign-in");
+      background-position: 26px 22px; 
+      padding-left: 50px;
+    }
+  }
 
 }
+
+#btn-close { 
+  @include icon("btn-close");
+  display: block; position: absolute;
+  width: 9px; height: 9px;
+  text-indent: -9999px;
+  top:10px; right:10px;
+}
+
 //
 //-------------------------------------------------------
 // Recruiters Landing Page
 //-------------------------------------------------------
 #recruiter-menu { padding-right: 10px; padding-left: 190px;  }
-body.recruiters {
+body {
   &.logged {
     background: url(../images/patterns/body.png) repeat-x fixed 0 -100px;
     .dropdown-toggle {border-color: #EFF7FE;}
@@ -1187,7 +1257,8 @@ a:hover img { opacity: 0.7; }
   margin: 34px 13px 13px;
   img { margin: 0 3px; }
 }
-#salary-details { input.amount {width: 110px;} }
+.checks.shift-left {left: -20px; position: relative;}
+#salary-details { input.amount {width: 95px;} }
 #salary-pay-period { width: 90px; margin-left: 40px;}
 #salary-currency { width: 70px; margin-right: 40px;}
 #display-salary {padding-left: 138px;}
@@ -1222,8 +1293,29 @@ input#alt-email {width: 180px; margin-left: 12px;}
 
   img {float: right;}
 }
-.side .thin-panes { margin-bottom: 20px; }
+.side {
+  .thin-panes { margin-bottom: 20px; }
+  .rows {
+    border-top: 8px solid $blue;
+    margin-top: 36px; padding-top: 1px;
+  }
+  .row {
+    background: $eggshell;
+    margin-left: 0px; margin-bottom: 1px;
+    padding: 14px;
+    position: relative;
+    font-weight: bold;
+    a {
+      display: block; text-indent: -9999px;
+      @include icon("delete");
+      background-position: center center;
+      width: 20px;
+      position: absolute; right: 10px; top: 12px;
+    }
+  }
+}
 .breadcrumbs { margin-bottom: 20px;}
+.crumb {display: inline-block; margin: 0 9px;}
 #post_job {
   .breadcrumbs {margin-bottom: 26px; margin-top: 4px}
   .breadcrumbs, h1 {padding-left: 12px;}
@@ -1334,6 +1426,31 @@ dl.candidate-form {
   dl { dt {width: 35%;} dd {width: 62%;} }
   button {margin: 0px 170px 65px 0px;}
 }
+//
+// Confirmed Payment
+//
+h1.confirmation {
+  background: #ffc;
+  padding: 12px 24px;
+}
+#confirmed-payment {
+  .main.col {width: 550px; padding-right: 36px}
+  .chat.pane {padding-top: 20px;}
+  .chat-face {width: 90px;}
+  h3 {display: block; margin: 20px 0px; font-size: 16px}
+  ul {list-style-type: none; margin-left: 0px;}
+  li {display: block; margin-bottom:10px;}
+
+}
+.confirmed-total {
+  font-size: 29px;
+  padding: 20px 10px;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  margin: 30px 0px;
+}
+
+
 // Candidate Jobs and Applications
 .candidate table.clean-list h1 {margin-top: 4px}
 table.clean-list {
@@ -1363,3 +1480,103 @@ table.clean-list {
   a.update.left {position: absolute; top: 6px; left: 243px;}
 }
 a.update {color: $link; font-size: 13px;}
+.bigger-text {
+  p, label {font-size: 14px}
+}
+strong.featured {font-size: 15px; display: inline-block; margin-left: 10px}
+img.featured-logo {margin-bottom: 12px}
+a.cancel {display: inline-block; margin-left: 10px;}
+
+// Candidate Register
+#candidate-register {
+  position: relative; top: -30px;
+  label.left {
+    width: 120px;
+  }
+  .togglee {
+    position: absolute;height: 300px; width: 960px; z-index:9;
+    display: none;
+  }
+  #selected-specialism {position: absolute; top:3px; left: 90px;}
+  .popup-menu {
+    background: #fff;
+    position: absolute;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 4px #999;
+    padding: 12px 12px 0 12px;
+    width: 660px;
+    ul {
+      list-style-type: none;
+      margin-left: 0px;
+      display: block; float: left;
+      width: 32%;
+    }
+    li {margin-bottom: 3px;}
+    a {color: $link;}
+  }
+}
+h2.step {
+  font-size: 17px; font-weight: normal;
+  background: $sky; padding: 4px 20px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 30px;
+  margin-top: 30px
+}
+
+//  Job Stats
+ol.stats {
+  margin: 0 0 15px 30px;
+  padding-top: 20px;
+  display: block;
+  font-weight: bold;
+  color: $orange;
+  li {margin-bottom:10px;}
+  a {display: block; color: $link; text-indent: -4px;}
+  small {color: #666; font-weight: normal; font-size: 13px; display: inline-block;
+    position: relative; left:-20px;
+  }
+}
+ul.positions {
+  margin-left: 10px;
+  li {
+    display: block;
+    padding: 15px 0px;
+    border-bottom:1px dotted #ccc;
+  }
+  li.last {border: none;}
+  a {color: $link; font-style: italic; display: block;}
+}
+h2.grayback {background: $eggshell; padding-left: 10px}
+.stat-totals {
+  background: $eggshell;
+  height: 28px;
+  padding: 20px;
+  margin: 20px 0;
+  .total {float: left; width: 33%;}
+  .count, a {display: block; float: left;}
+  a {line-height: 27px; margin-left: 8px; color: $link;}
+  .count {
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 8px;
+    &.orange { background: $orange; }
+    &.green { background: $green; }
+    &.cobalt { background: $cobalt; }
+  }
+}
+select.title {width: 60px}
+.birthdate {
+  float: left;
+  select {display: inline-block; width: 100px}
+}
+.relative {position: relative;}
+small.hint {
+  font-size: 13px;
+  display: block; clear: both;
+}
+.left-field {
+  float: left;
+  width: 600px;
+}
+.disclaimer {margin: 30px 0px; }

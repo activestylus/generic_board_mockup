@@ -35,3 +35,45 @@ job:
     - Television
     - Web Design
     - Other Media & Creative
+specialisms:
+  001:
+    - Accountancy
+    - Accountancy (Qualified)
+    - Admin, Secretarial & PA
+    - Apprenticeships
+    - Banking
+    - Charity & VOluntary
+    - Construction & Property
+    - Customer Service
+    - Education
+    - Energy
+    - Engineering
+    - Estate Agency
+    - Financial Services
+  002:
+    - FMCG
+    - General Insurance
+    - Graduate Training & Internships
+    - Health & Medicine
+    - Hospitality & Catering
+    - Human Resources
+    - IT & Telecoms
+    - Legal
+    - Leisure & Tourism
+    - Manufacturing
+    - Marketing & PR
+    - Media, Digital & Creative
+    - Motoring & Automotive
+  003:
+    - Public Sector
+    - Purchasing
+    - Recruitment Consultancy
+    - Retails
+    - Sales
+    - Scientific
+    - Security & Safety
+    - Social Care
+    - Strategy & Consultancy
+    - Training
+    - Transport & Logistics
+    - Other

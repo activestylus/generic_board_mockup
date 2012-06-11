@@ -1,0 +1,59 @@
+<% @title = "Recruiter-Confirmed-Payment" %>
+
+
+<%= partial "shared/recruiter_menu", locals: {active: ""} %>
+
+<div id="confirmed-payment" class="page pad-all">
+
+  <div class="breadcrumbs"><span class="crumb">Post a Job</span> / <span class="crumb">Cart Summary</span> / <span class="crumb">Checkout</span> / <span class="crumb">Confirmation</span></div>
+
+  <div class="main col first shade-right">
+    
+    <h1 class="confirmation">Confirmation of payment</h1>
+    
+    <p>Thank you for your order Herr Smith</p>
+    <div class="row-fluid">
+    	<div class="span6">
+    		<h3>Billing Address</h3>
+    		Mr Smith<br/>
+				Flat 6<br/>
+				Bratwurststrasse<br/>
+				Berlin, 10124<br/>
+				Germany<br/>
+				Phone: 
+    	</div>
+    	<div class="span6">
+      	<h3>Postal Address</h3>	
+      	Mr Smith<br/>
+				Flat 6<br/>
+				Bratwurststrasse<br/>
+				Berlin, 10124<br/>
+				Germany<br/>
+				Phone: 
+    	</div>
+    </div>
+    
+    <div class="confirmed-total">Order Total: <strong>€2500.00</strong></div>
+    <h3>Order Summary</h3>
+    <ul>
+    	<li>1 x job listing inc: sub category</li>
+    	<li>1 x Featured job listing</li>
+    	<li>1 x job listing</li>
+    	<li>1 x job banner advertisement</li>
+    	<li>Monster 30 day job listing</li>
+    </ul>
+    <h3>Toal for this order: €2500.00</h3>
+    <div class="hr thin2 break"></div>
+    <a href="#" class="btn btn-large" id="print-me">Print</a>
+    
+    
+    
+
+  </div>
+
+  <div class="side col">
+  	<%= partial "shared/chat_pane" %>
+  </div>
+
+  <div class="clear"></div>
+</div>

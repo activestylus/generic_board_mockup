@@ -1,0 +1,81 @@
+<% @title = "Recruiter-Stats" %>
+
+
+<%= partial "shared/recruiter_menu", locals: {active: ""} %>
+
+<div class="page pad-all bigger-text" id="job-stats">
+
+  <div class="main col first shade-right">
+    <div class="block full">
+      
+      <h1>Statistiken fur Assistent/ - in der Geschaftsfuhrung</h1>
+      <div class="caption"><strong>At a glance: </strong>Period  01 March  - 31 March 12</div>
+      <img src="images/graphs/candidate-activity.png" style="margin-top:26px;"/>
+      <div class="stat-totals">
+        <div class="total">
+          <div class="count green">549</div><a href="#">Number of views</a>
+        </div>
+        <div class="total">
+          <div class="count orange">523</div><a href="#">Unique views</a>
+        </div>
+        <div class="total">
+          <div class="count cobalt">10</div><a href="#">Appearances</a>
+        </div>
+      </div>
+      
+      <h2>Job Search Overview</h2>
+      <div class="caption">Analysis of job search traffic over a 30 day period.</div>
+      <img src="images/graphs/job-search.png" style="margin:26px 0 30px 40px;"/>
+
+      <div class="hr deboss white shift-right"><div>&nbsp;</div></div>
+    </div>
+  </div>
+
+  <div class="side col">
+
+    <h2 class="grayback">Job Reports</h2>
+    <ol class="stats">
+      <li>
+        <a href="#">Number of views</a>
+        <small>Number of times users have viewed actual job page</small>
+      </li>
+      <li>
+        <a href="#">Unique views</a>
+        <small>Total unique visitors to job</small>
+      </li>
+      <li>
+        <a href="#">Appearances</a>
+        <small>Amount of times job appeared in search results</small>
+      </li>
+      <li>
+        <a href="#">Jobs sent in email alerts</a>
+        <small>Total number of times job added as email alert</small>
+      </li>
+      <li>
+        <a href="#">Application clicks</a>
+        <small>Number of times users apply for job </small>
+      </li>
+      <li>
+        <a href="#">Applications completed</a>
+        <small>Users that completed job application process</small>
+      </li>
+    </ol>
+
+    <h2 class="grayback">Other Positions</h2>
+    <ul class="positions">
+      <li>
+        <a href="#">Ruby Developer</a>
+        <small>Stepstone standard listing</small>
+      </li>
+      <li class="last">
+        <a href="#">Senior HTML Developer</a>
+        <small>Monster Jobs</small>
+      </li>
+    </ul>
+
+
+
+  </div>
+
+  <div class="clear"></div>
+</div>

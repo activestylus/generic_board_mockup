@@ -10,6 +10,8 @@
 <script type="text/javascript" src="javascripts/jquery.jcarousel.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.jscrollpane.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.inview.js" ></script>
+<script type="text/javascript" src="javascripts/ModalDialog.js" ></script>
+<script type="text/javascript" src="javascripts/kalendae.min.js" ></script>
 <script type="text/javascript" src="javascripts/jquery.clickoutside.js" ></script>
 <script type="text/javascript" src="javascripts/app.js" ></script>
 <link href="stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
@@ -131,7 +133,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
   
 </ul>
 
-<div class="page pad-all" id="job-new">
+<div class="page pad-all bigger-text" id="job-new">
 
   <div class="main col first">
     <div class="block full" id="create-advert">
@@ -145,24 +147,19 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       <textarea rows="12"></textarea>
       <a href="#" class="btn btn-gray strong">Check Spelling</a>
     </div>
-    <div class="block" id="duration">
-      <label class="legend">Duration online</label>
-      <select>
-        <option value="30 days">30 days</option>
-        <option value="60 days">60 days</option>
-        <option value="90 days">90 days</option>
-      </select>
-      <label class="legend">or until</label>
-      <input type="text" class="date-picker" />
-      <div class="break"></div>
-      <a href="" class="add legend critical">Create multiple job listing</a>
-    </div>
-
 
     <div class="hr deboss white"><div>&nbsp;</div></div>
+    <label class="legend">Job type</label>
+    <div class="block checkboxes floated" id="job-type">
+      <label class="legend small">Category</label>
+      <div class="select">
+        <select><option>Creative and Media</option></select>
+      </div>
+      <div class="clear"></div>
+    </div>
 
-    <div class="block row-fluid" id="categories">
-      <h2 class="legend clear">Select Job Category(s)</h2>
+    <div class="block row-fluid form-grad" id="categories">
+      <h2 class="legend small clear">Select role/function</h2>
       
       <ul class="checkboxes span4">
         
@@ -243,9 +240,11 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       </ul>
       
     </div>
+    
+    <div class="hr dotted thin lite"></div>
 
     <div class="block checkboxes floated" id="job-type">
-      <label class="legend">Job type</label>
+      <label class="legend small">Position</label>
       <div class="checks">
         
         <input type="checkbox" id="Permanent"/>
@@ -266,7 +265,21 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
 
     <div class="hr deboss white"><div>&nbsp;</div></div>
 
+    <div class="block" id="duration">
+      <label class="legend">Duration online</label>
+      <select>
+        <option value="30 days">30 days</option>
+        <option value="60 days">60 days</option>
+        <option value="90 days">90 days</option>
+      </select>
+      <label class="legend">or until</label>
+      <input type="text" class="auto-kal" />
+    </div>
+
+    <div class="hr deboss white"><div>&nbsp;</div></div>
+
     <div class="block">
+      
       <h2 class="legend clear">Location</h2>
       <div class="field left-labels">
         <label>Country</label>
@@ -283,6 +296,8 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       <div class="break"></div>
     </div>
 
+    <div class="hr deboss white"><div>&nbsp;</div></div>
+
     <div class="block" id="salary-details">
       <h2 class="legend clear">Salary Details</h2>
       <select id="salary-currency">
@@ -290,9 +305,9 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <option value="GBP">£ GBP</option>
         <option value="USD">$ USD</option>
       </select>
-      <label class="legend">From</label>
+      <label class="legend spaced">From</label>
       <input type="text" placeholder="€" class="amount"/>
-      <label class="legend">to</label>
+      <label class="legend spaced">to</label>
       <input type="text" placeholder="€" class="amount"/>
       <select id="salary-pay-period">
         <option value="year">per annum</option>
@@ -351,6 +366,34 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       <div class="clear break"></div>
       <a href="#" class="add critical legend">Create another job listing</a>
     </div>
+    
+    <div class="hr deboss white"><div>&nbsp;</div></div>
+
+    <div class="block">
+      <h2 class="legend clear">Account Details</h2>
+      <div class="field left-labels wide">
+      <label>Title</label>
+      <select>
+        <option value="Mr">Mr</option>
+        <option value="Ms">Ms</option>
+        <option value="Mrs">Mrs</option>
+      </select>
+    </div>
+    <div class="field left-labels wide">
+      <label>Email address</label>
+      <input type="text"/>
+    </div>
+    <div class="field left-labels wide">
+      <label>Password</label>
+      <input type="password"/>
+    </div>
+    <div class="field left-labels wide">
+      <label>Confirm Password</label>
+      <input type="password"/>
+    </div>
+    <br/>
+    </div>
+    
 
     <div class="hr deboss white"><div>&nbsp;</div></div>
 
@@ -379,7 +422,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
     <div class="chat pane">
   <div class="text"><strong>Chat with us now</strong>
   <a href="#" class="btn btn-join">online</a></div>
-  <img src="images/thumbs/chat-with-us.png" />
+  <img src="images/thumbs/chat-with-us.png" class="chat-face" />
   <div class="clear"></div>
 </div>
 
@@ -400,10 +443,16 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li ><a href="Candidate-Home.html">Home</a></li>
       
         
+        <li ><a href="Candidate-Register.html">Register</a></li>
+      
+        
         <li ><a href="Candidate-Job-Page.html">Job Page</a></li>
       
         
         <li ><a href="Candidate-Search.html">Search</a></li>
+      
+        
+        <li ><a href="Candidate-Featured-Jobs.html">Featured Jobs</a></li>
       
         
         <li ><a href="Candidate-App-Confirm.html">App Confirm</a></li>
@@ -440,7 +489,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         <li ><a href="Recruiter-Profile.html">Profile</a></li>
       
         
-        <li class='active'><a href="Recruiter-Post-a-Job.html">Post A Job</a></li>
+        <li ><a href="Recruiter-Post-a-job.html">Post A Job</a></li>
       
         
         <li ><a href="Recruiter-CV-Search.html">Cv Search</a></li>
@@ -468,6 +517,12 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       
         
         <li ><a href="Recruiter-Payment-Invoice.html">Payment Invoice</a></li>
+      
+        
+        <li ><a href="Recruiter-Confirmed-Payment.html">Confirmed Payment</a></li>
+      
+        
+        <li ><a href="Recruiter-Stats.html">Stats</a></li>
       
     </ul>
   </div>

@@ -1,0 +1,133 @@
+<% @title, @bodyclass = "Candidate-Register", "logged" %>
+
+<div class="page pad-all bigger-text" id="candidate-register">
+	<h1 class="blue-underline">Register</h1>
+  <h2 class="step">1. You</h2>
+  <div class="block">
+  	<label class="left">Email address</label>
+  	<input type="text"/>
+  	<a class="btn btn-go" href="#">Upload CV</a>	
+  </div>
+
+  <div class="hr dotted thin lite"></div>
+
+  <div class="block">
+  	<label class="left">Name</label>
+  	<select class="title"><option>Mr</option><option>Mrs</option><option>Ms</option></select>
+    <input type="text" class="text" placeholder="First Name" />
+    <input type="text" class="text" placeholder="Last Name" />
+  </div>
+
+  <div class="block">
+    <label class="left">Phone number</label>
+    <input type="text"/>
+  </div>
+
+  <div class="block">
+    <label class="left">Date of birth</label>
+    <div class="birthdate">
+      <select><option value="">Day</option></select>
+      <select><option value="">Month</option></select>
+      <select><option value="">Year</option></select>
+    </div>
+    <div class="clear short">&nbsp;</div>
+  </div>
+
+  <div class="block">
+    <label class="left">Nationality</label>  
+    <select><option value="">Select nationality</option></select>
+  </div>
+
+  <div class="block">
+    <label class="left">Languages</label>  
+    <select><option value="">Select Language</option></select>
+  </div>
+
+  <div class="block">
+    <label class="left">Job title</label>
+    <input type="text"/>
+  </div>
+
+  <div class="block">
+    <label class="left">Highest qualification</label>
+    <input type="text"/>
+  </div>
+  
+  
+  <h2 class="step">2. Specialism and Skills</h2>
+  <div class="relative">
+    <a href="#" class="toggler btn btn-go">Industry</a>  
+    <div class="togglee pop" id="specialism-menu">
+      <div class="menu-wrap">
+      <div class="popup-menu" data-target="#selected-specialism">
+        <% (1..3).each do |n| %>
+        <ul>
+          <% data.categories.specialisms[n].each do |c| %>
+            <li><a href="#"><%= c %></a></li>
+          <% end %>
+        </ul>
+        <% end %>
+        <div class="clear">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+  <label id="selected-specialism">Media, Digital and Creative</label>
+  <div class="clear">&nbsp;</div>  
+  <div class="block">
+    <label class="left">List Skills</label>
+    <textarea rows ="4" placeholder="e.g. Microsoft Excel, Adobe CSS Suite"></textarea>
+  </div>
+  
+  <div class="block">
+    <label class="left">Preferred location</label>
+    <input type="text" placeholder="e.g. Berlin, Germany"/>
+  </div>
+
+  <div class="block">
+    <label class="left price">Expected Salary <span>€</span></label>
+    <input type="text" size="30"/>
+    <select class="per-year">
+      <option value="">per year</option>
+    </select>
+  </div>
+
+  <div class="block checkboxes floated">
+    <label class="left">Job Type</label>
+    <div class="checks shift-left">
+    <% %w(Permanent Freelance Contract Temporary).each do |type| %>
+      <input type="checkbox" id="job_type-<%= type %>"/>
+      <label for="job_type-<%= type %>"><%= type %></label>
+    <% end %>
+    </div>
+  </div>
+  <div class="clear">&nbsp;</div>
+
+  <div class="block">
+    <label class="left">Security</label>
+    <div class="left-field">
+      <small class="hint break">List the employers you want to block from accessing your CV</small>
+    <input type="text" class="span5"/><br>
+    <input type="text" class="span5"/>  
+    </div>
+    <div class="clear short">&nbsp;</div>
+  </div>
+
+
+  <h2 class="step">3. Create Account</h2>
+  <div class="block">
+    <label class="left wider">Choose password</label>
+    <input type="password" size="12"/>
+  </div>
+  <div class="block">
+    <label class="left wider">Confirm password</label>
+    <input type="password" size="12"/>
+  </div>
+
+  <div class="hr"></div>
+
+  <p class="disclaimer">By clicking register, you accept our  and agree that, in addition to sending you new jobs by email, we can email you about relevant opportunities, products and services.</p>
+
+  <input type="submit" value="Register" class="btn btn-join btn-large"/>
+  <br><br><br>
+
+</div>
