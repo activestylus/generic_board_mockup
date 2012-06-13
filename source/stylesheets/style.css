@@ -2536,33 +2536,6 @@ a.cancel {
   top: -30px; }
   #candidate-register label.left {
     width: 120px; }
-  #candidate-register .togglee {
-    position: absolute;
-    height: 300px;
-    width: 960px;
-    z-index: 9;
-    display: none; }
-  #candidate-register #selected-specialism {
-    position: absolute;
-    top: 3px;
-    left: 90px; }
-  #candidate-register .popup-menu {
-    background: #fff;
-    position: absolute;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 4px #999;
-    padding: 12px 12px 0 12px;
-    width: 660px; }
-    #candidate-register .popup-menu ul {
-      list-style-type: none;
-      margin-left: 0px;
-      display: block;
-      float: left;
-      width: 32%; }
-    #candidate-register .popup-menu li {
-      margin-bottom: 3px; }
-    #candidate-register .popup-menu a {
-      color: #004c94; }
 
 h2.step {
   font-size: 17px;
@@ -2660,3 +2633,80 @@ small.hint {
 
 .disclaimer {
   margin: 30px 0px; }
+
+.pop {
+  position: absolute;
+  height: 300px;
+  z-index: 9;
+  width: 810px;
+  top: 28px;
+  display: none; }
+  .pop.child {
+    right: 0; }
+
+.pop-parent-label, .pop-toggler, .pop-tokens {
+  float: left; }
+
+.pop-parent-label, .pop-tokens {
+  width: 333px; }
+
+.pop-toggler.child {
+  display: none; }
+
+.pop-tokens {
+  padding: 2px 0 0 8px; }
+
+.pop-parent-label {
+  padding: 3px 3px 3px 8px; }
+
+.pop-token {
+  background: #e5effa;
+  border-radius: 2px;
+  position: relative;
+  padding: 2px 20px 2px 8px;
+  display: block;
+  width: auto;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  .pop-token a {
+    background-image: url(../images/icons/delete-row.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    width: 14px;
+    height: 17px;
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    text-indent: -9999px; }
+    .pop-token a:hover {
+      opacity: 0.6; }
+
+.popup-menu {
+  background: #fff;
+  position: absolute;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px #999;
+  padding: 12px 12px 0 12px;
+  width: 720px; }
+  .popup-menu ul {
+    list-style-type: none;
+    margin-left: 0px;
+    margin-right: 20px;
+    display: block;
+    float: left;
+    width: 30%; }
+  .popup-menu li {
+    margin-bottom: 3px; }
+  .popup-menu a {
+    color: #004c94;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    padding: 2px 5px;
+    border-radius: 2px; }
+    .popup-menu a.selected {
+      background: #e5effa; }

@@ -1493,27 +1493,6 @@ a.cancel {display: inline-block; margin-left: 10px;}
   label.left {
     width: 120px;
   }
-  .togglee {
-    position: absolute;height: 300px; width: 960px; z-index:9;
-    display: none;
-  }
-  #selected-specialism {position: absolute; top:3px; left: 90px;}
-  .popup-menu {
-    background: #fff;
-    position: absolute;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 4px #999;
-    padding: 12px 12px 0 12px;
-    width: 660px;
-    ul {
-      list-style-type: none;
-      margin-left: 0px;
-      display: block; float: left;
-      width: 32%;
-    }
-    li {margin-bottom: 3px;}
-    a {color: $link;}
-  }
 }
 h2.step {
   font-size: 17px; font-weight: normal;
@@ -1580,3 +1559,69 @@ small.hint {
   width: 600px;
 }
 .disclaimer {margin: 30px 0px; }
+
+// MultiLevel Select
+
+.pop {
+  position: absolute;height: 300px; z-index:9;
+  width: 810px;
+  top: 28px;
+  display: none;
+  &.child {right:0;}
+}
+.pop-parent-label, .pop-toggler, .pop-tokens {float: left}
+.pop-parent-label, .pop-tokens {
+  width: 333px;  
+}
+.pop-toggler.child {display:none;}
+.pop-tokens {padding: 2px 0 0 8px; }
+.pop-parent-label {padding: 3px 3px 3px 8px;}
+.pop-token {
+  background: $sky;
+  border-radius: 2px;
+  position: relative;
+  padding: 2px 20px 2px 8px;
+  display: block;
+  width: auto;
+  margin-bottom:2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  a {
+    @include icon('delete-row');
+    background-position: center center; 
+    display: block;
+    width: 14px; height: 17px;
+    position: absolute;
+    top: 2px; right: 4px;
+    text-indent: -9999px;
+    &:hover {opacity:0.6;}
+  }
+}
+.popup-menu {
+  background: #fff;
+  position: absolute;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px #999;
+  padding: 12px 12px 0 12px;
+  width: 720px;
+  ul {
+    list-style-type: none;
+    margin-left: 0px; margin-right: 20px;
+    display: block; float: left;
+    width: 30%;
+  }
+  li {margin-bottom: 3px;}
+  a {
+    color: $link;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    padding: 2px 5px;
+    border-radius: 2px;
+    &.selected {
+      background: $sky;
+    }
+  }
+}

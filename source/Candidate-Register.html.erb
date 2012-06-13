@@ -56,22 +56,21 @@
   
   <h2 class="step">2. Specialism and Skills</h2>
   <div class="relative">
-    <a href="#" class="toggler btn btn-go">Industry</a>  
-    <div class="togglee pop" id="specialism-menu">
-      <div class="menu-wrap">
-      <div class="popup-menu" data-target="#selected-specialism">
-        <% (1..3).each do |n| %>
-        <ul>
-          <% data.categories.specialisms[n].each do |c| %>
-            <li><a href="#"><%= c %></a></li>
+    <select class="pop-menu parent" data-columns="3" data-name="Industry">
+      <% industries_hash.map do |industry,specialisms| %>
+         <option value="<%= industry %>"><%= industry %></option>
+      <% end %>
+    </select>
+    <select class="pop-menu child multi" data-columns="3" data-name="Specialisms">
+      <% industries_hash.map do |industry,specialisms| %>
+        <optgroup label="<%= industry %>">
+          <% specialisms.map do |specialism| %>
+            <option value="<%= specialism %>"><%= specialism %></option>
           <% end %>
-        </ul>
-        <% end %>
-        <div class="clear">&nbsp;</div>
-      </div>
-    </div>
+        </optgroup>
+      <% end %>
+    </select>
   </div>
-  <label id="selected-specialism">Media, Digital and Creative</label>
   <div class="clear">&nbsp;</div>  
   <div class="block">
     <label class="left">List Skills</label>
