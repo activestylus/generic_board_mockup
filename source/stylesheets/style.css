@@ -2645,28 +2645,28 @@ small.hint {
     right: 0; }
 
 .pop-parent-label, .pop-toggler, .pop-tokens {
-  float: left; }
+  float: left;
+  border-radius: 3px; }
 
 .pop-toggler.child {
   display: none; }
 
 .pop-tokens {
-  padding: 2px 0 0 8px;
+  padding: 0 0 0 8px;
   width: 333px; }
 
 .pop-parent-label {
   width: 323px;
   opacity: 0;
   margin: 0px 6px;
-  padding: 3px 3px 3px 8px; }
+  padding: 4px 4px 4px 8px; }
   .pop-parent-label.active {
     background: #e5effa; }
 
 .pop-token {
   background: #e5effa;
-  border-radius: 2px;
   position: relative;
-  padding: 2px 20px 2px 8px;
+  padding: 4px 20px 4px 8px;
   display: block;
   width: auto;
   margin-bottom: 2px;
@@ -2681,7 +2681,7 @@ small.hint {
     width: 14px;
     height: 17px;
     position: absolute;
-    top: 2px;
+    top: 4px;
     right: 4px;
     text-indent: -9999px; }
     .pop-token a:hover {
