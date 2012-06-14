@@ -405,16 +405,22 @@ var MultiLevelSelect = {
         , child   = wrap.find('input.pop-menu.child')
         , label   = wrap.parent().find('.pop-parent-label').first()
         ;
-      link.closest('.parent').find('.child .pop-menu a').removeClass('selected');
+      child.val("");
       toggler.attr('href', href);
       input.val(link.attr('title'));
-      child.val("");
-      label.text(link.attr('title'));
-      wrap.parent().find('.pop-tokens').first().html('');
-      wrap.parent().find('.pop-toggler.child').fadeIn();
+      self.activateParentToken(wrap, label, link);
       return false;
     });
     return false
+  },
+
+  activateParentToken: function(wrap, label, link) {
+    wrap.parent().find('.pop-tokens').first().html('');
+    link.closest('.parent').find('.child .pop-menu a').removeClass('selected');
+    wrap.parent().find('.pop-toggler.child').fadeIn();
+    label.addClass("active");
+    label.animate({ opacity: 1 });
+    label.text(link.attr('title'));    
   },
 
   watchTogglers: function() {

@@ -1570,12 +1570,17 @@ small.hint {
   &.child {right:0;}
 }
 .pop-parent-label, .pop-toggler, .pop-tokens {float: left}
-.pop-parent-label, .pop-tokens {
-  width: 333px;  
-}
 .pop-toggler.child {display:none;}
-.pop-tokens {padding: 2px 0 0 8px; }
-.pop-parent-label {padding: 3px 3px 3px 8px;}
+.pop-tokens {padding: 2px 0 0 8px; width: 333px;  }
+.pop-parent-label {
+  width: 323px;
+  opacity:0;
+  margin: 0px 6px;
+  padding: 3px 3px 3px 8px;
+  &.active {
+    background: $sky;  
+  }
+}
 .pop-token {
   background: $sky;
   border-radius: 2px;

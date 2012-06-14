@@ -2647,17 +2647,20 @@ small.hint {
 .pop-parent-label, .pop-toggler, .pop-tokens {
   float: left; }
 
-.pop-parent-label, .pop-tokens {
-  width: 333px; }
-
 .pop-toggler.child {
   display: none; }
 
 .pop-tokens {
-  padding: 2px 0 0 8px; }
+  padding: 2px 0 0 8px;
+  width: 333px; }
 
 .pop-parent-label {
+  width: 323px;
+  opacity: 0;
+  margin: 0px 6px;
   padding: 3px 3px 3px 8px; }
+  .pop-parent-label.active {
+    background: #e5effa; }
 
 .pop-token {
   background: #e5effa;
