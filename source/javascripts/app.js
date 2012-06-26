@@ -569,42 +569,16 @@
           if ($(i).val() === "") badFields++;
         }
       }
-      console.log(badFields);
       _ref3 = ['input', 'select'];
       for (_k = 0, _len3 = _ref3.length; _k < _len3; _k++) {
         type = _ref3[_k];
         _ref4 = prev.find("" + type + "[data-validate-presence]");
         for (_l = 0, _len4 = _ref4.length; _l < _len4; _l++) {
           i = _ref4[_l];
-          console.log($(i).val());
           if ($(i).val() === "") badFields++;
         }
       }
-      console.log(badFields);
       return badFields === 0;
-    },
-    scanFields: function(section, badFields) {
-      var i, type, _i, _len, _ref, _results;
-      _ref = ['input', 'select'];
-      _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        type = _ref[_i];
-        _results.push((function() {
-          var _j, _len2, _ref2, _results2;
-          _ref2 = section.find("" + type + "[data-validate-presence]");
-          _results2 = [];
-          for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-            i = _ref2[_j];
-            if ($(i).val() === "") {
-              _results2.push(badFields++);
-            } else {
-              _results2.push(void 0);
-            }
-          }
-          return _results2;
-        })());
-      }
-      return _results;
     },
     getIdNum: function(section) {
       return parseInt(section.attr('id').replace('step-', ''));
@@ -620,7 +594,6 @@
         i = _ref[_i];
         if ($(i).val() === "") badFields++;
       }
-      console.log(badFields);
       if (next !== 4) {
         if (next === 2 && badFields === !0) $("#step-3").slideUp();
         if (badFields === 0) {

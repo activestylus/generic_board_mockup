@@ -414,18 +414,10 @@ ValidateFormSections =
     for type in ['input','select']
       for i in section.find("#{type}[data-validate-presence]")
         badFields++ if $(i).val() is ""
-    console.log badFields
     for type in ['input','select']
       for i in prev.find("#{type}[data-validate-presence]")
-        console.log $(i).val()
         badFields++ if $(i).val() is ""
-    console.log badFields
     badFields is 0
-  
-  scanFields: (section, badFields)->
-    for type in ['input','select']
-      for i in section.find("#{type}[data-validate-presence]")
-        badFields++ if $(i).val() is ""
 
   getIdNum: (section)->
     parseInt( section.attr('id').replace('step-','') )
@@ -437,7 +429,6 @@ ValidateFormSections =
     badFields = 0
     for i in section.find("input[data-validate-presence]","select[data-validate-presence]")
       badFields++ if $(i).val() is ""
-    console.log badFields
     unless next is 4
       if next is 2 and badFields is not 0        
         $("#step-3").slideUp()
