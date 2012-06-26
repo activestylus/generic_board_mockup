@@ -989,6 +989,9 @@ label.left {
 label.wider {
   width: 180px; }
 
+abbr {
+  color: #f00; }
+
 select.per-year {
   width: 120px; }
 

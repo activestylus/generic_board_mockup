@@ -172,798 +172,1571 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
 <div class="page pad-all bigger-text" id="candidate-register">
 	<h1 class="blue-underline">Register</h1>
   <h2 class="step">1. You</h2>
-  <div class="block">
-  	<label class="left">Email address</label>
-  	<input type="text"/>
-  	<a class="btn btn-go" href="#">Upload CV</a>	
-  </div>
+  <div id="step-1" class="section">
+    <div class="block">
+    	<label class="left"><abbr>*</abbr>Email address</label>
+    	
+      <!-- email -->
+      <input id="email-input" type="text" data-validate-presence="can't be blank" data-validate-email="must be a valid email address" />
 
-  <div class="hr dotted thin lite"></div>
+    	<!-- cv -->
+      <input type="file" data-file="Upload CV" />
 
-  <div class="block">
-  	<label class="left">Name</label>
-  	<select class="title"><option>Mr</option><option>Mrs</option><option>Ms</option></select>
-    <input type="text" class="text" placeholder="First Name" />
-    <input type="text" class="text" placeholder="Last Name" />
-  </div>
-
-  <div class="block">
-    <label class="left">Phone number</label>
-    <input type="text"/>
-  </div>
-
-  <div class="block">
-    <label class="left">Date of birth</label>
-    <div class="birthdate">
-      <select><option value="">Day</option></select>
-      <select><option value="">Month</option></select>
-      <select><option value="">Year</option></select>
     </div>
-    <div class="clear short">&nbsp;</div>
-  </div>
+    <div class="hr dotted thin lite"></div>
+    <div class="block">
+    	<label class="left"><abbr>*</abbr>Name</label>
 
-  <div class="block">
-    <label class="left">Nationality</label>  
-    <select><option value="">Select nationality</option></select>
-  </div>
+      <!-- salutation -->
+    	<select class="title" data-validate-presence="can't be blank"><option>Mr</option><option>Mrs</option><option>Ms</option></select>
 
-  <div class="block">
-    <label class="left">Languages</label>  
-    <select><option value="">Select Language</option></select>
-  </div>
+      <!-- first_name -->
+      <input data-validate-presence="can't be blank" type="text" class="text" placeholder="First Name" />
 
-  <div class="block">
-    <label class="left">Job title</label>
-    <input type="text"/>
-  </div>
+      <!-- last_name -->
+      <input data-validate-presence="can't be blank" type="text" class="text" placeholder="Last Name" />
+    </div>
 
-  <div class="block">
-    <label class="left">Highest qualification</label>
-    <input type="text"/>
+    <div class="block">
+      <!-- phone -->
+      <label class="left"><abbr>*</abbr>Phone number</label>
+      <input type="text" data-validate-presence="can't be blank"/>
+    </div>
+
+    <div class="block">
+      <label class="left"><abbr>*</abbr>Date of birth</label>
+      
+      <!-- birth_date -->
+      <div class="birthdate">
+        <select data-validate-presence="can't be blank">
+          <option value="">Day</option>
+          
+          <option value="1">1</option>
+          
+          <option value="2">2</option>
+          
+          <option value="3">3</option>
+          
+          <option value="4">4</option>
+          
+          <option value="5">5</option>
+          
+          <option value="6">6</option>
+          
+          <option value="7">7</option>
+          
+          <option value="8">8</option>
+          
+          <option value="9">9</option>
+          
+          <option value="10">10</option>
+          
+          <option value="11">11</option>
+          
+          <option value="12">12</option>
+          
+          <option value="13">13</option>
+          
+          <option value="14">14</option>
+          
+          <option value="15">15</option>
+          
+          <option value="16">16</option>
+          
+          <option value="17">17</option>
+          
+          <option value="18">18</option>
+          
+          <option value="19">19</option>
+          
+          <option value="20">20</option>
+          
+          <option value="21">21</option>
+          
+          <option value="22">22</option>
+          
+          <option value="23">23</option>
+          
+          <option value="24">24</option>
+          
+          <option value="25">25</option>
+          
+          <option value="26">26</option>
+          
+          <option value="27">27</option>
+          
+          <option value="28">28</option>
+          
+          <option value="29">29</option>
+          
+          <option value="30">30</option>
+          
+          <option value="31">31</option>
+          
+        </select>
+        <select data-validate-presence="can't be blank">
+          <option value="">Month</option>
+          
+          <option value="1">1</option>
+          
+          <option value="2">2</option>
+          
+          <option value="3">3</option>
+          
+          <option value="4">4</option>
+          
+          <option value="5">5</option>
+          
+          <option value="6">6</option>
+          
+          <option value="7">7</option>
+          
+          <option value="8">8</option>
+          
+          <option value="9">9</option>
+          
+          <option value="10">10</option>
+          
+          <option value="11">11</option>
+          
+          <option value="12">12</option>
+          
+        </select>
+        <select data-validate-presence="can't be blank">
+          <option value="">Year</option>
+          
+          <option value="1994">1994</option>
+          
+          <option value="1993">1993</option>
+          
+          <option value="1992">1992</option>
+          
+          <option value="1991">1991</option>
+          
+          <option value="1990">1990</option>
+          
+          <option value="1989">1989</option>
+          
+          <option value="1988">1988</option>
+          
+          <option value="1987">1987</option>
+          
+          <option value="1986">1986</option>
+          
+          <option value="1985">1985</option>
+          
+          <option value="1984">1984</option>
+          
+          <option value="1983">1983</option>
+          
+          <option value="1982">1982</option>
+          
+          <option value="1981">1981</option>
+          
+          <option value="1980">1980</option>
+          
+          <option value="1979">1979</option>
+          
+          <option value="1978">1978</option>
+          
+          <option value="1977">1977</option>
+          
+          <option value="1976">1976</option>
+          
+          <option value="1975">1975</option>
+          
+          <option value="1974">1974</option>
+          
+          <option value="1973">1973</option>
+          
+          <option value="1972">1972</option>
+          
+          <option value="1971">1971</option>
+          
+          <option value="1970">1970</option>
+          
+          <option value="1969">1969</option>
+          
+          <option value="1968">1968</option>
+          
+          <option value="1967">1967</option>
+          
+          <option value="1966">1966</option>
+          
+          <option value="1965">1965</option>
+          
+          <option value="1964">1964</option>
+          
+          <option value="1963">1963</option>
+          
+          <option value="1962">1962</option>
+          
+          <option value="1961">1961</option>
+          
+          <option value="1960">1960</option>
+          
+          <option value="1959">1959</option>
+          
+          <option value="1958">1958</option>
+          
+          <option value="1957">1957</option>
+          
+          <option value="1956">1956</option>
+          
+          <option value="1955">1955</option>
+          
+          <option value="1954">1954</option>
+          
+          <option value="1953">1953</option>
+          
+          <option value="1952">1952</option>
+          
+          <option value="1951">1951</option>
+          
+          <option value="1950">1950</option>
+          
+          <option value="1949">1949</option>
+          
+          <option value="1948">1948</option>
+          
+          <option value="1947">1947</option>
+          
+          <option value="1946">1946</option>
+          
+          <option value="1945">1945</option>
+          
+          <option value="1944">1944</option>
+          
+          <option value="1943">1943</option>
+          
+          <option value="1942">1942</option>
+          
+          <option value="1941">1941</option>
+          
+          <option value="1940">1940</option>
+          
+          <option value="1939">1939</option>
+          
+          <option value="1938">1938</option>
+          
+          <option value="1937">1937</option>
+          
+          <option value="1936">1936</option>
+          
+          <option value="1935">1935</option>
+          
+          <option value="1934">1934</option>
+          
+          <option value="1933">1933</option>
+          
+          <option value="1932">1932</option>
+          
+          <option value="1931">1931</option>
+          
+          <option value="1930">1930</option>
+          
+          <option value="1929">1929</option>
+          
+          <option value="1928">1928</option>
+          
+          <option value="1927">1927</option>
+          
+          <option value="1926">1926</option>
+          
+          <option value="1925">1925</option>
+          
+          <option value="1924">1924</option>
+          
+          <option value="1923">1923</option>
+          
+          <option value="1922">1922</option>
+          
+          <option value="1921">1921</option>
+          
+          <option value="1920">1920</option>
+          
+        </select>
+      </div>
+      <div class="clear short">&nbsp;</div>
+    </div>
+
+    <div class="block">
+      <label class="left"><abbr>*</abbr>Job title</label>
+      
+      <!-- job_title -->
+      <input type="text" data-validate-presence="can't be blank"/>
+    </div>
+
+    <div class="block">
+      <label class="left"><abbr>*</abbr>Highest qualification</label>
+      
+      <!-- qualification -->
+      <input type="text" data-validate-presence="can't be blank"/>
+    </div>
+
+    <div class="block">
+      <label class="left">Nationality</label>  
+      
+      <!-- nationality -->
+      <select>
+        <option value="">Select nationality</option>
+        
+          <option value="Afghan">Afghan</option>
+        
+          <option value="Albanian">Albanian</option>
+        
+          <option value="Algerian">Algerian</option>
+        
+          <option value="American">American</option>
+        
+          <option value="Andorran">Andorran</option>
+        
+          <option value="Angolan">Angolan</option>
+        
+          <option value="Antiguans">Antiguans</option>
+        
+          <option value="Argentinean">Argentinean</option>
+        
+          <option value="Armenian">Armenian</option>
+        
+          <option value="Australian">Australian</option>
+        
+          <option value="Austrian">Austrian</option>
+        
+          <option value="Azerbaijani">Azerbaijani</option>
+        
+          <option value="Bahamian">Bahamian</option>
+        
+          <option value="Bahraini">Bahraini</option>
+        
+          <option value="Bangladeshi">Bangladeshi</option>
+        
+          <option value="Barbadian">Barbadian</option>
+        
+          <option value="Barbudans">Barbudans</option>
+        
+          <option value="Batswana">Batswana</option>
+        
+          <option value="Belarusian">Belarusian</option>
+        
+          <option value="Belgian">Belgian</option>
+        
+          <option value="Belizean">Belizean</option>
+        
+          <option value="Beninese">Beninese</option>
+        
+          <option value="Bhutanese">Bhutanese</option>
+        
+          <option value="Bolivian">Bolivian</option>
+        
+          <option value="Bosnian">Bosnian</option>
+        
+          <option value="Brazilian">Brazilian</option>
+        
+          <option value="British">British</option>
+        
+          <option value="Bruneian">Bruneian</option>
+        
+          <option value="Bulgarian">Bulgarian</option>
+        
+          <option value="Burkinabe">Burkinabe</option>
+        
+          <option value="Burmese">Burmese</option>
+        
+          <option value="Burundian">Burundian</option>
+        
+          <option value="Cambodian">Cambodian</option>
+        
+          <option value="Cameroonian">Cameroonian</option>
+        
+          <option value="Canadian">Canadian</option>
+        
+          <option value="Cape Verdean">Cape Verdean</option>
+        
+          <option value="Central African">Central African</option>
+        
+          <option value="Chadian">Chadian</option>
+        
+          <option value="Chilean">Chilean</option>
+        
+          <option value="Chinese">Chinese</option>
+        
+          <option value="Colombian">Colombian</option>
+        
+          <option value="Comoran">Comoran</option>
+        
+          <option value="Congolese">Congolese</option>
+        
+          <option value="Costa Rican">Costa Rican</option>
+        
+          <option value="Croatian">Croatian</option>
+        
+          <option value="Cuban">Cuban</option>
+        
+          <option value="Cypriot">Cypriot</option>
+        
+          <option value="Czech">Czech</option>
+        
+          <option value="Danish">Danish</option>
+        
+          <option value="Djibouti">Djibouti</option>
+        
+          <option value="Dominican">Dominican</option>
+        
+          <option value="Dutch">Dutch</option>
+        
+          <option value="East Timorese">East Timorese</option>
+        
+          <option value="Ecuadorean">Ecuadorean</option>
+        
+          <option value="Egyptian">Egyptian</option>
+        
+          <option value="Emirian">Emirian</option>
+        
+          <option value="Equatorial Guinean">Equatorial Guinean</option>
+        
+          <option value="Eritrean">Eritrean</option>
+        
+          <option value="Estonian">Estonian</option>
+        
+          <option value="Ethiopian">Ethiopian</option>
+        
+          <option value="Fijian">Fijian</option>
+        
+          <option value="Filipino">Filipino</option>
+        
+          <option value="Finnish">Finnish</option>
+        
+          <option value="French">French</option>
+        
+          <option value="Gabonese">Gabonese</option>
+        
+          <option value="Gambian">Gambian</option>
+        
+          <option value="Georgian">Georgian</option>
+        
+          <option value="German">German</option>
+        
+          <option value="Ghanaian">Ghanaian</option>
+        
+          <option value="Greek">Greek</option>
+        
+          <option value="Grenadian">Grenadian</option>
+        
+          <option value="Guatemalan">Guatemalan</option>
+        
+          <option value="Guinea-Bissauan">Guinea-Bissauan</option>
+        
+          <option value="Guinean">Guinean</option>
+        
+          <option value="Guyanese">Guyanese</option>
+        
+          <option value="Haitian">Haitian</option>
+        
+          <option value="Herzegovinian">Herzegovinian</option>
+        
+          <option value="Honduran">Honduran</option>
+        
+          <option value="Hungarian">Hungarian</option>
+        
+          <option value="I-Kiribati">I-Kiribati</option>
+        
+          <option value="Icelander">Icelander</option>
+        
+          <option value="Indian">Indian</option>
+        
+          <option value="Indonesian">Indonesian</option>
+        
+          <option value="Iranian">Iranian</option>
+        
+          <option value="Iraqi">Iraqi</option>
+        
+          <option value="Irish">Irish</option>
+        
+          <option value="Israeli">Israeli</option>
+        
+          <option value="Italian">Italian</option>
+        
+          <option value="Ivorian">Ivorian</option>
+        
+          <option value="Jamaican">Jamaican</option>
+        
+          <option value="Japanese">Japanese</option>
+        
+          <option value="Jordanian">Jordanian</option>
+        
+          <option value="Kazakhstani">Kazakhstani</option>
+        
+          <option value="Kenyan">Kenyan</option>
+        
+          <option value="Kittian and Nevisian">Kittian and Nevisian</option>
+        
+          <option value="Kuwaiti">Kuwaiti</option>
+        
+          <option value="Kyrgyz">Kyrgyz</option>
+        
+          <option value="Laotian">Laotian</option>
+        
+          <option value="Latvian">Latvian</option>
+        
+          <option value="Lebanese">Lebanese</option>
+        
+          <option value="Liberian">Liberian</option>
+        
+          <option value="Libyan">Libyan</option>
+        
+          <option value="Liechtensteiner">Liechtensteiner</option>
+        
+          <option value="Lithuanian">Lithuanian</option>
+        
+          <option value="Luxembourger">Luxembourger</option>
+        
+          <option value="Macedonian">Macedonian</option>
+        
+          <option value="Malagasy">Malagasy</option>
+        
+          <option value="Malawian">Malawian</option>
+        
+          <option value="Malaysian">Malaysian</option>
+        
+          <option value="Maldivan">Maldivan</option>
+        
+          <option value="Malian">Malian</option>
+        
+          <option value="Maltese">Maltese</option>
+        
+          <option value="Marshallese">Marshallese</option>
+        
+          <option value="Mauritanian">Mauritanian</option>
+        
+          <option value="Mauritian">Mauritian</option>
+        
+          <option value="Mexican">Mexican</option>
+        
+          <option value="Micronesian">Micronesian</option>
+        
+          <option value="Moldovan">Moldovan</option>
+        
+          <option value="Monacan">Monacan</option>
+        
+          <option value="Mongolian">Mongolian</option>
+        
+          <option value="Moroccan">Moroccan</option>
+        
+          <option value="Mosotho">Mosotho</option>
+        
+          <option value="Motswana">Motswana</option>
+        
+          <option value="Mozambican">Mozambican</option>
+        
+          <option value="Namibian">Namibian</option>
+        
+          <option value="Nauruan">Nauruan</option>
+        
+          <option value="Nepalese">Nepalese</option>
+        
+          <option value="New Zealander">New Zealander</option>
+        
+          <option value="Nicaraguan">Nicaraguan</option>
+        
+          <option value="Nigerian">Nigerian</option>
+        
+          <option value="Nigerien">Nigerien</option>
+        
+          <option value="North Korean">North Korean</option>
+        
+          <option value="Northern Irish">Northern Irish</option>
+        
+          <option value="Norwegian">Norwegian</option>
+        
+          <option value="Omani">Omani</option>
+        
+          <option value="Pakistani">Pakistani</option>
+        
+          <option value="Palauan">Palauan</option>
+        
+          <option value="Panamanian">Panamanian</option>
+        
+          <option value="Papua New Guinean">Papua New Guinean</option>
+        
+          <option value="Paraguayan">Paraguayan</option>
+        
+          <option value="Peruvian">Peruvian</option>
+        
+          <option value="Polish">Polish</option>
+        
+          <option value="Portuguese">Portuguese</option>
+        
+          <option value="Qatari">Qatari</option>
+        
+          <option value="Romanian">Romanian</option>
+        
+          <option value="Russian">Russian</option>
+        
+          <option value="Rwandan">Rwandan</option>
+        
+          <option value="Saint Lucian">Saint Lucian</option>
+        
+          <option value="Salvadoran">Salvadoran</option>
+        
+          <option value="Samoan">Samoan</option>
+        
+          <option value="San Marinese">San Marinese</option>
+        
+          <option value="Sao Tomean">Sao Tomean</option>
+        
+          <option value="Saudi">Saudi</option>
+        
+          <option value="Scottish">Scottish</option>
+        
+          <option value="Senegalese">Senegalese</option>
+        
+          <option value="Serbian">Serbian</option>
+        
+          <option value="Seychellois">Seychellois</option>
+        
+          <option value="Sierra Leonean">Sierra Leonean</option>
+        
+          <option value="Singaporean">Singaporean</option>
+        
+          <option value="Slovakian">Slovakian</option>
+        
+          <option value="Slovenian">Slovenian</option>
+        
+          <option value="Solomon Islander">Solomon Islander</option>
+        
+          <option value="Somali">Somali</option>
+        
+          <option value="South African">South African</option>
+        
+          <option value="South Korean">South Korean</option>
+        
+          <option value="Spanish">Spanish</option>
+        
+          <option value="Sri Lankan">Sri Lankan</option>
+        
+          <option value="Sudanese">Sudanese</option>
+        
+          <option value="Surinamer">Surinamer</option>
+        
+          <option value="Swazi">Swazi</option>
+        
+          <option value="Swedish">Swedish</option>
+        
+          <option value="Swiss">Swiss</option>
+        
+          <option value="Syrian">Syrian</option>
+        
+          <option value="Taiwanese">Taiwanese</option>
+        
+          <option value="Tajik">Tajik</option>
+        
+          <option value="Tanzanian">Tanzanian</option>
+        
+          <option value="Thai">Thai</option>
+        
+          <option value="Togolese">Togolese</option>
+        
+          <option value="Tongan">Tongan</option>
+        
+          <option value="Trinidadian or Tobagonian">Trinidadian or Tobagonian</option>
+        
+          <option value="Tunisian">Tunisian</option>
+        
+          <option value="Turkish">Turkish</option>
+        
+          <option value="Tuvaluan">Tuvaluan</option>
+        
+          <option value="Ugandan">Ugandan</option>
+        
+          <option value="Ukrainian">Ukrainian</option>
+        
+          <option value="Uruguayan">Uruguayan</option>
+        
+          <option value="Uzbekistani">Uzbekistani</option>
+        
+          <option value="Venezuelan">Venezuelan</option>
+        
+          <option value="Vietnamese">Vietnamese</option>
+        
+          <option value="Welsh">Welsh</option>
+        
+          <option value="Yemenite">Yemenite</option>
+        
+          <option value="Zambian">Zambian</option>
+        
+          <option value="Zimbabwean">Zimbabwean</option>
+        
+      </select>
+    </div>
+
+    <div class="block">
+      <label class="left">Languages</label>  
+      <!-- language -->
+      <select>
+        <option value="">Select Language</option>
+        
+          <option value="Arabic">Arabic</option>
+        
+          <option value="Awadhi">Awadhi</option>
+        
+          <option value="Azerbaijani">Azerbaijani</option>
+        
+          <option value="Bengali">Bengali</option>
+        
+          <option value="Burmese">Burmese</option>
+        
+          <option value="Cantonese">Cantonese</option>
+        
+          <option value="Dutch">Dutch</option>
+        
+          <option value="English">English</option>
+        
+          <option value="French">French</option>
+        
+          <option value="Gan">Gan</option>
+        
+          <option value="German">German</option>
+        
+          <option value="Gujarati">Gujarati</option>
+        
+          <option value="Hakka">Hakka</option>
+        
+          <option value="Hausa">Hausa</option>
+        
+          <option value="Hindustani">Hindustani</option>
+        
+          <option value="Italiam">Italiam</option>
+        
+          <option value="Javanese">Javanese</option>
+        
+          <option value="Japanese">Japanese</option>
+        
+          <option value="Kannada">Kannada</option>
+        
+          <option value="Korean">Korean</option>
+        
+          <option value="Maithili">Maithili</option>
+        
+          <option value="Malay Indonesian">Malay Indonesian</option>
+        
+          <option value="Malayalam">Malayalam</option>
+        
+          <option value="Mandarin">Mandarin</option>
+        
+          <option value="Oriya">Oriya</option>
+        
+          <option value="Persian">Persian</option>
+        
+          <option value="Polish">Polish</option>
+        
+          <option value="Portuguese">Portuguese</option>
+        
+          <option value="Romanian">Romanian</option>
+        
+          <option value="Russian">Russian</option>
+        
+          <option value="Spanish">Spanish</option>
+        
+          <option value="Sindhi">Sindhi</option>
+        
+          <option value="Sunda">Sunda</option>
+        
+          <option value="Swahili">Swahili</option>
+        
+          <option value="Tamil">Tamil</option>
+        
+          <option value="Telugu">Telugu</option>
+        
+          <option value="Thai">Thai</option>
+        
+          <option value="Turkish">Turkish</option>
+        
+          <option value="Ukrainian">Ukrainian</option>
+        
+          <option value="Urdu">Urdu</option>
+        
+          <option value="Vietnamese">Vietnamese</option>
+        
+          <option value="Yoruba">Yoruba</option>
+        
+          <option value="Xiang">Xiang</option>
+        
+      </select>
+    </div>
   </div>
-  
   
   <h2 class="step">2. Specialism and Skills</h2>
-  <div class="relative">
-    <select class="pop-menu parent" data-columns="3" data-name="Industry">
+  <div id="step-2" class="section">
+    <div class="relative">
       
-         <option value="Administration/Sachbearbeitung">Administration/Sachbearbeitung</option>
+      <!-- industry -->
+      <select data-validate-presence="can't be blank" class="pop-menu parent" data-columns="3" data-name="Industry">
+        
+           <option value="Administration/Sachbearbeitung">Administration/Sachbearbeitung</option>
+        
+           <option value="Aus- und Weiterbildung">Aus- und Weiterbildung</option>
+        
+           <option value="Customer Service/Kundenbetreuung">Customer Service/Kundenbetreuung</option>
+        
+           <option value="Design & Gestaltung">Design & Gestaltung</option>
+        
+           <option value="Geschäftsleitung/Strategisches Management">Geschäftsleitung/Strategisches Management</option>
+        
+           <option value="Handwerk">Handwerk</option>
+        
+           <option value="Hotel und Gastronomie">Hotel und Gastronomie</option>
+        
+           <option value="IT/Informationstechnologie">IT/Informationstechnologie</option>
+        
+           <option value="Ingenieurwesen/Entwicklung und Konstruktion">Ingenieurwesen/Entwicklung und Konstruktion</option>
+        
+           <option value="Instandhaltung">Instandhaltung</option>
+        
+           <option value="Logistik und Transport">Logistik und Transport</option>
+        
+           <option value="Marketing">Marketing</option>
+        
+           <option value="Medizin und Gesundheit">Medizin und Gesundheit</option>
+        
+           <option value="Naturwissenschaftliche Forschung">Naturwissenschaftliche Forschung</option>
+        
+           <option value="Personalwesen">Personalwesen</option>
+        
+           <option value="Produktion">Produktion</option>
+        
+           <option value="Projektmanagement">Projektmanagement</option>
+        
+           <option value="Qualitätswesen">Qualitätswesen</option>
+        
+           <option value="Rechnungswesen/Finanzen">Rechnungswesen/Finanzen</option>
+        
+           <option value="Recht">Recht</option>
+        
+           <option value="Redaktion/Dokumentation">Redaktion/Dokumentation</option>
+        
+           <option value="Sicherheit/Zivilschutz">Sicherheit/Zivilschutz</option>
+        
+           <option value="Support">Support</option>
+        
+           <option value="Vertrieb/Verkauf">Vertrieb/Verkauf</option>
+        
+           <option value="sonstige Berufe">sonstige Berufe</option>
+        
+      </select>
       
-         <option value="Aus- und Weiterbildung">Aus- und Weiterbildung</option>
+      <!-- specialisms -->
+      <select data-validate-presence="can't be blank" class="pop-menu child multi" data-columns="3" data-name="Specialisms">
+        
+          <optgroup label="Administration/Sachbearbeitung">
+            
+              <option value="Archivierung">Archivierung</option>
+            
+              <option value="Assistenz">Assistenz</option>
+            
+              <option value="Auftragsabwicklung/Dateneingabe">Auftragsabwicklung/Dateneingabe</option>
+            
+              <option value="Empfang/Telefonzentrale">Empfang/Telefonzentrale</option>
+            
+              <option value="Immobilienverwaltung">Immobilienverwaltung</option>
+            
+              <option value="Organisation">Organisation</option>
+            
+              <option value="Sachbearbeitung">Sachbearbeitung</option>
+            
+              <option value="Sekretariat">Sekretariat</option>
+            
+              <option value="sonstige Berufe - Administration/Sachbearbeitung">sonstige Berufe - Administration/Sachbearbeitung</option>
+            
+          </optgroup>
+        
+          <optgroup label="Aus- und Weiterbildung">
+            
+              <option value="Betriebliche Aus- und Weiterbildung">Betriebliche Aus- und Weiterbildung</option>
+            
+              <option value="Erwachsenenbildung">Erwachsenenbildung</option>
+            
+              <option value="Kindergarten & Erziehung">Kindergarten & Erziehung</option>
+            
+              <option value="Kundenschulung">Kundenschulung</option>
+            
+              <option value="Professur">Professur</option>
+            
+              <option value="Pädagogik">Pädagogik</option>
+            
+              <option value="Schul- & Universitätsverwaltung">Schul- & Universitätsverwaltung</option>
+            
+              <option value="Schulausbildung">Schulausbildung</option>
+            
+              <option value="Sonderschule">Sonderschule</option>
+            
+              <option value="Sport- & Fitnesstraining">Sport- & Fitnesstraining</option>
+            
+              <option value="sonstige Berufe - Aus-/Weiterbildung">sonstige Berufe - Aus-/Weiterbildung</option>
+            
+          </optgroup>
+        
+          <optgroup label="Customer Service/Kundenbetreuung">
+            
+              <option value="Call Center">Call Center</option>
+            
+              <option value="Flugbegleitung">Flugbegleitung</option>
+            
+              <option value="Haarpflege & Kosmetik">Haarpflege & Kosmetik</option>
+            
+              <option value="Händlerbetreuung">Händlerbetreuung</option>
+            
+              <option value="Kundenbetreuung">Kundenbetreuung</option>
+            
+              <option value="Kundenschulung">Kundenschulung</option>
+            
+              <option value="Reservierung & Ticketservice">Reservierung & Ticketservice</option>
+            
+              <option value="Schalterservice">Schalterservice</option>
+            
+              <option value="sonstige Berufe - Customer Service/Kundenbetreuung">sonstige Berufe - Customer Service/Kundenbetreuung</option>
+            
+              <option value="technischer Kundendienst/Hotline">technischer Kundendienst/Hotline</option>
+            
+          </optgroup>
+        
+          <optgroup label="Design & Gestaltung">
+            
+              <option value="Architektur/Raumgestaltung">Architektur/Raumgestaltung</option>
+            
+              <option value="Computer Animation & Multimedia">Computer Animation & Multimedia</option>
+            
+              <option value="Creative Direction">Creative Direction</option>
+            
+              <option value="Grafik/Illustration">Grafik/Illustration</option>
+            
+              <option value="Industriedesign">Industriedesign</option>
+            
+              <option value="Mode & Schmuckdesign">Mode & Schmuckdesign</option>
+            
+              <option value="Photografie, Videogestaltung">Photografie, Videogestaltung</option>
+            
+              <option value="Web/User Interface Design">Web/User Interface Design</option>
+            
+              <option value="sonstige Berufe - Design & Gestaltung">sonstige Berufe - Design & Gestaltung</option>
+            
+          </optgroup>
+        
+          <optgroup label="Geschäftsleitung/Strategisches Management">
+            
+              <option value="Business Analyse">Business Analyse</option>
+            
+              <option value="Consulting">Consulting</option>
+            
+              <option value="Filial-/Abteilungsleitung">Filial-/Abteilungsleitung</option>
+            
+              <option value="Franchising">Franchising</option>
+            
+              <option value="Geschäftsbereichsführung">Geschäftsbereichsführung</option>
+            
+              <option value="Geschäftsführung/Vorstand">Geschäftsführung/Vorstand</option>
+            
+              <option value="Klinik-/Heimleitung">Klinik-/Heimleitung</option>
+            
+              <option value="Mergers & Acquisitions">Mergers & Acquisitions</option>
+            
+              <option value="Restaurantleitung">Restaurantleitung</option>
+            
+              <option value="Schul- & Universitätsverwaltung">Schul- & Universitätsverwaltung</option>
+            
+              <option value="Stadtplanung">Stadtplanung</option>
+            
+              <option value="Strategie & Planung">Strategie & Planung</option>
+            
+              <option value="sonstige Berufe - Geschäftsleitung/Strategisches Management">sonstige Berufe - Geschäftsleitung/Strategisches Management</option>
+            
+          </optgroup>
+        
+          <optgroup label="Handwerk">
+            
+              <option value="Bauleitung">Bauleitung</option>
+            
+              <option value="Beton-/Mauerhandwerk">Beton-/Mauerhandwerk</option>
+            
+              <option value="Betriebstechnik/Inbetriebnahme">Betriebstechnik/Inbetriebnahme</option>
+            
+              <option value="Dachdecken">Dachdecken</option>
+            
+              <option value="Elektrik/Mechatronik">Elektrik/Mechatronik</option>
+            
+              <option value="Fußbodenverlegung/Malen/Tapezieren">Fußbodenverlegung/Malen/Tapezieren</option>
+            
+              <option value="Heizung/Klima">Heizung/Klima</option>
+            
+              <option value="Klempnerei/Sanitär">Klempnerei/Sanitär</option>
+            
+              <option value="Metallfacharbeit/Schmiede">Metallfacharbeit/Schmiede</option>
+            
+              <option value="Technisches Zeichnen/CAD">Technisches Zeichnen/CAD</option>
+            
+              <option value="Vermessen">Vermessen</option>
+            
+              <option value="Verputzen">Verputzen</option>
+            
+              <option value="Zimmerei/Tischlerei">Zimmerei/Tischlerei</option>
+            
+              <option value="sonstige Berufe - Handwerk">sonstige Berufe - Handwerk</option>
+            
+          </optgroup>
+        
+          <optgroup label="Hotel und Gastronomie">
+            
+              <option value="Bedienung/Servicekraft">Bedienung/Servicekraft</option>
+            
+              <option value="Bewirtungs-Service">Bewirtungs-Service</option>
+            
+              <option value="Gäste-Service">Gäste-Service</option>
+            
+              <option value="Kochen/Catering">Kochen/Catering</option>
+            
+              <option value="Restaurantleitung">Restaurantleitung</option>
+            
+              <option value="Rezeption">Rezeption</option>
+            
+              <option value="Sommelier">Sommelier</option>
+            
+              <option value="sonstige Berufe - Hotel & Gastronomie">sonstige Berufe - Hotel & Gastronomie</option>
+            
+          </optgroup>
+        
+          <optgroup label="IT/Informationstechnologie">
+            
+              <option value="Benutzerfreundlichkeit (Usability)">Benutzerfreundlichkeit (Usability)</option>
+            
+              <option value="Benutzerservice/Help Desk">Benutzerservice/Help Desk</option>
+            
+              <option value="Computer-/Netzwerksicherheit">Computer-/Netzwerksicherheit</option>
+            
+              <option value="Datenbankentwicklung/Administration">Datenbankentwicklung/Administration</option>
+            
+              <option value="ERP/SAP-Beratung, Einführung, Programmierung">ERP/SAP-Beratung, Einführung, Programmierung</option>
+            
+              <option value="IT-Consulting">IT-Consulting</option>
+            
+              <option value="IT-Projektmanagement">IT-Projektmanagement</option>
+            
+              <option value="Software-/Systemarchitektur">Software-/Systemarchitektur</option>
+            
+              <option value="Software-/Web-Entwicklung">Software-/Web-Entwicklung</option>
+            
+              <option value="System-/Netzwerkadministration">System-/Netzwerkadministration</option>
+            
+              <option value="Systemprogrammierung">Systemprogrammierung</option>
+            
+              <option value="Telekommunikationstechnik">Telekommunikationstechnik</option>
+            
+              <option value="Web/User Interface Design">Web/User Interface Design</option>
+            
+              <option value="sonstige Berufe - IT/Informationstechnologie">sonstige Berufe - IT/Informationstechnologie</option>
+            
+          </optgroup>
+        
+          <optgroup label="Ingenieurwesen/Entwicklung und Konstruktion">
+            
+              <option value="Bauwesen">Bauwesen</option>
+            
+              <option value="Biotechnologie">Biotechnologie</option>
+            
+              <option value="Chemietechnologie">Chemietechnologie</option>
+            
+              <option value="Elektronik">Elektronik</option>
+            
+              <option value="Energie-/Kerntechnik">Energie-/Kerntechnik</option>
+            
+              <option value="Funktechnik">Funktechnik</option>
+            
+              <option value="Luft- und Raumfahrttechnik">Luft- und Raumfahrttechnik</option>
+            
+              <option value="Maschinenbauwesen/Fahrzeugbau">Maschinenbauwesen/Fahrzeugbau</option>
+            
+              <option value="Prozesstechnik/Prozeßentwicklung">Prozesstechnik/Prozeßentwicklung</option>
+            
+              <option value="Prozeßsteuerung">Prozeßsteuerung</option>
+            
+              <option value="Schiffbau">Schiffbau</option>
+            
+              <option value="Technisches Zeichnen/CAD">Technisches Zeichnen/CAD</option>
+            
+              <option value="Umwelttechnik">Umwelttechnik</option>
+            
+              <option value="sonstige Berufe - Ingenieurwesen/Entwicklung & Konstruktion">sonstige Berufe - Ingenieurwesen/Entwicklung & Konstruktion</option>
+            
+          </optgroup>
+        
+          <optgroup label="Instandhaltung">
+            
+              <option value="Bürotechnik">Bürotechnik</option>
+            
+              <option value="Elektrik/Mechatronik">Elektrik/Mechatronik</option>
+            
+              <option value="Gebäudemanagment">Gebäudemanagment</option>
+            
+              <option value="Gebäudewartung/-reinigung">Gebäudewartung/-reinigung</option>
+            
+              <option value="Heizung/Klima">Heizung/Klima</option>
+            
+              <option value="KFZ-Mechanik/-Elektronik">KFZ-Mechanik/-Elektronik</option>
+            
+              <option value="Klempnerei/Sanitär">Klempnerei/Sanitär</option>
+            
+              <option value="Landschaftspflege">Landschaftspflege</option>
+            
+              <option value="Maschinenmontage/-instandhaltung">Maschinenmontage/-instandhaltung</option>
+            
+              <option value="Schlosserei">Schlosserei</option>
+            
+              <option value="sonstige Berufe - Instandhaltung">sonstige Berufe - Instandhaltung</option>
+            
+          </optgroup>
+        
+          <optgroup label="Logistik und Transport">
+            
+              <option value="Auto & Bus">Auto & Bus</option>
+            
+              <option value="Bahn">Bahn</option>
+            
+              <option value="Einkauf">Einkauf</option>
+            
+              <option value="Flugzeug & Schiff">Flugzeug & Schiff</option>
+            
+              <option value="Gefahrgutabwicklung">Gefahrgutabwicklung</option>
+            
+              <option value="Handelswareneinkauf">Handelswareneinkauf</option>
+            
+              <option value="Import-/Exportabwicklung">Import-/Exportabwicklung</option>
+            
+              <option value="Kalkulation">Kalkulation</option>
+            
+              <option value="Kurierdienst">Kurierdienst</option>
+            
+              <option value="LKW">LKW</option>
+            
+              <option value="Lieferantenbetreuung">Lieferantenbetreuung</option>
+            
+              <option value="Maschinen-/Gabelstapler-/-Kranführung">Maschinen-/Gabelstapler-/-Kranführung</option>
+            
+              <option value="Materialwirtschaft/Inventur/Disposition">Materialwirtschaft/Inventur/Disposition</option>
+            
+              <option value="Spedition">Spedition</option>
+            
+              <option value="Verpackung, Versand & Lagerwesen">Verpackung, Versand & Lagerwesen</option>
+            
+              <option value="sonstige Berufe - Logistik & Transport">sonstige Berufe - Logistik & Transport</option>
+            
+          </optgroup>
+        
+          <optgroup label="Marketing">
+            
+              <option value="Absatz-/Verkaufsförderung">Absatz-/Verkaufsförderung</option>
+            
+              <option value="Brand Marketing">Brand Marketing</option>
+            
+              <option value="Direct-Marketing (CRM)">Direct-Marketing (CRM)</option>
+            
+              <option value="Events/Promotion">Events/Promotion</option>
+            
+              <option value="Investor-/Public Relations">Investor-/Public Relations</option>
+            
+              <option value="Marketingkommunikation">Marketingkommunikation</option>
+            
+              <option value="Marktforschung">Marktforschung</option>
+            
+              <option value="Mediaplanung">Mediaplanung</option>
+            
+              <option value="Online-Marketing">Online-Marketing</option>
+            
+              <option value="Produktmanagement">Produktmanagement</option>
+            
+              <option value="Telemarketing">Telemarketing</option>
+            
+              <option value="Werbung">Werbung</option>
+            
+              <option value="sonstige Berufe - Marketing">sonstige Berufe - Marketing</option>
+            
+          </optgroup>
+        
+          <optgroup label="Medizin und Gesundheit">
+            
+              <option value="Altenpflege">Altenpflege</option>
+            
+              <option value="Apotheke/Pharmazie">Apotheke/Pharmazie</option>
+            
+              <option value="Ernährungsberatung">Ernährungsberatung</option>
+            
+              <option value="Krankenpflege">Krankenpflege</option>
+            
+              <option value="Labor/MTA/CTA/RTA/PTA">Labor/MTA/CTA/RTA/PTA</option>
+            
+              <option value="Medizinische Assistenz">Medizinische Assistenz</option>
+            
+              <option value="Optik/Akustik">Optik/Akustik</option>
+            
+              <option value="Physiotherapie/Reha-Service">Physiotherapie/Reha-Service</option>
+            
+              <option value="Praktische Medizin">Praktische Medizin</option>
+            
+              <option value="Psychologie">Psychologie</option>
+            
+              <option value="Rettungsassistenz/Rettungsdienst">Rettungsassistenz/Rettungsdienst</option>
+            
+              <option value="Sozialhilfe">Sozialhilfe</option>
+            
+              <option value="Sportmedizin">Sportmedizin</option>
+            
+              <option value="Tiermedizin/Tierpflege">Tiermedizin/Tierpflege</option>
+            
+              <option value="Zahnmedizin">Zahnmedizin</option>
+            
+              <option value="sonstige Berufe - Medizin & Gesundheit">sonstige Berufe - Medizin & Gesundheit</option>
+            
+          </optgroup>
+        
+          <optgroup label="Naturwissenschaftliche Forschung">
+            
+              <option value="Biologie & Chemie">Biologie & Chemie</option>
+            
+              <option value="Materialwissenschaft & Physik">Materialwissenschaft & Physik</option>
+            
+              <option value="Mathematik & Statistik">Mathematik & Statistik</option>
+            
+              <option value="Medizinische Forschung">Medizinische Forschung</option>
+            
+              <option value="Neue Produkte - Forschung & Entwicklung">Neue Produkte - Forschung & Entwicklung</option>
+            
+              <option value="Pharmazeutische Forschung">Pharmazeutische Forschung</option>
+            
+              <option value="Umwelt & Geologie">Umwelt & Geologie</option>
+            
+              <option value="sonstige Berufe - Naturwissenschaftliche Forschung">sonstige Berufe - Naturwissenschaftliche Forschung</option>
+            
+          </optgroup>
+        
+          <optgroup label="Personalwesen">
+            
+              <option value="Betriebliche Aus- und Weiterbildung">Betriebliche Aus- und Weiterbildung</option>
+            
+              <option value="Compensation/Benefits">Compensation/Benefits</option>
+            
+              <option value="Compliance">Compliance</option>
+            
+              <option value="Lohn- und Gehaltsabrechnung">Lohn- und Gehaltsabrechnung</option>
+            
+              <option value="Personalberatung">Personalberatung</option>
+            
+              <option value="Personalbeschaffung/-betreuung">Personalbeschaffung/-betreuung</option>
+            
+              <option value="sonstige Berufe - Personalwesen">sonstige Berufe - Personalwesen</option>
+            
+          </optgroup>
+        
+          <optgroup label="Produktion">
+            
+              <option value="Abfalltechnik">Abfalltechnik</option>
+            
+              <option value="Betriebs-/Produktionsleitung">Betriebs-/Produktionsleitung</option>
+            
+              <option value="Betriebstechnik">Betriebstechnik</option>
+            
+              <option value="Chemische-/Pharmazeutische Produktion">Chemische-/Pharmazeutische Produktion</option>
+            
+              <option value="Druckerei">Druckerei</option>
+            
+              <option value="Fertigungsmontage">Fertigungsmontage</option>
+            
+              <option value="Fertigungstechnologie & Verfahrenstechnik">Fertigungstechnologie & Verfahrenstechnik</option>
+            
+              <option value="Gefahrgutabwicklung">Gefahrgutabwicklung</option>
+            
+              <option value="Gießerei & Formgebung">Gießerei & Formgebung</option>
+            
+              <option value="Metall- & Schweißtechnik">Metall- & Schweißtechnik</option>
+            
+              <option value="Nahrungsmittelproduktion">Nahrungsmittelproduktion</option>
+            
+              <option value="Näherei & Schneiderei">Näherei & Schneiderei</option>
+            
+              <option value="Produktionsplanung">Produktionsplanung</option>
+            
+              <option value="Telekommunikationstechnik">Telekommunikationstechnik</option>
+            
+              <option value="Zerspanungstechnik & CNC">Zerspanungstechnik & CNC</option>
+            
+              <option value="sonstige Berufe - Produktion">sonstige Berufe - Produktion</option>
+            
+          </optgroup>
+        
+          <optgroup label="Projektmanagement">
+            
+              <option value="Event-Planung/-Koordination">Event-Planung/-Koordination</option>
+            
+              <option value="IT-Projektmanagement">IT-Projektmanagement</option>
+            
+              <option value="Programm Management">Programm Management</option>
+            
+              <option value="Projekt Management">Projekt Management</option>
+            
+              <option value="sonstige Berufe - Projektmanagement">sonstige Berufe - Projektmanagement</option>
+            
+          </optgroup>
+        
+          <optgroup label="Qualitätswesen">
+            
+              <option value="Arbeitsplatzsicherheit">Arbeitsplatzsicherheit</option>
+            
+              <option value="Bauüberwachung">Bauüberwachung</option>
+            
+              <option value="Betrugsuntersuchung">Betrugsuntersuchung</option>
+            
+              <option value="ISO-Zertifizierung">ISO-Zertifizierung</option>
+            
+              <option value="Qualitätskontrolle">Qualitätskontrolle</option>
+            
+              <option value="Six Sigma/Black Belt/TQM">Six Sigma/Black Belt/TQM</option>
+            
+              <option value="Software - Qualitätssicherung">Software - Qualitätssicherung</option>
+            
+              <option value="TÜV/Fahrzeuginspektion">TÜV/Fahrzeuginspektion</option>
+            
+              <option value="Umweltschutz">Umweltschutz</option>
+            
+              <option value="sonstige Berufe - Qualitätswesen">sonstige Berufe - Qualitätswesen</option>
+            
+          </optgroup>
+        
+          <optgroup label="Rechnungswesen/Finanzen">
+            
+              <option value="Aktuariat">Aktuariat</option>
+            
+              <option value="Buchhaltung">Buchhaltung</option>
+            
+              <option value="Controlling">Controlling</option>
+            
+              <option value="Corporate Finance">Corporate Finance</option>
+            
+              <option value="Debitoren-/Kreditorenbuchhaltung">Debitoren-/Kreditorenbuchhaltung</option>
+            
+              <option value="Finanz-/Vermögensberatung">Finanz-/Vermögensberatung</option>
+            
+              <option value="Finanzanalyse">Finanzanalyse</option>
+            
+              <option value="Fondsmanagment">Fondsmanagment</option>
+            
+              <option value="Immobilienfinanzierung">Immobilienfinanzierung</option>
+            
+              <option value="Inkasso/Mahnwesen">Inkasso/Mahnwesen</option>
+            
+              <option value="Investment Management">Investment Management</option>
+            
+              <option value="Kreditprüfung/-bearbeitung">Kreditprüfung/-bearbeitung</option>
+            
+              <option value="Risk-Management/Compliance">Risk-Management/Compliance</option>
+            
+              <option value="Steuer-undFinanzverwaltung">Steuer-undFinanzverwaltung</option>
+            
+              <option value="Steuerberatung">Steuerberatung</option>
+            
+              <option value="Underwriting">Underwriting</option>
+            
+              <option value="Wertpapier-/Warenhandel">Wertpapier-/Warenhandel</option>
+            
+              <option value="Wirtschaftsprüfung/Revision">Wirtschaftsprüfung/Revision</option>
+            
+              <option value="sonstige Berufe - Rechnungswesen/Finanzen">sonstige Berufe - Rechnungswesen/Finanzen</option>
+            
+          </optgroup>
+        
+          <optgroup label="Recht">
+            
+              <option value="Arbeitsrecht">Arbeitsrecht</option>
+            
+              <option value="Patentrecht">Patentrecht</option>
+            
+              <option value="Steuer-/Wirtschaftsrecht">Steuer-/Wirtschaftsrecht</option>
+            
+              <option value="Straf-/Zivilrecht">Straf-/Zivilrecht</option>
+            
+              <option value="juristische Assistenz">juristische Assistenz</option>
+            
+              <option value="sonstige Berufe - Recht">sonstige Berufe - Recht</option>
+            
+          </optgroup>
+        
+          <optgroup label="Redaktion/Dokumentation">
+            
+              <option value="Dokumentation">Dokumentation</option>
+            
+              <option value="Journalismus">Journalismus</option>
+            
+              <option value="Redaktion/Lektorat">Redaktion/Lektorat</option>
+            
+              <option value="sonstige Berufe - Redaktion/Dokumentation">sonstige Berufe - Redaktion/Dokumentation</option>
+            
+              <option value="Übersetzung">Übersetzung</option>
+            
+          </optgroup>
+        
+          <optgroup label="Sicherheit/Zivilschutz">
+            
+              <option value="Feuerwehr & Rettungsdienst">Feuerwehr & Rettungsdienst</option>
+            
+              <option value="Ladensicherheit">Ladensicherheit</option>
+            
+              <option value="Polizei">Polizei</option>
+            
+              <option value="Sicherheitsdienst">Sicherheitsdienst</option>
+            
+              <option value="Strafvollzug">Strafvollzug</option>
+            
+              <option value="Verteidigung">Verteidigung</option>
+            
+              <option value="sonstige Berufe - Sicherheit/Zivilschutz">sonstige Berufe - Sicherheit/Zivilschutz</option>
+            
+          </optgroup>
+        
+          <optgroup label="Support">
+            
+          </optgroup>
+        
+          <optgroup label="Vertrieb/Verkauf">
+            
+              <option value="Account Management">Account Management</option>
+            
+              <option value="Außendienst">Außendienst</option>
+            
+              <option value="Business Development">Business Development</option>
+            
+              <option value="Einzelhandelsverkauf">Einzelhandelsverkauf</option>
+            
+              <option value="Großhandelsverkauf">Großhandelsverkauf</option>
+            
+              <option value="Immobilienhandel">Immobilienhandel</option>
+            
+              <option value="Internationaler Vertrieb">Internationaler Vertrieb</option>
+            
+              <option value="Technischer Vertrieb">Technischer Vertrieb</option>
+            
+              <option value="Telesales">Telesales</option>
+            
+              <option value="Touristikbüro & Ticketverkauf">Touristikbüro & Ticketverkauf</option>
+            
+              <option value="Verkauf Medien & Werbung">Verkauf Medien & Werbung</option>
+            
+              <option value="Versicherungsvertretung">Versicherungsvertretung</option>
+            
+              <option value="Vertriebsassistenz">Vertriebsassistenz</option>
+            
+              <option value="sonstige Berufe - Vertrieb/Verkauf">sonstige Berufe - Vertrieb/Verkauf</option>
+            
+          </optgroup>
+        
+          <optgroup label="sonstige Berufe">
+            
+              <option value="Heimarbeit">Heimarbeit</option>
+            
+              <option value="Karrieremesse">Karrieremesse</option>
+            
+              <option value="sonstige Berufe">sonstige Berufe</option>
+            
+          </optgroup>
+        
+      </select>
+    </div>
+    <div class="clear">&nbsp;</div>  
+    <div class="block">
+      <label class="left">List Skills</label>
       
-         <option value="Customer Service/Kundenbetreuung">Customer Service/Kundenbetreuung</option>
+      <!-- skills -->
+      <textarea rows ="4" placeholder="e.g. Microsoft Excel, Adobe CSS Suite"></textarea>
+    </div>
+    
+    <div class="block">
+      <label class="left"><abbr>*</abbr>Preferred location</label>
       
-         <option value="Design & Gestaltung">Design & Gestaltung</option>
-      
-         <option value="Geschäftsleitung/Strategisches Management">Geschäftsleitung/Strategisches Management</option>
-      
-         <option value="Handwerk">Handwerk</option>
-      
-         <option value="Hotel und Gastronomie">Hotel und Gastronomie</option>
-      
-         <option value="IT/Informationstechnologie">IT/Informationstechnologie</option>
-      
-         <option value="Ingenieurwesen/Entwicklung und Konstruktion">Ingenieurwesen/Entwicklung und Konstruktion</option>
-      
-         <option value="Instandhaltung">Instandhaltung</option>
-      
-         <option value="Logistik und Transport">Logistik und Transport</option>
-      
-         <option value="Marketing">Marketing</option>
-      
-         <option value="Medizin und Gesundheit">Medizin und Gesundheit</option>
-      
-         <option value="Naturwissenschaftliche Forschung">Naturwissenschaftliche Forschung</option>
-      
-         <option value="Personalwesen">Personalwesen</option>
-      
-         <option value="Produktion">Produktion</option>
-      
-         <option value="Projektmanagement">Projektmanagement</option>
-      
-         <option value="Qualitätswesen">Qualitätswesen</option>
-      
-         <option value="Rechnungswesen/Finanzen">Rechnungswesen/Finanzen</option>
-      
-         <option value="Recht">Recht</option>
-      
-         <option value="Redaktion/Dokumentation">Redaktion/Dokumentation</option>
-      
-         <option value="Sicherheit/Zivilschutz">Sicherheit/Zivilschutz</option>
-      
-         <option value="Support">Support</option>
-      
-         <option value="Vertrieb/Verkauf">Vertrieb/Verkauf</option>
-      
-         <option value="sonstige Berufe">sonstige Berufe</option>
-      
-    </select>
-    <select class="pop-menu child multi" data-columns="3" data-name="Specialisms">
-      
-        <optgroup label="Administration/Sachbearbeitung">
-          
-            <option value="Archivierung">Archivierung</option>
-          
-            <option value="Assistenz">Assistenz</option>
-          
-            <option value="Auftragsabwicklung/Dateneingabe">Auftragsabwicklung/Dateneingabe</option>
-          
-            <option value="Empfang/Telefonzentrale">Empfang/Telefonzentrale</option>
-          
-            <option value="Immobilienverwaltung">Immobilienverwaltung</option>
-          
-            <option value="Organisation">Organisation</option>
-          
-            <option value="Sachbearbeitung">Sachbearbeitung</option>
-          
-            <option value="Sekretariat">Sekretariat</option>
-          
-            <option value="sonstige Berufe - Administration/Sachbearbeitung">sonstige Berufe - Administration/Sachbearbeitung</option>
-          
-        </optgroup>
-      
-        <optgroup label="Aus- und Weiterbildung">
-          
-            <option value="Betriebliche Aus- und Weiterbildung">Betriebliche Aus- und Weiterbildung</option>
-          
-            <option value="Erwachsenenbildung">Erwachsenenbildung</option>
-          
-            <option value="Kindergarten & Erziehung">Kindergarten & Erziehung</option>
-          
-            <option value="Kundenschulung">Kundenschulung</option>
-          
-            <option value="Professur">Professur</option>
-          
-            <option value="Pädagogik">Pädagogik</option>
-          
-            <option value="Schul- & Universitätsverwaltung">Schul- & Universitätsverwaltung</option>
-          
-            <option value="Schulausbildung">Schulausbildung</option>
-          
-            <option value="Sonderschule">Sonderschule</option>
-          
-            <option value="Sport- & Fitnesstraining">Sport- & Fitnesstraining</option>
-          
-            <option value="sonstige Berufe - Aus-/Weiterbildung">sonstige Berufe - Aus-/Weiterbildung</option>
-          
-        </optgroup>
-      
-        <optgroup label="Customer Service/Kundenbetreuung">
-          
-            <option value="Call Center">Call Center</option>
-          
-            <option value="Flugbegleitung">Flugbegleitung</option>
-          
-            <option value="Haarpflege & Kosmetik">Haarpflege & Kosmetik</option>
-          
-            <option value="Händlerbetreuung">Händlerbetreuung</option>
-          
-            <option value="Kundenbetreuung">Kundenbetreuung</option>
-          
-            <option value="Kundenschulung">Kundenschulung</option>
-          
-            <option value="Reservierung & Ticketservice">Reservierung & Ticketservice</option>
-          
-            <option value="Schalterservice">Schalterservice</option>
-          
-            <option value="sonstige Berufe - Customer Service/Kundenbetreuung">sonstige Berufe - Customer Service/Kundenbetreuung</option>
-          
-            <option value="technischer Kundendienst/Hotline">technischer Kundendienst/Hotline</option>
-          
-        </optgroup>
-      
-        <optgroup label="Design & Gestaltung">
-          
-            <option value="Architektur/Raumgestaltung">Architektur/Raumgestaltung</option>
-          
-            <option value="Computer Animation & Multimedia">Computer Animation & Multimedia</option>
-          
-            <option value="Creative Direction">Creative Direction</option>
-          
-            <option value="Grafik/Illustration">Grafik/Illustration</option>
-          
-            <option value="Industriedesign">Industriedesign</option>
-          
-            <option value="Mode & Schmuckdesign">Mode & Schmuckdesign</option>
-          
-            <option value="Photografie, Videogestaltung">Photografie, Videogestaltung</option>
-          
-            <option value="Web/User Interface Design">Web/User Interface Design</option>
-          
-            <option value="sonstige Berufe - Design & Gestaltung">sonstige Berufe - Design & Gestaltung</option>
-          
-        </optgroup>
-      
-        <optgroup label="Geschäftsleitung/Strategisches Management">
-          
-            <option value="Business Analyse">Business Analyse</option>
-          
-            <option value="Consulting">Consulting</option>
-          
-            <option value="Filial-/Abteilungsleitung">Filial-/Abteilungsleitung</option>
-          
-            <option value="Franchising">Franchising</option>
-          
-            <option value="Geschäftsbereichsführung">Geschäftsbereichsführung</option>
-          
-            <option value="Geschäftsführung/Vorstand">Geschäftsführung/Vorstand</option>
-          
-            <option value="Klinik-/Heimleitung">Klinik-/Heimleitung</option>
-          
-            <option value="Mergers & Acquisitions">Mergers & Acquisitions</option>
-          
-            <option value="Restaurantleitung">Restaurantleitung</option>
-          
-            <option value="Schul- & Universitätsverwaltung">Schul- & Universitätsverwaltung</option>
-          
-            <option value="Stadtplanung">Stadtplanung</option>
-          
-            <option value="Strategie & Planung">Strategie & Planung</option>
-          
-            <option value="sonstige Berufe - Geschäftsleitung/Strategisches Management">sonstige Berufe - Geschäftsleitung/Strategisches Management</option>
-          
-        </optgroup>
-      
-        <optgroup label="Handwerk">
-          
-            <option value="Bauleitung">Bauleitung</option>
-          
-            <option value="Beton-/Mauerhandwerk">Beton-/Mauerhandwerk</option>
-          
-            <option value="Betriebstechnik/Inbetriebnahme">Betriebstechnik/Inbetriebnahme</option>
-          
-            <option value="Dachdecken">Dachdecken</option>
-          
-            <option value="Elektrik/Mechatronik">Elektrik/Mechatronik</option>
-          
-            <option value="Fußbodenverlegung/Malen/Tapezieren">Fußbodenverlegung/Malen/Tapezieren</option>
-          
-            <option value="Heizung/Klima">Heizung/Klima</option>
-          
-            <option value="Klempnerei/Sanitär">Klempnerei/Sanitär</option>
-          
-            <option value="Metallfacharbeit/Schmiede">Metallfacharbeit/Schmiede</option>
-          
-            <option value="Technisches Zeichnen/CAD">Technisches Zeichnen/CAD</option>
-          
-            <option value="Vermessen">Vermessen</option>
-          
-            <option value="Verputzen">Verputzen</option>
-          
-            <option value="Zimmerei/Tischlerei">Zimmerei/Tischlerei</option>
-          
-            <option value="sonstige Berufe - Handwerk">sonstige Berufe - Handwerk</option>
-          
-        </optgroup>
-      
-        <optgroup label="Hotel und Gastronomie">
-          
-            <option value="Bedienung/Servicekraft">Bedienung/Servicekraft</option>
-          
-            <option value="Bewirtungs-Service">Bewirtungs-Service</option>
-          
-            <option value="Gäste-Service">Gäste-Service</option>
-          
-            <option value="Kochen/Catering">Kochen/Catering</option>
-          
-            <option value="Restaurantleitung">Restaurantleitung</option>
-          
-            <option value="Rezeption">Rezeption</option>
-          
-            <option value="Sommelier">Sommelier</option>
-          
-            <option value="sonstige Berufe - Hotel & Gastronomie">sonstige Berufe - Hotel & Gastronomie</option>
-          
-        </optgroup>
-      
-        <optgroup label="IT/Informationstechnologie">
-          
-            <option value="Benutzerfreundlichkeit (Usability)">Benutzerfreundlichkeit (Usability)</option>
-          
-            <option value="Benutzerservice/Help Desk">Benutzerservice/Help Desk</option>
-          
-            <option value="Computer-/Netzwerksicherheit">Computer-/Netzwerksicherheit</option>
-          
-            <option value="Datenbankentwicklung/Administration">Datenbankentwicklung/Administration</option>
-          
-            <option value="ERP/SAP-Beratung, Einführung, Programmierung">ERP/SAP-Beratung, Einführung, Programmierung</option>
-          
-            <option value="IT-Consulting">IT-Consulting</option>
-          
-            <option value="IT-Projektmanagement">IT-Projektmanagement</option>
-          
-            <option value="Software-/Systemarchitektur">Software-/Systemarchitektur</option>
-          
-            <option value="Software-/Web-Entwicklung">Software-/Web-Entwicklung</option>
-          
-            <option value="System-/Netzwerkadministration">System-/Netzwerkadministration</option>
-          
-            <option value="Systemprogrammierung">Systemprogrammierung</option>
-          
-            <option value="Telekommunikationstechnik">Telekommunikationstechnik</option>
-          
-            <option value="Web/User Interface Design">Web/User Interface Design</option>
-          
-            <option value="sonstige Berufe - IT/Informationstechnologie">sonstige Berufe - IT/Informationstechnologie</option>
-          
-        </optgroup>
-      
-        <optgroup label="Ingenieurwesen/Entwicklung und Konstruktion">
-          
-            <option value="Bauwesen">Bauwesen</option>
-          
-            <option value="Biotechnologie">Biotechnologie</option>
-          
-            <option value="Chemietechnologie">Chemietechnologie</option>
-          
-            <option value="Elektronik">Elektronik</option>
-          
-            <option value="Energie-/Kerntechnik">Energie-/Kerntechnik</option>
-          
-            <option value="Funktechnik">Funktechnik</option>
-          
-            <option value="Luft- und Raumfahrttechnik">Luft- und Raumfahrttechnik</option>
-          
-            <option value="Maschinenbauwesen/Fahrzeugbau">Maschinenbauwesen/Fahrzeugbau</option>
-          
-            <option value="Prozesstechnik/Prozeßentwicklung">Prozesstechnik/Prozeßentwicklung</option>
-          
-            <option value="Prozeßsteuerung">Prozeßsteuerung</option>
-          
-            <option value="Schiffbau">Schiffbau</option>
-          
-            <option value="Technisches Zeichnen/CAD">Technisches Zeichnen/CAD</option>
-          
-            <option value="Umwelttechnik">Umwelttechnik</option>
-          
-            <option value="sonstige Berufe - Ingenieurwesen/Entwicklung & Konstruktion">sonstige Berufe - Ingenieurwesen/Entwicklung & Konstruktion</option>
-          
-        </optgroup>
-      
-        <optgroup label="Instandhaltung">
-          
-            <option value="Bürotechnik">Bürotechnik</option>
-          
-            <option value="Elektrik/Mechatronik">Elektrik/Mechatronik</option>
-          
-            <option value="Gebäudemanagment">Gebäudemanagment</option>
-          
-            <option value="Gebäudewartung/-reinigung">Gebäudewartung/-reinigung</option>
-          
-            <option value="Heizung/Klima">Heizung/Klima</option>
-          
-            <option value="KFZ-Mechanik/-Elektronik">KFZ-Mechanik/-Elektronik</option>
-          
-            <option value="Klempnerei/Sanitär">Klempnerei/Sanitär</option>
-          
-            <option value="Landschaftspflege">Landschaftspflege</option>
-          
-            <option value="Maschinenmontage/-instandhaltung">Maschinenmontage/-instandhaltung</option>
-          
-            <option value="Schlosserei">Schlosserei</option>
-          
-            <option value="sonstige Berufe - Instandhaltung">sonstige Berufe - Instandhaltung</option>
-          
-        </optgroup>
-      
-        <optgroup label="Logistik und Transport">
-          
-            <option value="Auto & Bus">Auto & Bus</option>
-          
-            <option value="Bahn">Bahn</option>
-          
-            <option value="Einkauf">Einkauf</option>
-          
-            <option value="Flugzeug & Schiff">Flugzeug & Schiff</option>
-          
-            <option value="Gefahrgutabwicklung">Gefahrgutabwicklung</option>
-          
-            <option value="Handelswareneinkauf">Handelswareneinkauf</option>
-          
-            <option value="Import-/Exportabwicklung">Import-/Exportabwicklung</option>
-          
-            <option value="Kalkulation">Kalkulation</option>
-          
-            <option value="Kurierdienst">Kurierdienst</option>
-          
-            <option value="LKW">LKW</option>
-          
-            <option value="Lieferantenbetreuung">Lieferantenbetreuung</option>
-          
-            <option value="Maschinen-/Gabelstapler-/-Kranführung">Maschinen-/Gabelstapler-/-Kranführung</option>
-          
-            <option value="Materialwirtschaft/Inventur/Disposition">Materialwirtschaft/Inventur/Disposition</option>
-          
-            <option value="Spedition">Spedition</option>
-          
-            <option value="Verpackung, Versand & Lagerwesen">Verpackung, Versand & Lagerwesen</option>
-          
-            <option value="sonstige Berufe - Logistik & Transport">sonstige Berufe - Logistik & Transport</option>
-          
-        </optgroup>
-      
-        <optgroup label="Marketing">
-          
-            <option value="Absatz-/Verkaufsförderung">Absatz-/Verkaufsförderung</option>
-          
-            <option value="Brand Marketing">Brand Marketing</option>
-          
-            <option value="Direct-Marketing (CRM)">Direct-Marketing (CRM)</option>
-          
-            <option value="Events/Promotion">Events/Promotion</option>
-          
-            <option value="Investor-/Public Relations">Investor-/Public Relations</option>
-          
-            <option value="Marketingkommunikation">Marketingkommunikation</option>
-          
-            <option value="Marktforschung">Marktforschung</option>
-          
-            <option value="Mediaplanung">Mediaplanung</option>
-          
-            <option value="Online-Marketing">Online-Marketing</option>
-          
-            <option value="Produktmanagement">Produktmanagement</option>
-          
-            <option value="Telemarketing">Telemarketing</option>
-          
-            <option value="Werbung">Werbung</option>
-          
-            <option value="sonstige Berufe - Marketing">sonstige Berufe - Marketing</option>
-          
-        </optgroup>
-      
-        <optgroup label="Medizin und Gesundheit">
-          
-            <option value="Altenpflege">Altenpflege</option>
-          
-            <option value="Apotheke/Pharmazie">Apotheke/Pharmazie</option>
-          
-            <option value="Ernährungsberatung">Ernährungsberatung</option>
-          
-            <option value="Krankenpflege">Krankenpflege</option>
-          
-            <option value="Labor/MTA/CTA/RTA/PTA">Labor/MTA/CTA/RTA/PTA</option>
-          
-            <option value="Medizinische Assistenz">Medizinische Assistenz</option>
-          
-            <option value="Optik/Akustik">Optik/Akustik</option>
-          
-            <option value="Physiotherapie/Reha-Service">Physiotherapie/Reha-Service</option>
-          
-            <option value="Praktische Medizin">Praktische Medizin</option>
-          
-            <option value="Psychologie">Psychologie</option>
-          
-            <option value="Rettungsassistenz/Rettungsdienst">Rettungsassistenz/Rettungsdienst</option>
-          
-            <option value="Sozialhilfe">Sozialhilfe</option>
-          
-            <option value="Sportmedizin">Sportmedizin</option>
-          
-            <option value="Tiermedizin/Tierpflege">Tiermedizin/Tierpflege</option>
-          
-            <option value="Zahnmedizin">Zahnmedizin</option>
-          
-            <option value="sonstige Berufe - Medizin & Gesundheit">sonstige Berufe - Medizin & Gesundheit</option>
-          
-        </optgroup>
-      
-        <optgroup label="Naturwissenschaftliche Forschung">
-          
-            <option value="Biologie & Chemie">Biologie & Chemie</option>
-          
-            <option value="Materialwissenschaft & Physik">Materialwissenschaft & Physik</option>
-          
-            <option value="Mathematik & Statistik">Mathematik & Statistik</option>
-          
-            <option value="Medizinische Forschung">Medizinische Forschung</option>
-          
-            <option value="Neue Produkte - Forschung & Entwicklung">Neue Produkte - Forschung & Entwicklung</option>
-          
-            <option value="Pharmazeutische Forschung">Pharmazeutische Forschung</option>
-          
-            <option value="Umwelt & Geologie">Umwelt & Geologie</option>
-          
-            <option value="sonstige Berufe - Naturwissenschaftliche Forschung">sonstige Berufe - Naturwissenschaftliche Forschung</option>
-          
-        </optgroup>
-      
-        <optgroup label="Personalwesen">
-          
-            <option value="Betriebliche Aus- und Weiterbildung">Betriebliche Aus- und Weiterbildung</option>
-          
-            <option value="Compensation/Benefits">Compensation/Benefits</option>
-          
-            <option value="Compliance">Compliance</option>
-          
-            <option value="Lohn- und Gehaltsabrechnung">Lohn- und Gehaltsabrechnung</option>
-          
-            <option value="Personalberatung">Personalberatung</option>
-          
-            <option value="Personalbeschaffung/-betreuung">Personalbeschaffung/-betreuung</option>
-          
-            <option value="sonstige Berufe - Personalwesen">sonstige Berufe - Personalwesen</option>
-          
-        </optgroup>
-      
-        <optgroup label="Produktion">
-          
-            <option value="Abfalltechnik">Abfalltechnik</option>
-          
-            <option value="Betriebs-/Produktionsleitung">Betriebs-/Produktionsleitung</option>
-          
-            <option value="Betriebstechnik">Betriebstechnik</option>
-          
-            <option value="Chemische-/Pharmazeutische Produktion">Chemische-/Pharmazeutische Produktion</option>
-          
-            <option value="Druckerei">Druckerei</option>
-          
-            <option value="Fertigungsmontage">Fertigungsmontage</option>
-          
-            <option value="Fertigungstechnologie & Verfahrenstechnik">Fertigungstechnologie & Verfahrenstechnik</option>
-          
-            <option value="Gefahrgutabwicklung">Gefahrgutabwicklung</option>
-          
-            <option value="Gießerei & Formgebung">Gießerei & Formgebung</option>
-          
-            <option value="Metall- & Schweißtechnik">Metall- & Schweißtechnik</option>
-          
-            <option value="Nahrungsmittelproduktion">Nahrungsmittelproduktion</option>
-          
-            <option value="Näherei & Schneiderei">Näherei & Schneiderei</option>
-          
-            <option value="Produktionsplanung">Produktionsplanung</option>
-          
-            <option value="Telekommunikationstechnik">Telekommunikationstechnik</option>
-          
-            <option value="Zerspanungstechnik & CNC">Zerspanungstechnik & CNC</option>
-          
-            <option value="sonstige Berufe - Produktion">sonstige Berufe - Produktion</option>
-          
-        </optgroup>
-      
-        <optgroup label="Projektmanagement">
-          
-            <option value="Event-Planung/-Koordination">Event-Planung/-Koordination</option>
-          
-            <option value="IT-Projektmanagement">IT-Projektmanagement</option>
-          
-            <option value="Programm Management">Programm Management</option>
-          
-            <option value="Projekt Management">Projekt Management</option>
-          
-            <option value="sonstige Berufe - Projektmanagement">sonstige Berufe - Projektmanagement</option>
-          
-        </optgroup>
-      
-        <optgroup label="Qualitätswesen">
-          
-            <option value="Arbeitsplatzsicherheit">Arbeitsplatzsicherheit</option>
-          
-            <option value="Bauüberwachung">Bauüberwachung</option>
-          
-            <option value="Betrugsuntersuchung">Betrugsuntersuchung</option>
-          
-            <option value="ISO-Zertifizierung">ISO-Zertifizierung</option>
-          
-            <option value="Qualitätskontrolle">Qualitätskontrolle</option>
-          
-            <option value="Six Sigma/Black Belt/TQM">Six Sigma/Black Belt/TQM</option>
-          
-            <option value="Software - Qualitätssicherung">Software - Qualitätssicherung</option>
-          
-            <option value="TÜV/Fahrzeuginspektion">TÜV/Fahrzeuginspektion</option>
-          
-            <option value="Umweltschutz">Umweltschutz</option>
-          
-            <option value="sonstige Berufe - Qualitätswesen">sonstige Berufe - Qualitätswesen</option>
-          
-        </optgroup>
-      
-        <optgroup label="Rechnungswesen/Finanzen">
-          
-            <option value="Aktuariat">Aktuariat</option>
-          
-            <option value="Buchhaltung">Buchhaltung</option>
-          
-            <option value="Controlling">Controlling</option>
-          
-            <option value="Corporate Finance">Corporate Finance</option>
-          
-            <option value="Debitoren-/Kreditorenbuchhaltung">Debitoren-/Kreditorenbuchhaltung</option>
-          
-            <option value="Finanz-/Vermögensberatung">Finanz-/Vermögensberatung</option>
-          
-            <option value="Finanzanalyse">Finanzanalyse</option>
-          
-            <option value="Fondsmanagment">Fondsmanagment</option>
-          
-            <option value="Immobilienfinanzierung">Immobilienfinanzierung</option>
-          
-            <option value="Inkasso/Mahnwesen">Inkasso/Mahnwesen</option>
-          
-            <option value="Investment Management">Investment Management</option>
-          
-            <option value="Kreditprüfung/-bearbeitung">Kreditprüfung/-bearbeitung</option>
-          
-            <option value="Risk-Management/Compliance">Risk-Management/Compliance</option>
-          
-            <option value="Steuer-undFinanzverwaltung">Steuer-undFinanzverwaltung</option>
-          
-            <option value="Steuerberatung">Steuerberatung</option>
-          
-            <option value="Underwriting">Underwriting</option>
-          
-            <option value="Wertpapier-/Warenhandel">Wertpapier-/Warenhandel</option>
-          
-            <option value="Wirtschaftsprüfung/Revision">Wirtschaftsprüfung/Revision</option>
-          
-            <option value="sonstige Berufe - Rechnungswesen/Finanzen">sonstige Berufe - Rechnungswesen/Finanzen</option>
-          
-        </optgroup>
-      
-        <optgroup label="Recht">
-          
-            <option value="Arbeitsrecht">Arbeitsrecht</option>
-          
-            <option value="Patentrecht">Patentrecht</option>
-          
-            <option value="Steuer-/Wirtschaftsrecht">Steuer-/Wirtschaftsrecht</option>
-          
-            <option value="Straf-/Zivilrecht">Straf-/Zivilrecht</option>
-          
-            <option value="juristische Assistenz">juristische Assistenz</option>
-          
-            <option value="sonstige Berufe - Recht">sonstige Berufe - Recht</option>
-          
-        </optgroup>
-      
-        <optgroup label="Redaktion/Dokumentation">
-          
-            <option value="Dokumentation">Dokumentation</option>
-          
-            <option value="Journalismus">Journalismus</option>
-          
-            <option value="Redaktion/Lektorat">Redaktion/Lektorat</option>
-          
-            <option value="sonstige Berufe - Redaktion/Dokumentation">sonstige Berufe - Redaktion/Dokumentation</option>
-          
-            <option value="Übersetzung">Übersetzung</option>
-          
-        </optgroup>
-      
-        <optgroup label="Sicherheit/Zivilschutz">
-          
-            <option value="Feuerwehr & Rettungsdienst">Feuerwehr & Rettungsdienst</option>
-          
-            <option value="Ladensicherheit">Ladensicherheit</option>
-          
-            <option value="Polizei">Polizei</option>
-          
-            <option value="Sicherheitsdienst">Sicherheitsdienst</option>
-          
-            <option value="Strafvollzug">Strafvollzug</option>
-          
-            <option value="Verteidigung">Verteidigung</option>
-          
-            <option value="sonstige Berufe - Sicherheit/Zivilschutz">sonstige Berufe - Sicherheit/Zivilschutz</option>
-          
-        </optgroup>
-      
-        <optgroup label="Support">
-          
-        </optgroup>
-      
-        <optgroup label="Vertrieb/Verkauf">
-          
-            <option value="Account Management">Account Management</option>
-          
-            <option value="Außendienst">Außendienst</option>
-          
-            <option value="Business Development">Business Development</option>
-          
-            <option value="Einzelhandelsverkauf">Einzelhandelsverkauf</option>
-          
-            <option value="Großhandelsverkauf">Großhandelsverkauf</option>
-          
-            <option value="Immobilienhandel">Immobilienhandel</option>
-          
-            <option value="Internationaler Vertrieb">Internationaler Vertrieb</option>
-          
-            <option value="Technischer Vertrieb">Technischer Vertrieb</option>
-          
-            <option value="Telesales">Telesales</option>
-          
-            <option value="Touristikbüro & Ticketverkauf">Touristikbüro & Ticketverkauf</option>
-          
-            <option value="Verkauf Medien & Werbung">Verkauf Medien & Werbung</option>
-          
-            <option value="Versicherungsvertretung">Versicherungsvertretung</option>
-          
-            <option value="Vertriebsassistenz">Vertriebsassistenz</option>
-          
-            <option value="sonstige Berufe - Vertrieb/Verkauf">sonstige Berufe - Vertrieb/Verkauf</option>
-          
-        </optgroup>
-      
-        <optgroup label="sonstige Berufe">
-          
-            <option value="Heimarbeit">Heimarbeit</option>
-          
-            <option value="Karrieremesse">Karrieremesse</option>
-          
-            <option value="sonstige Berufe">sonstige Berufe</option>
-          
-        </optgroup>
-      
-    </select>
-  </div>
-  <div class="clear">&nbsp;</div>  
-  <div class="block">
-    <label class="left">List Skills</label>
-    <textarea rows ="4" placeholder="e.g. Microsoft Excel, Adobe CSS Suite"></textarea>
-  </div>
-  
-  <div class="block">
-    <label class="left">Preferred location</label>
-    <input type="text" placeholder="e.g. Berlin, Germany"/>
-  </div>
+      <!-- location -->
+      <input data-validate-presence="can't be blank" type="text" placeholder="e.g. Berlin, Germany"/>
+    </div>
 
-  <div class="block">
-    <label class="left price">Expected Salary <span>€</span></label>
-    <input type="text" size="30"/>
-    <select class="per-year">
-      <option value="">per year</option>
-    </select>
-  </div>
+    <div class="block">
+      <label class="left price"><abbr>*</abbr>Expected Salary <span>€</span></label>
+      
+      <!-- salary -->
+      <input data-validate-presence="can't be blank" type="text" size="30"/>
+      <select data-validate-presence="can't be blank" class="per-year">
+        
+           <option value="per year">per year</option>
+        
+           <option value="per month">per month</option>
+        
+           <option value="per week">per week</option>
+        
+           <option value="per day">per day</option>
+        
+           <option value="per hour">per hour</option>
+        
+      </select>
+    </div>
 
-  <div class="block checkboxes floated">
-    <label class="left">Job Type</label>
-    <div class="checks shift-left">
-    
-      <input type="checkbox" id="job_type-Permanent"/>
-      <label for="job_type-Permanent">Permanent</label>
-    
-      <input type="checkbox" id="job_type-Freelance"/>
-      <label for="job_type-Freelance">Freelance</label>
-    
-      <input type="checkbox" id="job_type-Contract"/>
-      <label for="job_type-Contract">Contract</label>
-    
-      <input type="checkbox" id="job_type-Temporary"/>
-      <label for="job_type-Temporary">Temporary</label>
-    
+    <div class="block checkboxes floated">
+      <label class="left">Job Type</label>
+      <div class="checks shift-left">
+
+      <!-- job_type -->
+      
+        <input type="checkbox" id="job_type-Permanent"/>
+        <label for="job_type-Permanent">Permanent</label>
+      
+        <input type="checkbox" id="job_type-Freelance"/>
+        <label for="job_type-Freelance">Freelance</label>
+      
+        <input type="checkbox" id="job_type-Contract"/>
+        <label for="job_type-Contract">Contract</label>
+      
+        <input type="checkbox" id="job_type-Temporary"/>
+        <label for="job_type-Temporary">Temporary</label>
+      
+      </div>
+    </div>
+    <div class="clear">&nbsp;</div>
+
+    <div class="block">
+      <label class="left">Security</label>
+      <div class="left-field">
+        <small class="hint break">List the employers you want to block from accessing your CV</small>
+      
+      <!-- block_employers -->
+      <input type="text" class="span5"/><br>
+      <input type="text" class="span5"/>  
+      </div>
+      <div class="clear short">&nbsp;</div>
     </div>
   </div>
-  <div class="clear">&nbsp;</div>
-
-  <div class="block">
-    <label class="left">Security</label>
-    <div class="left-field">
-      <small class="hint break">List the employers you want to block from accessing your CV</small>
-    <input type="text" class="span5"/><br>
-    <input type="text" class="span5"/>  
-    </div>
-    <div class="clear short">&nbsp;</div>
-  </div>
-
 
   <h2 class="step">3. Create Account</h2>
-  <div class="block">
-    <label class="left wider">Choose password</label>
-    <input type="password" size="12"/>
+  <div id="step-3" class="section">
+    <div class="block">
+      <label class="left wider"><abbr>*</abbr>Choose password</label>
+      
+      <!-- password -->
+      <input type="password" size="12" data-validate-presence="can't be blank"/>
+    </div>
+    <div class="block">
+      <label class="left wider"><abbr>*</abbr>Confirm password</label>
+      
+      <!-- password_confirmation -->
+      <input type="password" size="12" data-validate-presence="can't be blank"/>
+    </div>
+    <div class="hr"></div>
+    <p class="disclaimer">By clicking register, you accept our terms and agree that, in addition to sending you new jobs by email, we can email you about relevant opportunities, products and services.</p>
+    
+    <!-- submit_form -->
+    <input type="submit" value="Register" class="btn btn-join btn-large"/>
+    <br><br><br>
   </div>
-  <div class="block">
-    <label class="left wider">Confirm password</label>
-    <input type="password" size="12"/>
-  </div>
-
-  <div class="hr"></div>
-
-  <p class="disclaimer">By clicking register, you accept our  and agree that, in addition to sending you new jobs by email, we can email you about relevant opportunities, products and services.</p>
-
-  <input type="submit" value="Register" class="btn btn-join btn-large"/>
-  <br><br><br>
 
 </div>
     </div>

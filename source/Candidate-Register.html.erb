@@ -3,130 +3,197 @@
 <div class="page pad-all bigger-text" id="candidate-register">
 	<h1 class="blue-underline">Register</h1>
   <h2 class="step">1. You</h2>
-  <div class="block">
-  	<label class="left">Email address</label>
-  	<input type="text"/>
-  	<a class="btn btn-go" href="#">Upload CV</a>	
-  </div>
+  <div id="step-1" class="section">
+    <div class="block">
+    	<label class="left"><abbr>*</abbr>Email address</label>
+    	
+      <!-- email -->
+      <input id="email-input" type="text" <%= validate :presence, :email %> />
 
-  <div class="hr dotted thin lite"></div>
+    	<!-- cv -->
+      <input type="file" data-file="Upload CV" />
 
-  <div class="block">
-  	<label class="left">Name</label>
-  	<select class="title"><option>Mr</option><option>Mrs</option><option>Ms</option></select>
-    <input type="text" class="text" placeholder="First Name" />
-    <input type="text" class="text" placeholder="Last Name" />
-  </div>
-
-  <div class="block">
-    <label class="left">Phone number</label>
-    <input type="text"/>
-  </div>
-
-  <div class="block">
-    <label class="left">Date of birth</label>
-    <div class="birthdate">
-      <select><option value="">Day</option></select>
-      <select><option value="">Month</option></select>
-      <select><option value="">Year</option></select>
     </div>
-    <div class="clear short">&nbsp;</div>
-  </div>
+    <div class="hr dotted thin lite"></div>
+    <div class="block">
+    	<label class="left"><abbr>*</abbr>Name</label>
 
-  <div class="block">
-    <label class="left">Nationality</label>  
-    <select><option value="">Select nationality</option></select>
-  </div>
+      <!-- salutation -->
+    	<select class="title" <%= validate :presence %>><option>Mr</option><option>Mrs</option><option>Ms</option></select>
 
-  <div class="block">
-    <label class="left">Languages</label>  
-    <select><option value="">Select Language</option></select>
-  </div>
+      <!-- first_name -->
+      <input <%= validate :presence %> type="text" class="text" placeholder="First Name" />
 
-  <div class="block">
-    <label class="left">Job title</label>
-    <input type="text"/>
-  </div>
+      <!-- last_name -->
+      <input <%= validate :presence %> type="text" class="text" placeholder="Last Name" />
+    </div>
 
-  <div class="block">
-    <label class="left">Highest qualification</label>
-    <input type="text"/>
+    <div class="block">
+      <!-- phone -->
+      <label class="left"><abbr>*</abbr>Phone number</label>
+      <input type="text" <%= validate :presence %>/>
+    </div>
+
+    <div class="block">
+      <label class="left"><abbr>*</abbr>Date of birth</label>
+      
+      <!-- birth_date -->
+      <div class="birthdate">
+        <select <%= validate :presence %>>
+          <option value="">Day</option>
+          <% (1..31).each do |n| %>
+          <option value="<%= n %>"><%= n %></option>
+          <% end %>
+        </select>
+        <select <%= validate :presence %>>
+          <option value="">Month</option>
+          <% (1..12).each do |n| %>
+          <option value="<%= n %>"><%= n %></option>
+          <% end %>
+        </select>
+        <select <%= validate :presence %>>
+          <option value="">Year</option>
+          <% (1920..1994).to_a.reverse.each do |n| %>
+          <option value="<%= n %>"><%= n %></option>
+          <% end %>
+        </select>
+      </div>
+      <div class="clear short">&nbsp;</div>
+    </div>
+
+    <div class="block">
+      <label class="left"><abbr>*</abbr>Job title</label>
+      
+      <!-- job_title -->
+      <input type="text" <%= validate :presence %>/>
+    </div>
+
+    <div class="block">
+      <label class="left"><abbr>*</abbr>Highest qualification</label>
+      
+      <!-- qualification -->
+      <input type="text" <%= validate :presence %>/>
+    </div>
+
+    <div class="block">
+      <label class="left">Nationality</label>  
+      
+      <!-- nationality -->
+      <select>
+        <option value="">Select nationality</option>
+        <% data.nationalities.all.each do |n| %>
+          <option value="<%= n %>"><%= n %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="block">
+      <label class="left">Languages</label>  
+      <!-- language -->
+      <select>
+        <option value="">Select Language</option>
+        <% data.languages.all.each do |n| %>
+          <option value="<%= n %>"><%= n %></option>
+        <% end %>
+      </select>
+    </div>
   </div>
-  
   
   <h2 class="step">2. Specialism and Skills</h2>
-  <div class="relative">
-    <select class="pop-menu parent" data-columns="3" data-name="Industry">
-      <% industries_hash.map do |industry,specialisms| %>
-         <option value="<%= industry %>"><%= industry %></option>
-      <% end %>
-    </select>
-    <select class="pop-menu child multi" data-columns="3" data-name="Specialisms">
-      <% industries_hash.map do |industry,specialisms| %>
-        <optgroup label="<%= industry %>">
-          <% specialisms.map do |specialism| %>
-            <option value="<%= specialism %>"><%= specialism %></option>
-          <% end %>
-        </optgroup>
-      <% end %>
-    </select>
-  </div>
-  <div class="clear">&nbsp;</div>  
-  <div class="block">
-    <label class="left">List Skills</label>
-    <textarea rows ="4" placeholder="e.g. Microsoft Excel, Adobe CSS Suite"></textarea>
-  </div>
-  
-  <div class="block">
-    <label class="left">Preferred location</label>
-    <input type="text" placeholder="e.g. Berlin, Germany"/>
-  </div>
+  <div id="step-2" class="section">
+    <div class="relative">
+      
+      <!-- industry -->
+      <select <%= validate :presence %> class="pop-menu parent" data-columns="3" data-name="Industry">
+        <% industries_hash.map do |industry,specialisms| %>
+           <option value="<%= industry %>"><%= industry %></option>
+        <% end %>
+      </select>
+      
+      <!-- specialisms -->
+      <select <%= validate :presence %> class="pop-menu child multi" data-columns="3" data-name="Specialisms">
+        <% industries_hash.map do |industry,specialisms| %>
+          <optgroup label="<%= industry %>">
+            <% specialisms.map do |specialism| %>
+              <option value="<%= specialism %>"><%= specialism %></option>
+            <% end %>
+          </optgroup>
+        <% end %>
+      </select>
+    </div>
+    <div class="clear">&nbsp;</div>  
+    <div class="block">
+      <label class="left">List Skills</label>
+      
+      <!-- skills -->
+      <textarea rows ="4" placeholder="e.g. Microsoft Excel, Adobe CSS Suite"></textarea>
+    </div>
+    
+    <div class="block">
+      <label class="left"><abbr>*</abbr>Preferred location</label>
+      
+      <!-- location -->
+      <input <%= validate :presence %> type="text" placeholder="e.g. Berlin, Germany"/>
+    </div>
 
-  <div class="block">
-    <label class="left price">Expected Salary <span>€</span></label>
-    <input type="text" size="30"/>
-    <select class="per-year">
-      <option value="">per year</option>
-    </select>
-  </div>
+    <div class="block">
+      <label class="left price"><abbr>*</abbr>Expected Salary <span>€</span></label>
+      
+      <!-- salary -->
+      <input <%= validate :presence %> type="text" size="30"/>
+      <select <%= validate :presence %> class="per-year">
+        <% %w(year month week day hour).map do |n| %>
+           <option value="per <%= n %>">per <%= n %></option>
+        <% end %>
+      </select>
+    </div>
 
-  <div class="block checkboxes floated">
-    <label class="left">Job Type</label>
-    <div class="checks shift-left">
-    <% %w(Permanent Freelance Contract Temporary).each do |type| %>
-      <input type="checkbox" id="job_type-<%= type %>"/>
-      <label for="job_type-<%= type %>"><%= type %></label>
-    <% end %>
+    <div class="block checkboxes floated">
+      <label class="left">Job Type</label>
+      <div class="checks shift-left">
+
+      <!-- job_type -->
+      <% %w(Permanent Freelance Contract Temporary).each do |type| %>
+        <input type="checkbox" id="job_type-<%= type %>"/>
+        <label for="job_type-<%= type %>"><%= type %></label>
+      <% end %>
+      </div>
+    </div>
+    <div class="clear">&nbsp;</div>
+
+    <div class="block">
+      <label class="left">Security</label>
+      <div class="left-field">
+        <small class="hint break">List the employers you want to block from accessing your CV</small>
+      
+      <!-- block_employers -->
+      <input type="text" class="span5"/><br>
+      <input type="text" class="span5"/>  
+      </div>
+      <div class="clear short">&nbsp;</div>
     </div>
   </div>
-  <div class="clear">&nbsp;</div>
-
-  <div class="block">
-    <label class="left">Security</label>
-    <div class="left-field">
-      <small class="hint break">List the employers you want to block from accessing your CV</small>
-    <input type="text" class="span5"/><br>
-    <input type="text" class="span5"/>  
-    </div>
-    <div class="clear short">&nbsp;</div>
-  </div>
-
 
   <h2 class="step">3. Create Account</h2>
-  <div class="block">
-    <label class="left wider">Choose password</label>
-    <input type="password" size="12"/>
+  <div id="step-3" class="section">
+    <div class="block">
+      <label class="left wider"><abbr>*</abbr>Choose password</label>
+      
+      <!-- password -->
+      <input type="password" size="12" <%= validate :presence %>/>
+    </div>
+    <div class="block">
+      <label class="left wider"><abbr>*</abbr>Confirm password</label>
+      
+      <!-- password_confirmation -->
+      <input type="password" size="12" <%= validate :presence %>/>
+    </div>
+    <div class="hr"></div>
+    <p class="disclaimer">By clicking register, you accept our terms and agree that, in addition to sending you new jobs by email, we can email you about relevant opportunities, products and services.</p>
+    
+    <!-- submit_form -->
+    <input type="submit" value="Register" class="btn btn-join btn-large"/>
+    <br><br><br>
   </div>
-  <div class="block">
-    <label class="left wider">Confirm password</label>
-    <input type="password" size="12"/>
-  </div>
-
-  <div class="hr"></div>
-
-  <p class="disclaimer">By clicking register, you accept our  and agree that, in addition to sending you new jobs by email, we can email you about relevant opportunities, products and services.</p>
-
-  <input type="submit" value="Register" class="btn btn-join btn-large"/>
-  <br><br><br>
 
 </div>
