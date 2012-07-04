@@ -1,14 +1,14 @@
 <% @title, @bodyclass = "Candidate-Register", "logged" %>
 
-<div class="page pad-all bigger-text" id="candidate-register">
+<div class="page pad-all bigger-text steps" id="candidate-register">
 	<h1 class="blue-underline">Register</h1>
   <h2 class="step">1. You</h2>
-  <div id="step-1" class="section">
+  <div data-step="1" class="section">
     <div class="block">
     	<label class="left"><abbr>*</abbr>Email address</label>
     	
       <!-- email -->
-      <input id="email-input" type="text" <%= validate :presence, :email %> />
+      <input class="validate" id="email-input" type="text" <%= validate :presence, :email %> />
 
     	<!-- cv -->
       <input type="file" data-file="Upload CV" />
@@ -19,19 +19,19 @@
     	<label class="left"><abbr>*</abbr>Name</label>
 
       <!-- salutation -->
-    	<select class="title" <%= validate :presence %>><option>Mr</option><option>Mrs</option><option>Ms</option></select>
+    	<select class="title validate" <%= validate :presence %>><option>Mr</option><option>Mrs</option><option>Ms</option></select>
 
       <!-- first_name -->
-      <input <%= validate :presence %> type="text" class="text" placeholder="First Name" />
+      <input class="validate" <%= validate :presence %> type="text" class="text" placeholder="First Name" />
 
       <!-- last_name -->
-      <input <%= validate :presence %> type="text" class="text" placeholder="Last Name" />
+      <input class="validate" <%= validate :presence %> type="text" class="text" placeholder="Last Name" />
     </div>
 
     <div class="block">
       <!-- phone -->
       <label class="left"><abbr>*</abbr>Phone number</label>
-      <input type="text" <%= validate :presence %>/>
+      <input type="text" class="validate" <%= validate :presence %>/>
     </div>
 
     <div class="block">
@@ -39,19 +39,19 @@
       
       <!-- birth_date -->
       <div class="birthdate">
-        <select <%= validate :presence %>>
+        <select class="validate" <%= validate :presence %>>
           <option value="">Day</option>
           <% (1..31).each do |n| %>
           <option value="<%= n %>"><%= n %></option>
           <% end %>
         </select>
-        <select <%= validate :presence %>>
+        <select class="validate" <%= validate :presence %>>
           <option value="">Month</option>
           <% (1..12).each do |n| %>
           <option value="<%= n %>"><%= n %></option>
           <% end %>
         </select>
-        <select <%= validate :presence %>>
+        <select class="validate" <%= validate :presence %>>
           <option value="">Year</option>
           <% (1920..1994).to_a.reverse.each do |n| %>
           <option value="<%= n %>"><%= n %></option>
@@ -65,21 +65,21 @@
       <label class="left"><abbr>*</abbr>Job title</label>
       
       <!-- job_title -->
-      <input type="text" <%= validate :presence %>/>
+      <input class="validate" type="text" <%= validate :presence %>/>
     </div>
 
     <div class="block">
       <label class="left"><abbr>*</abbr>Highest qualification</label>
       
       <!-- qualification -->
-      <input type="text" <%= validate :presence %>/>
+      <input class="validate" type="text" <%= validate :presence %>/>
     </div>
 
     <div class="block">
       <label class="left">Nationality</label>  
       
       <!-- nationality -->
-      <select>
+      <select class="validate" >
         <option value="">Select nationality</option>
         <% data.nationalities.all.each do |n| %>
           <option value="<%= n %>"><%= n %></option>
@@ -87,7 +87,7 @@
       </select>
     </div>
 
-    <div class="block">
+    <div class="block validate">
       <label class="left">Languages</label>  
       <!-- language -->
       <select>
@@ -100,7 +100,7 @@
   </div>
   
   <h2 class="step">2. Specialism and Skills</h2>
-  <div id="step-2" class="section">
+  <div data-step="2" class="section">
     <div class="relative">
       
       <!-- industry -->
@@ -133,15 +133,15 @@
       <label class="left"><abbr>*</abbr>Preferred location</label>
       
       <!-- location -->
-      <input <%= validate :presence %> type="text" placeholder="e.g. Berlin, Germany"/>
+      <input class="validate" <%= validate :presence %> type="text" placeholder="e.g. Berlin, Germany"/>
     </div>
 
     <div class="block">
       <label class="left price"><abbr>*</abbr>Expected Salary <span>€</span></label>
       
       <!-- salary -->
-      <input <%= validate :presence %> type="text" size="30"/>
-      <select <%= validate :presence %> class="per-year">
+      <input class="validate" <%= validate :presence %> type="text" size="30"/>
+      <select class="validate" <%= validate :presence %> class="per-year">
         <% %w(year month week day hour).map do |n| %>
            <option value="per <%= n %>">per <%= n %></option>
         <% end %>
@@ -175,18 +175,18 @@
   </div>
 
   <h2 class="step">3. Create Account</h2>
-  <div id="step-3" class="section">
+  <div data-step="3" class="section">
     <div class="block">
       <label class="left wider"><abbr>*</abbr>Choose password</label>
       
       <!-- password -->
-      <input type="password" size="12" <%= validate :presence %>/>
+      <input class="validate" type="password" size="12" <%= validate :presence %>/>
     </div>
     <div class="block">
       <label class="left wider"><abbr>*</abbr>Confirm password</label>
       
       <!-- password_confirmation -->
-      <input type="password" size="12" <%= validate :presence %>/>
+      <input class="validate" type="password" size="12" <%= validate :presence %>/>
     </div>
     <div class="hr"></div>
     <p class="disclaimer">By clicking register, you accept our terms and agree that, in addition to sending you new jobs by email, we can email you about relevant opportunities, products and services.</p>

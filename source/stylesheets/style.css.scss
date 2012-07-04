@@ -461,12 +461,14 @@ small.search {
   &.spaced {margin: 10px;}
 }
 .block {
+  zoom:1;
   position: relative;
   padding: 0px 20px 20px 20px;
   &.full {
     input, textarea {width: 98%;}
   }
-
+  &:before, &:after { content:""; display:table; }
+  &:after { clear:both; }
   .top-right {top: 8px;}
 }
 input, textarea, select, .uneditable-input {
@@ -583,6 +585,25 @@ a.remove {
   @include icon('delete'); @include size(20px);
   text-indent: -9999px; display: block;
   &:hover { opacity: 0.6; }
+}
+
+//-------------------------------------------------------
+// Validation
+//-------------------------------------------------------
+.validated-field {
+  float: left; display: inline-block; position: relative;
+  ul {
+    position: absolute;
+    top: 27px; left: -25px;
+    border-radius: 0 0 4px 4px;
+    background-color: #f00; color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 4px 9px;
+    min-width: 90px;
+    z-index: 999;
+    list-style-type: none;
+  }
 }
 //
 //----------------------------------------------------------------
@@ -1273,6 +1294,12 @@ a:hover img { opacity: 0.7; }
 #job-ref {
   label.fine {float: left; width: 125px;}
 }
+.page .block {
+  input, textarea, select {
+  &.invalid {background-color: #fdd;}
+}
+}
+
 input#alt-email {width: 180px; margin-left: 12px;}
 .cart-summary {
   &.pane {background: #fff; border: 1px solid #ddd}

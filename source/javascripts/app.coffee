@@ -174,7 +174,8 @@ MultiLevelSelect =
       input = document.createElement("input")
       input.setAttribute "type", "hidden"
       Dom.copyAttributes elem, input
-      Dom.insertAfter elem, fragment.appendChild(input)
+      fragment.appendChild input
+      Dom.insertAfter elem, fragment
 
     false
 
@@ -254,7 +255,7 @@ MultiLevelSelect =
   removeHtmlToken: (input, value) ->
     tokens = input.parent().find(".pop-token")
     $.each tokens, (i, token) ->
-      token.parentNode.removeChild token  if source.match(new RegExp(check))
+      token.parentNode.removeChild(token) if value.match(new RegExp(check))
 
   watchTokenRemovers: (self) ->
     $(document).on "click", "a.pop-token-remove", ->
@@ -384,9 +385,20 @@ PrintPage = init: ->
       window.print()
       false
 
+Validate =
+  email: (field)->
+    matches = field.val().match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i)
+    !(matches is null) and matches.length > 0
+  presence: (field)->
+    !(field.val() is "")
+  
+
 ValidateFormSections =
   init: ->
     @hideSections(this)
+    @addStepButtons()
+    @addValidationsFor(this)
+    @watchStepButtons(this)
     @watchRequiredInputs(this)
     false
   
@@ -395,17 +407,91 @@ ValidateFormSections =
       unless self.isValid self, $(step)
         $(step).hide()
     false
+  
+  addStepButtons: ->
+    for step in $(".steps .section")
+      #$(step).append("<a href='#' class='previous btn btn-large btn-go'>Previous Step</a>")
+      unless $(step).data("step") is 3
+        $(step).append("<a href='#' class='next btn btn-large btn-go'>Continue</a>")
+
+  addValidationsFor: (self)->
+    for f in $('.validate')
+      field  = $(f)
+      field.wrap("<div class='validated-field' />")
+      ul = $(document.createElement("ul"))
+      ul.attr 'class', 'errors'
+      div = field.closest('validated-field')
+      errors = {}
+      if field.data('validate-presence')
+        errors['presence'] = field.data('validate-presence')
+      if field.data('validate-email')
+        errors['email'] = field.data('validate-email')
+      for type, msg of errors
+        li = $(document.createElement "li")
+        li.html msg
+        li.addClass type
+        ul.append li
+      unless $.isEmptyObject errors
+        ul.hide()
+        ul.insertAfter field
+    false
+
+  watchStepButtons: (self)->
+    $('a.next').click ->
+      section = $(this).closest('.section')
+      current = self.getIdNum(section)
+      next    = current + 1
+      invalidFields = 0
+      for i in section.find("input[data-validate-presence]","select[data-validate-presence]")
+        invalidFields++ if $(i).val() is ""
+      #if next is 2 and badFields is not 0        
+      #  $("#step-3").slideUp()
+      # if invalidFields == 0
+      #   $("#step-#{next}").slideDown()
+      # else
+      #   self.showInvalidFieldsFor(section)
+      # else
+      #   if next is 2
+      #     $("#step-2").slideUp()
+      #     $("#step-3").slideUp()
+      #   else
+      #     $("#step-#{next}").slideUp()
+      false
 
   watchRequiredInputs: (self)->
-    for input in $("input[data-validate-presence]")
-      if input.tagName is "INPUT"
-        $(input).keyup ->
-          self.showNext self, $(this)
-    for input in $("select[data-validate-presence]")
-      if input.tagName is "SELECT"
-        $(input).change ->
-          self.showNext self, $(this)
+    inputs = "input.validate, textarea.validate"
+    $("select.validate").on 'change', (e)->
+      self.validate $(this), self
+    $(inputs).on 'keyup', (e)->
+      self.validate $(this), self
+    $(inputs).on 'blur', (e)->
+      self.validate $(this), self
     false
+  
+  validate: (field, self)->
+    ul = field.next('ul.errors')
+    errs = 0
+    if field.data('validate-presence')
+      errs += self.feedback('presence', field, ul)
+    if field.data('validate-email')
+      errs += self.feedback('email', field, ul)
+    if errs > 0
+      ul.slideDown()
+      field.addClass 'invalid'
+    else
+      ul.slideUp()
+      field.removeClass 'invalid'
+
+  feedback: (type, field, ul)->
+    self = this
+    li = ul.find("li.#{type}").first()
+    if Validate[type](field)
+      li.slideUp()
+      err = 0
+    else
+      li.show()
+      err = 1
+    return err
   
   isValid: (self, section)->
     current = self.getIdNum(section)
@@ -420,26 +506,26 @@ ValidateFormSections =
     badFields is 0
 
   getIdNum: (section)->
-    parseInt( section.attr('id').replace('step-','') )
-
-  showNext: (self, input)->
-    section = input.closest('.section')
-    current = self.getIdNum(section)
-    next    = current + 1
-    badFields = 0
-    for i in section.find("input[data-validate-presence]","select[data-validate-presence]")
-      badFields++ if $(i).val() is ""
-    unless next is 4
-      if next is 2 and badFields is not 0        
-        $("#step-3").slideUp()
-      if badFields == 0
-        $("#step-#{next}").slideDown()
-      else
-        if next is 2
-          $("#step-2").slideUp()
-          $("#step-3").slideUp()
-        else
-          $("#step-#{next}").slideUp()
+    parseInt section.data('step')
+  
+  # showNext: (self, input)->
+  #   section = input.closest('.section')
+  #   current = self.getIdNum(section)
+  #   next    = current + 1
+  #   badFields = 0
+  #   for i in section.find("input[data-validate-presence]","select[data-validate-presence]")
+  #     badFields++ if $(i).val() is ""
+  #   unless next is 4
+  #     if next is 2 and badFields is not 0        
+  #       $("#step-3").slideUp()
+  #     if badFields == 0
+  #       $("#step-#{next}").slideDown()
+  #     else
+  #       if next is 2
+  #         $("#step-2").slideUp()
+  #         $("#step-3").slideUp()
+  #       else
+  #         $("#step-#{next}").slideUp()
 
     false
 

@@ -1,5 +1,5 @@
 (function() {
-  var AdvancedSearch, Dom, DropDownMenu, FileNav, HoverScroll, ModalWindow, MultiLevelSelect, PrintPage, Selections, SlideShow, Toggler, ValidateFormSections, changeUrl;
+  var AdvancedSearch, Dom, DropDownMenu, FileNav, HoverScroll, ModalWindow, MultiLevelSelect, PrintPage, Selections, SlideShow, Toggler, Validate, ValidateFormSections, changeUrl;
 
   changeUrl = function() {
     return document.location.href = document.getElementById("choose_language").value;
@@ -257,7 +257,8 @@
         input = document.createElement("input");
         input.setAttribute("type", "hidden");
         Dom.copyAttributes(elem, input);
-        return Dom.insertAfter(elem, fragment.appendChild(input));
+        fragment.appendChild(input);
+        return Dom.insertAfter(elem, fragment);
       });
       return false;
     },
@@ -345,7 +346,7 @@
       var tokens;
       tokens = input.parent().find(".pop-token");
       return $.each(tokens, function(i, token) {
-        if (source.match(new RegExp(check))) {
+        if (value.match(new RegExp(check))) {
           return token.parentNode.removeChild(token);
         }
       });
@@ -512,9 +513,23 @@
     }
   };
 
+  Validate = {
+    email: function(field) {
+      var matches;
+      matches = field.val().match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
+      return !(matches === null) && matches.length > 0;
+    },
+    presence: function(field) {
+      return !(field.val() === "");
+    }
+  };
+
   ValidateFormSections = {
     init: function() {
       this.hideSections(this);
+      this.addStepButtons();
+      this.addValidationsFor(this);
+      this.watchStepButtons(this);
       this.watchRequiredInputs(this);
       return false;
     },
@@ -533,27 +548,108 @@
       }
       return _results;
     },
-    watchRequiredInputs: function(self) {
-      var input, _i, _j, _len, _len2, _ref, _ref2;
-      _ref = $("input[data-validate-presence]");
+    addStepButtons: function() {
+      var step, _i, _len, _ref, _results;
+      _ref = $(".steps .section");
+      _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        input = _ref[_i];
-        if (input.tagName === "INPUT") {
-          $(input).keyup(function() {
-            return self.showNext(self, $(this));
-          });
+        step = _ref[_i];
+        if ($(step).data("step") !== 3) {
+          _results.push($(step).append("<a href='#' class='next btn btn-large btn-go'>Continue</a>"));
+        } else {
+          _results.push(void 0);
         }
       }
-      _ref2 = $("select[data-validate-presence]");
-      for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-        input = _ref2[_j];
-        if (input.tagName === "SELECT") {
-          $(input).change(function() {
-            return self.showNext(self, $(this));
-          });
+      return _results;
+    },
+    addValidationsFor: function(self) {
+      var div, errors, f, field, li, msg, type, ul, _i, _len, _ref;
+      _ref = $('.validate');
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        f = _ref[_i];
+        field = $(f);
+        field.wrap("<div class='validated-field' />");
+        ul = $(document.createElement("ul"));
+        ul.attr('class', 'errors');
+        div = field.closest('validated-field');
+        errors = {};
+        if (field.data('validate-presence')) {
+          errors['presence'] = field.data('validate-presence');
+        }
+        if (field.data('validate-email')) {
+          errors['email'] = field.data('validate-email');
+        }
+        for (type in errors) {
+          msg = errors[type];
+          li = $(document.createElement("li"));
+          li.html(msg);
+          li.addClass(type);
+          ul.append(li);
+        }
+        if (!$.isEmptyObject(errors)) {
+          ul.hide();
+          ul.insertAfter(field);
         }
       }
       return false;
+    },
+    watchStepButtons: function(self) {
+      return $('a.next').click(function() {
+        var current, i, invalidFields, next, section, _i, _len, _ref;
+        section = $(this).closest('.section');
+        current = self.getIdNum(section);
+        next = current + 1;
+        invalidFields = 0;
+        _ref = section.find("input[data-validate-presence]", "select[data-validate-presence]");
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          i = _ref[_i];
+          if ($(i).val() === "") invalidFields++;
+        }
+        return false;
+      });
+    },
+    watchRequiredInputs: function(self) {
+      var inputs;
+      inputs = "input.validate, textarea.validate";
+      $("select.validate").on('change', function(e) {
+        return self.validate($(this), self);
+      });
+      $(inputs).on('keyup', function(e) {
+        return self.validate($(this), self);
+      });
+      $(inputs).on('blur', function(e) {
+        return self.validate($(this), self);
+      });
+      return false;
+    },
+    validate: function(field, self) {
+      var errs, ul;
+      ul = field.next('ul.errors');
+      errs = 0;
+      if (field.data('validate-presence')) {
+        errs += self.feedback('presence', field, ul);
+      }
+      if (field.data('validate-email')) errs += self.feedback('email', field, ul);
+      if (errs > 0) {
+        ul.slideDown();
+        return field.addClass('invalid');
+      } else {
+        ul.slideUp();
+        return field.removeClass('invalid');
+      }
+    },
+    feedback: function(type, field, ul) {
+      var err, li, self;
+      self = this;
+      li = ul.find("li." + type).first();
+      if (Validate[type](field)) {
+        li.slideUp();
+        err = 0;
+      } else {
+        li.show();
+        err = 1;
+      }
+      return err;
     },
     isValid: function(self, section) {
       var badFields, current, i, prev, type, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4;
@@ -581,32 +677,7 @@
       return badFields === 0;
     },
     getIdNum: function(section) {
-      return parseInt(section.attr('id').replace('step-', ''));
-    },
-    showNext: function(self, input) {
-      var badFields, current, i, next, section, _i, _len, _ref;
-      section = input.closest('.section');
-      current = self.getIdNum(section);
-      next = current + 1;
-      badFields = 0;
-      _ref = section.find("input[data-validate-presence]", "select[data-validate-presence]");
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        i = _ref[_i];
-        if ($(i).val() === "") badFields++;
-      }
-      if (next !== 4) {
-        if (next === 2 && badFields === !0) $("#step-3").slideUp();
-        if (badFields === 0) {
-          $("#step-" + next).slideDown();
-        } else {
-          if (next === 2) {
-            $("#step-2").slideUp();
-            $("#step-3").slideUp();
-          } else {
-            $("#step-" + next).slideUp();
-          }
-        }
-      }
+      parseInt(section.data('step'));
       return false;
     }
   };
