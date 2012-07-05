@@ -487,7 +487,9 @@ label {
   &.tall {line-height: 26px;}
   &.left {display: inline-block; padding-right: 10px; float: left;}
   &.wider {width:180px;}
+  &.text-right {text-align: right; display: block;}
 }
+
 abbr {color: #f00}
 select {
   &.per-year {width: 120px;}
