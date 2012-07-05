@@ -455,7 +455,7 @@ ValidateFormSections =
     for step in $(".steps .section")
       #$(step).append("<a href='#' class='previous btn btn-large btn-go'>Previous Step</a>")
       unless $(step).data("step") is 3
-        $(step).append("<a href='#' class='next btn btn-large btn-go'>Continue</a>")
+        $(step).append("<a href='#' class='next cf btn btn-large btn-go'>Continue</a>")
     false
 
   addValidationsFor: (self)->

@@ -601,7 +601,7 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         step = _ref[_i];
         if ($(step).data("step") !== 3) {
-          $(step).append("<a href='#' class='next btn btn-large btn-go'>Continue</a>");
+          $(step).append("<a href='#' class='next cf btn btn-large btn-go'>Continue</a>");
         }
       }
       return false;

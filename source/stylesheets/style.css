@@ -2746,3 +2746,11 @@ small.hint {
     border-radius: 2px; }
     .popup-menu a.selected {
       background: #e5effa; }
+
+.cf:before,
+.cf:after {
+  content: "";
+  display: table; }
+
+.cf:after {
+  clear: both; }
