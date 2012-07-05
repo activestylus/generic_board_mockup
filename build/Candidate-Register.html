@@ -169,15 +169,15 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
 </div>
     <div id="yield">
       
-<div class="page pad-all bigger-text" id="candidate-register">
+<div class="page pad-all bigger-text steps" id="candidate-register">
 	<h1 class="blue-underline">Register</h1>
   <h2 class="step">1. You</h2>
-  <div id="step-1" class="section">
+  <div data-step="1" class="section">
     <div class="block">
     	<label class="left"><abbr>*</abbr>Email address</label>
     	
       <!-- email -->
-      <input id="email-input" type="text" data-validate-presence="can't be blank" data-validate-email="must be a valid email address" />
+      <input class="validate" id="email-input" type="text" data-validate-presence="can't be blank" data-validate-email="must be a valid email address" />
 
     	<!-- cv -->
       <input type="file" data-file="Upload CV" />
@@ -188,19 +188,19 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
     	<label class="left"><abbr>*</abbr>Name</label>
 
       <!-- salutation -->
-    	<select class="title" data-validate-presence="can't be blank"><option>Mr</option><option>Mrs</option><option>Ms</option></select>
+    	<select class="title validate" data-validate-presence="can't be blank"><option>Mr</option><option>Mrs</option><option>Ms</option></select>
 
       <!-- first_name -->
-      <input data-validate-presence="can't be blank" type="text" class="text" placeholder="First Name" />
+      <input class="validate" data-validate-presence="can't be blank" type="text" class="text" placeholder="First Name" />
 
       <!-- last_name -->
-      <input data-validate-presence="can't be blank" type="text" class="text" placeholder="Last Name" />
+      <input class="validate" data-validate-presence="can't be blank" type="text" class="text" placeholder="Last Name" />
     </div>
 
     <div class="block">
       <!-- phone -->
       <label class="left"><abbr>*</abbr>Phone number</label>
-      <input type="text" data-validate-presence="can't be blank"/>
+      <input type="text" class="validate" data-validate-presence="can't be blank"/>
     </div>
 
     <div class="block">
@@ -208,7 +208,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       
       <!-- birth_date -->
       <div class="birthdate">
-        <select data-validate-presence="can't be blank">
+        <select class="validate" data-validate-presence="can't be blank">
           <option value="">Day</option>
           
           <option value="1">1</option>
@@ -274,7 +274,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
           <option value="31">31</option>
           
         </select>
-        <select data-validate-presence="can't be blank">
+        <select class="validate" data-validate-presence="can't be blank">
           <option value="">Month</option>
           
           <option value="1">1</option>
@@ -302,7 +302,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
           <option value="12">12</option>
           
         </select>
-        <select data-validate-presence="can't be blank">
+        <select class="validate" data-validate-presence="can't be blank">
           <option value="">Year</option>
           
           <option value="1994">1994</option>
@@ -464,21 +464,21 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       <label class="left"><abbr>*</abbr>Job title</label>
       
       <!-- job_title -->
-      <input type="text" data-validate-presence="can't be blank"/>
+      <input class="validate" type="text" data-validate-presence="can't be blank"/>
     </div>
 
     <div class="block">
       <label class="left"><abbr>*</abbr>Highest qualification</label>
       
       <!-- qualification -->
-      <input type="text" data-validate-presence="can't be blank"/>
+      <input class="validate" type="text" data-validate-presence="can't be blank"/>
     </div>
 
     <div class="block">
       <label class="left">Nationality</label>  
       
       <!-- nationality -->
-      <select>
+      <select class="validate" >
         <option value="">Select nationality</option>
         
           <option value="Afghan">Afghan</option>
@@ -870,7 +870,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       </select>
     </div>
 
-    <div class="block">
+    <div class="block validate">
       <label class="left">Languages</label>  
       <!-- language -->
       <select>
@@ -967,7 +967,7 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
   </div>
   
   <h2 class="step">2. Specialism and Skills</h2>
-  <div id="step-2" class="section">
+  <div data-step="2" class="section">
     <div class="relative">
       
       <!-- industry -->
@@ -1646,8 +1646,9 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
         
       </select>
     </div>
-    <div class="clear">&nbsp;</div>  
-    <div class="block">
+    <div class="clear">&nbsp;</div>
+    <div id="step2-fields">
+      <div class="block">
       <label class="left">List Skills</label>
       
       <!-- skills -->
@@ -1658,15 +1659,15 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       <label class="left"><abbr>*</abbr>Preferred location</label>
       
       <!-- location -->
-      <input data-validate-presence="can't be blank" type="text" placeholder="e.g. Berlin, Germany"/>
+      <input class="validate" data-validate-presence="can't be blank" type="text" placeholder="e.g. Berlin, Germany"/>
     </div>
 
     <div class="block">
       <label class="left price"><abbr>*</abbr>Expected Salary <span>€</span></label>
       
       <!-- salary -->
-      <input data-validate-presence="can't be blank" type="text" size="30"/>
-      <select data-validate-presence="can't be blank" class="per-year">
+      <input class="validate" data-validate-presence="can't be blank" type="text" size="30"/>
+      <select class="validate" data-validate-presence="can't be blank" class="per-year">
         
            <option value="per year">per year</option>
         
@@ -1714,21 +1715,24 @@ var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-25375052-1"]),_gaq.push(["_setDom
       </div>
       <div class="clear short">&nbsp;</div>
     </div>
+      
+    </div>
+    
   </div>
 
   <h2 class="step">3. Create Account</h2>
-  <div id="step-3" class="section">
+  <div data-step="3" class="section">
     <div class="block">
       <label class="left wider"><abbr>*</abbr>Choose password</label>
       
       <!-- password -->
-      <input type="password" size="12" data-validate-presence="can't be blank"/>
+      <input class="validate" type="password" size="12" data-validate-presence="can't be blank"/>
     </div>
     <div class="block">
       <label class="left wider"><abbr>*</abbr>Confirm password</label>
       
       <!-- password_confirmation -->
-      <input type="password" size="12" data-validate-presence="can't be blank"/>
+      <input class="validate" type="password" size="12" data-validate-presence="can't be blank"/>
     </div>
     <div class="hr"></div>
     <p class="disclaimer">By clicking register, you accept our terms and agree that, in addition to sending you new jobs by email, we can email you about relevant opportunities, products and services.</p>

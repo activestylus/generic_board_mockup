@@ -953,10 +953,16 @@ small.search {
     margin: 10px; }
 
 .block {
+  zoom: 1;
   position: relative;
   padding: 0px 20px 20px 20px; }
   .block.full input, .block.full textarea {
     width: 98%; }
+  .block:before, .block:after {
+    content: "";
+    display: table; }
+  .block:after {
+    clear: both; }
   .block .top-right {
     top: 8px; }
 
@@ -1151,6 +1157,24 @@ a.remove {
   display: block; }
   a.remove:hover {
     opacity: 0.6; }
+
+.validated-field {
+  float: left;
+  display: inline-block;
+  position: relative; }
+  .validated-field ul {
+    position: absolute;
+    top: 27px;
+    left: -25px;
+    border-radius: 0 0 4px 4px;
+    background-color: #f00;
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 4px 9px;
+    min-width: 90px;
+    z-index: 999;
+    list-style-type: none; }
 
 .nav-tabs {
   border-bottom: 5px solid #000066;
@@ -2232,6 +2256,9 @@ a:hover img {
   float: left;
   width: 125px; }
 
+.page .block input.invalid, .page .block textarea.invalid, .page .block select.invalid {
+  background-color: #fdd; }
+
 input#alt-email {
   width: 180px;
   margin-left: 12px; }
@@ -2624,6 +2651,9 @@ select.title {
 
 .relative {
   position: relative; }
+
+.disabled {
+  opacity: 0.3; }
 
 small.hint {
   font-size: 13px;

@@ -234,7 +234,7 @@
       return node.parentNode.insertBefore(newNode, node.nextSibling);
     },
     cleanText: function(str) {
-      return str.replace("&amp;", "").replace("/", "").replace("&", "").replace("-", "").replace("[x]", "");
+      return str.replace("&amp;", "").replace("/", "").replace("&", "").replace("-", "").replace("–", "").replace("[x]", "");
     }
   };
 
@@ -343,13 +343,20 @@
       return wrap;
     },
     removeHtmlToken: function(input, value) {
-      var tokens;
-      tokens = input.parent().find(".pop-token");
-      return $.each(tokens, function(i, token) {
-        if (value.match(new RegExp(check))) {
-          return token.parentNode.removeChild(token);
+      var source, target, token, _i, _len, _ref, _results;
+      _ref = input.parent().find(".pop-token");
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        token = _ref[_i];
+        source = Dom.cleanText($(token).text());
+        target = Dom.cleanText(value);
+        if (source === target) {
+          _results.push(token.parentNode.removeChild(token));
+        } else {
+          _results.push(void 0);
         }
-      });
+      }
+      return _results;
     },
     watchTokenRemovers: function(self) {
       return $(document).on("click", "a.pop-token-remove", function() {
@@ -364,6 +371,7 @@
           }
         });
         link.parent().remove();
+        if (!Validate.presence(input)) ValidateFormSections.disableStep(2);
         return false;
       });
     },
@@ -376,6 +384,11 @@
         selected = link.hasClass("selected");
         link.toggleClass("selected");
         self.toggleChildSelections(self, link, input, selected);
+        if (Validate.presence(input)) {
+          ValidateFormSections.enableStep(2);
+        } else {
+          ValidateFormSections.disableStep(2);
+        }
         return false;
       });
       return false;
@@ -526,41 +539,72 @@
 
   ValidateFormSections = {
     init: function() {
-      this.hideSections(this);
+      this.markValidFields();
       this.addStepButtons();
+      this.hideSections(this);
       this.addValidationsFor(this);
       this.watchStepButtons(this);
       this.watchRequiredInputs(this);
       return false;
     },
+    markValidFields: function() {
+      var errs, f, _i, _len, _ref;
+      _ref = $('.validate');
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        f = _ref[_i];
+        f = $(f);
+        errs = 0;
+        if (f.data('validate-presence') && !Validate.presence(f)) errs++;
+        if (f.data('validate-email') && !Validate.email(f)) errs++;
+        if (errs === 0) f.addClass('valid');
+      }
+      return false;
+    },
     hideSections: function(self) {
-      var n, step, _i, _j, _len, _len2, _ref, _ref2, _results;
+      var input, n, prev, step, _i, _len, _ref;
       _ref = [2, 3];
-      _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         n = _ref[_i];
-        _ref2 = $("#step-2,#step-3");
-        for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-          step = _ref2[_j];
-          if (!self.isValid(self, $(step))) $(step).hide();
-        }
-        _results.push(false);
+        step = $("[data-step=" + n + "]");
+        prev = $("[data-step=" + (n - 1) + "]");
+        if (!(self.isValid(step) || self.isValid(prev))) step.hide();
       }
-      return _results;
+      input = $(".pop-menu.child.multi");
+      if (!Validate.presence(input)) {
+        self.disableStep(2);
+      } else {
+        self.enableStep(2);
+      }
+      return false;
+    },
+    enableStep: function(n) {
+      var next, step;
+      step = $("#step" + n + "-fields");
+      next = step.closest('.section').find('a.next');
+      step.removeClass('disabled');
+      step.find('input,textarea,select').prop('disabled', false);
+      next.removeClass('disabled');
+      return false;
+    },
+    disableStep: function(n) {
+      var next, step;
+      step = $("#step" + n + "-fields");
+      next = step.closest('.section').find('a.next');
+      step.addClass('disabled');
+      step.find('input,textarea,select').prop('disabled', true);
+      next.addClass('disabled');
+      return false;
     },
     addStepButtons: function() {
-      var step, _i, _len, _ref, _results;
+      var step, _i, _len, _ref;
       _ref = $(".steps .section");
-      _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         step = _ref[_i];
         if ($(step).data("step") !== 3) {
-          _results.push($(step).append("<a href='#' class='next btn btn-large btn-go'>Continue</a>"));
-        } else {
-          _results.push(void 0);
+          $(step).append("<a href='#' class='next btn btn-large btn-go'>Continue</a>");
         }
       }
-      return _results;
+      return false;
     },
     addValidationsFor: function(self) {
       var div, errors, f, field, li, msg, type, ul, _i, _len, _ref;
@@ -594,19 +638,30 @@
       return false;
     },
     watchStepButtons: function(self) {
-      return $('a.next').click(function() {
-        var current, i, invalidFields, next, section, _i, _len, _ref;
-        section = $(this).closest('.section');
-        current = self.getIdNum(section);
-        next = current + 1;
-        invalidFields = 0;
-        _ref = section.find("input[data-validate-presence]", "select[data-validate-presence]");
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          i = _ref[_i];
-          if ($(i).val() === "") invalidFields++;
+      $('a.next').click(function() {
+        var current, f, field, next, section, _i, _len, _ref;
+        if (!$(this).hasClass('disabled')) {
+          section = $(this).closest('.section');
+          current = self.getIdNum(section);
+          next = $("[data-step=" + (current + 1) + "]");
+          if (self.isValid(section)) {
+            console.log("current:" + current + " next:" + next);
+            next.slideDown();
+          } else {
+            _ref = section.find('.validate');
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              f = _ref[_i];
+              field = $(f);
+              if (!field.hasClass('valid')) {
+                field.next('ul').slideDown();
+                field.addClass('invalid');
+              }
+            }
+          }
         }
         return false;
       });
+      return false;
     },
     watchRequiredInputs: function(self) {
       var inputs;
@@ -632,11 +687,14 @@
       if (field.data('validate-email')) errs += self.feedback('email', field, ul);
       if (errs > 0) {
         ul.slideDown();
-        return field.addClass('invalid');
+        field.addClass('invalid');
+        field.removeClass('valid');
       } else {
         ul.slideUp();
-        return field.removeClass('invalid');
+        field.addClass('valid');
+        field.removeClass('invalid');
       }
+      return false;
     },
     feedback: function(type, field, ul) {
       var err, li, self;
@@ -651,34 +709,14 @@
       }
       return err;
     },
-    isValid: function(self, section) {
-      var badFields, current, i, prev, type, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4;
-      current = self.getIdNum(section);
-      badFields = 0;
-      prev = $("step-" + (current - 1));
-      _ref = ['input', 'select'];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        type = _ref[_i];
-        _ref2 = section.find("" + type + "[data-validate-presence]");
-        for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-          i = _ref2[_j];
-          if ($(i).val() === "") badFields++;
-        }
-      }
-      _ref3 = ['input', 'select'];
-      for (_k = 0, _len3 = _ref3.length; _k < _len3; _k++) {
-        type = _ref3[_k];
-        _ref4 = prev.find("" + type + "[data-validate-presence]");
-        for (_l = 0, _len4 = _ref4.length; _l < _len4; _l++) {
-          i = _ref4[_l];
-          if ($(i).val() === "") badFields++;
-        }
-      }
-      return badFields === 0;
+    isValid: function(section) {
+      var r, v;
+      r = section.find('.validate').size();
+      v = section.find('.valid').size();
+      return r === v;
     },
     getIdNum: function(section) {
-      parseInt(section.data('step'));
-      return false;
+      return parseInt(section.data('step'));
     }
   };
 

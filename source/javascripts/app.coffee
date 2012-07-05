@@ -154,7 +154,7 @@ Dom =
     node.parentNode.insertBefore newNode, node.nextSibling
 
   cleanText: (str) ->
-    str.replace("&amp;", "").replace("/","").replace("&", "").replace("-", "").replace "[x]", ""
+    str.replace("&amp;", "").replace("/","").replace("&", "").replace("-", "").replace("–", "").replace "[x]", ""
 
 MultiLevelSelect =
   init: ->
@@ -253,9 +253,11 @@ MultiLevelSelect =
     wrap
 
   removeHtmlToken: (input, value) ->
-    tokens = input.parent().find(".pop-token")
-    $.each tokens, (i, token) ->
-      token.parentNode.removeChild(token) if value.match(new RegExp(check))
+    for token in input.parent().find(".pop-token")
+      source = Dom.cleanText $(token).text()
+      target = Dom.cleanText value
+      if source is target
+        token.parentNode.removeChild(token) 
 
   watchTokenRemovers: (self) ->
     $(document).on "click", "a.pop-token-remove", ->
@@ -266,6 +268,8 @@ MultiLevelSelect =
       $.each links, (i, a) ->
         $(a).removeClass "selected"  if link.attr("title") is a.getAttribute("title")
       link.parent().remove()
+      unless Validate.presence(input)
+        ValidateFormSections.disableStep(2)
       false
 
   watchChildLinks: (self) ->
@@ -276,8 +280,11 @@ MultiLevelSelect =
       selected = link.hasClass("selected")
       link.toggleClass "selected"
       self.toggleChildSelections self, link, input, selected
+      if Validate.presence(input)
+        ValidateFormSections.enableStep(2)
+      else
+        ValidateFormSections.disableStep(2)
       false
-
     false
 
   watchParentLinks: (self) ->
@@ -395,17 +402,53 @@ Validate =
 
 ValidateFormSections =
   init: ->
-    @hideSections(this)
+    @markValidFields()
     @addStepButtons()
+    @hideSections(this)
     @addValidationsFor(this)
     @watchStepButtons(this)
     @watchRequiredInputs(this)
     false
   
-  hideSections: (self)-> for n in [2,3]
-    for step in $("#step-2,#step-3")
-      unless self.isValid self, $(step)
-        $(step).hide()
+  markValidFields: ->
+    for f in $('.validate')
+      f = $(f)
+      errs = 0
+      if f.data('validate-presence') and !Validate.presence(f)
+        errs++
+      if f.data('validate-email') and !Validate.email(f)
+        errs++
+      if errs is 0
+        f.addClass('valid')
+    false
+
+  hideSections: (self)->
+    for n in [2,3]
+      step = $("[data-step=#{n}]")
+      prev = $("[data-step=#{n-1}]")
+      unless self.isValid(step) or self.isValid(prev)
+        step.hide()
+    input = $(".pop-menu.child.multi")
+    if !Validate.presence(input)
+      self.disableStep(2)
+    else
+      self.enableStep(2)
+    false
+
+  enableStep: (n)->
+    step = $("#step#{n}-fields")
+    next = step.closest('.section').find('a.next')
+    step.removeClass('disabled')
+    step.find('input,textarea,select').prop('disabled',false)
+    next.removeClass('disabled')
+    false
+
+  disableStep: (n)->
+    step = $("#step#{n}-fields")
+    next = step.closest('.section').find('a.next')
+    step.addClass('disabled')
+    step.find('input,textarea,select').prop('disabled',true)
+    next.addClass('disabled')
     false
   
   addStepButtons: ->
@@ -413,6 +456,7 @@ ValidateFormSections =
       #$(step).append("<a href='#' class='previous btn btn-large btn-go'>Previous Step</a>")
       unless $(step).data("step") is 3
         $(step).append("<a href='#' class='next btn btn-large btn-go'>Continue</a>")
+    false
 
   addValidationsFor: (self)->
     for f in $('.validate')
@@ -438,12 +482,21 @@ ValidateFormSections =
 
   watchStepButtons: (self)->
     $('a.next').click ->
-      section = $(this).closest('.section')
-      current = self.getIdNum(section)
-      next    = current + 1
-      invalidFields = 0
-      for i in section.find("input[data-validate-presence]","select[data-validate-presence]")
-        invalidFields++ if $(i).val() is ""
+      unless $(this).hasClass 'disabled'
+        section = $(this).closest '.section'
+        current = self.getIdNum section
+        next    = $("[data-step=#{current + 1}]")
+        #console.log(self.isValid(section))
+        if self.isValid section
+          console.log "current:#{current} next:#{next}"
+          next.slideDown()
+        else
+          for f in section.find('.validate')
+            field = $(f)
+            unless field.hasClass 'valid'
+              field.next('ul').slideDown()
+              field.addClass 'invalid'
+      
       #if next is 2 and badFields is not 0        
       #  $("#step-3").slideUp()
       # if invalidFields == 0
@@ -457,6 +510,7 @@ ValidateFormSections =
       #   else
       #     $("#step-#{next}").slideUp()
       false
+    false
 
   watchRequiredInputs: (self)->
     inputs = "input.validate, textarea.validate"
@@ -478,9 +532,12 @@ ValidateFormSections =
     if errs > 0
       ul.slideDown()
       field.addClass 'invalid'
+      field.removeClass 'valid'
     else
       ul.slideUp()
+      field.addClass 'valid'
       field.removeClass 'invalid'
+    false
 
   feedback: (type, field, ul)->
     self = this
@@ -493,21 +550,14 @@ ValidateFormSections =
       err = 1
     return err
   
-  isValid: (self, section)->
-    current = self.getIdNum(section)
-    badFields = 0
-    prev = $("step-#{current - 1}")
-    for type in ['input','select']
-      for i in section.find("#{type}[data-validate-presence]")
-        badFields++ if $(i).val() is ""
-    for type in ['input','select']
-      for i in prev.find("#{type}[data-validate-presence]")
-        badFields++ if $(i).val() is ""
-    badFields is 0
-
+  isValid: (section)->
+    r = section.find('.validate').size()
+    v = section.find('.valid').size()
+    r is v
+    
   getIdNum: (section)->
     parseInt section.data('step')
-  
+
   # showNext: (self, input)->
   #   section = input.closest('.section')
   #   current = self.getIdNum(section)
@@ -527,7 +577,7 @@ ValidateFormSections =
   #       else
   #         $("#step-#{next}").slideUp()
 
-    false
+  #  false
 
 $ ->
   PrintPage.init()
